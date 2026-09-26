@@ -117,6 +117,10 @@ manually by Somlab.
 
 ## Production notes
 
+For the complete GitHub-to-Contabo procedure, including Nginx, systemd,
+Cloudflare, SQLite transfer/backup, TLS, and update commands, see
+[`DEPLOYMENT.md`](DEPLOYMENT.md).
+
 Customer videos accept MP4, WebM, MOV/M4V and Ogg files up to 999,999,999 bytes
 each (strictly under 1 decimal GB). Install `requirements.txt` for the bundled
 FFmpeg runtime, or set `CUSTOMER_VIDEO_FFMPEG` to a maintained system FFmpeg.
