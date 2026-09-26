@@ -1,0 +1,102 @@
+{
+  "source": "https://www.sdbiosensor.com/product/main?bcode=11",
+  "products": [
+    {
+      "name": "STANDARD™ Q Malaria P.f/Pan Ag Test",
+      "slug": "standard-q-malaria-pf-pan-ag-test",
+      "code": "09MAL30D",
+      "short_description": "Rapid qualitative detection of P. falciparum-specific HRP-2 and Plasmodium species-specific pLDH antigens in whole blood.",
+      "description": "A rapid immunochromatographic assay for the qualitative detection of Plasmodium falciparum-specific HRP-2 antigen and Plasmodium species-specific pLDH antigen, including P. falciparum, P. vivax, P. ovale and P. malariae, in capillary or venous whole blood. The test is intended for use by trained healthcare professionals, laboratory personnel or other appropriately trained health workers.",
+      "specifications": [
+        ["Specimen", "Capillary or venous whole blood"],
+        ["Test time", "15–30 minutes"],
+        ["Specimen volume", "5 µl"],
+        ["Sensitivity", "P. falciparum 99.68%; Pan 100%"],
+        ["Specificity", "100%"],
+        ["Storage temperature", "2–40°C / 36–104°F"],
+        ["Pack size", "25 tests per kit"]
+      ],
+      "source_url": "https://www.sdbiosensor.com/product/product_view?product_no=213",
+      "image_url": "https://www.sdbiosensor.com/data/board/4/213/323b9f9346e5dc38407456c97006c346.png",
+      "image_filename": "standard-q-malaria-pf-pan-ag.png"
+    },
+    {
+      "name": "STANDARD™ Q HCV Ab Test",
+      "slug": "standard-q-hcv-ab-test",
+      "code": "09HCV10D",
+      "short_description": "Rapid qualitative detection of antibodies to hepatitis C virus in human serum, plasma or whole blood.",
+      "description": "A rapid chromatographic immunoassay for the qualitative detection of antibodies to hepatitis C virus in human serum, plasma or whole blood. It is intended for professional in vitro diagnostic use as an aid to the early diagnosis of HCV infection.",
+      "specifications": [
+        ["Specimen", "Serum, plasma and whole blood"],
+        ["Test time", "5–20 minutes"],
+        ["Specimen volume", "Whole blood 20 µl; serum or plasma 10 µl"],
+        ["Sensitivity", "100% (413/413)"],
+        ["Specificity", "Plasma 97.20% (972/1000); whole blood 98.60% (493/500); total 97.67% (1465/1500)"],
+        ["Storage temperature", "2–40°C / 36–104°F"],
+        ["Pack size", "25 tests per kit"]
+      ],
+      "source_url": "https://www.sdbiosensor.com/product/product_view?product_no=202",
+      "image_url": "https://www.sdbiosensor.com/data/board/4/202/01f3e177706f179ad63f8a8231fe3cf1.png",
+      "image_filename": "standard-q-hcv-ab.png"
+    },
+    {
+      "name": "STANDARD™ Q HBsAg Test",
+      "slug": "standard-q-hbsag-test",
+      "code": "09HBS10D",
+      "short_description": "Rapid qualitative detection of hepatitis B surface antigen in serum, plasma or whole blood.",
+      "description": "A rapid chromatographic immunoassay for the qualitative detection of hepatitis B surface antigen. It is intended for professional in vitro diagnostic use as an aid to early diagnosis of HBV infection and provides an initial screening result that should be confirmed with a more specific diagnostic method when appropriate.",
+      "specifications": [
+        ["Specimen", "Serum, plasma and whole blood"],
+        ["Test time", "20 minutes"],
+        ["Specimen volume", "100 µl"],
+        ["Sensitivity", "100% (43/43)"],
+        ["Specificity", "100% (162/162)"],
+        ["Storage temperature", "2–40°C / 36–104°F"],
+        ["Pack size", "25 tests per kit"]
+      ],
+      "source_url": "https://www.sdbiosensor.com/product/product_view?product_no=199",
+      "image_url": "https://www.sdbiosensor.com/data/board/4/199/bb909091b396cc1dbda369672a64db77.png",
+      "image_filename": "standard-q-hbsag.png"
+    },
+    {
+      "name": "STANDARD™ Q HIV 1/2 Ab 3-Line",
+      "slug": "standard-q-hiv-1-2-ab-3-line",
+      "code": "09HIV30D",
+      "short_description": "Rapid qualitative detection and differentiation of HIV-1 and HIV-2 antibodies in serum, plasma or whole blood.",
+      "description": "A rapid chromatographic immunoassay for the qualitative detection of antibodies specific to HIV-1, including subtype O, and HIV-2 in human serum, plasma, or venous and capillary whole blood. It is intended for in vitro diagnostic use as an aid to diagnosis in symptomatic and asymptomatic populations and people at risk of HIV infection.",
+      "specifications": [
+        ["Specimen", "Serum, plasma, venous whole blood and capillary whole blood"],
+        ["Test time", "10–20 minutes"],
+        ["Sensitivity", "Capillary whole blood 100% (71/71); venous whole blood 99.01% (100/101); serum 99.84% (622/623); plasma 99.78% (456/457)"],
+        ["Specificity", "Whole blood 100% (750/750); serum 99.92% (1276/1277); plasma 100% (1177/1177)"],
+        ["Storage temperature", "2–40°C / 36–104°F"],
+        ["Pack size", "25 tests per kit"]
+      ],
+      "source_url": "https://www.sdbiosensor.com/product/product_view?product_no=206",
+      "image_url": "https://www.sdbiosensor.com/data/board/4/206/bff1a487652a1bf230f62a9e2977a5bf.png",
+      "image_filename": "standard-q-hiv-1-2-ab-3-line.png"
+    },
+    {
+      "name": "STANDARD™ Q Syphilis Ab Test",
+      "slug": "standard-q-syphilis-ab-test",
+      "code": "09SYP10D",
+      "short_description": "Rapid qualitative detection of antibodies to Treponema pallidum in whole blood, serum or plasma.",
+      "description": "A rapid chromatographic immunoassay for the qualitative detection of antibodies to Treponema pallidum in human serum, plasma or whole blood. It is intended for professional in vitro diagnostic use as an aid to the early diagnosis of syphilis infection.",
+      "specifications": [
+        ["Specimen", "Whole blood, serum and plasma"],
+        ["Test time", "5–20 minutes"],
+        ["Specimen volume", "Whole blood 20 µl; serum or plasma 10 µl"],
+        ["Sensitivity", "100% (701/701)"],
+        ["Specificity", "100% (1200/1200)"],
+        ["Storage temperature", "2–40°C / 36–104°F"]
+      ],
+      "variants": [
+        {"name": "25 tests per kit", "sku": "09SYP10D"},
+        {"name": "100 tests per kit", "sku": "09SYP10FM"}
+      ],
+      "source_url": "https://www.sdbiosensor.com/product/product_view?product_no=208",
+      "image_url": "https://www.sdbiosensor.com/data/board/4/208/230f2cb1746fc7e9c7b7b6298116141e.png",
+      "image_filename": "standard-q-syphilis-ab.png"
+    }
+  ]
+}

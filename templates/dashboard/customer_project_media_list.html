@@ -1,0 +1,28 @@
+{% extends "dashboard/base.html" %}
+{% block title %}{{ project.title }} media{% endblock %}
+{% block content %}
+<div class="dash-heading">
+  <div><a class="back-link" href="{% url 'dashboard_customer_projects' customer.pk %}">← {{ customer.name }} projects</a><span>Project gallery</span><h1>{{ project.title }} media</h1></div>
+  <a class="btn btn-primary" href="{% url 'dashboard_customer_project_media_add' customer.pk project.pk %}">+ Add media</a>
+</div>
+<div class="dash-card">
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Media</th><th>Type</th><th>Caption</th><th>Display order</th><th>Actions</th></tr></thead>
+      <tbody>
+        {% for item in media_items %}
+          <tr>
+            <td><div class="manage-item"><span>{% if item.file %}{% if item.media_type == 'image' %}<img src="{{ item.file.url }}" alt="">{% else %}▶{% endif %}{% else %}↗{% endif %}</span><div><strong>{% if item.file %}{{ item.file.name|cut:"customers/projects/" }}{% else %}External video{% endif %}</strong><small>{{ item.video_url|default:item.description|truncatechars:70 }}</small></div></div></td>
+            <td>{{ item.get_media_type_display }}</td>
+            <td>{{ item.caption|default:"—" }}</td>
+            <td>{{ item.display_order }}</td>
+            <td><div class="row-actions"><a href="{% url 'dashboard_customer_project_media_edit' customer.pk project.pk item.pk %}">Edit</a><a class="danger" href="{% url 'dashboard_customer_project_media_delete' customer.pk project.pk item.pk %}">Delete</a></div></td>
+          </tr>
+        {% empty %}
+          <tr><td colspan="5"><div class="empty-state"><h3>No project media yet</h3><p>Add installation photos, delivery images, uploaded videos, or a verified external video URL.</p></div></td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

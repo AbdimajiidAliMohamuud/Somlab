@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Product Inquiry — Somlab Diagnostics{% endblock %}
+{% block meta_description %}Send a product inquiry to the Somlab Diagnostics team.{% endblock %}
+{% block content %}
+<section class="inquiry-hero">
+  <div class="container inquiry-hero-grid">
+    <div>
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="{% url 'home' %}">Home</a><span>/</span><a href="{% url 'product_list' %}">Products</a><span>/</span><strong>Inquiry</strong></nav>
+      <span class="eyebrow">Product inquiry</span>
+      <h1>Tell us what your team needs.</h1>
+      <p>Share your product, quantity and application requirements. A Somlab specialist will review the request and contact you with availability, pricing and the appropriate next steps.</p>
+    </div>
+    <aside class="inquiry-hero-note">
+      <span aria-hidden="true">✓</span>
+      <div><strong>Handled by a Somlab specialist</strong><small>Your request is saved securely and routed directly to our team.</small></div>
+    </aside>
+  </div>
+</section>
+
+<section class="inquiry-section">
+  <div class="container inquiry-layout">
+    <div class="form-card inquiry-form-card">
+      <div class="inquiry-form-heading"><span class="eyebrow">Request details</span><h2>Product inquiry</h2><p>Fields marked with an asterisk are required.</p></div>
+      <form method="post" novalidate data-product-inquiry-form>
+        {% csrf_token %}
+        {% include "includes/form_fields.html" with form=form %}
+        <button class="btn btn-primary btn-block" type="submit">Submit inquiry <span aria-hidden="true">→</span></button>
+      </form>
+    </div>
+    <aside class="inquiry-context-card">
+      <span class="eyebrow">What happens next</span>
+      <ol>
+        <li><b>01</b><div><strong>Technical review</strong><p>We review the selected product and your application requirements.</p></div></li>
+        <li><b>02</b><div><strong>Availability and pricing</strong><p>Our team confirms the suitable configuration, availability and quotation.</p></div></li>
+        <li><b>03</b><div><strong>Personal follow-up</strong><p>A Somlab representative contacts you using the details provided.</p></div></li>
+      </ol>
+      {% if selected_product %}<div class="inquiry-selected-product"><small>Selected product</small><strong>{{ selected_product.name }}</strong><span>{{ selected_product.product_code }} · {{ selected_product.category.navigation_name }}</span></div>{% endif %}
+    </aside>
+  </div>
+</section>
+{{ inquiry_products_by_group|json_script:"inquiry-products-by-group" }}
+{% endblock %}

@@ -1,0 +1,15 @@
+<svg class="services-card-icon" aria-hidden="true" viewBox="0 0 24 24">
+  {% if service.slug == "equipment-installation" %}
+    <path d="M4 5h16v10H4zM8 19h8M12 15v4"></path><path d="m8 10 2.3 2.3L16 7"></path>
+  {% elif service.slug == "training-application-support" %}
+    <path d="m3 8 9-4 9 4-9 4zM7 10.5V15c2.7 2 7.3 2 10 0v-4.5M21 8v6"></path>
+  {% elif service.slug == "maintenance-technical-support" %}
+    <path d="M14.5 6.5a4 4 0 0 0-5 5L4 17l3 3 5.5-5.5a4 4 0 0 0 5-5l-2.7 2.7-3-3z"></path>
+  {% elif service.slug == "laboratory-project-development" %}
+    <path d="M5 3h14v18H5zM8 7h8M8 11h5M8 15h3"></path><path d="m14 16 1.5 1.5L19 14"></path>
+  {% elif service.slug == "laboratory-management-systems" %}
+    <path d="M4 5h16v14H4zM4 9h16M9 9v10"></path><path d="M12 13h5M12 16h3"></path>
+  {% else %}
+    <path d="M4 10 12 4l8 6v10H4zM8 20v-6h8v6"></path><path d="M7 10h10"></path>
+  {% endif %}
+</svg>

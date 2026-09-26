@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block title %}Laboratory Services — Somlab Diagnostics{% endblock %}
+{% block meta_description %}Installation, training, maintenance and complete laboratory project support from Somlab Diagnostics.{% endblock %}
+{% block content %}
+<section class="services-hero">
+  <div class="container services-hero-grid">
+    <div class="services-hero-copy">
+      <span class="eyebrow">Somlab services</span>
+      <h1>Technical support built around laboratory performance.</h1>
+      <p>From early planning and equipment installation to training, maintenance and complete laboratory projects, Somlab helps teams move from requirement to reliable operation.</p>
+      <div class="services-hero-actions">
+        <a class="btn btn-primary" href="#services-overview">Explore our services <span aria-hidden="true">↓</span></a>
+        <a class="btn btn-secondary" href="{% url 'contact' %}?subject=Laboratory%20services">Talk to our team</a>
+      </div>
+      <div class="services-hero-principles" aria-label="Somlab service approach">
+        <span><b aria-hidden="true">✓</b> Laboratory-focused planning</span>
+        <span><b aria-hidden="true">✓</b> Practical implementation</span>
+        <span><b aria-hidden="true">✓</b> Continued technical support</span>
+      </div>
+    </div>
+    <div class="services-lifecycle" aria-label="Somlab service lifecycle: plan, implement and support">
+      <div class="services-lifecycle-visual" aria-hidden="true">
+        <span class="services-lifecycle-orbit orbit-one"></span>
+        <span class="services-lifecycle-orbit orbit-two"></span>
+        <span class="services-lifecycle-core"><svg viewBox="0 0 24 24"><path d="M5 7h14v11H5zM8 4h8v3M9 12h6M12 9v6"></path></svg></span>
+        <span class="services-lifecycle-node node-plan"><small>01</small><strong>Plan</strong></span>
+        <span class="services-lifecycle-node node-deliver"><small>02</small><strong>Implement</strong></span>
+        <span class="services-lifecycle-node node-support"><small>03</small><strong>Support</strong></span>
+      </div>
+      <div class="services-lifecycle-caption"><strong>One connected service approach</strong><span>Planning, delivery and follow-up shaped around your laboratory.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="services-overview" id="services-overview">
+  <div class="container">
+    <header class="services-section-heading">
+      <div><span class="eyebrow">Service capabilities</span><h2>Support across the laboratory lifecycle</h2></div>
+      <p>Choose a focused service or combine capabilities as part of a wider laboratory implementation.</p>
+    </header>
+    {% if services %}
+      <div class="services-premium-grid">
+        {% for service in services %}
+          <a class="services-premium-card" href="{{ service.get_absolute_url }}">
+            <span class="services-card-top"><span class="services-card-icon-wrap">{% include "core/_service_icon.html" with service=service %}</span><small>{{ forloop.counter|stringformat:"02d" }}</small></span>
+            <span class="services-card-copy"><h3>{{ service.name }}</h3><p>{{ service.short_description }}</p></span>
+            <span class="services-card-link"><b aria-hidden="true">→</b></span>
+          </a>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="empty-state"><h3>Services will appear here</h3><p>Add services in the administration area.</p></div>
+    {% endif %}
+  </div>
+</section>
+
+<section class="services-value-section">
+  <div class="container services-value-grid">
+    <div class="services-value-intro">
+      <span class="eyebrow">Why Somlab</span>
+      <h2>Technical capability that stays with the project.</h2>
+      <p>Our service approach connects laboratory requirements, equipment realities and the people responsible for day-to-day performance.</p>
+      <a href="{% url 'about' %}" class="services-value-link">About Somlab <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="services-value-list">
+      <article><span>01</span><div><h3>Laboratory-focused expertise</h3><p>Recommendations shaped around workflows, equipment requirements and practical operating needs.</p></div></article>
+      <article><span>02</span><div><h3>Implementation continuity</h3><p>Coordinated support from preparation and setup through commissioning and handover.</p></div></article>
+      <article><span>03</span><div><h3>Practical user readiness</h3><p>Training and application guidance that helps laboratory teams work with confidence.</p></div></article>
+      <article><span>04</span><div><h3>After-sales support</h3><p>Maintenance, troubleshooting and responsive follow-up focused on dependable operation.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="services-process-section">
+  <div class="container">
+    <header class="services-section-heading services-process-heading">
+      <div><span class="eyebrow">How we work</span><h2>A clear path from requirement to operation</h2></div>
+      <p>The exact scope adapts to the service, equipment and facility involved.</p>
+    </header>
+    <ol class="services-process" aria-label="Somlab service process">
+      <li><span>01</span><div><h3>Assessment</h3><p>Understand your requirement, workflow and operating environment.</p></div></li>
+      <li><span>02</span><div><h3>Planning</h3><p>Define the practical scope, sequence and technical preparation.</p></div></li>
+      <li><span>03</span><div><h3>Supply & setup</h3><p>Coordinate equipment, site readiness and implementation details.</p></div></li>
+      <li><span>04</span><div><h3>Installation</h3><p>Place, configure, commission and complete operational checks.</p></div></li>
+      <li><span>05</span><div><h3>Training</h3><p>Prepare users for confident operation and routine workflows.</p></div></li>
+      <li><span>06</span><div><h3>Ongoing support</h3><p>Provide maintenance, troubleshooting and follow-up as required.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="services-support-section">
+  <div class="container services-support-panel">
+    <div class="services-support-copy"><span class="eyebrow">Service enquiries</span><h2>Need technical support or planning a laboratory project?</h2><p>Tell us about your equipment, facility or project requirement. We’ll help identify the next practical step.</p></div>
+    <div class="services-support-actions"><a class="btn btn-white" href="{% url 'contact' %}?subject=Technical%20support">Request support</a><a class="btn services-outline-button" href="{% url 'contact' %}?subject=Laboratory%20project">Discuss a project</a></div>
+  </div>
+</section>
+{% endblock %}

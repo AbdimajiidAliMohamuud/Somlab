@@ -1,0 +1,2810 @@
+{
+  "source": "https://polycheck.de/alternative-products/",
+  "products": [
+    {
+      "group": "Autoimmune",
+      "name": "AI-STD",
+      "source_url": "https://polycheck.de/product/ai-std-2/",
+      "source_id": "2845",
+      "row_sku": "",
+      "components": [
+        "Ro/SS-A 60",
+        "La/SS-B",
+        "Scl-70",
+        "PM/Scl 100",
+        "Sm",
+        "PCNA",
+        "dsDNA",
+        "Ribosomal Phosphoprotein Po",
+        "CENP-B",
+        "AMA M2",
+        "PR3",
+        "MPO",
+        "TPO",
+        "Thyroglobulin (TG)"
+      ],
+      "variants": [
+        {
+          "name": "12-Kit",
+          "sku": "05012050"
+        },
+        {
+          "name": "24-Kit",
+          "sku": "05012040"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012060"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012560"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_07-scaled-1.jpg"
+    },
+    {
+      "group": "Autoimmune",
+      "name": "AI-STD-X",
+      "source_url": "https://polycheck.de/product/ai-std-x-2/",
+      "source_id": "2846",
+      "row_sku": "",
+      "components": [
+        "Ro/SS-A 52",
+        "La/SS-B",
+        "CENP-B",
+        "Scl-70",
+        "dsDNA",
+        "Jo-1",
+        "MPO",
+        "PR3",
+        "AMA M2",
+        "LC 1",
+        "LKM 1",
+        "PM/Scl 100",
+        "SRP 54",
+        "SP 100",
+        "gp 210",
+        "Ku",
+        "Sm",
+        "U1-snRNP"
+      ],
+      "variants": [
+        {
+          "name": "12-Kit",
+          "sku": "05012054"
+        },
+        {
+          "name": "24-Kit",
+          "sku": "05012044"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012064"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012564"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_04-scaled-1.jpg"
+    },
+    {
+      "group": "Autoimmune",
+      "name": "Rheuma",
+      "source_url": "https://polycheck.de/product/rheuma-2/",
+      "source_id": "2847",
+      "row_sku": "",
+      "components": [
+        "Ro/SS-A 52",
+        "Jo-1",
+        "Sm",
+        "CENP-B",
+        "La/SS-B",
+        "Histone",
+        "PM/Scl-100",
+        "Ribosomal Phosphoprotein Po",
+        "dsDNA",
+        "Scl-70",
+        "U1-snRNP",
+        "Ro/SS-A 60",
+        "Mi-2",
+        "Ku"
+      ],
+      "variants": [
+        {
+          "name": "12-Kit",
+          "sku": "05012056"
+        },
+        {
+          "name": "24-Kit",
+          "sku": "05012046"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012066"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012566"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_01-scaled-1.jpg"
+    },
+    {
+      "group": "Autoimmune",
+      "name": "Liver / Kidney",
+      "source_url": "https://polycheck.de/product/liver-kidney/",
+      "source_id": "2848",
+      "row_sku": "",
+      "components": [
+        "AMA M2",
+        "SP 100",
+        "gp 210",
+        "LKM 1",
+        "LC 1",
+        "CENP-B",
+        "GBM",
+        "PR3",
+        "MPO",
+        "SLA/LP"
+      ],
+      "variants": [
+        {
+          "name": "12-Kit",
+          "sku": "05012052"
+        },
+        {
+          "name": "24-Kit",
+          "sku": "05012042"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012062"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012562"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_03-scaled-1.jpg"
+    },
+    {
+      "group": "Autoimmune",
+      "name": "Myositis",
+      "source_url": "https://polycheck.de/product/myositis/",
+      "source_id": "2849",
+      "row_sku": "",
+      "components": [
+        "Mi-2",
+        "PM/Scl 100",
+        "Jo-1",
+        "SRP 54",
+        "PL-7",
+        "PL-12",
+        "Ku"
+      ],
+      "variants": [
+        {
+          "name": "12-Kit",
+          "sku": "05012051"
+        },
+        {
+          "name": "24-Kit",
+          "sku": "05012041"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012061"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012561"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_06-scaled-1.jpg"
+    },
+    {
+      "group": "Autoimmune",
+      "name": "Celiac IgG",
+      "source_url": "https://polycheck.de/product/celiac-igg/",
+      "source_id": "2850",
+      "row_sku": "",
+      "components": [
+        "deam. Gliadin IgG",
+        "tTG IgG",
+        "Intrinsic Factor"
+      ],
+      "variants": [
+        {
+          "name": "12-Kit",
+          "sku": "05012053"
+        },
+        {
+          "name": "24-Kit",
+          "sku": "05012043"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012063"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012563"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_05-scaled-1.jpg"
+    },
+    {
+      "group": "Autoimmune",
+      "name": "Celiac IgA+total",
+      "source_url": "https://polycheck.de/product/celiac-igatotal/",
+      "source_id": "2851",
+      "row_sku": "",
+      "components": [
+        "deam. Gliadin IgA",
+        "tTG IgA",
+        "total IgA"
+      ],
+      "variants": [
+        {
+          "name": "12-Kit",
+          "sku": "05012057"
+        },
+        {
+          "name": "24-Kit",
+          "sku": "05012047"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012067"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012567"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_04-scaled-1.jpg"
+    },
+    {
+      "group": "Autoimmune",
+      "name": "Celiac Dual Kit",
+      "source_url": "https://polycheck.de/product/celiac-dual-kit/",
+      "source_id": "2852",
+      "row_sku": "",
+      "components": [
+        "12x Celiac IgA+total",
+        "12x Celiac IgG"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012247"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012267"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012568"
+        }
+      ],
+      "image_url": ""
+    },
+    {
+      "group": "Allergy",
+      "name": "CCD-Blocker",
+      "source_url": "https://polycheck.de/product/ccd-blocker/",
+      "source_id": "3703",
+      "row_sku": "",
+      "components": [],
+      "variants": [],
+      "image_url": ""
+    },
+    {
+      "group": "Allergy",
+      "name": "Inhalation 10-I",
+      "source_url": "https://polycheck.de/product/inhalation-10-i/",
+      "source_id": "197",
+      "row_sku": "",
+      "components": [
+        "k202 CCD / Bromelain",
+        "t03 Birch pollen",
+        "t02 Alder pollen",
+        "t04 Hazel pollen",
+        "t07 White Oak pollen",
+        "t09 Olive pollen",
+        "g06 Timothy Grass pollen",
+        "g12 Rye pollen",
+        "w01 Ragweed pollen",
+        "w06 Mugwort pollen",
+        "w09 Plantain pollen"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012102"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012112"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012512"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_05-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Inhalation 10-II",
+      "source_url": "https://polycheck.de/product/inhalation-10-ii/",
+      "source_id": "2802",
+      "row_sku": "",
+      "components": [
+        "k202 CCD / Bromelain",
+        "d01 D. pteronyssinus",
+        "d02 D. farinae",
+        "e02/e05 Dog epithelia",
+        "e01 Cat epithelia",
+        "e03 Horse epithelia",
+        "e81 Sheep epithelia",
+        "m03 Aspergillus fumigatus",
+        "m02 Cladosporium herbarum",
+        "m01 Penicillium notatum",
+        "m06 Alternaria alternata"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012202"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012212"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012513"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_04-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Inhalation 10-III",
+      "source_url": "https://polycheck.de/product/inhalation-10-iii/",
+      "source_id": "2803",
+      "row_sku": "",
+      "components": [
+        "k202 CCD / Bromelain",
+        "t03 Birch pollen",
+        "gx7 6 Grass Mix",
+        "g12 Rye pollen",
+        "w06 Mugwort pollen",
+        "d01 D. pteronyssinus",
+        "d02 D. farinae",
+        "e02/05 Dog epithelia",
+        "e01 Cat epithelia",
+        "ex78 Feathers Mix",
+        "m02/06 Cladosporium herbarum / Alternaria alternata Mix"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012105"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012115"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012505"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_04-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Inhalation 20-I",
+      "source_url": "https://polycheck.de/product/inhalation-20-i/",
+      "source_id": "2804",
+      "row_sku": "",
+      "components": [
+        "k202 CCD / Bromelain",
+        "t03 Birch pollen",
+        "t02 Alder pollen",
+        "t04 Hazel pollen",
+        "t07 White Oak pollen",
+        "g06 Timothy Grass pollen",
+        "g12 Rye pollen",
+        "w06 Mugwort pollen",
+        "w09 Plantain pollen",
+        "d01 D. pteronyssinus",
+        "d02 D. farinae",
+        "e02/e05 Dog epithelia",
+        "e01 Cat epithelia",
+        "e03 Horse epithelia",
+        "e06 Guinea Pig epithelia",
+        "e84 Hamster epithelia",
+        "e82 Rabbit epithelia",
+        "m03 Aspergillus fumigatus",
+        "m02 Cladosporium herbarum",
+        "m01 Penicillium notatum",
+        "m06 Alternaria alternata"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012002"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012022"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012522"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_06-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Inhalation 30-I",
+      "source_url": "https://polycheck.de/product/inhalation-30-i/",
+      "source_id": "2806",
+      "row_sku": "",
+      "components": [
+        "t23 Cypress pollen",
+        "t04 Hazel pollen",
+        "t15 White Ash pollen",
+        "t07 White Oak pollen",
+        "t09 Olive pollen",
+        "t03 Birch pollen",
+        "g12 Rye pollen",
+        "g14 Cultivated Oat pollen",
+        "g08 Kentucky bluegrass pollen",
+        "g06 Timothy Grass pollen",
+        "g15 Cultivated Wheat pollen",
+        "g03 Cocksfoot pollen",
+        "g02 Bermuda Grass pollen",
+        "w09 Plantain pollen",
+        "w10 Goosefoot pollen",
+        "w21 Wall pellitory pollen (P. judaica)",
+        "w01 Ragweed pollen",
+        "w06 Mugwort pollen",
+        "e01 Cat epithelia",
+        "e02/05 Dog epithelia",
+        "e03 Horse epithelia",
+        "m06 Alternaria alternata",
+        "m03 Aspergillus fumigatus",
+        "m05 Candida albicans",
+        "d201 Blomia tropicalis",
+        "d01 D. pteronyssinus",
+        "d02 D. farinae",
+        "k82 Latex",
+        "i06 Cockroach (Blatella germanica)",
+        "k202 CCD / Bromelain"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012092"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012093"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012593"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_06-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Inhalation 30-II",
+      "source_url": "https://polycheck.de/product/inhalation-30-ii/",
+      "source_id": "1938",
+      "row_sku": "",
+      "components": [
+        "t01/t11 Box Elder Plantane Mix",
+        "t14 Cottonwood pollen",
+        "t02 Alder pollen",
+        "t208 Limetree pollen",
+        "t231 Juniper pollen",
+        "t03 Birch pollen",
+        "t04 Hazel pollen",
+        "t05 Beech pollen",
+        "t15 White Ash pollen",
+        "g06 Timothy Grass pollen",
+        "gx7 6 Grass Mix",
+        "w01/w03 Ragweed / Giant Ragweed",
+        "w204 Sunflower pollen",
+        "w206 Camomile pollen",
+        "w21 Wall pellitory pollen (P. judaica)",
+        "w06 Mugwort pollen",
+        "w07 Oxeye Daisy pollen",
+        "e01/e02/e05 Cat / Dog epithelia Mix",
+        "e03/e04 Horse / Cow epithelia Mix",
+        "ex10 Rodent epithelia Mix",
+        "m02/m06 Cladosporium herbarum / Alternaria alternata Mix",
+        "m01/m03 Penicillium notatum / Aspergillus fumigatus Mix",
+        "d01 D. pteronyssinus",
+        "d02 D. farinae",
+        "d70 Acarussiro",
+        "k82 Latex",
+        "i01 Bee venom",
+        "i03 Wasp venom",
+        "i06 Cockroach (Blatella germanica)",
+        "k202 CCD / Bromelain"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012124"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012125"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012554"
+        }
+      ],
+      "image_url": ""
+    },
+    {
+      "group": "Allergy",
+      "name": "Food 10-III",
+      "source_url": "https://polycheck.de/product/food-10-iii/",
+      "source_id": "2808",
+      "row_sku": "",
+      "components": [
+        "k202 CCD / Bromelain",
+        "f02 Cow's milk",
+        "f01 Egg White",
+        "f75 Egg Yolk",
+        "f78 Casein (nBos d8)",
+        "f14 Soybean",
+        "f09 Rice",
+        "f93 Cacao (Chocolate)",
+        "f49 Apple",
+        "f31 Carrot",
+        "fx10 Flour Mix"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012103"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012106"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012506"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_03-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Food 10-IV",
+      "source_url": "https://polycheck.de/product/food-10-iv/",
+      "source_id": "994",
+      "row_sku": "",
+      "components": [
+        "k202 CCD / Bromelain",
+        "f13 Peanut",
+        "f10 Sesame",
+        "f26 Pork meat",
+        "f83 Chicken meat",
+        "f27 Beef meat",
+        "f03 Codfish",
+        "fx29 Citrus Mix",
+        "f85 Celery",
+        "f95 Peach",
+        "f25 Tomato"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012104"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012107"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012507"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_01-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Food 20-I",
+      "source_url": "https://polycheck.de/product/food-20-i/",
+      "source_id": "998",
+      "row_sku": "",
+      "components": [
+        "k202 CCD / Bromelain",
+        "f17 Hazelnut",
+        "f13 Peanut",
+        "f16 Walnut",
+        "f20 Almond",
+        "f02 Cow's milk",
+        "f01 Egg White",
+        "f75 Egg Yolk",
+        "f78 Casein (nBos d8)",
+        "f35 Potato",
+        "f85 Celery",
+        "f31 Carrot",
+        "f25 Tomato",
+        "f03 Codfish",
+        "f24 Shrimp, Pacific",
+        "f95 Peach",
+        "f49 Apple",
+        "f14 Soybean",
+        "f04 Wheat flour",
+        "f10 Sesame",
+        "f05 Rye flour"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012001"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "0502021"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "0502521"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_07-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Food 30-I",
+      "source_url": "https://polycheck.de/product/food-30-i/",
+      "source_id": "1002",
+      "row_sku": "",
+      "components": [
+        "f25 Tomato",
+        "f96 Avocado",
+        "f92 Banana",
+        "fx29 Citrus Mix",
+        "f84 Kiwi",
+        "f13 Peanut",
+        "f17 Hazelnut",
+        "f12 Pea",
+        "f14 Soybean",
+        "f85 Celery",
+        "f27 Beef meat",
+        "f83 Chicken meat",
+        "f26 Pork meat",
+        "f207 Clam Shell",
+        "f24 Shrimp, Pacific",
+        "f23 Crab",
+        "f40 Tuna, Yellowfin",
+        "f03 Codfish",
+        "f47 Garlic",
+        "f48 Onion",
+        "f45 Baker's yeast",
+        "f10 Sesame",
+        "f09 Rice",
+        "f08 Corn",
+        "f04 Wheat flour",
+        "f76 Alpha-Lactalbumin (nBos d4)",
+        "f77 Beta-Lactoglobulin (nBos d5)",
+        "f78 Casein (nBos d8)",
+        "f01 Egg White",
+        "k202 CCD / Bromelain"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012096"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012097"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012597"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_03-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Food 30-II",
+      "source_url": "https://polycheck.de/product/food-30-ii/",
+      "source_id": "2809",
+      "row_sku": "",
+      "components": [
+        "f02 Cow's milk",
+        "f76 Alpha-Lactalbumin (nBos d4)",
+        "f77 Beta-Lactoglobulin (nBos d5)",
+        "f78 Casein (nBos d8)",
+        "f01 Egg White",
+        "f75 Egg Yolk",
+        "f114 Sunflower seed",
+        "f14 Soybean",
+        "f17 Hazelnut",
+        "f13 Peanut",
+        "f12 Pea",
+        "f260 Tofu",
+        "f25 Tomato",
+        "f48 Onion",
+        "fx69 Herb Mix I",
+        "f281 Curry",
+        "fx4 Fish Mix",
+        "fx76 Seafood Mix III",
+        "f44 Strawberry",
+        "f92 Banana",
+        "f358 Sour Cherry",
+        "f49 Apple",
+        "fx29 Citrus Mix",
+        "f84 Kiwi",
+        "f259 Grape",
+        "f95 Peach",
+        "f93 Cacao (Chocolate)",
+        "f07 Oat flour",
+        "f04 Wheat flour",
+        "k202 CCD / Bromelain"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012122"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012123"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012552"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_01-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Paediatric 20-I",
+      "source_url": "https://polycheck.de/product/paediatric-20-l/",
+      "source_id": "1015",
+      "row_sku": "",
+      "components": [
+        "k202 CCD / Bromelain",
+        "f13 Peanut",
+        "f02 Cow's milk",
+        "f01 Egg White",
+        "f75 Egg Yolk",
+        "f35 Potato",
+        "f31 Carrot",
+        "f03 Codfish",
+        "f49 Apple",
+        "f14 Soybean",
+        "f04 Wheat flour",
+        "t03 Birch pollen",
+        "g06 Timothy Grass pollen",
+        "w06 Mugwort pollen",
+        "d01 D. pteronyssinus",
+        "d02 D. farinae",
+        "e02/e05 Dog epithelia",
+        "e01 Cat epithelia",
+        "e03 Horse epithelia",
+        "m03 Aspergillus fumigatus",
+        "m02 Cladosporium herbarum"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012003"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012023"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012523"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_04-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Paediatric 30-I",
+      "source_url": "https://polycheck.de/product/paediatric-30-i/",
+      "source_id": "2810",
+      "row_sku": "",
+      "components": [
+        "gx7 6 Grass Mix",
+        "t03 Birch pollen",
+        "w06 Mugwort pollen",
+        "d01 D. pteronyssinus",
+        "d02 D. farinae",
+        "e01 Cat epithelia",
+        "e02/e05 Dog epithelia",
+        "e03 Horse epithelia",
+        "m02 Cladosporium herbarum",
+        "m03 Aspergillus fumigatus",
+        "m06 Alternaria alternata",
+        "f01 Egg White",
+        "f75 Egg Yolk",
+        "f02 Cow's milk",
+        "f76 Alpha-Lactalbumin (nBos d4)",
+        "f77 Beta-Lactoglobulin (nBos d5)",
+        "f78 Casein (nBos d8)",
+        "e204 BSA",
+        "f03 Codfish",
+        "fx10 Flour Mix",
+        "f09 Rice",
+        "f14 Soybean",
+        "f13 Peanut",
+        "f17 Hazelnut",
+        "f31 Carrot",
+        "f35 Potato",
+        "f49 Apple",
+        "f93 Cacao (Chocolate)",
+        "f83 Chicken meat",
+        "k202 CCD / Bromelain"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012126"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012127"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012527"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_04-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Atopic 20-I",
+      "source_url": "https://polycheck.de/product/atopic-20-i/",
+      "source_id": "2811",
+      "row_sku": "",
+      "components": [
+        "k202 CCD / Bromelain",
+        "f02 Cow's milk",
+        "f78 Casein (nBos d8)",
+        "f76 Alpha-Lactalbumin (nBos d4)",
+        "f77 Beta-Lactoglobulin (nBos d5)",
+        "e204 BSA",
+        "f01/f75 Egg White / Egg Yolk Mix",
+        "f09 Rice",
+        "f14 Soybean",
+        "f92 Banana",
+        "f26 Pork meat",
+        "f27 Beef meat",
+        "f83 Chicken meat",
+        "fx10 Flour Mix",
+        "f45 Baker's yeast",
+        "d01/d02 D. pteronyssinus / D. farinae Mix",
+        "m02/m06 Cladosporium herbarum / Alternaria alternata Mix",
+        "t03/t07 Birch pollen / Oak pollen Mix",
+        "t02/t04 Alder pollen / Hazel pollen Mix",
+        "gx7 6 Grass Mix",
+        "tIgE Total IgE"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012019"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012024"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012524"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_04-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Atopic 30-I",
+      "source_url": "https://polycheck.de/product/atopic-30-i/",
+      "source_id": "2812",
+      "row_sku": "",
+      "components": [
+        "f02 Cow's milk",
+        "f76 Alpha-Lactalbumin (nBos d4)",
+        "f77 Beta-Lactoglobulin (n Bos d5)",
+        "f78 Casein (nBos d8)",
+        "f01 Egg White",
+        "f75 Egg Yolk",
+        "f03 Codfish",
+        "f13 Peanut",
+        "f93 Cacao (Chocolate)",
+        "f14 Soybean",
+        "f49 Apple",
+        "f31 Carrot",
+        "f25 Tomato",
+        "fx10 Flour Mix",
+        "f83 Chicken meat",
+        "fx29 Citrus Mix",
+        "f09 Rice",
+        "gx7 6 Grass Mix",
+        "g12 Rye pollen",
+        "e02/e05 Dog epithelia",
+        "e01 Cat epithelia",
+        "m02 Cladosporium herbarum",
+        "m06 Alternaria alternata",
+        "m03 Aspergillus fumigatus",
+        "d01 D. pteronyssinus",
+        "d02 D. farinae",
+        "t04 Hazel pollen",
+        "t03 Birch pollen",
+        "w06 Mugwort pollen",
+        "k202 CCD / Bromelain"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012085"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012095"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012595"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_05-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Atopic 30-II",
+      "source_url": "https://polycheck.de/product/atopic-30-ii/",
+      "source_id": "2813",
+      "row_sku": "",
+      "components": [
+        "f85 Celery",
+        "f14 Soybean",
+        "f13 Peanut",
+        "f12 Pea",
+        "f96 Avocado",
+        "f26 Pork",
+        "f04 Wheat flour",
+        "f24 Shrimp",
+        "f03 Codfish",
+        "f84 Kiwi",
+        "f02 Cow's milk",
+        "f01 Egg White",
+        "t03 Birch pollen",
+        "t09 Olive pollen",
+        "t07 White Oak pollen",
+        "t11 London Plane pollen",
+        "t23 Cypress pollen",
+        "g15 Cultivated Wheat pollen",
+        "g06 Timothy Grass pollen",
+        "w01 Ragweed pollen",
+        "w21 Wall pellitory pollen (P. judaica)",
+        "w06 Mugwort pollen",
+        "e01 Cat epithelia",
+        "e02/e05 Dog epithelia",
+        "m03 Aspergillus fumigatus",
+        "m06 Alternaria alternata",
+        "i06 Cockroach (Blatella germanica)",
+        "d01 D. pteronyssinus",
+        "d02 D. farinae",
+        "k202 CCD / Bromelain"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012090"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012091"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012591"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_05-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "IMF 10-I",
+      "source_url": "https://polycheck.de/product/imf-10-i/",
+      "source_id": "2814",
+      "row_sku": "",
+      "components": [
+        "k202 CCD / Bromelain",
+        "d01/d02 D. pteronyssinus / D. farinae",
+        "i01 Bee venom",
+        "i03 Wasp venom",
+        "i75 Hornet venom",
+        "i71 Mosquito",
+        "i80 Black fly",
+        "ex77 Cage Birds Mix",
+        "ex78 Feathers Mix",
+        "ix267 Cockroach Mix",
+        "tIgE Total IgE"
+      ],
+      "variants": [
+        {
+          "name": "12-Kit",
+          "sku": "05012610"
+        },
+        {
+          "name": "24-Kit",
+          "sku": "05012611"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012612"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012613"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_01-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Eczema 10-I",
+      "source_url": "https://polycheck.de/product/eczema-10-l/",
+      "source_id": "2815",
+      "row_sku": "",
+      "components": [
+        "k202 CCD / Bromelain",
+        "d01 D. pteronyssinus",
+        "e01 Cat epithelia",
+        "e02/e05 Dog epithelia",
+        "k82 Latex",
+        "f01 Egg White",
+        "f03 Codfish",
+        "f14 Soybean",
+        "f93 Cacao (Chocolate)",
+        "f17 Hazelnut",
+        "f13 Peanut"
+      ],
+      "variants": [
+        {
+          "name": "12-Kit",
+          "sku": "05012600"
+        },
+        {
+          "name": "24-Kit",
+          "sku": "05012601"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012602"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012603"
+        }
+      ],
+      "image_url": ""
+    },
+    {
+      "group": "Allergy",
+      "name": "Korea I-Standard",
+      "source_url": "https://polycheck.de/product/korea-i-standard/",
+      "source_id": "2816",
+      "row_sku": "",
+      "components": [
+        "f14 Soybean",
+        "f02 Cow's milk",
+        "f01 Egg White",
+        "f23 Crab",
+        "f24/f440 Shrimp Mix",
+        "f95 Peach",
+        "h01 House dust",
+        "d01 D. pteronyssinus",
+        "d02 D. farinae",
+        "ix267 Cockroach Mix",
+        "e02/e05 Dog epithelia",
+        "e01 Cat epithelia",
+        "m06 Alternaria alternata",
+        "t02/03 Alder pollen / Birch pollen Mix",
+        "t07 White Oak pollen",
+        "w01 Ragweed pollen",
+        "w06 Mugwort pollen",
+        "g06 Timothy Grass pollen",
+        "g12 Rye pollen",
+        "tIgE Total IgE"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012005"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012015"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012515"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_05-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Korea II-Inhalation",
+      "source_url": "https://polycheck.de/product/korea-ii-inhalation/",
+      "source_id": "2817",
+      "row_sku": "",
+      "components": [
+        "w07 Oxeye Daisy pollen",
+        "g09 Redtop pollen",
+        "t61 Sycamore pollen",
+        "w11 Russian Thistle pollen",
+        "t17 Japanese Cedar pollen",
+        "t215 Lilac pollen",
+        "tx251 Ash Mix",
+        "t19 Acacia pollen",
+        "t04 Hazel pollen",
+        "w14 Pigweed pollen",
+        "g04 Meadow Fescue pollen",
+        "g02 Bermuda Grass pollen",
+        "g03 Cocksfoot pollen",
+        "w12 Goldenrod pollen",
+        "w08 Dandelion pollen",
+        "k82 Latex",
+        "m03 Aspergillus fumigatus",
+        "m02 Cladosporium herbarum",
+        "m01 Penicillium notatum",
+        "d72 Tyrophagus prutescentiae"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012006"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012016"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012516"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_04-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Korea III-Food",
+      "source_url": "https://polycheck.de/product/korea-iii-food/",
+      "source_id": "2818",
+      "row_sku": "",
+      "components": [
+        "f11 Buckwheat flour",
+        "f13 Peanut",
+        "f93 Cacao (Chocolate)",
+        "f81 Cheese, Cheddar",
+        "f60 Mackerel",
+        "f25 Tomato",
+        "f35 Potato",
+        "f40 Tuna, Yellowfin",
+        "f03 Codfish",
+        "f41 Salmon, Atlantic",
+        "f26 Pork meat",
+        "f83 Chicken meat",
+        "f27 Beef meat",
+        "fx29 Citrus Mix",
+        "f45 Baker's yeast",
+        "f04 Wheat flour",
+        "f09 Rice",
+        "f06 Barley flour",
+        "f47 Garlic",
+        "f299 Sweet Chestnut"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012007"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012017"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012517"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_03-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Iraq Inhalation 20-II*",
+      "source_url": "https://polycheck.de/product/iraq-inhalation-20-ii/",
+      "source_id": "2819",
+      "row_sku": "",
+      "components": [
+        "k202 CCD / Bromelain",
+        "t09 Olive pollen",
+        "t214 Date palm pollen",
+        "g02 Bermuda Grass pollen",
+        "g12 Rye pollen",
+        "gx7 6 Grass Mix",
+        "w06 Mugwort tpollen",
+        "w09 Plantain pollen",
+        "w10 Goosefoot pollen",
+        "w11 Russian Thistle pollen",
+        "e01/e02/e05 Cat / Dog epithelia Mix",
+        "ex77 Cage Birds Mix",
+        "ex79 Feathers Mix II",
+        "m01/m03 Penicillium notatum / Aspergillus fumigatus Mix",
+        "m02/m06 Cladosporium herbarum / Alternaria alternata Mix",
+        "m05 Candida albicans",
+        "d01/d02 D. pteronyssinus / D. farinae Mix",
+        "d201 Blomia tropicalis",
+        "k82 Latex",
+        "ix267 Cockroach Mix",
+        "tIgE Total IgE"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012160"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012161"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012162"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_06-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Iraq  Food 20-II*",
+      "source_url": "https://polycheck.de/product/iraq-food-20-ii/",
+      "source_id": "2820",
+      "row_sku": "",
+      "components": [
+        "k202 CCD / Bromelain",
+        "f01/f75 Egg White / Egg Yolk Mix",
+        "f02 Cow's milk",
+        "fx10 Flour Mix",
+        "f14 Soybean",
+        "f25 Tomato",
+        "f262 Eggplant",
+        "f85 Celery",
+        "f09 Rice",
+        "f10 Sesame",
+        "fx80 Nut Mix I",
+        "f95 Peach",
+        "f49 Apple",
+        "f44 Strawberry",
+        "f92/f91 Banana / Mango Mix",
+        "fx29 Citrus Mix",
+        "f45 Baker’s yeast",
+        "f93 Cacao (Chocolate)",
+        "f83 Chicken meat",
+        "fx75 Meat Mix",
+        "fx4 Fish Mix"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012156"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012157"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012158"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_07-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Iraq Atopic 20*",
+      "source_url": "https://polycheck.de/product/iraq-atopic-20/",
+      "source_id": "2821",
+      "row_sku": "",
+      "components": [
+        "k202 CCD / Bromelain",
+        "f02 Cow's milk",
+        "f76 Alpha-Lactalbumin (nBos d4)",
+        "f77 Beta-Lactoglobulin (nBos d5)",
+        "e204 BSA",
+        "f01/f75 Egg White / Egg Yolk Mix",
+        "fx75 Meat Mix",
+        "fx77 Seafood Mix IV",
+        "f93 Cacao (Chocolate)",
+        "f14 Soybean",
+        "fx80 Nut Mix I",
+        "f10 Sesame",
+        "d01/d02 D. pteronyssinus / D. farinae Mix",
+        "m02/m06 Cladosporium herbarum / Alternaria alternata Mix",
+        "gx7 6 Grass Mix",
+        "g02 Bermuda Grass pollen",
+        "w10 Goosefoot pollen",
+        "w11 Russian Thistle pollen",
+        "ix267 Cockroach Mix",
+        "k82 Latex",
+        "e01/e02/e05 Cat / Dog epithelia Mix"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012149"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012150"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012151"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_04-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Iran Inhalation 30*",
+      "source_url": "https://polycheck.de/product/iran-inhalation-30/",
+      "source_id": "1945",
+      "row_sku": "",
+      "components": [
+        "tx23 Alder pollen / Birch pollen Mix",
+        "tx251 Ash Mix",
+        "t16 Pine pollen",
+        "t19 Acacia pollen",
+        "t20 Mesquite",
+        "g02 Bermuda Grass pollen",
+        "g10 Great millet",
+        "w11 Russian Thistle pollen",
+        "w17 Summer cypress",
+        "g14 Cultivated Oat pollen",
+        "gx7 6 Grass Mix",
+        "w06 Mugwort pollen",
+        "w09 Plantain pollen",
+        "w10 Goosefoot pollen",
+        "w14 Pigweed pollen",
+        "w01/w03 Ragweed / Giant Ragweed pollen",
+        "w18 Sorrel pollen",
+        "e01/e02/e05 Cat / Dog epithelia Mix",
+        "e03/e04 Horse / Cow epithelia Mix",
+        "e81 Sheep epithelia",
+        "ex77 Cage Birds Mix",
+        "ex79 Feathers Mix II",
+        "ex10 Rodent epithelia Mix",
+        "mx01 Mould Mix",
+        "m02/m06 Penicillium notatum /Aspergillus fumigatis",
+        "m05 Candida albicans",
+        "h01 House dust",
+        "d01/d02 D. pteronyssinus / D. farinae",
+        "ix267 Cockroach Mix",
+        "k202 CCD / Bromelain"
+      ],
+      "variants": [
+        {
+          "name": "12-Kit",
+          "sku": "05012119"
+        },
+        {
+          "name": "24-Kit",
+          "sku": "05012120"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012121"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012520"
+        }
+      ],
+      "image_url": ""
+    },
+    {
+      "group": "Allergy",
+      "name": "Iran Food 30*",
+      "source_url": "https://polycheck.de/product/iran-food-30/",
+      "source_id": "1953",
+      "row_sku": "",
+      "components": [
+        "f01/f75 Egg White/ Egg Yolk Mix",
+        "f02 Cow's milk",
+        "f78 Casein (nBos d8)",
+        "f09 Rice",
+        "f45 Baker's yeast",
+        "f14 Soybean",
+        "fx80 Nut Mix I",
+        "fx81 Nut Mix II",
+        "f10 Sesame",
+        "fx10 Flour Mix",
+        "f44 Strawberry",
+        "f49 Apple",
+        "f259 Grape",
+        "f84 Kiwi",
+        "f92/f91 Banana / Mango Mix",
+        "f95 Peach",
+        "f93 Cacao (Chocolate)",
+        "f87 Muskmelon",
+        "fx29 Citrus Mix",
+        "f25 Tomato",
+        "f46 Redpepper",
+        "f47 Garlic",
+        "f48 Onion",
+        "f35 Potato",
+        "f85 Celery",
+        "f262 Eggplant",
+        "f83 Chicken meat",
+        "fx75 Meat Mix",
+        "fx77 Seafood Mix IV",
+        "k202 CCD / Bromelain"
+      ],
+      "variants": [
+        {
+          "name": "12-Kit",
+          "sku": "05012116"
+        },
+        {
+          "name": "24-Kit",
+          "sku": "05012117"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012118"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012558"
+        }
+      ],
+      "image_url": ""
+    },
+    {
+      "group": "Allergy",
+      "name": "Gulf Inhalation 20*",
+      "source_url": "https://polycheck.de/product/gulf-inhalation-20/",
+      "source_id": "1961",
+      "row_sku": "",
+      "components": [
+        "g06 Timothy Grass pollen",
+        "g12 Rye pollen",
+        "t02 Alder pollen",
+        "t03 Birch pollen",
+        "t07 White Oak pollen",
+        "t09 Olive pollen",
+        "w01 Ragweed pollen",
+        "w06 Mugwort pollen",
+        "d01 D. pteronyssinus",
+        "d02 D. farinae",
+        "i06 Cockroach (Blatella germanica)",
+        "e01 Cat epithelia",
+        "e02/e05 Dog epithelia",
+        "e03 Horse epithelia",
+        "e17 Camel epithelia",
+        "m01 Penicillium notatum",
+        "m02/m06 Cladosporium herbarum / Alternaria alternata Mix",
+        "m03 Aspergillus fumigatus",
+        "m05 Candida albicans",
+        "k202 CCD / Bromelain"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012130"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012133"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012530"
+        }
+      ],
+      "image_url": ""
+    },
+    {
+      "group": "Allergy",
+      "name": "Gulf Inhalation 30",
+      "source_url": "https://polycheck.de/product/gulf-inhalation-30/",
+      "source_id": "2822",
+      "row_sku": "",
+      "components": [
+        "g06 Timothy Grass pollen",
+        "g01 Sweet Vernel grass pollen",
+        "g12 Rye pollen",
+        "g14 Cultivated Oat pollen",
+        "gx7 6 Grass Mix",
+        "w06 Mugwort pollen",
+        "w10 Goosefoot pollen",
+        "w14 Pigweed pollen",
+        "w01 Ragweed pollen",
+        "t02 Alder pollen",
+        "t03 Birch pollen",
+        "t214 Date palm pollen",
+        "t16 Pine pollen",
+        "e01 Cat epithelia",
+        "e02/e05 Dog epithelia",
+        "e03 Horse epithelia",
+        "e04 Cow epithelia",
+        "e17 Camel epithelia",
+        "e81 Sheep epithelia",
+        "m01 Penicillium notatum",
+        "m02 Cladosporium herbarum",
+        "m03 Aspergillus fumigatus",
+        "m06 Alternaria alternata",
+        "m05 Candida albicans",
+        "h01 House dust",
+        "d01/d02 D. pteronyssinus / D. farinaeMix",
+        "ix267 Cockroach Mix",
+        "ex77 Cage Birds Mix",
+        "ex79 Feathers Mix II",
+        "k202 CCD / Bromelain"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012139"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012138"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012538"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_05-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Gulf Food 20*",
+      "source_url": "https://polycheck.de/product/gulf-food-20/",
+      "source_id": "1965",
+      "row_sku": "",
+      "components": [
+        "f01/f75 Egg White / Egg Yolk Mix",
+        "f02 Cow's milk",
+        "f93 Cacao (Chocolate)",
+        "f04 Wheat flour",
+        "f14 Soybean",
+        "f45 Baker's yeast",
+        "fx80 Nut Mix I",
+        "f13 Peanut",
+        "f33 Orange",
+        "f44 Strawberry",
+        "f92 Banana",
+        "f91 Mango",
+        "f25 Tomatoe",
+        "f31 Carrot",
+        "f48 Onion",
+        "f83 Chicken meat",
+        "f88 Lamb meat",
+        "f03 Codfish",
+        "f24 Shrimp, Pacific",
+        "k202 CCD / Bromelain"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012131"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012134"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012531"
+        }
+      ],
+      "image_url": ""
+    },
+    {
+      "group": "Allergy",
+      "name": "Gulf Food 30",
+      "source_url": "https://polycheck.de/product/gulf-food-30/",
+      "source_id": "2823",
+      "row_sku": "",
+      "components": [
+        "f01 Egg White",
+        "f75 Egg Yolk",
+        "f02 Cow's milk",
+        "f93 Cacao (Chocolate)",
+        "fx10 Flour Mix",
+        "f14 Soybean",
+        "f45 Baker's yeast",
+        "fx80 Nut Mix",
+        "f13 Peanut",
+        "fx29 Citrus Mix",
+        "f44 Strawberry",
+        "f92 Banana",
+        "f91 Mango",
+        "f25 Tomato",
+        "f95 Peach",
+        "f259 Grape",
+        "f84 Kiwi",
+        "f46 Red Pepper",
+        "f87 Muskmelon",
+        "f49 Apple",
+        "f262 Eggplant",
+        "f09 Rice",
+        "f48 Onion",
+        "f47 Garlic",
+        "f83 Chicken meat",
+        "f88 Lamb meat",
+        "f27 Beef meat",
+        "f24 Shrimp, Pacific",
+        "fx77 Seafood Mix IV",
+        "k202 CCD / Bromelain"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012137"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012136"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012536"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_03-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Mediterran 20-I",
+      "source_url": "https://polycheck.de/product/mediterran-20-l/",
+      "source_id": "2824",
+      "row_sku": "",
+      "components": [
+        "k202 CCD / Bromelain",
+        "d01 D. pteronyssinus",
+        "d02 D. farinae",
+        "d71 Lepidoglyphus destructor",
+        "d72 Tyrophagus prutescentiae",
+        "e01 Cat epithelia",
+        "e2/e5 Dog epithelia",
+        "e04 Cow epithelia",
+        "e85 Chicken feathers",
+        "g12 Rye pollen",
+        "g13 Velvet Grass pollen",
+        "g21 Quack grass pollen",
+        "g202 Maize pollen",
+        "gx8 Grass mix",
+        "w01 Ragweed pollen",
+        "w06 Mugwort pollen",
+        "w21 Wall pellitory pollen (P. judaice)",
+        "w204 Sunflower pollen",
+        "t14 Cottonwood pollen",
+        "t19 Acacia pollen",
+        "t23 Cypress pollen"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012033"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012433"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012533"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_06-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Mediterran 20-II",
+      "source_url": "https://polycheck.de/product/mediterran-20-ii/",
+      "source_id": "2825",
+      "row_sku": "",
+      "components": [
+        "k202 CCD / Bromelain",
+        "t02 Alder pollen",
+        "t03 Birch pollen",
+        "t04 Hazel pollen",
+        "t05 Beech pollen",
+        "t07 White Oak pollen",
+        "t09 Olive pollen",
+        "t12 Willow pollen",
+        "t16 Pine pollen",
+        "m01 Penicillium notatum",
+        "m02 Cladosporium herbarum",
+        "m03 Aspergillus fumigatus",
+        "m06 Alternaria alternata",
+        "m11 Rhizopus nigricans",
+        "gx8 Grass Mix",
+        "h01 House dust",
+        "i01 Bee venom",
+        "i03 Wasp venom",
+        "e81 Sheep epithelia",
+        "w06 Mugwort pollen",
+        "w07 Oxeye Daisy pollen"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012034"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012434"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012534"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_06-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Hungary Food 20",
+      "source_url": "https://polycheck.de/product/hungary-food-20/",
+      "source_id": "2826",
+      "row_sku": "",
+      "components": [
+        "k202 CCD / Bromelain",
+        "f17 Hazelnut",
+        "f13 Peanut",
+        "f20 Almond",
+        "f02 Cow's milk",
+        "f01 Egg White",
+        "f75 Egg Yolk",
+        "f78 Casein (nBos d8)",
+        "f85 Celery",
+        "f31 Carrot",
+        "f25 Tomato",
+        "f225 Pumpkin",
+        "f03 Codfish",
+        "f95 Peach",
+        "f49 Apple",
+        "f92 Banana",
+        "fx29 Citrus Mix",
+        "f14 Soybean",
+        "f04 Wheat flour",
+        "f10 Sesame",
+        "f05 Rye flour"
+      ],
+      "variants": [
+        {
+          "name": "24.-Kit",
+          "sku": "05012098"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012113"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012598"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_03-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Hungary Inhalation 20",
+      "source_url": "https://polycheck.de/product/hungary-inhalation-20/",
+      "source_id": "2827",
+      "row_sku": "",
+      "components": [
+        "k202 CCD / Bromelain",
+        "t03 Birch pollen",
+        "t02 Alder pollen",
+        "t04 Hazel pollen",
+        "t14 Cottonwood pollen",
+        "g02 Bermuda Grass pollen",
+        "gx7 Grass Mix",
+        "g12 Rye pollen",
+        "w06 Mugwort pollen",
+        "w09 Plantain pollen",
+        "w21 Wall pellitory pollen (P. judaica)",
+        "w12 Goldenrod pollen",
+        "w01/w03 Ragweed / Giant Ragweed pollen",
+        "d01 D. pteronyssinus",
+        "d02 D. farinae",
+        "ex78 Feathers Mix",
+        "e02/e05 Dog epithelia",
+        "e01 Cat epithelia",
+        "m03 Aspergillus fumigatus",
+        "m02 Cladosporium herbarum",
+        "m06 Alternaria alternata"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012099"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012114"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012599"
+        }
+      ],
+      "image_url": ""
+    },
+    {
+      "group": "Allergy",
+      "name": "Hungary Atopic 20",
+      "source_url": "https://polycheck.de/product/hungary-atopic-20/",
+      "source_id": "1982",
+      "row_sku": "",
+      "components": [
+        "k202 CCD / Bromelain",
+        "t03 Birch pollen",
+        "w01/w03 Ragweed / Giant Ragweed pollen",
+        "g06 Timothy Grass pollen",
+        "w06 Mugwort pollen",
+        "k82 Latex",
+        "f14 Soybean",
+        "f07 Oat flour",
+        "f03 Codfish",
+        "f04 Wheat flour",
+        "f13 Peanut",
+        "f01 Egg White",
+        "f02 Cow's milk",
+        "m03 Aspergillus fumigatus",
+        "m02 Cladosporium herbarum",
+        "m06 Alternaria alternata",
+        "e02/e05 Dog epithelia",
+        "e01 Cat epithelia",
+        "i06 Cockroach (Blatella germanica)",
+        "d02 D. farinae",
+        "d01 D. pteronyssinus"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012200"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012220"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012240"
+        }
+      ],
+      "image_url": ""
+    },
+    {
+      "group": "Allergy",
+      "name": "Hungary Paediatric 20",
+      "source_url": "https://polycheck.de/product/hungary-paediatric-20/",
+      "source_id": "2828",
+      "row_sku": "",
+      "components": [
+        "k202 CCD / Bromelain",
+        "f13 Peanut",
+        "f02 Cow's milk",
+        "f01 Egg White",
+        "f75 Egg Yolk",
+        "f35 Potato",
+        "f31 Carrot",
+        "f03 Codfish",
+        "f49 Apple",
+        "f14 Soybean",
+        "f04 Wheat flour",
+        "t03 Birch pollen",
+        "g06 Timothy Grass pollen",
+        "w06 Mugwort pollen",
+        "d01 D. pteronyssinus",
+        "d02 D. farinae",
+        "e02/e05 Dog epithelia",
+        "e01 Cat epithelia",
+        "w01/w03 Ragweed / Giant Ragweed pollen",
+        "m03 Aspergillus fumigatus",
+        "m02 Cladosporium herbarum"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012108"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012148"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012548"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_01-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Lebanon Food 30*",
+      "source_url": "https://polycheck.de/product/lebanon-food-30/",
+      "source_id": "1971",
+      "row_sku": "",
+      "components": [
+        "f02 Cow's milk",
+        "f01/f75 Egg White / Egg Yolk Mix",
+        "fx80 Nut Mix I",
+        "f44 Strawberry",
+        "fx29 Citrus Mix",
+        "f49 Apple",
+        "f84 Kiwi",
+        "f95 Peach",
+        "f10 Sesame",
+        "fx4 Fish Mix",
+        "f259/f289 Date / Grapes",
+        "fx76 Seafood Mix III",
+        "f04 Wheat flour",
+        "f14 Soybean",
+        "f27 Beef meat",
+        "f83 Chicken meat",
+        "f12 Pea",
+        "f309 Chickpea",
+        "f35 Potato",
+        "f96 Avocado",
+        "f08 Corn",
+        "f47 Garlic",
+        "f48 Onion",
+        "f25 Tomato",
+        "f31 Carrot",
+        "f09 Rice",
+        "f45 Baker's yeast",
+        "fx69 Herb Mix I",
+        "fx73 Herb Mix II",
+        "k202 CCD / Bromelain"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012170"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012171"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012172"
+        }
+      ],
+      "image_url": ""
+    },
+    {
+      "group": "Allergy",
+      "name": "Lebanon Inhalation 30*",
+      "source_url": "https://polycheck.de/product/lebanon-inhalation-30/",
+      "source_id": "1976",
+      "row_sku": "",
+      "components": [
+        "t07 White Oak pollen",
+        "t02 Alder pollen",
+        "t09 Olive pollen",
+        "t03 Birch pollen",
+        "t16a Pine pollen",
+        "tx63 Tree Mix",
+        "g06 Timothy Grass pollen",
+        "g12 Rye pollen",
+        "g02 Bermuda Grass pollen",
+        "g15 Cultivated Wheat pollen",
+        "w19 Wall pellitory pollen (P. officinalis)",
+        "w06 Mugwort pollen",
+        "w07 Oxeye Daisy pollen",
+        "w204 Sunflower pollen",
+        "t23 Cypress pollen",
+        "m05 Candida albicans",
+        "i06 Cockroach (Blatella germanica)",
+        "k82 Latex",
+        "d01/d02 D. pteronyssinus / D. farinae",
+        "e02/e05 Dog epithelia",
+        "e01 Cat epithelia",
+        "e03 Horse epithelia",
+        "e81 Sheep epithelia",
+        "ex10 Rodent epithelia Mix",
+        "ex78 Feathers Mix",
+        "m03 Aspergillus fumigatus",
+        "m02 Cladosporium herbarum",
+        "m01 Penicillium notatum",
+        "m06 Alternaria alternata",
+        "k202 CCD / Bromelain"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012180"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012181"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012182"
+        }
+      ],
+      "image_url": ""
+    },
+    {
+      "group": "Allergy",
+      "name": "Vietnam Food 20*",
+      "source_url": "https://polycheck.de/product/vietnam-food-20/",
+      "source_id": "2829",
+      "row_sku": "",
+      "components": [
+        "k202 CCD / Bromelain",
+        "f02 Cow’s milk",
+        "f76 Alpha-Lactalbumin (nBos d4)",
+        "f77 Beta-Lactoglobulin (nBos d5)",
+        "f78 Casein (nBos d8)",
+        "f01 Egg White",
+        "f75 Egg Yolk",
+        "f14 Soybean",
+        "f13 Peanut",
+        "f83 Chicken meat",
+        "f26 Pork meat",
+        "f27 Beef meat",
+        "f24/f440 Shrimp Mix",
+        "f23 Crab",
+        "f04 Wheat flour",
+        "f40 Tuna, Yellowfin",
+        "f41 Salmon, Atlantic",
+        "fx29 Citrus Mix",
+        "f47 Garlic",
+        "f48 Onion",
+        "tIgE Total IgE"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012702"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012703"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012502"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_07-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Vietnam Standard 30*",
+      "source_url": "https://polycheck.de/product/vietnam-standard-30/",
+      "source_id": "2830",
+      "row_sku": "",
+      "components": [
+        "d01 D. pteronyssinus",
+        "d02 D. farinae",
+        "d201 Blomia tropicalis",
+        "h01 House dust",
+        "e02/e05 Dog epithelia",
+        "e01 Cat epithelia",
+        "m02 Cladosporium herbarum",
+        "m06 Alternaria alternata",
+        "m03 Aspergillus fumigatus",
+        "m05 Candida albicans",
+        "i71 Mosquito",
+        "i80 Black fly",
+        "i06 Cockroach (Blatella germanica)",
+        "k82 Latex",
+        "f02 Cow’s milk",
+        "f76 Alpha-Lactalbumin (nBos d4)",
+        "f77 Beta-Lactoglobulin (nBos d5)",
+        "f78 Casein (nBos d8)",
+        "f01 Egg White",
+        "f75 Egg Yolk",
+        "f14 Soybean",
+        "f13 Peanut",
+        "f83 Chicken meat",
+        "f26 Pork meat",
+        "f27 Beef meat",
+        "f24/f440 Shrimp Mix",
+        "f23 Crab",
+        "f04 Wheat flour",
+        "k202 CCD / Bromelain",
+        "tIgE Total IgE"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012700"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012701"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012500"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_05-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Atopic India 30*",
+      "source_url": "https://polycheck.de/product/atopic-india-30/",
+      "source_id": "2831",
+      "row_sku": "",
+      "components": [
+        "h01 House dust",
+        "d01/d02 D. pteronyssinus / D. farinae",
+        "d201 Blomia tropicalis",
+        "i71 Mosquito",
+        "i06 Cockroach (Blatella germanica)",
+        "e02/e05 Dog epithelia",
+        "e01 Cat epithelia",
+        "g02 Bermuda Grass pollen",
+        "m02/m06 Cladosporium herbarum / Alternaria alternata",
+        "m01/m03 Penicillium notatum / Aspergillus fumigatus",
+        "f24 Shrimp, Pacific",
+        "f40 Tuna, Yellowfin",
+        "f23 Crab",
+        "f01/f75 Egg White / Egg Yolk Mix",
+        "f02 Cow’s milk",
+        "f04 Wheat flour",
+        "f45 Baker‘s yeast",
+        "f79 Gluten",
+        "f225 Pumpkin",
+        "f44 Strawberry",
+        "f25 Tomato",
+        "f35 Potato",
+        "f13 Peanut",
+        "f92 Banana",
+        "f36 Coconut",
+        "f14 Soybean",
+        "f93 Cacao (Chocolate)",
+        "f83 Chicken meat",
+        "f27 Beef meat",
+        "k202 CCD / Bromelain"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012400"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012430"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012450"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_04-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Paediatric India 30*",
+      "source_url": "https://polycheck.de/product/paediatric-india-30/",
+      "source_id": "2832",
+      "row_sku": "",
+      "components": [
+        "g02 Bermuda Grass pollen",
+        "t03 Birch pollen",
+        "w06 Mugwort pollen",
+        "d01 D. pteronyssinus",
+        "d02 D. farinae",
+        "e01 Cat epithelia",
+        "e02/e05 Dog epithelia",
+        "f92 Banana",
+        "m02 Cladosporium herbarum",
+        "m03 Aspergillus fumigatus",
+        "m06 Alternaria alternata",
+        "f01 Egg White",
+        "f75 Egg Yolk",
+        "f02 Cow's milk",
+        "f76 Alpha-Lactalbumin (nBos d4)",
+        "f77 Beta-Lactoglobulin (nBos d5)",
+        "f78 Casein (nBos d8)",
+        "e204 BSA",
+        "f40 Tuna, Yellowfin",
+        "f79 Gluten",
+        "f09 Rice",
+        "f14 Soybean",
+        "f13 Peanut",
+        "f17 Hazelnut",
+        "f31 Carrot",
+        "f35 Potato",
+        "f49 Apple",
+        "f93 Cacao (Chocolate)",
+        "f83 Chicken meat",
+        "k202 CCD / Bromelain"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012300"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012330"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012350"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_04-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Venezuela Food 20*",
+      "source_url": "https://polycheck.de/product/venezuela-food-20/",
+      "source_id": "2833",
+      "row_sku": "",
+      "components": [
+        "k202 CCD / Bromelain",
+        "fx80 Nut Mix I",
+        "f08 Corn",
+        "f09 Rice",
+        "f04 Wheat flour",
+        "f79 Gluten",
+        "f02 Cow's milk",
+        "f76 Alpha-Lactalbumin (nBos d4)",
+        "f77 Beta-Lactoglobulin (nBos d5)",
+        "f78 Casein (nBos d8)",
+        "f07 Oat flour",
+        "f14 Soybean",
+        "f26 Pork meat",
+        "f83 Chicken meat",
+        "f01 Egg White",
+        "f75 Egg Yolk",
+        "fx29 Citrus Mix",
+        "f440 Shrimp, Atlantic",
+        "f40 Tuna, Yellowfin",
+        "f23 Crab",
+        "f93 Cacao (Chocolate)"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012800"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012810"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012820"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_07-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Venezuela Inhalation 20*",
+      "source_url": "https://polycheck.de/product/venezuela-inhalation-20/",
+      "source_id": "2834",
+      "row_sku": "",
+      "components": [
+        "k202 CCD / Bromelain",
+        "d201 Blomia tropicalis",
+        "d01 D. pteronyssinus",
+        "d02 D. farinae",
+        "e02/e05 Dog epithelia",
+        "e01 Cat epithelia",
+        "ex10 Rodent epithelia Mix",
+        "e213 Parrot feathers",
+        "ex78 Feathers Mix",
+        "m03 Aspergillus fumigatus",
+        "m02 Cladosporium herbarum",
+        "m01 Penicillium notatum",
+        "gx8 Grass Mix",
+        "w01 Ragweed pollen",
+        "w06 Mugwort pollen",
+        "t03 Birch pollen",
+        "t19 Acacia pollen",
+        "t07 White Oak pollen",
+        "i71 Mosquito",
+        "ix267 Cockroach Mix",
+        "k82 Latex"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012801"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012811"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012821"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_06-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Insects / CCD plus",
+      "source_url": "https://polycheck.de/product/insect-ccd-plus/",
+      "source_id": "2835",
+      "row_sku": "",
+      "components": [
+        "k202 CCD / Bromelain",
+        "i01 Bee venom",
+        "i03 Wasp venom",
+        "i209 rVes v 5",
+        "i75 Hornet venom",
+        "i71 Mosquito",
+        "i80 Black fly"
+      ],
+      "variants": [
+        {
+          "name": "12-Kit",
+          "sku": "05012342"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012442"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012542"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_01-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Insect Venoms  Components",
+      "source_url": "https://polycheck.de/product/insect-venoms-components/",
+      "source_id": "2836",
+      "row_sku": "",
+      "components": [
+        "k202 CCD / Bromelain",
+        "i01 Bee venom",
+        "i208 rApi m 1",
+        "i217 rApi m 10",
+        "i03 Wasp venom",
+        "i211 rVes v 1",
+        "i209 rVes v 5",
+        "i75 Hornet venom"
+      ],
+      "variants": [
+        {
+          "name": "12-Kit",
+          "sku": "05012630"
+        },
+        {
+          "name": "24-Kit",
+          "sku": "05012631"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012632"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012633"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_03-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Milk plus Gluten 6",
+      "source_url": "https://polycheck.de/product/milk-plus-gluten-6/",
+      "source_id": "2837",
+      "row_sku": "",
+      "components": [
+        "f02 Cow's milk",
+        "f76 Alpha-Lactalbumin (nBos d4)",
+        "f77 Beta-Lactoglobulin (nBos d5)",
+        "f78 Casein (nBos d8)",
+        "e204 BSA",
+        "f79 Gluten"
+      ],
+      "variants": [
+        {
+          "name": "12-Kit",
+          "sku": "05012318"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012307"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012518"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_01-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "RecPollen-IT 10-I",
+      "source_url": "https://polycheck.de/product/recpollen-it-10-i/",
+      "source_id": "2838",
+      "row_sku": "",
+      "components": [
+        "k202 CCD / Bromelain",
+        "g06 Timothy Grass pollen",
+        "g205 rPhl p 1",
+        "g215 rPhl p 5",
+        "g210 rPhl p 7",
+        "g212 rPhl p 12",
+        "t03 Birch pollen",
+        "t215 rBet v 1",
+        "t216 rBet v 2",
+        "w06 Mugwortpollen",
+        "w231 rArt v 1"
+      ],
+      "variants": [
+        {
+          "name": "12-Kit",
+          "sku": "05012640"
+        },
+        {
+          "name": "24-Kit",
+          "sku": "05012641"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012642"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012643"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_05-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Fungal Components",
+      "source_url": "https://polycheck.de/product/fungal-components/",
+      "source_id": "2839",
+      "row_sku": "",
+      "components": [
+        "k202 CCD / Bromelain",
+        "m03 Aspergillus fumigatus",
+        "m218 rAsp f 1",
+        "m220 rAsp f 3",
+        "m221 rAsp f 4",
+        "m222 rAsp f 6",
+        "m06 Alternaria alternata",
+        "m229 rAlt a 1",
+        "m02 Cladosporium herbarum",
+        "m01 Penicillium notatum"
+      ],
+      "variants": [
+        {
+          "name": "12-Kit",
+          "sku": "05012620"
+        },
+        {
+          "name": "24-Kit",
+          "sku": "05012621"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012622"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012623"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_04-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Egg Components",
+      "source_url": "https://polycheck.de/product/egg-components/",
+      "source_id": "2840",
+      "row_sku": "",
+      "components": [
+        "f01 Egg White",
+        "f75 Egg Yolk",
+        "f232 Ovalbumin (nGal d 2)",
+        "f233 Ovomucoid (nGal d 1)",
+        "f323 Conalbumin (nGal d 3)",
+        "k208 Lysozym (nGal d 4)"
+      ],
+      "variants": [
+        {
+          "name": "12-Kit",
+          "sku": "05012323"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012324"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012553"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_03-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "RecPeanut-IT plus",
+      "source_url": "https://polycheck.de/product/recpeanut-it-plus/",
+      "source_id": "2841",
+      "row_sku": "",
+      "components": [
+        "k202 CCD / Bromelain",
+        "f13 Peanut",
+        "f422 rAra h 1",
+        "f423 rAra h 2",
+        "f424 rAra h 3",
+        "f447 rAra h 6",
+        "f352 rAra h 8",
+        "f427 rAra h 9"
+      ],
+      "variants": [
+        {
+          "name": "12-Kit",
+          "sku": "05012325"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012326"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012556"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_03-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "RecMites-IT",
+      "source_url": "https://polycheck.de/product/recmites-it/",
+      "source_id": "2842",
+      "row_sku": "",
+      "components": [
+        "k202 CCD / Bromelain",
+        "d01 D. pteronyssinus",
+        "d02 D. farinae",
+        "d202 rDer p 1",
+        "d203 rDer p 2",
+        "d205 rDer p 10",
+        "d209 rDer p 23"
+      ],
+      "variants": [
+        {
+          "name": "12-Kit",
+          "sku": "05012327"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012328"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012528"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_01-scaled-1.jpg"
+    },
+    {
+      "group": "Allergy",
+      "name": "Dual Kit (Inhalation 20-I, Food 20 I)",
+      "source_url": "https://polycheck.de/product/dual-kit-inhalation-20-i-food-20-i/",
+      "source_id": "2843",
+      "row_sku": "",
+      "components": [
+        "12x Inhalation 20-I",
+        "12x Food 20-I"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012402"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012403"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012504"
+        }
+      ],
+      "image_url": ""
+    },
+    {
+      "group": "Allergy",
+      "name": "Dual Kit 30  (Inhalation 30-I, Food 30-I)",
+      "source_url": "https://polycheck.de/product/dual-kit-30-inhalation-30-i-food-30-i/",
+      "source_id": "2844",
+      "row_sku": "",
+      "components": [
+        "12x Inhalation 30-I",
+        "12x Food 30-I"
+      ],
+      "variants": [
+        {
+          "name": "24-Kit",
+          "sku": "05012432"
+        },
+        {
+          "name": "A-Kit",
+          "sku": "05012443"
+        },
+        {
+          "name": "Semi-A-Kit",
+          "sku": "05012444"
+        }
+      ],
+      "image_url": ""
+    },
+    {
+      "group": "Veterinary",
+      "name": "Canis CCD",
+      "source_url": "https://polycheck.de/product/canis-ccd/",
+      "source_id": "2853",
+      "row_sku": "",
+      "components": [
+        "D. farinae",
+        "D. pteronyssinus",
+        "Malassezia",
+        "Lepidoglyphus destructor",
+        "Asp. fumigatus / Pen. notatum / Alt. tenuis / Clad. herbarum",
+        "Ragweed (Ambrosia) pollen",
+        "Birch / Alder / Hazel pollen",
+        "Plantane / Willow / Poplar pollen",
+        "Wall pellitory pollen",
+        "Rye Pollen",
+        "6 Grass Mix",
+        "Stinging Nettle pollen",
+        "Lambs Quarter pollen",
+        "English Plantain pollen",
+        "Mugwort pollen",
+        "Sorrel pollen",
+        "Acarus siro",
+        "Tyrophagus",
+        "Flea (Ctenoceph.)",
+        "CCD / Bromelain"
+      ],
+      "variants": [
+        {
+          "name": "12-Kit",
+          "sku": "05011018"
+        },
+        {
+          "name": "24-Kit",
+          "sku": "05011017"
+        }
+      ],
+      "image_url": ""
+    },
+    {
+      "group": "Veterinary",
+      "name": "Felis CCD",
+      "source_url": "https://polycheck.de/product/felis-ccd/",
+      "source_id": "2854",
+      "row_sku": "",
+      "components": [
+        "D. farinae",
+        "D. pteronyssinus",
+        "Malassezia",
+        "Lepidoglyphus destructor",
+        "Asp. fumigatus / Pen. notatum / Alt. tenuis / Clad. herbarum",
+        "Ragweed (Ambrosia) pollen",
+        "Birch / Alder / Hazel pollen",
+        "Plantane / Willow / Poplar pollen",
+        "Wall pellitory pollen",
+        "Rye Pollen",
+        "6 Grass Mix",
+        "Stinging Nettle pollen",
+        "Lambs Quarter pollen",
+        "English Plantain pollen",
+        "Mugwort pollen",
+        "Sorrel pollen",
+        "Acarus siro",
+        "Tyrophagus",
+        "Flea (Ctenoceph.)",
+        "CCD / Bromelain"
+      ],
+      "variants": [
+        {
+          "name": "12-Kit",
+          "sku": "05011020"
+        },
+        {
+          "name": "24-Kit",
+          "sku": "05011019"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_03-scaled-1.jpg"
+    },
+    {
+      "group": "Veterinary",
+      "name": "Equus 20",
+      "source_url": "https://polycheck.de/product/equus-20-2/",
+      "source_id": "2855",
+      "row_sku": "",
+      "components": [
+        "D. farinae",
+        "D. pteronyssinus",
+        "Lepidoglyphus",
+        "Aspergillus / Penicillium",
+        "Thermoact. / Micropolyspora",
+        "Ragweed (Ambrosia) pollen",
+        "Birch / Alder / Hazel pollen",
+        "Plantane / Willow / Poplar pollen",
+        "Rye Pollen",
+        "6 Grass Mix",
+        "Plantain pollen",
+        "Mugwort pollen",
+        "Rape pollen",
+        "Horse fly (Tabanus)",
+        "Biting Midges (Culicoides nub.)",
+        "Mosquito",
+        "Black Fly (Simulium eq.)",
+        "Stable Fly (Stomoxys cal.)",
+        "Acarus siro",
+        "Tyrophagus"
+      ],
+      "variants": [
+        {
+          "name": "12-Kit",
+          "sku": "05011024"
+        },
+        {
+          "name": "24-Kit",
+          "sku": "05011022"
+        }
+      ],
+      "image_url": "https://polycheck.de/wp-content/uploads/2021/07/Polycheck2021_Products_Farben_06-scaled-1.jpg"
+    }
+  ]
+}

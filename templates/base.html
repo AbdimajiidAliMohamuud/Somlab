@@ -1,0 +1,138 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{% block meta_description %}Somlab Diagnostics supplies laboratory equipment, reagents and complete laboratory solutions across East Africa.{% endblock %}">
+  <title>{% block title %}Somlab Diagnostics{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="{% static 'img/somlab-logo.png' %}">
+  <link rel="stylesheet" href="{% static 'css/site.css' %}?v=customer-video-player-3">
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="{% url 'home' %}" aria-label="Somlab Diagnostics home">
+        <img src="{% static 'img/somlab-logo.png' %}" alt="Somlab Diagnostics">
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+      <div class="nav-actions">
+        <a class="nav-contact" href="{% url 'contact' %}">Contact us</a>
+      </div>
+    </div>
+    <div class="header-menu-bar">
+      <nav class="container main-nav" aria-label="Main navigation">
+        <a href="{% url 'about' %}"{% if request.resolver_match.url_name == "about" %} class="active" aria-current="page"{% endif %}>About Us</a>
+        <div class="nav-products{% if request.resolver_match.url_name == 'product_list' or request.resolver_match.url_name == 'equipment_group_products' or request.resolver_match.url_name == 'product_detail' or request.resolver_match.url_name == 'category_detail' or request.resolver_match.url_name == 'subcategory_detail' or request.resolver_match.url_name == 'microbiology_landing' or request.resolver_match.url_name == 'vatech_category' %} active{% endif %}">
+          <div class="nav-products-trigger">
+            <button class="nav-products-toggle" type="button" aria-expanded="false" aria-controls="products-mega-menu"{% if request.resolver_match.url_name == 'product_list' or request.resolver_match.url_name == 'equipment_group_products' or request.resolver_match.url_name == 'product_detail' or request.resolver_match.url_name == 'category_detail' or request.resolver_match.url_name == 'subcategory_detail' or request.resolver_match.url_name == 'microbiology_landing' or request.resolver_match.url_name == 'vatech_category' %} aria-current="page"{% endif %}>
+              <span>Products &amp; Solutions</span>
+              <span class="nav-products-arrow" aria-hidden="true">⌄</span>
+            </button>
+          </div>
+          <div class="mega-menu" id="products-mega-menu">
+            <div class="container mega-menu-inner">
+              <div class="mega-menu-heading">
+                <div><span>Products &amp; solutions</span><strong>Browse by equipment group</strong></div>
+                <a href="{% url 'product_list' %}">View complete catalogue →</a>
+              </div>
+              <div class="discipline-menu">
+                <section class="discipline-menu-main">
+                  <div class="discipline-menu-groups">
+                    {% for group in product_navigation_groups %}
+                      <section class="discipline-menu-group" aria-labelledby="{{ group.heading_id }}">
+                        <h3 id="{{ group.heading_id }}"><a class="equipment-group-heading-link" href="{{ group.group_url }}"><span>{{ group.name }}</span></a></h3>
+                        <div class="discipline-links manufacturer-menu-list">
+                          {% if group.flat_items %}
+                            {% for item in group.flat_items %}
+                              <div class="manufacturer-menu-item">
+                                {% if item.children %}
+                                  <button class="manufacturer-row manufacturer-menu-toggle" type="button" aria-expanded="false" aria-controls="{{ item.control_id }}">
+                                    <span>{{ item.label }}</span>
+                                    <span class="nested-menu-chevron" aria-hidden="true">›</span>
+                                  </button>
+                                  <div class="manufacturer-submenu" id="{{ item.control_id }}" hidden>
+                                    {% for child in item.children %}
+                                      <div class="manufacturer-category-item">
+                                        <a class="manufacturer-category-link" href="{{ child.url }}"><span>{{ child.label }}</span><b>→</b></a>
+                                      </div>
+                                    {% endfor %}
+                                  </div>
+                                {% else %}
+                                  <a class="manufacturer-row manufacturer-direct-link" href="{{ item.url }}"><span>{{ item.label }}</span><b>→</b></a>
+                                {% endif %}
+                              </div>
+                            {% endfor %}
+                          {% else %}
+                            {% for manufacturer in group.manufacturers %}
+                              <div class="manufacturer-menu-item">
+                                {% if manufacturer.categories %}
+                                  <button class="manufacturer-row manufacturer-menu-toggle" type="button" aria-expanded="{% if group.slug == 'medical' %}true{% else %}false{% endif %}" aria-controls="manufacturer-menu-{{ manufacturer.partner.pk }}">
+                                    <span>{{ manufacturer.label }}</span>
+                                    <span class="nested-menu-chevron" aria-hidden="true">›</span>
+                                  </button>
+                                  <div class="manufacturer-submenu" id="manufacturer-menu-{{ manufacturer.partner.pk }}"{% if group.slug != 'medical' %} hidden{% endif %}>
+                                    {% for category_node in manufacturer.categories %}
+                                      <div class="manufacturer-category-item">
+                                        <a class="manufacturer-category-link" href="{{ category_node.url }}"><span>{{ category_node.label }}</span><b>→</b></a>
+                                      </div>
+                                    {% endfor %}
+                                  </div>
+                                {% else %}
+                                  <a class="manufacturer-row manufacturer-direct-link" href="{% if manufacturer.direct_url %}{{ manufacturer.direct_url }}{% else %}{% url 'product_list' %}?brand={{ manufacturer.brand_slug }}{% endif %}"><span>{{ manufacturer.label }}</span><b>→</b></a>
+                                {% endif %}
+                              </div>
+                            {% empty %}
+                              <p class="mega-group-empty">Manufacturers will appear here when added.</p>
+                            {% endfor %}
+                          {% endif %}
+                        </div>
+                      </section>
+                    {% endfor %}
+                  </div>
+                </section>
+                <aside class="discipline-menu-aside">
+                  <span>Need help choosing?</span>
+                  <h3>Find the right solution for your laboratory.</h3>
+                  <p>Our team can help match equipment and supplies to your workflow.</p>
+                  <a href="{% url 'contact' %}">Talk to Somlab →</a>
+                </aside>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="{% url 'partners' %}"{% if request.resolver_match.url_name == "partners" %} class="active" aria-current="page"{% endif %}>Partners</a>
+        <a href="{% url 'customers' %}"{% if request.resolver_match.url_name == "customers" or request.resolver_match.url_name == "customer_detail" %} class="active" aria-current="page"{% endif %}>Customers</a>
+        <a href="{% url 'services' %}"{% if request.resolver_match.url_name == "services" or request.resolver_match.url_name == "service_detail" %} class="active" aria-current="page"{% endif %}>Services</a>
+      </nav>
+    </div>
+  </header>
+
+  {% if messages %}
+  <div class="toast-stack container">
+    {% for message in messages %}<div class="alert alert-{{ message.tags }}">{{ message }}<button aria-label="Dismiss">&times;</button></div>{% endfor %}
+  </div>
+  {% endif %}
+
+  <main>{% block content %}{% endblock %}</main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <img class="footer-logo" src="{% static 'SLD_Logo_-02.png' %}" alt="Somlab Diagnostics" loading="eager" decoding="async">
+        <p>Your trusted source for quality laboratory equipment, diagnostics and dependable technical support.</p>
+      </div>
+      <div><h3>Explore</h3><a href="{% url 'about' %}">About Somlab</a><a href="{% url 'product_list' %}">Products</a><a href="{% url 'services' %}">Services</a><a href="{% url 'partners' %}">Partners</a></div>
+      <div><h3>Support</h3><a href="{% url 'contact' %}">Contact us</a><a href="{% url 'product_inquiry' %}">Product inquiry</a></div>
+      <div><h3>Visit us</h3><p>Star Home Tower, 5th Floor, Apt. 504<br>KM5, Amira Hotel Street, Hodan<br>Mogadishu, Somalia</p><a href="mailto:info@somlab.so">info@somlab.so</a></div>
+    </div>
+    <div class="container footer-bottom"><span>© {% now "Y" %} Somlab Diagnostics. All rights reserved.</span><span>A sister company of Medisom Health Group</span></div>
+  </footer>
+  <script src="{% static 'js/site.js' %}?v=customer-video-player-3"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,3080 @@
+{
+  "source": "https://www.molbiodiagnostics.com",
+  "products": [
+    {
+      "name": "Truelab® Uno Dx",
+      "subcategory": "Truenat",
+      "description": "A compact one-bay real-time micro-PCR analyser for low-volume laboratories and decentralized molecular testing.",
+      "specifications": [
+        [
+          "Testing bays",
+          "1"
+        ],
+        [
+          "Throughput",
+          "10–12 samples in 8 hours"
+        ],
+        [
+          "Access",
+          "Single test workflow"
+        ]
+      ],
+      "variants": [],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/uno.jpg",
+      "source_url": "https://www.molbiodiagnostics.com/truenat/",
+      "code": "MOLBIO-TRUELAB-UNO-DX"
+    },
+    {
+      "name": "Truelab® Duo",
+      "subcategory": "Truenat",
+      "description": "A dual-bay real-time micro-PCR analyser supporting random-access molecular testing.",
+      "specifications": [
+        [
+          "Testing bays",
+          "2"
+        ],
+        [
+          "Throughput",
+          "20–24 samples in 8 hours"
+        ],
+        [
+          "Access",
+          "Random access"
+        ]
+      ],
+      "variants": [],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/duo.jpg",
+      "source_url": "https://www.molbiodiagnostics.com/truenat/",
+      "code": "MOLBIO-TRUELAB-DUO"
+    },
+    {
+      "name": "Truelab® Quattro",
+      "subcategory": "Truenat",
+      "description": "A four-bay random-access real-time micro-PCR analyser for higher-throughput decentralized testing.",
+      "specifications": [
+        [
+          "Testing bays",
+          "4"
+        ],
+        [
+          "Throughput",
+          "40–48 samples in 8 hours"
+        ],
+        [
+          "Access",
+          "Random access"
+        ]
+      ],
+      "variants": [],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/Quattro.jpg",
+      "source_url": "https://www.molbiodiagnostics.com/truenat/",
+      "code": "MOLBIO-TRUELAB-QUATTRO"
+    },
+    {
+      "name": "iBreastExam®",
+      "subcategory": "iBreastExam",
+      "description": "A handheld, non-invasive breast health screening device that uses dynamic co-planar capacitive sensing to identify tissue abnormalities at the point of care.",
+      "specifications": [
+        [
+          "Method",
+          "Dynamic co-planar capacitive sensing"
+        ],
+        [
+          "Operation",
+          "Handheld, battery-powered and wireless"
+        ],
+        [
+          "Result",
+          "Instant electronic result"
+        ],
+        [
+          "Imaging radiation",
+          "None"
+        ]
+      ],
+      "variants": [],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/09/Interface-new.jpg",
+      "source_url": "https://www.molbiodiagnostics.com/ibreastexam/",
+      "code": "MOLBIO-IBREASTEXAM"
+    },
+    {
+      "name": "Atlas Ultraportable",
+      "subcategory": "ProRad Atlas",
+      "description": "Atlas Ultraportable is the 140 W variant of the ProRad Atlas ultraportable digital X-ray system, with a 70 kV range, 2.0 mA range and a 0.01–1.3 second exposure timer. The system is designed for imaging in settings including home healthcare, mobile health camps and remote areas.",
+      "specifications": [
+        ["Maximum power", "140 W"],
+        ["kV range", "70 kV"],
+        ["mA range", "2.0 mA"],
+        ["Exposure timer", "0.01–1.3 seconds"]
+      ],
+      "variants": [],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/10/ProRad-Atlas-Ultraportable-Variants.png",
+      "source_url": "https://www.molbiodiagnostics.com/prorad-atlas-ultraportable/",
+      "code": "MOLBIO-PRORAD-ATLAS",
+      "filename": "ProRad-Atlas-Ultraportable-Variants.png",
+      "sha256": "2c52f048d7c0d19debff95b7e24f619ef14726baa5859a724d7974a713b0cfde"
+    },
+    {
+      "name": "Atlas Ultraportable Plus",
+      "subcategory": "ProRad Atlas",
+      "description": "Atlas Ultraportable Plus is the 420 W variant of the ProRad Atlas ultraportable digital X-ray system, with a 50–70 kV range, 6.0 mA range and a 0.02–2.0 second exposure timer. The system is designed for imaging in settings including home healthcare, mobile health camps and remote areas.",
+      "specifications": [
+        ["Maximum power", "420 W"],
+        ["kV range", "50–70 kV"],
+        ["mA range", "6.0 mA"],
+        ["Exposure timer", "0.02–2.0 seconds"]
+      ],
+      "variants": [],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/10/Atlas-Ultraportable-Plus.png",
+      "source_url": "https://www.molbiodiagnostics.com/prorad-atlas-ultraportable/",
+      "code": "MOLBIO-PRORAD-ATLAS-PLUS",
+      "filename": "Atlas-Ultraportable-Plus.png",
+      "sha256": "f10e898bbdfcaebbc62b0132013fdea1aa87aef2a70a389d60b20b392a8901c1"
+    },
+    {
+      "name": "Atlas Ultraportable Ultima",
+      "subcategory": "ProRad Atlas",
+      "description": "Atlas Ultraportable Ultima is the 900 W variant of the ProRad Atlas ultraportable digital X-ray system, with a 50–90 kV range, 5–10 mA range and a 0.02–2 second exposure timer. The system is designed for imaging in settings including home healthcare, mobile health camps and remote areas.",
+      "specifications": [
+        ["Maximum power", "900 W"],
+        ["kV range", "50–90 kV"],
+        ["mA range", "5–10 mA"],
+        ["Exposure timer", "0.02–2 seconds"]
+      ],
+      "variants": [],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/10/Atlas-Ultraportable-Ultima.png",
+      "source_url": "https://www.molbiodiagnostics.com/prorad-atlas-ultraportable/",
+      "code": "MOLBIO-PRORAD-ATLAS-ULTIMA",
+      "filename": "Atlas-Ultraportable-Ultima.png",
+      "sha256": "e663b79a7d8f024cb815295ef15c4a1655ccd559785458562c289398ce77e50d"
+    },
+    {
+      "name": "OS Ultra",
+      "subcategory": "OptraScan",
+      "description": "A high-capacity whole-slide scanner for scalable routine digital pathology workflows.",
+      "specifications": [
+        [
+          "Slide capacity",
+          "80–480 slides"
+        ],
+        [
+          "Scan time (15 × 15 mm tissue)",
+          "30 s at 20×; 60 s at 40×"
+        ],
+        [
+          "Weight",
+          "106 kg"
+        ],
+        [
+          "Dimensions",
+          "W 24.2 × L 37.4 × H 24.8 in"
+        ]
+      ],
+      "variants": [],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/12/os-ultra-image-1.jpg",
+      "source_url": "https://www.molbiodiagnostics.com/optrascan-digital-pathology-solutions/",
+      "code": "MOLBIO-OPTRASCAN-OS-ULTRA"
+    },
+    {
+      "name": "OS - Lite",
+      "subcategory": "OptraScan",
+      "description": "A compact 15-slide whole-slide scanner for routine digital pathology.",
+      "specifications": [
+        [
+          "Slide capacity",
+          "15 slides"
+        ],
+        [
+          "Scan time (15 × 15 mm tissue)",
+          "40 s at 20×; 90 s at 40×"
+        ],
+        [
+          "Weight",
+          "25 kg"
+        ],
+        [
+          "Dimensions",
+          "W 11.2 × L 17.3 × H 15.7 in"
+        ]
+      ],
+      "variants": [],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/12/os-lite-image.jpg",
+      "source_url": "https://www.molbiodiagnostics.com/optrascan-digital-pathology-solutions/",
+      "code": "MOLBIO-OPTRASCAN-OS-LITE"
+    },
+    {
+      "name": "OS - SiX",
+      "subcategory": "OptraScan",
+      "description": "A six-slide whole-slide scanner for compact digital pathology installations.",
+      "specifications": [
+        [
+          "Slide capacity",
+          "6 slides"
+        ],
+        [
+          "Scan time (15 × 15 mm tissue)",
+          "120 s at 20×; 240 s at 40×"
+        ],
+        [
+          "Weight",
+          "25 kg"
+        ],
+        [
+          "Dimensions",
+          "W 11.6 × L 19.5 × H 17.3 in"
+        ]
+      ],
+      "variants": [],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/12/os-six-image.jpg",
+      "source_url": "https://www.molbiodiagnostics.com/optrascan-digital-pathology-solutions/",
+      "code": "MOLBIO-OPTRASCAN-OS-SIX"
+    },
+    {
+      "name": "OS - FS",
+      "subcategory": "OptraScan",
+      "description": "A six-slide scanner configured for frozen-section digital pathology workflows.",
+      "specifications": [
+        [
+          "Slide capacity",
+          "6 slides"
+        ],
+        [
+          "Scan time (15 × 15 mm tissue)",
+          "120 s at 20×; 240 s at 40×"
+        ],
+        [
+          "Weight",
+          "25 kg"
+        ],
+        [
+          "Dimensions",
+          "W 11.6 × L 19.5 × H 17.3 in"
+        ]
+      ],
+      "variants": [],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/12/os-fs-image.jpg",
+      "source_url": "https://www.molbiodiagnostics.com/optrascan-digital-pathology-solutions/",
+      "code": "MOLBIO-OPTRASCAN-OS-FS"
+    },
+    {
+      "name": "OS - Fli",
+      "subcategory": "OptraScan",
+      "description": "A high-capacity fluorescence whole-slide scanner for digital pathology applications.",
+      "specifications": [
+        [
+          "Slide capacity",
+          "80–480 slides"
+        ],
+        [
+          "Scan time (15 × 15 mm tissue)",
+          "Under 2 min at 40×"
+        ],
+        [
+          "Weight",
+          "106 kg"
+        ],
+        [
+          "Dimensions",
+          "W 24.2 × L 37.4 × H 24.8 in"
+        ]
+      ],
+      "variants": [],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/12/os-fli-image.jpg",
+      "source_url": "https://www.molbiodiagnostics.com/optrascan-digital-pathology-solutions/",
+      "code": "MOLBIO-OPTRASCAN-OS-FLI"
+    },
+    {
+      "name": "Truenat® MTB",
+      "group": "Respiratory Infections",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat® MTB is a chip-based real-time PCR test for quantitative detection and diagnosis of Mycobacterium tuberculosis (MTB) in human pulmonary and EPTB specimens, aiding the diagnosis of tuberculosis.",
+      "specifications": [
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistry"
+        ],
+        [
+          "Assay type",
+          "Quantitative detection"
+        ],
+        [
+          "Total Assay Time",
+          "60 minutes"
+        ],
+        [
+          "Clinical Specimen",
+          "Human pulmonary and EPTB specimen"
+        ],
+        [
+          "Gene Target",
+          "nrdB gene which codes for Truenat® MTB ribonucleoside- diphosphate reductase large subunit"
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control - Extraction Control"
+        ],
+        [
+          "Sensitivity",
+          "100%"
+        ],
+        [
+          "Specificity",
+          "100%"
+        ],
+        [
+          "LOD",
+          "100 CFU/mL"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat® MTB micro PCR chip",
+        "Microtube with freeze-dried RT PCR reagents",
+        "DNase & RNase free pipette tip"
+      ],
+      "variants": [
+        {
+          "name": "5T",
+          "sku": "601030005"
+        },
+        {
+          "name": "25T",
+          "sku": "601030025"
+        },
+        {
+          "name": "50T",
+          "sku": "601030050"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/MTB.jpg",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/MTB2.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® MTB Plus",
+      "group": "Respiratory Infections",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat® MTB Plus is a chip-based real-time PCR Test for semi-quantitative detection and diagnosis of Mycobacterium tuberculosis (MTB) in human pulmonary and EPTB specimens and aids in the diagnosis of infection with MTB.",
+      "specifications": [
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistry"
+        ],
+        [
+          "Assay type",
+          "Semi-quantitative detection"
+        ],
+        [
+          "Total Assay Time",
+          "60 minutes"
+        ],
+        [
+          "Clinical Specimen",
+          "Sputum / Non Sputum / EPTB"
+        ],
+        [
+          "Gene Target",
+          "nrdz gene & IS6110 gene sequence"
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control - Extraction Control"
+        ],
+        [
+          "Sensitivity",
+          "100%"
+        ],
+        [
+          "Specificity",
+          "100%"
+        ],
+        [
+          "LOD",
+          "29 cells/mL"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat MTB Plus micro PCR chip",
+        "Microtube with freeze-dried PCR reagents",
+        "DNase and RNase free filter barrier microtip",
+        "Desiccant pouch"
+      ],
+      "variants": [
+        {
+          "name": "5T",
+          "sku": "601130005"
+        },
+        {
+          "name": "25T",
+          "sku": "601130025"
+        },
+        {
+          "name": "50T",
+          "sku": "601130050"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/MTB-PLUS.jpg",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/MTB-PLUS2.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® MTB-RIF Dx",
+      "group": "Respiratory Infections",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat® MTB-RIF Dx is a chip-based real-time PCR Test for the detection of Rifampicin resistance in Mycobacterium tuberculosis in Truenat MTB/MTB Plus positive human specimens and aids in the diagnosis of MDR-TB. This test detects the presence of major mutations (SNPs) in the MTB genome that are known to cause resistance to rifampicin.",
+      "specifications": [
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistry followed by melt-curve assay"
+        ],
+        [
+          "Assay type",
+          "Qualitative detection"
+        ],
+        [
+          "Total Assay Time",
+          "70 minutes"
+        ],
+        [
+          "Clinical Specimen",
+          "MTB positive human specimen"
+        ],
+        [
+          "Gene Target",
+          "RRDR region of the rpoB gene"
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control - Extraction Control"
+        ],
+        [
+          "Sensitivity",
+          "100%"
+        ],
+        [
+          "Specificity",
+          "96%"
+        ],
+        [
+          "LOD",
+          "200 cells/mL of Sputum"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat® MTB-RIF Dx micro-PCR chip",
+        "Microtube with freeze-dried PCR reagents",
+        "DNase and RNase free filter barrier microtip",
+        "Desiccant pouch"
+      ],
+      "variants": [
+        {
+          "name": "5T",
+          "sku": "601210005"
+        },
+        {
+          "name": "20T",
+          "sku": "601210020"
+        },
+        {
+          "name": "25T",
+          "sku": "601210025"
+        },
+        {
+          "name": "50T",
+          "sku": "601210050"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/MTB-RIF.jpg",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/MTB-RIF2.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® MTB-INH",
+      "group": "Respiratory Infections",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat® MTB-INH is a chip-based Real Time PCR test for detection of Isoniazid resistance in Mycobacterium tuberculosis (MTB) in Truenat MTB/MTB Plus positive human specimen and aids in the diagnosis of MDR-TB. This test detects the presence of major mutations (SNPs) in the MTB genome that are known to cause resistance to Isoniazid.",
+      "specifications": [
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistry followed by melt-curve assay"
+        ],
+        [
+          "Assay type",
+          "Qualitative detection"
+        ],
+        [
+          "Total Assay Time",
+          "70 minutes"
+        ],
+        [
+          "Clinical Specimen",
+          "MTB positive human specimen"
+        ],
+        [
+          "Gene Target",
+          "inhA and katG genes of Mycobacterium tuberculosis genome"
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control - Extraction Control"
+        ],
+        [
+          "Sensitivity",
+          "100%"
+        ],
+        [
+          "Specificity",
+          "96%"
+        ],
+        [
+          "LOD",
+          "494 cells/mL"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat® MTB-INH micro-PCR chip",
+        "Microtube with freeze-dried PCR reagents",
+        "DNase and RNase free filter barrier microtip",
+        "Desiccant pouch"
+      ],
+      "variants": [
+        {
+          "name": "5T",
+          "sku": "601360005"
+        },
+        {
+          "name": "20T",
+          "sku": "601360020"
+        },
+        {
+          "name": "25T",
+          "sku": "601360025"
+        },
+        {
+          "name": "50T",
+          "sku": "601360050"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/MTB-INH.jpg",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/MTB-INH2.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® Influenza A/B",
+      "group": "Respiratory Infections",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat® Influenza A/B is a Chip‐based Real Time Duplex Reverse Transcription Polymerase Chain Reaction (RT-PCR) Test for semi-quantitative detection of Influenza A and Influenza B virus in human throat and nasal swab specimens and aids in differential diagnosis of infection with Influenza A and/or Influenza B virus.",
+      "specifications": [
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistry"
+        ],
+        [
+          "Assay type",
+          "Semi-quantitative detection"
+        ],
+        [
+          "Total Assay Time",
+          "60 minutes"
+        ],
+        [
+          "Clinical Specimen",
+          "Human throat and nasal swab specimens"
+        ],
+        [
+          "Gene Target",
+          "M gene of Influenza A and NSP gene of Influenza B genome"
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control - Extraction Control"
+        ],
+        [
+          "LOD",
+          "810.15 copies/ml for Inf A, 755.21 copies/ml for Inf B"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat® Influenza A/B micro-PCR chip",
+        "Microtube with freeze-dried RT PCR reagents",
+        "DNase & RNase free pipette tip",
+        "Desiccant pouch"
+      ],
+      "variants": [
+        {
+          "name": "5T",
+          "sku": "601200005"
+        },
+        {
+          "name": "20T",
+          "sku": "601200020"
+        },
+        {
+          "name": "25T",
+          "sku": "601200025"
+        },
+        {
+          "name": "50T",
+          "sku": "601200050"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/influezna.jpg",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/influezna2.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® H3N2/H1N1",
+      "group": "Respiratory Infections",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat® H3N2/H1N1 is a chip-based Real Time Duplex PCR Test for semi-quantitative detection of H3N2 and H1N1 virus in human throat and nasal swab specimens and aids in differential diagnosis of infections with H3N2 and/or H1N1 virus.",
+      "specifications": [
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistry"
+        ],
+        [
+          "Assay type",
+          "Semi-quantitative detection"
+        ],
+        [
+          "Total Assay Time",
+          "65 minutes (samle to result)"
+        ],
+        [
+          "Clinical Specimen",
+          "Oropharyngeal/ Nasopharyngeal swab"
+        ],
+        [
+          "Gene Target",
+          "HA gene of H3N2 genome and NP and HA gene of H1N1 genome"
+        ],
+        [
+          "Internal Controls",
+          "Human RNase P gene - full process internal positive control (IPC) for swab collection,"
+        ],
+        [
+          "Sensitivity",
+          "100%"
+        ],
+        [
+          "Specificity",
+          "100%"
+        ],
+        [
+          "LOD",
+          "434 copies/mL for H3N2 and 821 copies/mL for H1N1"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat® H3N2/H1N1 micro-PCR chip",
+        "Microtube with freeze-dried RT PCR reagents",
+        "DNase & RNase free pipette tip"
+      ],
+      "variants": [
+        {
+          "name": "5T",
+          "sku": "601310005"
+        },
+        {
+          "name": "20T",
+          "sku": "601310020"
+        },
+        {
+          "name": "25T",
+          "sku": "601310025"
+        },
+        {
+          "name": "50T",
+          "sku": "601310050"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/H3N2_H1N1.jpg",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/H3N2_H1N12.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® COVID-19",
+      "group": "Respiratory Infections",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat® COVID-19 is a chip-based Real Time Duplex PCR Test for semi-quantitative detection of SARS CoV-2 RNA in human oropharyngeal and nasopharyngeal swab specimen and aids in detection and confirmation of SARS CoV-2 infection and diagnosis of COVID-19. The test detects the E and Orf1a genes of the virus.",
+      "specifications": [
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistry"
+        ],
+        [
+          "Assay type",
+          "Semi-quantitative detection"
+        ],
+        [
+          "Total Assay Time",
+          "60 minutes"
+        ],
+        [
+          "Clinical Specimen",
+          "Human oropharyngeal and nasopharyngeal swab specimen"
+        ],
+        [
+          "Gene Target",
+          "E and Orf1a gene"
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control - Extraction Control"
+        ],
+        [
+          "Sensitivity",
+          "100%"
+        ],
+        [
+          "Specificity",
+          "100%"
+        ],
+        [
+          "LOD",
+          "Orf1a: 480 genome copies/mL, E gene: 487 genome copies/mL"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat® COVID-19 micro PCR chip",
+        "Microtube with freeze-dried RT PCR reagents",
+        "DNase & RNase free pipette tip"
+      ],
+      "variants": [
+        {
+          "name": "5T",
+          "sku": "601430005"
+        },
+        {
+          "name": "20T",
+          "sku": "601430020"
+        },
+        {
+          "name": "25T",
+          "sku": "601430025"
+        },
+        {
+          "name": "50T",
+          "sku": "601430050"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/COVID-19.jpg",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/COVID-192.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® Inf A,B/COVID-19",
+      "group": "Respiratory Infections",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat® Inf A, B/COVID-19 is a chip-based Real Time Duplex PCR Test for semi-quantitative detection of InfluenzaA,B and COVID-19 in human oropharyngeal and nasopharyngeal swab specimen and aids in the differenetial diagnosis of infection with Influenza A,B and COVID-19 virus.",
+      "specifications": [
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistry"
+        ],
+        [
+          "Assay type",
+          "Semi-quantitative detection"
+        ],
+        [
+          "Total Assay Time",
+          "60 minutes"
+        ],
+        [
+          "Clinical Specimen",
+          "Human oropharyngeal and nasopharyngeal swab specimens"
+        ],
+        [
+          "Gene Target",
+          "Orf1a gene and RdRP gene for COVID-19. For Influenza A it is gene coding for matrix protein and for Influenza B it is gene coding for nonstructural protein."
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control - Extraction Control"
+        ],
+        [
+          "Sensitivity",
+          "100%"
+        ],
+        [
+          "Specificity",
+          "100%"
+        ],
+        [
+          "LOD",
+          "LoD for Inf A, Inf B and COVID-19 was estimated to be 887.42, 786.20 and 493.66 genome copies/ml respectively"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [],
+      "variants": [
+        {
+          "name": "5T",
+          "sku": "601720005"
+        },
+        {
+          "name": "20T",
+          "sku": "601720020"
+        },
+        {
+          "name": "25T",
+          "sku": "601720025"
+        },
+        {
+          "name": "50T",
+          "sku": "601720050"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/Inf-AB_COVID-19-1.jpg",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/Inf-AB_COVID-192-1.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® Malaria Pv/Pf",
+      "group": "Vector Borne Disease",
+      "subcategory": "Truenat Assays",
+      "description": "A chip-based real-time duplex PCR test for the quantitative detection of Plasmodium vivax and Plasmodium falciparum in blood specimens, aiding malaria diagnosis.",
+      "specifications": [
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistry"
+        ],
+        [
+          "Assay type",
+          "Quantitative detection"
+        ],
+        [
+          "Total Assay Time",
+          "60 minutes"
+        ],
+        [
+          "Clinical Specimen",
+          "Human blood specimen"
+        ],
+        [
+          "Gene Target",
+          "The erythrocyte binding protein (EBP) gene which is expressed on the surface of the merozoites"
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control - Extraction Control"
+        ],
+        [
+          "Sensitivity",
+          "100%"
+        ],
+        [
+          "Specificity",
+          "100%"
+        ],
+        [
+          "LOD",
+          "1553 copies/mL for Plasmodium falciparum plasmid DNA and 2569 copies/mL for Plasmodium vivax plasmid DNA."
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat® Malaria Pv/Pf micro PCR chip",
+        "Microtube with freeze-dried RT PCR reagents",
+        "DNase & RNase free pipette tip"
+      ],
+      "variants": [
+        {
+          "name": "5 Tests",
+          "sku": "601010005"
+        },
+        {
+          "name": "25T",
+          "sku": "601010025"
+        },
+        {
+          "name": "50T",
+          "sku": "601010050"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/Malaria-Pv_Pf.jpg",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/Malaria-Pv_Pf2.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® Dengue/Chikungunya",
+      "group": "Vector Borne Disease",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat® Dengue/Chikungunya is a chip-based real-time duplex RT-PCR test for the quantitative detection of dengue and chikungunya viruses in blood/serum/plasma, aiding in their differential diagnosis.",
+      "specifications": [
+        [
+          "Test Name",
+          "Truenat® Dengue/Chikungunya"
+        ],
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Assay Method- Real Time RT-PCR based on Taqman chemistry"
+        ],
+        [
+          "Assay type",
+          "Quantitative detection"
+        ],
+        [
+          "Total Assay Time",
+          "60 minutes"
+        ],
+        [
+          "Clinical Specimen",
+          "Human blood/plasma/serum specimens"
+        ],
+        [
+          "Gene Target",
+          "Part of 3' untranslated region (UTR) of the dengue genome and Non-structural protein 4(nsP4) gene of the Chikungunya genome"
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control - Extraction Control"
+        ],
+        [
+          "LOD",
+          "139.76 copies/mL for Dengue; 180.45 copies/mL for Chikungunya"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat® Dengue/Chikungunya micro-PCR chip",
+        "Microtube with freeze-dried RT PCR reagents",
+        "DNase & RNase free pipette tip",
+        "Dessicant Pouch"
+      ],
+      "variants": [
+        {
+          "name": "5T",
+          "sku": "601040005"
+        },
+        {
+          "name": "20T",
+          "sku": "601040020"
+        },
+        {
+          "name": "25T",
+          "sku": "601040025"
+        },
+        {
+          "name": "50T",
+          "sku": "601040050"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/Dengue_Chikungunya.jpg",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/Dengue_Chikungunya2.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® Dengue",
+      "group": "Vector Borne Disease",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat® Dengue is a chip-based real-time PCR test for quantitative detection of dengue virus in human blood/serum/plasma specimens and aiding diagnosis of dengue disease.",
+      "specifications": [
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistry"
+        ],
+        [
+          "Assay type",
+          "Quantitative detection"
+        ],
+        [
+          "Total Assay Time",
+          "60 minutes"
+        ],
+        [
+          "Clinical Specimen",
+          "Human blood/plasma/serum specimens"
+        ],
+        [
+          "Gene Target",
+          "Part of 3' untranslated region (UTR) of the dengue genome"
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control - Extraction Control"
+        ],
+        [
+          "LOD",
+          "222.99 copies/mL"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat® Dengue micro-PCR chip",
+        "Microtube with freeze-dried RT PCR reagents",
+        "DNase & RNase free pipette tip"
+      ],
+      "variants": [
+        {
+          "name": "5T",
+          "sku": "601050005"
+        },
+        {
+          "name": "20T",
+          "sku": "601050020"
+        },
+        {
+          "name": "25T",
+          "sku": "601050025"
+        },
+        {
+          "name": "50T",
+          "sku": "601050050"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/Dengue.jpg",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/Dengue2.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® Chikungunya",
+      "group": "Vector Borne Disease",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat® Chikungunya is a chip‐based Real-Time Reverse Transcription Polymerase Chain Reaction (RT‐PCR) for quantitative detection of Chikungunya virus in human blood/serum/plasma specimen and aids in the diagnosis of infection with Chikungunya.",
+      "specifications": [
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistry"
+        ],
+        [
+          "Assay type",
+          "Quantitative detection"
+        ],
+        [
+          "Total Assay Time",
+          "60 minutes"
+        ],
+        [
+          "Clinical Specimen",
+          "Human blood/plasma/serum specimens"
+        ],
+        [
+          "Gene Target",
+          "Non-structural protein 4(nsP4) gene of the Chikungunya genome"
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control - Extraction Control"
+        ],
+        [
+          "LOD",
+          "153.57 copies/mL"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat® Chikungunya micro-PCR chip",
+        "Microtube with freeze-dried RT PCR reagents",
+        "DNase & RNase free pipette tip",
+        "Desiccant pouch"
+      ],
+      "variants": [
+        {
+          "name": "5T",
+          "sku": "601060005"
+        },
+        {
+          "name": "20T",
+          "sku": "601060020"
+        },
+        {
+          "name": "25T",
+          "sku": "601060025"
+        },
+        {
+          "name": "50T",
+          "sku": "601060050"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/Chikangunya.jpg",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/Chikangunya2.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® HBV",
+      "group": "Hepatitis",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat® HBV is a chip-based Real Time PCR Test for quantitative estimation of the Hepatitis B Virus (HBV) in human blood/serum/plasma specimen and aids in the diagnosis of infection with Hepatitis B virus and in the estimation of viral load.",
+      "specifications": [
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistry"
+        ],
+        [
+          "Assay type",
+          "Quantitative detection"
+        ],
+        [
+          "Total Assay Time",
+          "60 minutes"
+        ],
+        [
+          "Clinical Specimen",
+          "Human blood/serum/plasma specimen"
+        ],
+        [
+          "Gene Target",
+          "Part of the core/pre-core region of HBV genome"
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control - Extraction Control"
+        ],
+        [
+          "Sensitivity",
+          "100%"
+        ],
+        [
+          "Specificity",
+          "100%"
+        ],
+        [
+          "LOD",
+          "55.92 IU/ml"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat® HBV micro-PCR chip",
+        "Microtube with freeze-dried RT PCR reagents",
+        "DNase & RNase free pipette tip"
+      ],
+      "variants": [
+        {
+          "name": "5T",
+          "sku": "601090005"
+        },
+        {
+          "name": "20T",
+          "sku": "601090020"
+        },
+        {
+          "name": "25T",
+          "sku": "601090025"
+        },
+        {
+          "name": "50T",
+          "sku": "601090050"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/HBV-1.jpg",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/HBV2.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® HCV",
+      "group": "Hepatitis",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat® HCV is a chip-based Real Time PCR Test for quantitative detection and the diagnosis of Hepatitis C virus (HCV) in whole blood/plasma/serum and aids in the monitoring of HCV viral load of patients with HCV infection",
+      "specifications": [
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistr"
+        ],
+        [
+          "Assay type",
+          "Quantitative detection"
+        ],
+        [
+          "Total Assay Time",
+          "60 minutes"
+        ],
+        [
+          "Clinical Specimen",
+          "Whole (venous) blood/plasma/serum"
+        ],
+        [
+          "Gene Target",
+          "3' UTR region of the HCV genome"
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control - Extraction Control"
+        ],
+        [
+          "Sensitivity",
+          "100%"
+        ],
+        [
+          "Specificity",
+          "100%"
+        ],
+        [
+          "LOD",
+          "Genotype and sample specific - consult IFU"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat® HCV micro-PCR chip",
+        "Microtube with freeze-dried RT PCR reagents",
+        "DNase & RNase free pipette tip"
+      ],
+      "variants": [
+        {
+          "name": "5T",
+          "sku": "601180005"
+        },
+        {
+          "name": "20T",
+          "sku": "601180020"
+        },
+        {
+          "name": "25T",
+          "sku": "601180025"
+        },
+        {
+          "name": "50T",
+          "sku": "601180050"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/HCV2.jpg",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/HCV.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® HAV",
+      "group": "Hepatitis",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat® HAV is a chip-based Real Time PCR Test for quantitative detection and diagnosis of Hepatitis A virus in human blood /serum/ plasma specimen and aids in the diagnosis of infection with Hepatitis A Virus. This test is also intended for qualitative detection and diagnosis of Hepatitis A Virus in Stool sample.",
+      "specifications": [
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistry"
+        ],
+        [
+          "Assay type",
+          "Quantitative detection (For blood/serum/plasma)"
+        ],
+        [
+          "Total Assay Time",
+          "60 minutes"
+        ],
+        [
+          "Clinical Specimen",
+          "Whole blood/plasma/serum, stool"
+        ],
+        [
+          "Gene Target",
+          "5’NCR of HAV genome"
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control - Extraction Control"
+        ],
+        [
+          "Sensitivity",
+          "100%"
+        ],
+        [
+          "Specificity",
+          "100%"
+        ],
+        [
+          "LOD",
+          "87.7 IU/mL of Plasma"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat® HAV micro-PCR chip",
+        "Microtube with freeze-dried RT PCR reagents",
+        "DNase & RNase free pipette tip"
+      ],
+      "variants": [
+        {
+          "name": "5T",
+          "sku": "601320005"
+        },
+        {
+          "name": "20T",
+          "sku": "601320020"
+        },
+        {
+          "name": "25T",
+          "sku": "601320025"
+        },
+        {
+          "name": "50T",
+          "sku": "601320050"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/HAV-1.jpg",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/HAV2.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® HEV",
+      "group": "Hepatitis",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat® HEV is a chip-based Real Time Reverse Transcription Polymerase Chain Reaction (RT-PCR) Test for the quantitative detection and diagnosis of Hepatitis E virus in human blood /serum/ plasma specimen and aids in the diagnosis of infection with Hepatitis E Virus. This test is also intended for qualitative detection and diagnosis of Hepatitis E Virus in the stool sample.",
+      "specifications": [
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistry"
+        ],
+        [
+          "Assay type",
+          "Quantitative detection (For blood/serum/plasma)"
+        ],
+        [
+          "Total Assay Time",
+          "60 minutes"
+        ],
+        [
+          "Clinical Specimen",
+          "Whole blood/plasma/serum, stool"
+        ],
+        [
+          "Gene Target",
+          "ORF 1 poly protein gene of HEV genome"
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control - Extraction Control"
+        ],
+        [
+          "Sensitivity",
+          "100%"
+        ],
+        [
+          "Specificity",
+          "100%"
+        ],
+        [
+          "LOD",
+          "516 copies/mL"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat® HEV micro-PCR chip",
+        "Microtube with freeze-dried RT PCR reagents",
+        "DNase and RNase free filter barrier microtip",
+        "Dessicant Pouch"
+      ],
+      "variants": [
+        {
+          "name": "5T",
+          "sku": "601330005"
+        },
+        {
+          "name": "20T",
+          "sku": "601330020"
+        },
+        {
+          "name": "25T",
+          "sku": "601330025"
+        },
+        {
+          "name": "50T",
+          "sku": "601330050"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/HEV-1.jpg",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/HEV2.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® HPV-HR Plus",
+      "group": "Sexually Transmitted Infections",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat HPV HR Plus is a chip-based Real-Time Duplex PCR Test for s emi-quantitative detection of high risk Human Papillomavirus (HPV) genotypes 16, 18, 31, 33, 35, 45, 52, and 58 in female cervical specimens collected by a clinician.",
+      "specifications": [
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistry"
+        ],
+        [
+          "Assay type",
+          "Semi-quantitative"
+        ],
+        [
+          "Total Assay Time",
+          "40 Mins"
+        ],
+        [
+          "Clinical Specimen",
+          "Female cervical swab specimen"
+        ],
+        [
+          "Gene Target",
+          "The target sequence is L1 and E7 Gene"
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control - Extraction Control"
+        ],
+        [
+          "Sensitivity",
+          "100%"
+        ],
+        [
+          "Specificity",
+          "100%"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat® HPV HR Plus micro-PCR chip",
+        "Microtube with freeze-dried RT PCR reagents",
+        "DNase & RNase free pipette tip"
+      ],
+      "variants": [
+        {
+          "name": "5T",
+          "sku": "601840005"
+        },
+        {
+          "name": "20T",
+          "sku": "601840020"
+        },
+        {
+          "name": "25T",
+          "sku": "601840025"
+        },
+        {
+          "name": "50T",
+          "sku": "601840050"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2026/05/HPV-HR-Plus-virus-image-1.png",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/06/truenat-hpv-hr-plus-box.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® HIV-1/HIV-2",
+      "group": "Sexually Transmitted Infections",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat® HIV-1/HIV-2 is a chip-based Real Time Duplex PCR Test for quantitative detection and differential diagnosis of infection with human immunodeficiency virus type 1 & 2 (HIV-1 & 2) in whole blood/plasma/serum and aids in the monitoring of the HIV-1 & 2 viral loads in patients with HIV-1 and/or HIV-2 infection.",
+      "specifications": [
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistry"
+        ],
+        [
+          "Assay type",
+          "Quantitative detection"
+        ],
+        [
+          "Total Assay Time",
+          "60 minutes"
+        ],
+        [
+          "Clinical Specimen",
+          "Plasma"
+        ],
+        [
+          "Gene Target",
+          "Pol gene for HIV-1 and 5’ UTR for HIV-2 genome"
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control - Extraction Control"
+        ],
+        [
+          "Sensitivity",
+          "100%"
+        ],
+        [
+          "Specificity",
+          "100%"
+        ],
+        [
+          "LOD",
+          "HIV-1: 635 IU/mL, HIV-2: 1372.80 IU/mL"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat® HIV-1/HIV-2 micro-PCR chip",
+        "Microtube with freeze-dried RT PCR reagents",
+        "DNase & RNase free pipette tip"
+      ],
+      "variants": [
+        {
+          "name": "5T",
+          "sku": "601540005"
+        },
+        {
+          "name": "20T",
+          "sku": "601540020"
+        },
+        {
+          "name": "25T",
+          "sku": "601540025"
+        },
+        {
+          "name": "50T",
+          "sku": "601540050"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/HIV-1_HIV.jpg",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/HIV-1-HIV-22.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® HPV-HR",
+      "group": "Sexually Transmitted Infections",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat® HPV-HR is a chip-based Real Time Duplex PCR Test for semi-quantitative detection of high risk Human Papillomavirus (HPV) types 16, 18, 31 and 45 in female cervical specimens collected by a clinician. It aids in the differential diagnosis of symptomatic or asymptomatic infection with high risk HPV types 16/31 and 18/45.",
+      "specifications": [
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistry"
+        ],
+        [
+          "Assay type",
+          "Semi-quantitative detection"
+        ],
+        [
+          "Total Assay Time",
+          "60 minutes"
+        ],
+        [
+          "Clinical Specimen",
+          "Female cervical specimens"
+        ],
+        [
+          "Gene Target",
+          "Regions within the E6 and E7 genes of high risk HPV types 16,18,31 and 45"
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control - Extraction Control"
+        ],
+        [
+          "Sensitivity",
+          "97.70%"
+        ],
+        [
+          "Specificity",
+          "98.90%"
+        ],
+        [
+          "LOD",
+          "HPV 16: 266.16 IU/mL, HPV 18: 295.81 IU/mL, HPV 31: 352.90 IU/ml, HPV 45: 443.71 IU/mL"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat HPV-HR micro-PCR chip",
+        "Microtube with freeze-dried PCR reagents",
+        "DNase and RNase free filter barrier microtip",
+        "Desiccant pouch"
+      ],
+      "variants": [
+        {
+          "name": "5T",
+          "sku": "601220005"
+        },
+        {
+          "name": "20T",
+          "sku": "601220020"
+        },
+        {
+          "name": "25T",
+          "sku": "601220020"
+        },
+        {
+          "name": "50T",
+          "sku": "601220020"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/HPV-HR.jpg",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/HPV-HR2.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® HSV 1/2",
+      "group": "Sexually Transmitted Infections",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat® HSV 1/2 is a chip-based Real Time PCR Test for semi-quantitative detection of HSV 1/2 virus in genital swab/CSF specimens and aids in the diagnosis of infection with HSV 1/2 virus.",
+      "specifications": [
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistry"
+        ],
+        [
+          "Assay type",
+          "Semi-quantitative detection"
+        ],
+        [
+          "Total Assay Time",
+          "60 minutes"
+        ],
+        [
+          "Clinical Specimen",
+          "Genital swab/CSF specimens"
+        ],
+        [
+          "Gene Target",
+          "DNA Polymerase (UL30) gene of Herpes simplex virus type 1 & 2 genome"
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control - Extraction Control"
+        ],
+        [
+          "Sensitivity",
+          "100%"
+        ],
+        [
+          "Specificity",
+          "100%"
+        ],
+        [
+          "LOD",
+          "294 copies/mL"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat® HSV 1/2 micro PCR chip",
+        "Microtube with freeze-dried RT PCR reagents",
+        "DNase & RNase free pipette tip"
+      ],
+      "variants": [
+        {
+          "name": "5T",
+          "sku": "601570005"
+        },
+        {
+          "name": "20T",
+          "sku": "601570020"
+        },
+        {
+          "name": "25T",
+          "sku": "601570025"
+        },
+        {
+          "name": "50T",
+          "sku": "601570050"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/HSV-1_2.jpg",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/HSV-1_22.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® CT/NG",
+      "group": "Sexually Transmitted Infections",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat® CT/NG is a chip-based Real Time Duplex PCR Test for semi-quantitative detection of Chlamydia trachomatis and Neisseria gonorrhoeae in female endocervical and vaginal swab specimens, male urethral swab specimen and male and female urine specimen and aids in the diagnosis of symptomatic or asymptomatic infection with Chlamydia trachomatis and/or Neisseria gonorrhoeae.",
+      "specifications": [
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistry"
+        ],
+        [
+          "Assay type",
+          "Semi-quantitative detection"
+        ],
+        [
+          "Total Assay Time",
+          "60 minutes"
+        ],
+        [
+          "Clinical Specimen",
+          "Female endocervical and vaginal swab specimens, male urethral swab specimen and male and female urine specimen"
+        ],
+        [
+          "Gene Target",
+          "For Chlamydia trachomatis assay, the target is a region within the cryptic plasmid DNA and ompA gene. For Neisseria gonorrhoeae assay, the target is porB gene and opaE gen"
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control - Extraction Control"
+        ],
+        [
+          "Sensitivity",
+          "100%"
+        ],
+        [
+          "Specificity",
+          "100%"
+        ],
+        [
+          "LOD",
+          "274.67 copies/mL for Chlamydia trachomatis; 264.65 copies/mL for Neisseria gonorrhoeae"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat® CT/NG micro PCR chip",
+        "Microtube with freeze-dried PCR reagents",
+        "DNase and RNase free filter barrier microtip",
+        "Desiccant pouch"
+      ],
+      "variants": [
+        {
+          "name": "5T",
+          "sku": "601160005"
+        },
+        {
+          "name": "20T",
+          "sku": "601160020"
+        },
+        {
+          "name": "25T",
+          "sku": "601160025"
+        },
+        {
+          "name": "50T",
+          "sku": "601160050"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/CT_NG.jpg",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/CT_NG2.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® Trich",
+      "group": "Sexually Transmitted Infections",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat® Trich is a chip-based Real Time PCR Test for semi-quantitative detection of Trichomonas vaginalis in female endocervical and vaginal swab specimens, male urethral swab specimen and male and female urine specimen and aids in the diagnosis of symptomatic or asymptomatic infection with Trichomonas vaginalis.",
+      "specifications": [
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistry"
+        ],
+        [
+          "Assay type",
+          "Semi-quantitative detection"
+        ],
+        [
+          "Total Assay Time",
+          "60 minutes"
+        ],
+        [
+          "Clinical Specimen",
+          "Female endocervical and vaginal swab specimens, male urethral swab specimen and male and female urine specimen"
+        ],
+        [
+          "Gene Target",
+          "Malate dehydrogenase in the T. vaginalis genome"
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control - Extraction Control"
+        ],
+        [
+          "Sensitivity",
+          "95.83%"
+        ],
+        [
+          "Specificity",
+          "100%"
+        ],
+        [
+          "LOD",
+          "246.17 copies/ml"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat® Trich micro-PCR chip",
+        "Microtube with freeze-dried RT PCR reagents",
+        "DNase & RNase free pipette tip"
+      ],
+      "variants": [
+        {
+          "name": "5T",
+          "sku": "601050005"
+        },
+        {
+          "name": "20T",
+          "sku": "601050020"
+        },
+        {
+          "name": "25T",
+          "sku": "601050025"
+        },
+        {
+          "name": "50T",
+          "sku": "601050050"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/Trich.jpg",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/Trich2.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® Mgen",
+      "group": "Sexually Transmitted Infections",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat® Mgen is a chip-based real-time PCR test for semi-quantitative detection of Mycoplasma genitalium in urogenital swabs (urethral, vaginal and cervical) and urine specimens, aiding in the diagnosis of symptomatic or asymptomatic Mgen infection.",
+      "specifications": [
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep® AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistry"
+        ],
+        [
+          "Assay Type",
+          "Semi-quantitative detection"
+        ],
+        [
+          "Total Assay Time",
+          "60 minutes"
+        ],
+        [
+          "Clinical Specimen",
+          "Urogenital swabs (urethral, vaginal and cervical) and urine specimens"
+        ],
+        [
+          "Gene Target",
+          "Hypothetical protein (IgG-blocking protein M)"
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control – Extraction Control"
+        ],
+        [
+          "Sensitivity",
+          "100%"
+        ],
+        [
+          "Specificity",
+          "100%"
+        ],
+        [
+          "LOD",
+          "636.05 copies/mL"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2–30°C"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat® Mgen micro PCR chip (1 No.)",
+        "Microtube with freeze-dried PCR reagents (1 No.)",
+        "DNase and RNase filter barrier free pipette tip (1 No.)",
+        "Desiccant pouch (1 No.)",
+        "Package Insert (1 No.)"
+      ],
+      "variants": [],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2026/05/Mgen2.png",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2026/05/MGen.png"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® Rabies",
+      "group": "Zoonotic Diseases",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat® Rabies is a chip-based Real Time PCR Test for semi-quantitative detection of Rabies Virus in Cerebrospinal fluid (CSF), saliva, brain tissue, corneal swabs specimens of animals and aids in the diagnosis of Rabies virus",
+      "specifications": [
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistry"
+        ],
+        [
+          "Assay type",
+          "Semi-quantitative detection"
+        ],
+        [
+          "Total Assay Time",
+          "60 minutes"
+        ],
+        [
+          "Clinical Specimen",
+          "Cerebrospinal fluid (CSF), saliva, brain tissue, corneal swabs specimens of animals"
+        ],
+        [
+          "Gene Target",
+          "Nucleoprotein gene of the Rabies genome"
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control - Extraction Control"
+        ],
+        [
+          "LOD",
+          "273.83 copies/mL"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat® Rabies micro-PCR chip",
+        "Microtube with freeze-dried RT PCR reagents",
+        "DNase and RNase free filter barrier microtip",
+        "Desiccant pouch"
+      ],
+      "variants": [
+        {
+          "name": "5T",
+          "sku": "601120005"
+        },
+        {
+          "name": "20T",
+          "sku": "601120020"
+        },
+        {
+          "name": "25T",
+          "sku": "601120025"
+        },
+        {
+          "name": "50T",
+          "sku": "601120050"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/Rabies.jpg",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/Rabies2.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® Nipah",
+      "group": "Zoonotic Diseases",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat® Nipah is a chip-based Real Time Reverse Transcription Polymerase Chain Reaction (RT‐PCR) test for semi-quantitative detection and the diagnosis of Nipah virus in Oropharyngeal swab and aids in the diagnosis of infection with Nipah virus RNA.",
+      "specifications": [
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistry"
+        ],
+        [
+          "Assay type",
+          "Semi-quantitative detection"
+        ],
+        [
+          "Total Assay Time",
+          "60 minutes"
+        ],
+        [
+          "Clinical Specimen",
+          "Oropharyngeal swab specimen"
+        ],
+        [
+          "Gene Target",
+          "Nucleocaspid protein gene"
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control - Extraction Control"
+        ],
+        [
+          "Sensitivity",
+          "100%"
+        ],
+        [
+          "Specificity",
+          "100%"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat® Nipah micro-PCR chip",
+        "Microtube with freeze-dried RT PCR reagents",
+        "DNase and RNase free filter barrier microtip",
+        "Desiccant Pouch"
+      ],
+      "variants": [
+        {
+          "name": "5T",
+          "sku": "601390005"
+        },
+        {
+          "name": "20T",
+          "sku": "601390020"
+        },
+        {
+          "name": "25T",
+          "sku": "601390025"
+        },
+        {
+          "name": "50T",
+          "sku": "601390050"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/Nipah.jpg",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/Nipah2.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® EBV",
+      "group": "Viral Infections",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat® EBV is a chip-based Real Time PCR test for the quantitative detection of Epstein-Barr virus in human blood/serum/plasma and CSF specimens and aids in diagnosis of EBV infection.",
+      "specifications": [
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistry"
+        ],
+        [
+          "Assay type",
+          "Quantitative detection"
+        ],
+        [
+          "Total Assay Time",
+          "60 minutes"
+        ],
+        [
+          "Clinical Specimen",
+          "Human blood/serum/plasma and CSF specimens"
+        ],
+        [
+          "Gene Target",
+          "LMP2 gene of Epstein-Barr virus genome"
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control - Extraction Control"
+        ],
+        [
+          "Sensitivity",
+          "100%"
+        ],
+        [
+          "Specificity",
+          "100%"
+        ],
+        [
+          "LOD",
+          "209 copies/mL"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat® EBV micro-PCR chip",
+        "Microtube with freeze-dried RT PCR reagents",
+        "DNase & RNase free pipette tip"
+      ],
+      "variants": [
+        {
+          "name": "5T",
+          "sku": "601600005"
+        },
+        {
+          "name": "20T",
+          "sku": "601600020"
+        },
+        {
+          "name": "25T",
+          "sku": "601600025"
+        },
+        {
+          "name": "50T",
+          "sku": "601600050"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/EBV.jpg",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/EBV2.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® CMV",
+      "group": "Viral Infections",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat® CMV is a chip-based Real Time PCR test for the quantitative detection of Cytomegalovirus in human plasma / whole blood / Serum / specimens and aids in diagnosis of infection with Cytomegalovirus.",
+      "specifications": [
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistry"
+        ],
+        [
+          "Assay type",
+          "Quantitative detection"
+        ],
+        [
+          "Total Assay Time",
+          "60 minutes"
+        ],
+        [
+          "Clinical Specimen",
+          "Human blood/serum/plasma specimens"
+        ],
+        [
+          "Gene Target",
+          "UL55 or gB gene coding for envelope glycoprotein B and RL11 gene coding for membrane glycoprotein RL11"
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control - Extraction Control"
+        ],
+        [
+          "Sensitivity",
+          "100%"
+        ],
+        [
+          "Specificity",
+          "100%"
+        ],
+        [
+          "LOD",
+          "226.79 IU/mL"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat® CMV micro-PCR chip",
+        "Microtube with freeze-dried RT PCR reagents",
+        "DNase & RNase free pipette tip"
+      ],
+      "variants": [
+        {
+          "name": "5T",
+          "sku": "601590005"
+        },
+        {
+          "name": "20T",
+          "sku": "601590020"
+        },
+        {
+          "name": "25T",
+          "sku": "601590025"
+        },
+        {
+          "name": "50T",
+          "sku": "601590050"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/CMV.jpg",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/CMV2.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® Salmonella",
+      "group": "Bacterial Infections",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat® Salmonella is a chip-based Real Time PCR Test for qualitative detection and diagnosis of Salmonella in human blood and aids in the diagnosis of infection with Salmonella.",
+      "specifications": [
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistry"
+        ],
+        [
+          "Assay type",
+          "Qualitative detection"
+        ],
+        [
+          "Total Assay Time",
+          "60 minutes"
+        ],
+        [
+          "Clinical Specimen",
+          "Human blood"
+        ],
+        [
+          "Gene Target",
+          "pmp' gene encoding the “Plasmid maintenance protein”"
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control - Extraction Control"
+        ],
+        [
+          "LOD",
+          "417 copies/mL"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat® Salmonella micro-PCR chip",
+        "Microtube with freeze-dried RT PCR reagents",
+        "DNase & RNase free pipette tip"
+      ],
+      "variants": [
+        {
+          "name": "5T",
+          "sku": "601080005"
+        },
+        {
+          "name": "20T",
+          "sku": "601080020"
+        },
+        {
+          "name": "25T",
+          "sku": "601080025"
+        },
+        {
+          "name": "50T",
+          "sku": "601080050"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/Salmonella.jpg",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/Salmonella2.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® GBS",
+      "group": "Bacterial Infections",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat® GBS is a chip-based Real Time PCR test for semi-quantitative detection and diagnosis of group B streptococcus in vagino-rectal swabs, cerebrospinal fluid (CSF) and Blood/Serum/Plasma specimen and aids in the diagnosis of infection with group B streptococcus.",
+      "specifications": [
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistry"
+        ],
+        [
+          "Assay type",
+          "Semi-quantitative detection"
+        ],
+        [
+          "Total Assay Time",
+          "60 minutes"
+        ],
+        [
+          "Clinical Specimen",
+          "Vagino-rectal swabs, cerebrospinal fluid (CSF) and Blood/Serum/Plasma"
+        ],
+        [
+          "Gene Target",
+          "cAMP factor gene"
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control - Extraction Control"
+        ],
+        [
+          "LOD",
+          "686.21 copies/mL"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat® GBS micro-PCR chip",
+        "Microtube with freeze-dried RT PCR reagents",
+        "DNase & RNase free pipette tip"
+      ],
+      "variants": [
+        {
+          "name": "5T",
+          "sku": "601240005"
+        },
+        {
+          "name": "20T",
+          "sku": "601240020"
+        },
+        {
+          "name": "25T",
+          "sku": "601240025"
+        },
+        {
+          "name": "50T",
+          "sku": "601240050"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/GBS.jpg",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/GBS2.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® LTS",
+      "group": "Bacterial Infections",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat® LTS is a chip-based Real Time PCR Test for semi quantitative detection of Leptospira and aids in the diagnosis of Leptospirosis in human Blood/Serum/Plasma.",
+      "specifications": [
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistry"
+        ],
+        [
+          "Assay type",
+          "Semi-quantitative detection"
+        ],
+        [
+          "Total Assay Time",
+          "60 minutes"
+        ],
+        [
+          "Clinical Specimen",
+          "Human blood/serum/plasma."
+        ],
+        [
+          "Gene Target",
+          "Repetitive elements present across genome"
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control - Extraction Control"
+        ],
+        [
+          "Sensitivity",
+          "100%"
+        ],
+        [
+          "Specificity",
+          "100%"
+        ],
+        [
+          "LOD",
+          "736.62 copies/mL"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat® LTS micro-PCR chip",
+        "Microtube with freeze-dried RT PCR reagents",
+        "DNase & RNase free pipette tip"
+      ],
+      "variants": [
+        {
+          "name": "5T",
+          "sku": "601400005"
+        },
+        {
+          "name": "20T",
+          "sku": "601400020"
+        },
+        {
+          "name": "25T",
+          "sku": "601400025"
+        },
+        {
+          "name": "50T",
+          "sku": "601400050"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/LTS2.jpg",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/LTS2-1.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® Scrub T",
+      "group": "Bacterial Infections",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat® Scrub T is a chip-based Real Time PCR Test for quantitative detection of Scrub typhus bacteria in blood / Serum / Plasma specimens.",
+      "specifications": [
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistry"
+        ],
+        [
+          "Assay type",
+          "Quantitative detection"
+        ],
+        [
+          "Total Assay Time",
+          "60 minutes"
+        ],
+        [
+          "Clinical Specimen",
+          "Whole blood/plasma/serum specimen"
+        ],
+        [
+          "Gene Target",
+          "htrA gene of Orientia tsutsugamushi"
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control - Extraction Control"
+        ],
+        [
+          "Sensitivity",
+          "100%"
+        ],
+        [
+          "Specificity",
+          "100%"
+        ],
+        [
+          "LOD",
+          "339 copies/mL"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat® Scrub T micro-PCR chip",
+        "Microtube with freeze-dried RT PCR reagents",
+        "DNase & RNase free pipette tip"
+      ],
+      "variants": [
+        {
+          "name": "5T",
+          "sku": "601450005"
+        },
+        {
+          "name": "20T",
+          "sku": "601450020"
+        },
+        {
+          "name": "25T",
+          "sku": "601450025"
+        },
+        {
+          "name": "50T",
+          "sku": "601450050"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/Scrub-T2.jpg",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/Scrub-T-1.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® Shigella",
+      "group": "Bacterial Infections",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat® Shigella is a chip-based Real Time PCR Test for semi quantitative detection of Shigella spp. in human stool specimen and aids in the diagnosis of infection with Shigella.",
+      "specifications": [
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistry"
+        ],
+        [
+          "Assay type",
+          "Semi-quantitative detection"
+        ],
+        [
+          "Total Assay Time",
+          "60 minutes"
+        ],
+        [
+          "Clinical Specimen",
+          "Human stool specimen"
+        ],
+        [
+          "Gene Target",
+          "ipgF gene producing invasion associated protein of Shigella genome"
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control - Extraction Control"
+        ],
+        [
+          "Sensitivity",
+          "100%"
+        ],
+        [
+          "Specificity",
+          "100%"
+        ],
+        [
+          "LOD",
+          "413.88 copies/mL"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat® Shigella micro-PCR chip",
+        "Microtube with freeze-dried RT PCR reagents",
+        "DNase & RNase free pipette tip"
+      ],
+      "variants": [
+        {
+          "name": "5T",
+          "sku": "601470005"
+        },
+        {
+          "name": "20T",
+          "sku": "601470020"
+        },
+        {
+          "name": "25T",
+          "sku": "601470025"
+        },
+        {
+          "name": "50T",
+          "sku": "601470050"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/Shigella.jpg",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/Shigella2.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® CDI",
+      "group": "Bacterial Infections",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat® CDI is a chip-based Real Time PCR Test for semi-quantitative detection and diagnosis of Clostridium difficile infections in stool samples.",
+      "specifications": [
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistry"
+        ],
+        [
+          "Assay type",
+          "Semi-quantitative detection"
+        ],
+        [
+          "Total Assay Time",
+          "60 minutes"
+        ],
+        [
+          "Clinical Specimen",
+          "Human stool specimen"
+        ],
+        [
+          "Gene Target",
+          "Gene Clostridium difficile toxin B protein"
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control - Extraction Control"
+        ],
+        [
+          "Sensitivity",
+          "100%"
+        ],
+        [
+          "Specificity",
+          "100%"
+        ],
+        [
+          "LOD",
+          "625.78 copies/mL"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat® CDI micro-PCR chip",
+        "Microtube with freeze-dried RT PCR reagents",
+        "DNase & RNase free pipette tip"
+      ],
+      "variants": [
+        {
+          "name": "5T",
+          "sku": "601620005"
+        },
+        {
+          "name": "20T",
+          "sku": "601620020"
+        },
+        {
+          "name": "25T",
+          "sku": "601620025"
+        },
+        {
+          "name": "50T",
+          "sku": "601620050"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/CDI.jpg",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/CDI2.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® Cholera",
+      "group": "Bacterial Infections",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat® Cholera is a chip-based Real Time PCR Test for semi-quantitative detection of Vibrio cholerae in stool sample specimens and aids in the diagnosis of Cholera infections.",
+      "specifications": [
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistry"
+        ],
+        [
+          "Assay type",
+          "Semi-quantitative detectio"
+        ],
+        [
+          "Total Assay Time",
+          "60 minutes"
+        ],
+        [
+          "Clinical Specimen",
+          "Human stool"
+        ],
+        [
+          "Gene Target",
+          "Cholera Enterotoxin"
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control - Extraction Control"
+        ],
+        [
+          "Sensitivity",
+          "100%"
+        ],
+        [
+          "Specificity",
+          "100%"
+        ],
+        [
+          "LOD",
+          "254.91 copies/mL"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat® Cholera micro-PCR chip",
+        "Microtube with freeze-dried RT PCR reagents",
+        "DNase & RNase free pipette tip"
+      ],
+      "variants": [
+        {
+          "name": "5T",
+          "sku": "601500005"
+        },
+        {
+          "name": "20T",
+          "sku": "601500020"
+        },
+        {
+          "name": "25T",
+          "sku": "601500025"
+        },
+        {
+          "name": "50T",
+          "sku": "601500050"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/Cholera.jpg",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/Cholera2.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® M. leprae",
+      "group": "Bacterial Infections",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat® M. leprae is a chip-based Real Time PCR Test for the semi-quantitative detection of Mycobacterium leprae in slit skin smear specimens.",
+      "specifications": [
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistry"
+        ],
+        [
+          "Assay type",
+          "Semi-quantitative detection"
+        ],
+        [
+          "Total Assay Time",
+          "60 minutes"
+        ],
+        [
+          "Clinical Specimen",
+          "Slit skin smear specimen"
+        ],
+        [
+          "Gene Target",
+          "16S ribosomal RNA gene, sodA gene, and gene coding for RLEP region"
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control - Extraction Control"
+        ],
+        [
+          "Sensitivity",
+          "100%"
+        ],
+        [
+          "Specificity",
+          "100%"
+        ],
+        [
+          "LOD",
+          "330 copies/mL"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat® M. leprae micro-PCR chip",
+        "Microtube with freeze-dried RT PCR reagents",
+        "DNase & RNase free pipette tip"
+      ],
+      "variants": [
+        {
+          "name": "5T",
+          "sku": "601700005"
+        },
+        {
+          "name": "20T",
+          "sku": "601700020"
+        },
+        {
+          "name": "25T",
+          "sku": "601700025"
+        },
+        {
+          "name": "50T",
+          "sku": "601700050"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/M-leprae.jpg",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/M-leprae2.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    },
+    {
+      "name": "Truenat® HLA-B27",
+      "group": "Others",
+      "subcategory": "Truenat Assays",
+      "description": "Truenat® HLA-B27 is a chip-based Real-Time PCR Test for qualitative detection of HLA-B27 in human blood specimens and aids in diagnosing HLA-B27 typing.",
+      "specifications": [
+        [
+          "Extraction Method",
+          "Microfluidics Cartridge Based Automated in Trueprep AUTO v2"
+        ],
+        [
+          "Assay Method",
+          "Real Time PCR based on Taqman chemistry"
+        ],
+        [
+          "Assay type",
+          "Qualitative detection"
+        ],
+        [
+          "Total Assay Time",
+          "60 minutes"
+        ],
+        [
+          "Clinical Specimen",
+          "Human blood"
+        ],
+        [
+          "Gene Target",
+          "Exon 2 of HLA-B and human RNase P"
+        ],
+        [
+          "Internal Controls",
+          "Internal Process Control - Extraction Control"
+        ],
+        [
+          "Sensitivity",
+          "100%"
+        ],
+        [
+          "Specificity",
+          "100%"
+        ],
+        [
+          "Kit Storage Temperature",
+          "2-30℃"
+        ]
+      ],
+      "kit_contents": [
+        "Truenat® HLA-B27 micro-PCR chip",
+        "Microtube with freeze-dried PCR reagents",
+        "DNase and RNase free filter barrier microtip",
+        "Desiccant pouch"
+      ],
+      "variants": [
+        {
+          "name": "5T",
+          "sku": "601380005"
+        },
+        {
+          "name": "20T",
+          "sku": "601380020"
+        },
+        {
+          "name": "25T",
+          "sku": "601380025"
+        },
+        {
+          "name": "50T",
+          "sku": "601380050"
+        }
+      ],
+      "image_url": "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/HLA-B272.jpg",
+      "gallery_urls": [
+        "https://www.molbiodiagnostics.com/wp-content/uploads/2025/04/HLA-B27.jpg"
+      ],
+      "source_url": "https://www.molbiodiagnostics.com/truenat-assays/"
+    }
+  ]
+}

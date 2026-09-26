@@ -1,0 +1,5 @@
+{% extends "dashboard/base.html" %}
+{% block title %}Delete {{ type_name }}{% endblock %}
+{% block content %}
+<div class="delete-panel dash-card"><span class="delete-icon">!</span><h1>Delete {{ type_name|lower }}?</h1><p>You are about to delete <strong>{{ item }}</strong>. This action cannot be undone.</p><form method="post">{% csrf_token %}<a class="btn btn-secondary" href="{% if cancel_url %}{{ cancel_url }}{% else %}{% url cancel_url_name %}{% endif %}">Keep it</a><button class="btn delete-button">Delete permanently</button></form></div>
+{% endblock %}

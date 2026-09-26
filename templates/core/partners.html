@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Our Global Partners — Somlab Diagnostics{% endblock %}
+{% block content %}
+<section class="partners-intro">
+  <div class="container narrow">
+    <span class="eyebrow">Trusted international network</span>
+    <h1>Our Global Partners</h1>
+    <p>We work with trusted international medical and diagnostic manufacturers to bring dependable technology, quality products and specialist expertise to laboratories across East Africa.</p>
+  </div>
+</section>
+
+{% if partners %}
+<section class="partners-marquee-section" aria-label="Partner manufacturers">
+  {% include "core/_partner_marquee.html" with marquee_label="Partner manufacturers" %}
+</section>
+{% endif %}
+
+<section class="section partners-directory">
+  <div class="container">
+    <div class="partners-directory-heading">
+      <span class="eyebrow">Manufacturer profiles</span>
+      <h2>Expertise from around the world</h2>
+      <p>Explore the manufacturers helping Somlab deliver reliable laboratory and diagnostic solutions.</p>
+    </div>
+    <div class="partner-grid">
+      {% for partner in partners %}
+      <article class="partner-card" id="partner-{{ partner.name|slugify }}">
+        {% if partner.website %}<a class="partner-card-link" href="{{ partner.website }}" target="_blank" rel="noopener noreferrer" aria-label="Visit {{ partner.name }} official website"><span class="sr-only">Visit {{ partner.name }} official website</span></a>{% endif %}
+        <div class="partner-logo-wrap">
+          {% if partner.logo %}<img src="{{ partner.logo.url }}" alt="{{ partner.name }} logo" loading="lazy" decoding="async">{% else %}<span class="partner-monogram">{{ partner.name|slice:":2"|upper }}</span>{% endif %}
+        </div>
+        <div class="partner-card-content">
+          <div class="partner-card-heading">
+            <h2>{{ partner.name }}</h2>
+            {% if partner.country %}<span>{{ partner.country }}</span>{% endif %}
+          </div>
+          <p>{{ partner.description|default:"Specialised laboratory and diagnostic solutions." }}</p>
+        </div>
+      </article>
+      {% empty %}
+        <div class="empty-state wide"><h3>Partner profiles are being prepared.</h3></div>
+      {% endfor %}
+    </div>
+    <p class="fine-print">Manufacturer and partner names are displayed for product identification. Representation status and logo permissions should be confirmed before production publication.</p>
+  </div>
+</section>
+{% endblock %}

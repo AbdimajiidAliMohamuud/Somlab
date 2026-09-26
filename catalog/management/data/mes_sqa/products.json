@@ -1,0 +1,857 @@
+{
+  "source": "https://mes-global.com/products/automated-semen-analysis-solutions/",
+  "expected_product_count": 39,
+  "catalogue_product_codes": [
+    "SQA-Vision",
+    "SQA-iOw",
+    "SQA-V Gold",
+    "QwikCheck Gold",
+    "MaleMan Reference Lab Services",
+    "YO Home Sperm Test Kit",
+    "MES-QWIKCHECK-TEST-KITS",
+    "MES-ADVANCED-TESTING-KITS",
+    "MES-QWIKCHECK-VALIDATION-KITS",
+    "MES-QWIKCHECK-SQA-SUPPLIES",
+    "SQA-Vb",
+    "SQA-Vp",
+    "SQA-Ve",
+    "SQA-Vt"
+  ],
+  "subcategories": [
+    {
+      "name": "Automated Semen Analysis Solutions",
+      "slug": "automated-semen-analysis-solutions",
+      "description": "MES automated semen-analysis systems for hospitals, fertility centres, reference laboratories and sperm banks."
+    },
+    {
+      "name": "MaleMan Reference Lab Services",
+      "slug": "maleman-reference-lab-services",
+      "description": "MES clinical reference-laboratory semen testing and at-home specimen-collection services for healthcare providers."
+    },
+    {
+      "name": "Consumer Semen Analysis Solutions",
+      "slug": "consumer-semen-analysis-solutions",
+      "description": "MES consumer semen-analysis products built around the YO Home Sperm Test platform."
+    },
+    {
+      "name": "Semen Analysis & Validation Kits",
+      "slug": "semen-analysis-validation-kits",
+      "description": "Official MES testing, advanced-assessment, validation and SQA supplies directly supporting automated semen-analysis workflows."
+    },
+    {
+      "name": "Veterinary Semen Analysis Solutions",
+      "slug": "veterinary-semen-analysis-solutions",
+      "description": "MES automated semen-analysis systems and species-specific data-management software for veterinary breeding programs."
+    }
+  ],
+  "products": [
+    {
+      "name": "SQA-Vision",
+      "slug": "sqa-vision-automated-semen-analyzer",
+      "code": "SQA-Vision",
+      "image_filename": "sqa-vision-automated-semen-analyzer.png",
+      "subcategory": "automated-semen-analysis-solutions",
+      "status": "listed",
+      "short_description": "Automated semen analysis with a 75-second test cycle across routine, fertility-preparation and specialist sample types.",
+      "description": "The SQA-Vision provides fully automated measurement of core semen parameters and supports semi-automated advanced assessments. MES positions the system for objective, standardised testing in andrology laboratories, with visualisation, WHO 6th Edition-compatible software and LIS/EMR connectivity.",
+      "specifications": [
+        ["Model", "SQA-Vision"],
+        ["Test cycle", "75 seconds"],
+        ["Sample types", "Fresh, IUI/IVF, washed, post-vasectomy, frozen, mail-in, longevity and manual count"],
+        ["Fully automated results", "Sperm concentration; motility; rapid, slow and non-progressive motility; normal morphology; functional sperm; velocity; and additional parameters"],
+        ["Semi-automated results", "DNA fragmentation (WHO 6th classifications), vitality, full differential morphology, debris/round cells, pH and WBC"],
+        ["Regulatory information", "FDA cleared; CLIA moderately complex; CAP/API proficiency; regulatory compliance in more than 50 countries"],
+        ["Software", "WHO 6th Edition compatible"],
+        ["Connectivity", "LIS/EMR interface capability"],
+        ["Manufacturer warranty", "1 year"]
+      ],
+      "source_url": "https://mes-global.com/products/automated-semen-analysis-solutions/sqa-vision-automated-semen-analyzer/"
+    },
+    {
+      "name": "SQA-iO | CLIA Waived",
+      "slug": "sqa-iow-automated-semen-analyzer",
+      "code": "SQA-iOw",
+      "image_filename": "sqa-iow-automated-analyzer.png",
+      "subcategory": "automated-semen-analysis-solutions",
+      "status": "listed",
+      "short_description": "A compact, web-based, FDA-cleared and CLIA-waived analyzer delivering WHO 6th Edition semen-analysis results in under 75 seconds.",
+      "description": "The SQA-iOw combines a web-based interface and compact format for diagnostic semen testing and sample-preparation quality control. It reports concentration, motility, morphology and additional parameters, and can integrate with the SQA-VU visualisation system and laboratory information systems.",
+      "specifications": [
+        ["Model", "SQA-iOw"],
+        ["Test time", "Under 75 seconds"],
+        ["Interface", "Web-based"],
+        ["Reported results", "Sperm concentration, motility, morphology and additional parameters"],
+        ["Regulatory information", "FDA cleared; CLIA waived"],
+        ["WHO edition", "6th Edition"],
+        ["Visualisation", "Integrates with the SQA-VU visualisation system"],
+        ["Connectivity", "Bidirectional LIS/EMR interface"]
+      ],
+      "source_url": "https://mes-global.com/products/automated-semen-analysis-solutions/sqa-io-automated-semen-analyzer/"
+    },
+    {
+      "name": "SQA-V Gold",
+      "slug": "sqa-v-gold-automated-semen-analyzer",
+      "code": "SQA-V Gold",
+      "subcategory": "automated-semen-analysis-solutions",
+      "status": "listed",
+      "short_description": "Automated sperm count, morphology, motility and 13 additional parameters with integrated visualisation and LIS transfer.",
+      "description": "The SQA-V Gold is an automated semen analyzer for fresh, washed, frozen and post-vasectomy samples. It requires no sample dilution, supports two sample-volume options and combines automated analysis with a 500× visualisation system.",
+      "specifications": [
+        ["Model", "SQA-V Gold"],
+        ["Reported results", "Sperm count, morphology, motility and 13 additional parameters"],
+        ["Sample preparation", "No sample dilution required"],
+        ["Sample volume options", "0.25 ml and 20 µl"],
+        ["Sample types", "Fresh, washed, frozen and post-vasectomy"],
+        ["Visualisation", "500× visualisation system"],
+        ["Connectivity", "LIS interface transfer capability"],
+        ["Proficiency", "Included on the CAP proficiency schedule"],
+        ["Market availability", "Not available in America or Canada"]
+      ],
+      "source_url": "https://mes-global.com/products/automated-semen-analysis-solutions/sqa-v-gold/"
+    },
+    {
+      "name": "QwikCheck Gold",
+      "slug": "qwikcheck-gold-automated-semen-analyzer",
+      "code": "QwikCheck Gold",
+      "subcategory": "automated-semen-analysis-solutions",
+      "status": "discontinued",
+      "short_description": "Discontinued MES automated analyzer for sperm count, morphology, motility and 13 additional parameters.",
+      "description": "QwikCheck Gold is a discontinued MES automated semen analyzer. The legacy system reports sperm count, morphology, motility and 13 additional parameters for fresh, washed, frozen and post-vasectomy samples, with archive software for result management.",
+      "specifications": [
+        ["Model", "QwikCheck Gold"],
+        ["Product status", "Discontinued"],
+        ["Reported results", "Sperm count, morphology, motility and 13 additional parameters"],
+        ["Sample preparation", "No sample dilution required"],
+        ["Sample volume options", "0.25 ml and 20 µl"],
+        ["Sample types", "Fresh, washed, frozen and post-vasectomy"],
+        ["Quality control", "Runs latex beads and is included on the CAP proficiency schedule"],
+        ["Software", "Archive software included"],
+        ["Market availability", "Not available in America or Canada"]
+      ],
+      "source_url": "https://mes-global.com/products/automated-semen-analysis-solutions/legacy-automated-semen-analyzers/"
+    },
+    {
+      "name": "QwikCheck Test Kits",
+      "slug": "qwikcheck-test-kits",
+      "code": "MES-QWIKCHECK-TEST-KITS",
+      "subcategory": "semen-analysis-validation-kits",
+      "status": "listed",
+      "short_description": "Problem-solving QwikCheck kits for manual and automated semen analysis, sample preparation and quality control.",
+      "description": "The official QwikCheck Test Kits family groups MES quality-control, dilution, liquefaction, vitality, test-strip quality-control, fixed-coverslip and WBC/pH reagent products.",
+      "specifications": [],
+      "source_url": "https://mes-global.com/products/semen-analysis-validation-kits/qwikcheck-test-kits/"
+    },
+    {
+      "name": "Advanced Testing Kits",
+      "slug": "advanced-testing-kits",
+      "code": "MES-ADVANCED-TESTING-KITS",
+      "subcategory": "semen-analysis-validation-kits",
+      "status": "listed",
+      "short_description": "MES advanced semen-testing kits for specialised laboratory assessment.",
+      "description": "The official Advanced Testing Kits family contains the QwikCheck DFI Kit for DNA Fragmentation Index testing using the Sperm Chromatin Dispersion method.",
+      "specifications": [],
+      "source_url": "https://mes-global.com/products/semen-analysis-validation-kits/advanced-testing-kits/"
+    },
+    {
+      "name": "QwikCheck Validation Kits",
+      "slug": "qwikcheck-validation-kits",
+      "code": "MES-QWIKCHECK-VALIDATION-KITS",
+      "subcategory": "semen-analysis-validation-kits",
+      "status": "listed",
+      "short_description": "QwikCheck kits for initial and semi-annual validation of SQA systems.",
+      "description": "The official QwikCheck Validation Kits family groups MES proficiency, training, precision and linearity products for validating SQA analyzers.",
+      "specifications": [],
+      "source_url": "https://mes-global.com/products/semen-analysis-validation-kits/validation-kits/"
+    },
+    {
+      "name": "QwikCheck & SQA Supplies",
+      "slug": "qwikcheck-sqa-supplies",
+      "code": "MES-QWIKCHECK-SQA-SUPPLIES",
+      "subcategory": "semen-analysis-validation-kits",
+      "status": "listed",
+      "short_description": "Official QwikCheck and SQA capillaries, reagent strips and morphology supplies.",
+      "description": "The official QwikCheck & SQA Supplies family groups low-volume and standard testing capillaries, fixed-coverslip slides, WBC/pH reagent strips and morphology slides.",
+      "specifications": [],
+      "source_url": "https://mes-global.com/products/semen-analysis-validation-kits/qwikcheck-sqa-supplies/"
+    },
+    {
+      "name": "QwikCheck™ Quality Control Beads",
+      "slug": "qwikcheck-quality-control-beads",
+      "code": "0200",
+      "image_filename": "qwikcheck-quality-control-beads.png",
+      "subcategory": "semen-analysis-validation-kits",
+      "status": "listed",
+      "short_description": "Three-level in-vitro quality-control material for assessing accuracy and precision in automated and manual sperm counting.",
+      "description": "QwikCheck Quality Control Beads provide known target values for laboratory sperm-counting quality control. MES identifies them for QwikCheck Gold, Spermalite, SQA-V Gold and SQA-Vision analyzers as well as manual counting chambers.",
+      "specifications": [
+        ["Product number", "0200"],
+        ["Levels", "3"],
+        ["Use", "In-vitro quality control for automated and manual sperm counting systems"],
+        ["Compatible analyzers", "QwikCheck Gold, Spermalite, SQA-V Gold and SQA-Vision"]
+      ],
+      "source_url": "https://mes-global.com/products/semen-analysis-validation-kits/qwikcheck-test-kits/"
+    },
+    {
+      "name": "QwikCheck™ Dilution Kit",
+      "slug": "qwikcheck-dilution-kit",
+      "code": "0800",
+      "image_filename": "qwikcheck-dilution-kit.png",
+      "subcategory": "semen-analysis-validation-kits",
+      "status": "listed",
+      "short_description": "Earl’s Balanced Salt solution for diluting semen before automated or manual testing.",
+      "description": "The QwikCheck Dilution Kit supports sperm motility and vitality during dilution. MES states that it can increase sample volume for fully automated low-volume testing on SQA sperm quality analyzers and is recommended by the WHO Manual.",
+      "specifications": [
+        ["Product number", "0800"],
+        ["Medium", "Earl’s Balanced Salt solution"],
+        ["Use", "Semen dilution before automated or manual testing"],
+        ["SQA application", "Increasing sample volume for fully automated low-volume testing"]
+      ],
+      "source_url": "https://mes-global.com/products/semen-analysis-validation-kits/qwikcheck-test-kits/"
+    },
+    {
+      "name": "QwikCheck™ Liquefaction Kit",
+      "slug": "qwikcheck-liquefaction-kit",
+      "code": "0900",
+      "image_filename": "qwikcheck-liquefaction-kit.png",
+      "subcategory": "semen-analysis-validation-kits",
+      "status": "listed",
+      "short_description": "Sample-preparation kit for promoting and accelerating liquefaction of highly viscous semen samples.",
+      "description": "The QwikCheck Liquefaction Kit prepares highly viscous samples for automated or manual semen analysis. MES also identifies use with agglutinated or aggregated samples and other conditions that prevent thorough mixing before analysis.",
+      "specifications": [
+        ["Product number", "0900"],
+        ["Use", "Promotes and accelerates liquefaction of highly viscous semen samples"],
+        ["Methods", "Automated and manual semen analysis"]
+      ],
+      "source_url": "https://mes-global.com/products/semen-analysis-validation-kits/qwikcheck-test-kits/"
+    },
+    {
+      "name": "QwikCheck™ 1-Step Vitality Stain",
+      "slug": "qwikcheck-1-step-vitality-stain",
+      "code": "A-CA-01057-00",
+      "image_filename": "qwikcheck-vitality-stain.png",
+      "subcategory": "semen-analysis-validation-kits",
+      "status": "listed",
+      "short_description": "One-step stain for grading live and dead sperm to supplement manual or automated motility results.",
+      "description": "The QwikCheck 1-Step Vitality Stain differentiates live from dead sperm cells. The kit contains five premixed vials and can be used with manual methods or the SQA-Vision Touch-to-Mark interface.",
+      "specifications": [
+        ["Product number", "A-CA-01057-00"],
+        ["Assessment", "Sperm vitality (live versus dead)"],
+        ["Contents", "5 premixed vials"],
+        ["Compatibility", "Manual methods and SQA-Vision Touch-to-Mark interface"]
+      ],
+      "source_url": "https://mes-global.com/products/semen-analysis-validation-kits/qwikcheck-test-kits/"
+    },
+    {
+      "name": "QwikCheck™ WBC/pH Test Strips Quality Control",
+      "slug": "qwikcheck-wbc-ph-test-strips-quality-control",
+      "code": "A-CA-01752-00",
+      "image_filename": "qwikcheck-test-strip-qc.png",
+      "subcategory": "semen-analysis-validation-kits",
+      "status": "listed",
+      "short_description": "Professional in-vitro quality control for QwikCheck semen pH and leukocyte test strips.",
+      "description": "QwikCheck Test Strip Quality Control validates the pH and WBC patches on QwikCheck Test Strips. Results are read by comparing the developed strip colours with the supplied colour chart.",
+      "specifications": [
+        ["Product number", "A-CA-01752-00"],
+        ["Use", "Validation of QwikCheck WBC/pH Test Strips"],
+        ["Analytes", "pH and leukocytes (WBC)"],
+        ["Intended user", "Professionals; in-vitro diagnostic use only"]
+      ],
+      "source_url": "https://mes-global.com/products/semen-analysis-validation-kits/qwikcheck-test-kits/"
+    },
+    {
+      "name": "QwikCheck™ Fixed Coverslip Slides",
+      "slug": "qwikcheck-fixed-coverslip-slides",
+      "code": "A-CA-01082-00",
+      "image_filename": "qwikcheck-fixed-coverslip-slides.png",
+      "subcategory": "semen-analysis-validation-kits",
+      "status": "listed",
+      "short_description": "Dual-chamber fixed-coverslip slides for routine manual and automated semen screening.",
+      "description": "QwikCheck Fixed Coverslip Slides use a precision fluid chamber to distribute sperm or quality-control material into one field of view. They load by capillary action and provide two chambers for duplicate counts.",
+      "specifications": [
+        ["Product number", "A-CA-01082-00"],
+        ["Sample volume", "Approximately 4 µl"],
+        ["Loading", "Capillary action"],
+        ["Chambers", "2 per slide"],
+        ["Methods", "Manual and automated semen screening"]
+      ],
+      "source_url": "https://mes-global.com/products/semen-analysis-validation-kits/qwikcheck-test-kits/"
+    },
+    {
+      "name": "QwikCheck™ WBC/pH Test Reagent Strips",
+      "slug": "qwikcheck-wbc-ph-test-reagent-strips",
+      "code": "0700",
+      "image_filename": "qwikcheck-reagent-strips.png",
+      "subcategory": "semen-analysis-validation-kits",
+      "status": "listed",
+      "short_description": "FDA-cleared professional test strips for determining pH and leukocytes in semen.",
+      "description": "QwikCheck WBC/pH Test Reagent Strips determine semen pH and leukocyte levels by colour comparison with the chart on the bottle. MES identifies them as the only FDA-cleared test strip designed specifically for semen.",
+      "specifications": [
+        ["Product number", "0700"],
+        ["Analytes", "pH and leukocytes (WBC) in semen"],
+        ["Result method", "Colour comparison"],
+        ["Regulatory information", "FDA cleared"],
+        ["Intended user", "Professional use only"]
+      ],
+      "source_url": "https://mes-global.com/products/semen-analysis-validation-kits/qwikcheck-test-kits/"
+    },
+    {
+      "name": "QwikCheck™ DFI Kit DNA Fragmentation",
+      "slug": "qwikcheck-dfi-kit-dna-fragmentation",
+      "code": "A-CA-01873-00",
+      "image_filename": "qwikcheck-dfi-kit.png",
+      "subcategory": "semen-analysis-validation-kits",
+      "status": "listed",
+      "short_description": "In-vitro diagnostic kit for sperm DNA Fragmentation Index assessment using the SCD method.",
+      "description": "The QwikCheck DFI Kit prepares slides for DNA Fragmentation Index assessment using the Sperm Chromatin Dispersion method and WHO 6th Edition five-category methodology. Evaluation can be performed with a microscope or the SQA-Vision analyzer.",
+      "specifications": [
+        ["Product number", "A-CA-01873-00"],
+        ["Method", "Sperm Chromatin Dispersion (SCD)"],
+        ["Methodology", "WHO 6th Edition, five categories"],
+        ["Compatibility", "Microscope or SQA-Vision Automated Sperm Quality Analyzer"],
+        ["Tests", "10"]
+      ],
+      "source_url": "https://mes-global.com/products/semen-analysis-validation-kits/advanced-testing-kits/"
+    },
+    {
+      "name": "QwikCheck Beads™ Proficiency and Training Kit",
+      "slug": "qwikcheck-beads-proficiency-training-kit",
+      "code": "A-CA-00691-00",
+      "image_filename": "qwikcheck-proficiency-training-kit.png",
+      "subcategory": "semen-analysis-validation-kits",
+      "status": "listed",
+      "short_description": "Initial proficiency, training and validation kit for bringing SQA instruments online.",
+      "description": "The QwikCheck Beads Proficiency and Training Kit supports initial accuracy, linearity, precision and lower-limit-detection studies for SQA-V and SQA-Vision analyzers. MES also includes protocols for backup-method comparison and data analysis.",
+      "specifications": [
+        ["Product number", "A-CA-00691-00"],
+        ["Validation stage", "Initial"],
+        ["Studies", "Accuracy, linearity, precision and lower limit detection"],
+        ["Compatible analyzers", "SQA-V and SQA-Vision"]
+      ],
+      "source_url": "https://mes-global.com/products/semen-analysis-validation-kits/validation-kits/"
+    },
+    {
+      "name": "QwikCheck™ Beads Precision and Linearity Kit",
+      "slug": "qwikcheck-beads-precision-linearity-kit",
+      "code": "A-CA-01188-00",
+      "image_filename": "qwikcheck-precision-linearity-kit.png",
+      "subcategory": "semen-analysis-validation-kits",
+      "status": "listed",
+      "short_description": "Semi-annual SQA system mini-validation kit for precision, detection limit, accuracy and linearity.",
+      "description": "The QwikCheck Beads Precision and Linearity Kit is MES’s recommended semi-annual validation tool for SQA-V and SQA-Vision analyzers. It supports linearity, repeatability, lower-limit-detection and concentration-accuracy checks.",
+      "specifications": [
+        ["Product number", "A-CA-01188-00"],
+        ["Validation interval", "Semi-annual"],
+        ["Studies", "Repeatability, lower limit detection, accuracy and linearity"],
+        ["Compatible analyzers", "SQA-V and SQA-Vision"]
+      ],
+      "source_url": "https://mes-global.com/products/semen-analysis-validation-kits/validation-kits/"
+    },
+    {
+      "name": "SQA - Low Volume Testing Capillary",
+      "slug": "sqa-low-volume-testing-capillary",
+      "code": "A-CA-02089-00",
+      "image_filename": "sqa-low-volume-testing-capillary.png",
+      "subcategory": "semen-analysis-validation-kits",
+      "status": "listed",
+      "short_description": "Low-volume SQA capillary for automated testing of washed, frozen and fertility-preparation samples.",
+      "description": "The SQA Low Volume Testing Capillary is designed for washed, frozen and other IUI/IVF fertility preparations. MES specifies a 10-microlitre sample for assessing motile and progressive counts, total counts, velocity and additional parameters.",
+      "specifications": [
+        ["Product number", "A-CA-02089-00"],
+        ["Sample volume", "10 µl"],
+        ["Sample types", "Washed, frozen and other IUI/IVF fertility preparations"],
+        ["Reported assessments", "Motile and progressive motile sperm counts, total motile and progressive counts, velocity and additional parameters"]
+      ],
+      "source_url": "https://mes-global.com/products/semen-analysis-validation-kits/qwikcheck-sqa-supplies/"
+    },
+    {
+      "name": "SQA - Testing Capillary",
+      "slug": "sqa-testing-capillary",
+      "code": "4021-0",
+      "image_filename": "sqa-testing-capillary.png",
+      "subcategory": "semen-analysis-validation-kits",
+      "status": "listed",
+      "short_description": "Standard SQA testing capillary for fresh, washed, frozen and other fertility samples.",
+      "description": "The standard SQA Testing Capillary supports concentration, motility, morphology, motile and progressive sperm counts, total counts, velocity and additional assessments across fresh and prepared samples.",
+      "specifications": [
+        ["Product number", "4021-0"],
+        ["Pack size", "50 capillaries"],
+        ["Sample types", "Fresh, washed, frozen and other fertility preparations"],
+        ["Reported assessments", "Concentration, motility, normal morphology, motile and progressive counts, total counts, velocity and additional parameters"]
+      ],
+      "source_url": "https://mes-global.com/products/semen-analysis-validation-kits/qwikcheck-sqa-supplies/"
+    },
+    {
+      "name": "QwikCheck™ 1-Step Morphology Slides",
+      "slug": "qwikcheck-1-step-morphology-slides",
+      "code": "VS-CA-01108-00",
+      "image_filename": "qwikcheck-morphology-slides.png",
+      "subcategory": "semen-analysis-validation-kits",
+      "status": "listed",
+      "short_description": "Pre-coated rapid-staining slides for detailed morphology assessment with SQA-Vision or microscopy.",
+      "description": "QwikCheck 1-Step Morphology Slides use a dried staining layer for rapid sperm morphology assessment. MES designed them for SQA-Vision analyzers and microscopy to differentiate normal cells and classify defects, WBCs and pinheads.",
+      "specifications": [
+        ["Product number", "VS-CA-01108-00"],
+        ["Use", "Rapid staining for detailed sperm morphology assessment"],
+        ["Compatibility", "SQA-Vision Automated Sperm Quality Analyzer and microscopy"],
+        ["Assessment", "Normal and abnormal sperm morphology, WBCs and pinheads"]
+      ],
+      "source_url": "https://mes-global.com/products/semen-analysis-validation-kits/qwikcheck-sqa-supplies/"
+    },
+    {
+      "name": "Bi-Directional LIS/EMR Interface",
+      "slug": "bi-directional-lis-emr-interface",
+      "code": "Bi-Directional LIS/EMR Interface",
+      "image_filename": "bidirectional-lis-emr-interface.png",
+      "subcategory": "automated-semen-analysis-solutions",
+      "status": "listed",
+      "short_description": "MES interface for exchanging patient demographics and semen-analysis results between the SQA-Vision and laboratory systems.",
+      "description": "The MES Bi-Directional LIS/EMR Interface connects the SQA-Vision with leading laboratory and electronic medical record systems. It receives patient demographics, supports barcode-driven sample identification and transmits completed semen-analysis results back to the connected system.",
+      "specifications": [
+        ["Compatible analyzer", "SQA-Vision"],
+        ["Data exchange", "Patient demographics and completed test results"],
+        ["Workflow", "Barcode-supported bidirectional transfer"],
+        ["SQA-iO integration", "Under development"]
+      ],
+      "source_url": "https://mes-global.com/products/automated-semen-analysis-solutions/bi-directional-lis-interface/"
+    },
+    {
+      "name": "SQA-VU Visualization System",
+      "slug": "sqa-vu-visualization-system",
+      "code": "SQA-VU Visualization System",
+      "image_filename": "sqa-vu-visualization-system.png",
+      "subcategory": "automated-semen-analysis-solutions",
+      "status": "listed",
+      "short_description": "Visualization system supplied with the SQA-iO for viewing samples and capturing semen-analysis images and video.",
+      "description": "The SQA-VU Visualization System is an official component of the SQA-iO system. MES describes it as providing live sample viewing plus image and video capture through the SQA-iO application.",
+      "specifications": [
+        ["Parent system", "SQA-iO"],
+        ["Functions", "Live viewing, image capture and video capture"],
+        ["Integration", "SQA-iO application"]
+      ],
+      "source_url": "https://mes-global.com/products/automated-semen-analysis-solutions/sqa-io-automated-semen-analyzer/"
+    },
+    {
+      "name": "Docking Station for SQA-iOw + VU",
+      "slug": "docking-station-for-sqa-iow-vu",
+      "code": "Docking Station for SQA-iOw + VU",
+      "image_filename": "sqa-io-vu-docking-station.png",
+      "subcategory": "automated-semen-analysis-solutions",
+      "status": "listed",
+      "short_description": "Official docking station included with the SQA-iO and SQA-VU visualization system.",
+      "description": "MES lists the Docking Station for SQA-iOw + VU among the components included with its complete SQA-iO automated semen-analysis system.",
+      "specifications": [
+        ["Parent system", "SQA-iO"],
+        ["Compatibility", "SQA-iOw analyzer and SQA-VU visualization system"]
+      ],
+      "source_url": "https://mes-global.com/products/automated-semen-analysis-solutions/sqa-io-automated-semen-analyzer/"
+    },
+    {
+      "name": "Desktop PC + Monitor",
+      "slug": "sqa-io-desktop-pc-monitor",
+      "code": "Desktop PC + Monitor",
+      "image_filename": "sqa-io-desktop-pc-monitor.png",
+      "subcategory": "automated-semen-analysis-solutions",
+      "status": "listed",
+      "short_description": "Computer and monitor package included with the SQA-iO system in the United States and Canada.",
+      "description": "MES lists a Desktop PC + Monitor as part of the complete SQA-iO system supplied in the United States and Canada.",
+      "specifications": [
+        ["Parent system", "SQA-iO"],
+        ["Included markets", "United States and Canada only"]
+      ],
+      "source_url": "https://mes-global.com/products/automated-semen-analysis-solutions/sqa-io-automated-semen-analyzer/"
+    },
+    {
+      "name": "SQA Semen Analysis Test Kit",
+      "slug": "sqa-semen-analysis-test-kit",
+      "code": "SQA Semen Analysis Test Kit",
+      "image_filename": "sqa-semen-analysis-test-kit.png",
+      "subcategory": "automated-semen-analysis-solutions",
+      "status": "listed",
+      "short_description": "Official semen-analysis test kit included with the SQA-iO automated analyzer system.",
+      "description": "MES includes the SQA Semen Analysis Test Kit with the SQA-iO system for its semen-analysis workflow.",
+      "specifications": [
+        ["Parent system", "SQA-iO"],
+        ["Product type", "Semen-analysis test kit"]
+      ],
+      "source_url": "https://mes-global.com/products/automated-semen-analysis-solutions/sqa-io-automated-semen-analyzer/"
+    },
+    {
+      "name": "SQA QC & Cleaning Kit",
+      "slug": "sqa-qc-cleaning-kit",
+      "code": "SQA QC & Cleaning Kit",
+      "image_filename": "sqa-qc-cleaning-kit.png",
+      "subcategory": "automated-semen-analysis-solutions",
+      "status": "listed",
+      "short_description": "Quality-control and cleaning kit included with the SQA-iO automated analyzer system.",
+      "description": "MES includes the SQA QC & Cleaning Kit with the SQA-iO system to support quality control and analyzer maintenance.",
+      "specifications": [
+        ["Parent system", "SQA-iO"],
+        ["Functions", "Quality control and cleaning"]
+      ],
+      "source_url": "https://mes-global.com/products/automated-semen-analysis-solutions/sqa-io-automated-semen-analyzer/"
+    },
+    {
+      "name": "MaleMan Reference Lab Services",
+      "slug": "maleman-reference-lab-services",
+      "code": "MaleMan Reference Lab Services",
+      "subcategory": "maleman-reference-lab-services",
+      "status": "listed",
+      "short_description": "MES reference-laboratory semen-testing service with at-home collection and provider-facing results.",
+      "description": "MaleMan is the MES reference-laboratory service for healthcare providers. MES supplies at-home specimen-collection kits, performs testing in its CLIA-certified and CAP-accredited laboratory using the SQA-Vision, and supports white-label and private-label programs.",
+      "specifications": [
+        ["Service", "Clinical reference-laboratory semen testing"],
+        ["Collection", "At-home specimen-collection kits"],
+        ["Laboratory", "CLIA certified and CAP accredited"],
+        ["Analysis platform", "SQA-Vision"],
+        ["Program options", "White label and private label"]
+      ],
+      "source_url": "https://mes-global.com/products/maleman/"
+    },
+    {
+      "name": "YO Home Sperm Test Kit",
+      "slug": "yo-home-sperm-test-kit",
+      "code": "YO Home Sperm Test Kit",
+      "subcategory": "consumer-semen-analysis-solutions",
+      "status": "listed",
+      "short_description": "At-home, smartphone-based sperm test reporting five semen parameters and a live sample video.",
+      "description": "The YO Home Sperm Test Kit is an over-the-counter, smartphone-based semen-analysis product. MES states that it reports five sperm parameters, displays a live sample video and includes supplies for three tests without requiring the sample to be shipped to a laboratory.",
+      "specifications": [
+        ["Test setting", "At home"],
+        ["Platform", "Smartphone and YO app"],
+        ["Reported output", "Five sperm parameters and live sample video"],
+        ["Tests included", "3"],
+        ["Regulatory information", "FDA and CE cleared"]
+      ],
+      "source_url": "https://mes-global.com/products/consumer-semen-analysis-solutions/yo-home-sperm-test-kit/"
+    },
+    {
+      "name": "YO Testing Device",
+      "slug": "yo-testing-device",
+      "code": "YO Testing Device",
+      "subcategory": "consumer-semen-analysis-solutions",
+      "status": "listed",
+      "short_description": "Smartphone-connected testing device supplied in the YO Home Sperm Test Kit.",
+      "description": "MES lists the YO Testing Device as the reusable device included in the YO Home Sperm Test Kit. It works with a compatible smartphone and the YO application to analyze the prepared sample.",
+      "specifications": [
+        ["Parent product", "YO Home Sperm Test Kit"],
+        ["Platform", "Compatible smartphone and YO application"]
+      ],
+      "source_url": "https://mes-global.com/products/consumer-semen-analysis-solutions/yo-home-sperm-test-kit/"
+    },
+    {
+      "name": "YO 3 Test Refill Kit",
+      "slug": "yo-3-test-refill-kit",
+      "code": "YO 3 Test Refill Kit",
+      "subcategory": "consumer-semen-analysis-solutions",
+      "status": "listed",
+      "short_description": "Official three-test refill kit for the reusable YO Home Sperm Test device.",
+      "description": "MES identifies the YO 3 Test Refill Kit as the refill option available for customers who already have the reusable YO testing device.",
+      "specifications": [
+        ["Compatibility", "YO Home Sperm Test"],
+        ["Tests", "3"]
+      ],
+      "source_url": "https://mes-global.com/products/consumer-semen-analysis-solutions/yo-home-sperm-test-kit/"
+    },
+    {
+      "name": "SQA-Vb - Bovine Semen Quality Analyzer",
+      "slug": "sqa-vb-bovine-semen-quality-analyzer",
+      "code": "SQA-Vb",
+      "subcategory": "veterinary-semen-analysis-solutions",
+      "status": "listed",
+      "short_description": "Automated bovine semen analyzer delivering quantitative bull-semen evaluation in less than one minute.",
+      "description": "The SQA-Vb is MES's automated system for quantitative bull-semen evaluation. It provides results in less than one minute and is supplied with a computer and B-Sperm data-management software for breeding-program workflows.",
+      "specifications": [
+        ["Model", "SQA-Vb"],
+        ["Species", "Bovine"],
+        ["Analysis time", "Less than one minute"],
+        ["Included software", "B-Sperm Data Management Software"]
+      ],
+      "source_url": "https://mes-global.com/products/veterinary-semen-analysis-solutions/sqa-vb-bovine-semen-quality-analyzer/"
+    },
+    {
+      "name": "B-Sperm Data Management Software",
+      "slug": "b-sperm-data-management-software",
+      "code": "B-Sperm Data Management Software",
+      "subcategory": "veterinary-semen-analysis-solutions",
+      "status": "listed",
+      "short_description": "Bovine semen-analysis data-management software supplied with the SQA-Vb.",
+      "description": "MES supplies B-Sperm Data Management Software with the SQA-Vb bovine semen quality analyzer to support bull-semen analysis records and breeding-program workflows.",
+      "specifications": [
+        ["Parent system", "SQA-Vb"],
+        ["Species", "Bovine"],
+        ["Product type", "Data-management software"]
+      ],
+      "source_url": "https://mes-global.com/products/veterinary-semen-analysis-solutions/sqa-vb-bovine-semen-quality-analyzer/"
+    },
+    {
+      "name": "SQA-Vp - Porcine Semen Quality Analyzer",
+      "slug": "sqa-vp-porcine-semen-quality-analyzer",
+      "code": "SQA-Vp",
+      "subcategory": "veterinary-semen-analysis-solutions",
+      "status": "listed",
+      "short_description": "Automated porcine semen analyzer delivering quantitative boar-semen evaluation in less than one minute.",
+      "description": "The SQA-Vp is MES's automated system for quantitative boar-semen evaluation. It provides results in less than one minute and uses a preheated testing capillary with temperature control. MES supplies the system with a computer and P-Sperm software.",
+      "specifications": [
+        ["Model", "SQA-Vp"],
+        ["Species", "Porcine"],
+        ["Analysis time", "Less than one minute"],
+        ["Sample handling", "Preheated testing capillary and temperature control"],
+        ["Included software", "P-Sperm Data Management Software"]
+      ],
+      "source_url": "https://mes-global.com/products/veterinary-semen-analysis-solutions/sqa-vp-porcine-semen-quality-analyzer/"
+    },
+    {
+      "name": "P-Sperm Data Management Software",
+      "slug": "p-sperm-data-management-software",
+      "code": "P-Sperm Data Management Software",
+      "subcategory": "veterinary-semen-analysis-solutions",
+      "status": "listed",
+      "short_description": "Porcine semen-analysis data-management software supplied with the SQA-Vp.",
+      "description": "MES supplies P-Sperm Data Management Software with the SQA-Vp porcine semen quality analyzer for boar-semen analysis data and breeding-program workflows.",
+      "specifications": [
+        ["Parent system", "SQA-Vp"],
+        ["Species", "Porcine"],
+        ["Product type", "Data-management software"]
+      ],
+      "source_url": "https://mes-global.com/products/veterinary-semen-analysis-solutions/sqa-vp-porcine-semen-quality-analyzer/"
+    },
+    {
+      "name": "SQA-Ve - Equine Semen Quality Analyzer",
+      "slug": "sqa-ve-equine-semen-quality-analyzer",
+      "code": "SQA-Ve",
+      "subcategory": "veterinary-semen-analysis-solutions",
+      "status": "listed",
+      "short_description": "Automated equine semen analyzer for raw, extended and cooled stallion samples with results in about two minutes.",
+      "description": "The SQA-Ve is MES's automated system for raw, extended and cooled stallion-semen samples. It provides quantitative analysis in approximately two minutes and is supplied with a computer and E-Sperm data-management software.",
+      "specifications": [
+        ["Model", "SQA-Ve"],
+        ["Species", "Equine"],
+        ["Analysis time", "Approximately two minutes"],
+        ["Sample types", "Raw, extended and cooled semen"],
+        ["Included software", "E-Sperm Data Management Software"],
+        ["Market availability", "Not available in the United States"]
+      ],
+      "source_url": "https://mes-global.com/products/veterinary-semen-analysis-solutions/sqa-ve-equine-semen-quality-analyzer/"
+    },
+    {
+      "name": "E-Sperm Data Management Software",
+      "slug": "e-sperm-data-management-software",
+      "code": "E-Sperm Data Management Software",
+      "subcategory": "veterinary-semen-analysis-solutions",
+      "status": "listed",
+      "short_description": "Equine semen-analysis data-management software supplied with the SQA-Ve.",
+      "description": "MES supplies E-Sperm Data Management Software with the SQA-Ve equine semen quality analyzer for stallion-semen analysis data and breeding-program workflows.",
+      "specifications": [
+        ["Parent system", "SQA-Ve"],
+        ["Species", "Equine"],
+        ["Product type", "Data-management software"]
+      ],
+      "source_url": "https://mes-global.com/products/veterinary-semen-analysis-solutions/sqa-ve-equine-semen-quality-analyzer/"
+    },
+    {
+      "name": "SQA-Vt - Avian Semen Quality Analyzer",
+      "slug": "sqa-vt-avian-semen-quality-analyzer",
+      "code": "SQA-Vt",
+      "subcategory": "veterinary-semen-analysis-solutions",
+      "status": "listed",
+      "short_description": "Automated avian semen analyzer delivering quantitative turkey-semen evaluation in less than one minute.",
+      "description": "The SQA-Vt is MES's automated system for quantitative turkey-semen evaluation. It provides results in less than one minute and is supplied with a computer and T-Sperm flock-management software.",
+      "specifications": [
+        ["Model", "SQA-Vt"],
+        ["Species", "Avian (turkey)"],
+        ["Analysis time", "Less than one minute"],
+        ["Included software", "T-Sperm Flock Management Software"]
+      ],
+      "source_url": "https://mes-global.com/products/veterinary-semen-analysis-solutions/sqa-vt-avian-semen-quality-analyzer/"
+    },
+    {
+      "name": "T-Sperm Flock Management Software",
+      "slug": "t-sperm-flock-management-software",
+      "code": "T-Sperm Flock Management Software",
+      "subcategory": "veterinary-semen-analysis-solutions",
+      "status": "listed",
+      "short_description": "Avian flock-management software supplied with the SQA-Vt semen quality analyzer.",
+      "description": "MES supplies T-Sperm Flock Management Software with the SQA-Vt. MES identifies archive, quality-control, video and sorting functions for managing turkey-semen and flock records.",
+      "specifications": [
+        ["Parent system", "SQA-Vt"],
+        ["Species", "Avian (turkey)"],
+        ["Functions", "Archive, quality control, video and sorting"],
+        ["Product type", "Flock-management software"]
+      ],
+      "source_url": "https://mes-global.com/products/veterinary-semen-analysis-solutions/sqa-vt-avian-semen-quality-analyzer/"
+    }
+  ],
+  "relationships": [
+    {
+      "parent_code": "SQA-iOw",
+      "items": [
+        {
+          "code": "SQA-iOw",
+          "name": "SQA-iOw Automated Analyzer",
+          "image_filename": "sqa-iow-automated-analyzer.png",
+          "type": "included item",
+          "description": "The FDA-cleared, CLIA-waived SQA-iOw delivers precise WHO 6th Edition results for sperm concentration, motility, morphology, and much more in under 75 seconds. Built for compliance and ease of use, it is backed by 25 years of global experience and customer support."
+        },
+        {
+          "code": "SQA-VU Visualization System",
+          "name": "SQA-VU Visualization System",
+          "image_filename": "sqa-vu-visualization-system.png",
+          "type": "included item",
+          "description": "The SQA-Vu is a visual interface that integrates with the SQA-iOw App, allowing users to view samples in real time and easily capture images and record videos."
+        },
+        {
+          "code": "Docking Station for SQA-iOw + VU",
+          "name": "Docking Station for SQA-iOw + VU",
+          "image_filename": "sqa-io-vu-docking-station.png",
+          "type": "included item",
+          "description": "The SQA Docking Station offers a streamlined, space-saving solution for securely integrating the SQA-iOw and SQA-VU, ensuring reliable connectivity and an organized workspace for efficient diagnostic testing."
+        },
+        {
+          "code": "Desktop PC + Monitor",
+          "name": "Desktop PC + Monitor",
+          "image_filename": "sqa-io-desktop-pc-monitor.png",
+          "type": "included item",
+          "description": "The Desktop PC & Monitor is a user-friendly computer designed to work directly with the SQA-iOw Semen Analyzer. Featuring an intuitive interface, it simplifies data entry, results visualization, and system operation. Only included in USA & Canada markets."
+        },
+        {
+          "code": "SQA Semen Analysis Test Kit",
+          "name": "SQA Semen Analysis Test Kit",
+          "image_filename": "sqa-semen-analysis-test-kit.png",
+          "type": "included item",
+          "description": "The SQA Semen Analysis Test Kit delivers essential consumables for routine semen analysis, WBC/pH screening, and sample liquefaction, supporting efficient workflows and standardized testing when used with SQA analyzers."
+        },
+        {
+          "code": "SQA QC & Cleaning Kit",
+          "name": "SQA QC & Cleaning Kit",
+          "image_filename": "sqa-qc-cleaning-kit.png",
+          "type": "included item",
+          "description": "The QC & Cleaning Kit is perfect for the SQA-iOw, supporting routine quality control testing and device maintenance in laboratory settings. It helps verify system performance using standardized QC materials while supporting ongoing quality assurance practices."
+        },
+        {
+          "code": "A-CA-01082-00",
+          "name": "QwikCheck Fixed Coverslip Slides",
+          "image_filename": "qwikcheck-fixed-coverslip-slides.png",
+          "type": "included item",
+          "description": "QwikCheck Fixed Coverslip Slides are designed for sample visualization, featuring a dual-chamber design that evenly distributes ~4 µL samples for clear, consistent viewing."
+        },
+        {
+          "code": "A-CA-00691-00",
+          "name": "QwikCheck Proficiency & Training Kit",
+          "image_filename": "qwikcheck-proficiency-training-kit.png",
+          "type": "included item",
+          "description": "The QwikCheck Proficiency & Training Kit supports CLIA-compliant validation of new SQA analyzers, including accuracy, precision, and linearity, with complimentary data analysis and training support."
+        }
+      ]
+    },
+    {
+      "parent_code": "MES-QWIKCHECK-TEST-KITS",
+      "items": [
+        {
+          "code": "0200",
+          "type": "included product",
+          "image_filename": "qwikcheck-quality-control-beads.png",
+          "source_image_url": "https://mes-global.com/wp-content/uploads/2024/09/Beads3-1024x576.png"
+        },
+        {
+          "code": "0800",
+          "type": "included product",
+          "image_filename": "qwikcheck-dilution-kit.png",
+          "source_image_url": "https://mes-global.com/wp-content/uploads/2024/09/Dilution3-1024x576.png"
+        },
+        {
+          "code": "0900",
+          "type": "included product",
+          "image_filename": "qwikcheck-liquefaction-kit.png",
+          "source_image_url": "https://mes-global.com/wp-content/uploads/2024/09/Liquefaction3-1024x576.png"
+        },
+        {
+          "code": "A-CA-01057-00",
+          "type": "included product",
+          "image_filename": "qwikcheck-vitality-stain.png",
+          "source_image_url": "https://mes-global.com/wp-content/uploads/2024/09/Vitality3-1024x576.png"
+        },
+        {
+          "code": "A-CA-01752-00",
+          "type": "included product",
+          "image_filename": "qwikcheck-test-strip-qc.png",
+          "source_image_url": "https://mes-global.com/wp-content/uploads/2024/09/Test-Strip-QC3-1024x576.png"
+        },
+        {
+          "code": "A-CA-01082-00",
+          "type": "included product",
+          "image_filename": "qwikcheck-fixed-coverslip-slides.png",
+          "source_image_url": "https://mes-global.com/wp-content/uploads/2024/09/Fixed-Coverslipslide3-1024x576.png"
+        },
+        {
+          "code": "0700",
+          "type": "included product",
+          "image_filename": "qwikcheck-reagent-strips.png",
+          "source_image_url": "https://mes-global.com/wp-content/uploads/2026/06/Reagent-Strips_2026-1440p-1024x576.png"
+        }
+      ]
+    },
+    {
+      "parent_code": "MES-ADVANCED-TESTING-KITS",
+      "items": [
+        {
+          "code": "A-CA-01873-00",
+          "type": "included product",
+          "image_filename": "qwikcheck-dfi-kit.png",
+          "source_image_url": "https://mes-global.com/wp-content/uploads/2025/05/0002-1024x802.png"
+        }
+      ]
+    },
+    {
+      "parent_code": "MES-QWIKCHECK-VALIDATION-KITS",
+      "items": [
+        {
+          "code": "A-CA-00691-00",
+          "type": "included product",
+          "image_filename": "qwikcheck-proficiency-training-kit.png",
+          "source_image_url": "https://mes-global.com/wp-content/uploads/2024/09/Proficiency-Training-Kit3-1024x576.png"
+        },
+        {
+          "code": "A-CA-01188-00",
+          "type": "included product",
+          "image_filename": "qwikcheck-precision-linearity-kit.png",
+          "source_image_url": "https://mes-global.com/wp-content/uploads/2024/09/Precision-Linearity-Kit3-1024x576.png"
+        }
+      ]
+    },
+    {
+      "parent_code": "MES-QWIKCHECK-SQA-SUPPLIES",
+      "items": [
+        {
+          "code": "A-CA-02089-00",
+          "type": "included product",
+          "image_filename": "sqa-low-volume-testing-capillary.png",
+          "source_image_url": "https://mes-global.com/wp-content/uploads/2024/09/Low-Volume-Testing-Capillaries3-1024x576.png"
+        },
+        {
+          "code": "4021-0",
+          "type": "included product",
+          "image_filename": "sqa-testing-capillary.png",
+          "source_image_url": "https://mes-global.com/wp-content/uploads/2024/09/Testing-Capillaries3-1024x576.png"
+        },
+        {
+          "code": "A-CA-01082-00",
+          "type": "included product",
+          "image_filename": "qwikcheck-fixed-coverslip-slides.png",
+          "source_image_url": "https://mes-global.com/wp-content/uploads/2024/09/Fixed-Coverslipslide3-1024x576.png"
+        },
+        {
+          "code": "0700",
+          "type": "included product",
+          "image_filename": "qwikcheck-reagent-strips.png",
+          "source_image_url": "https://mes-global.com/wp-content/uploads/2026/06/Reagent-Strips_2026-1440p-1024x576.png"
+        },
+        {
+          "code": "VS-CA-01108-00",
+          "type": "included product",
+          "image_filename": "qwikcheck-morphology-slides.png",
+          "source_image_url": "https://mes-global.com/wp-content/uploads/2024/07/Morphology-Slide-1024x1024.png"
+        }
+      ]
+    }
+  ]
+}

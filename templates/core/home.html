@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block title %}Somlab Diagnostics — Laboratory solutions that perform{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="hero-orb hero-orb-one"></div><div class="hero-orb hero-orb-two"></div>
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Laboratory solutions across East Africa</span>
+      <h1>Confidence in every <span>diagnostic result.</span></h1>
+      <p>Quality equipment, reagents and technical expertise for hospitals, laboratories, universities and clinics.</p>
+      <div class="hero-actions"><a class="btn btn-primary" href="{% url 'product_list' %}">Explore products <span>→</span></a><a class="btn btn-secondary" href="{% url 'contact' %}">Talk to our team</a></div>
+      <div class="trust-row"><div><strong>7</strong><span>Product areas</span></div><div><strong>Regional</strong><span>Technical support</span></div><div><strong>End-to-end</strong><span>Laboratory solutions</span></div></div>
+    </div>
+    <div class="hero-visual hero-quality-visual">
+      <figure class="hero-photo-panel hero-partner-panel" aria-label="Somlab quality manufacturing partners">
+        <div class="hero-partner-logos" data-quality-logo-carousel aria-label="Somlab quality partners">
+          {% for partner in quality_partners %}
+          <a class="hero-partner-logo{% if forloop.first %} is-active{% endif %}" href="{{ partner.product_url }}" aria-label="View {{ partner.name }} products" data-brand="{{ partner.product_brand_slug }}"{% if not forloop.first %} aria-hidden="true" tabindex="-1"{% endif %}>
+            {% if partner.logo %}<img src="{{ partner.logo.url }}" alt="{{ partner.name }} logo" decoding="async" data-manufacturer-logo>{% else %}<span>{{ partner.name }}</span>{% endif %}
+          </a>
+          {% endfor %}
+        </div>
+        <div class="hero-photo-heading">
+          <span>Somlab Quality Standard</span>
+        </div>
+        <div class="hero-photo-card hero-photo-card-quality">
+          <b aria-hidden="true">✓</b>
+          <span><strong>Verified quality</strong><small>Trusted manufacturers</small></span>
+        </div>
+        <div class="hero-photo-card hero-photo-card-support">
+          <b aria-hidden="true">↗</b>
+          <span><strong>Technical support</strong><small>From install to uptime</small></span>
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="search-band">
+  <div class="container smart-search-wrap" data-smart-search data-suggestions-url="{% url 'product_suggestions' %}">
+    <form class="home-search" action="{% url 'product_list' %}" role="search"><span aria-hidden="true">⌕</span><input name="q" placeholder="Search by our product" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="product-search-suggestions"><button>Search catalogue</button></form>
+    <div class="search-suggestions" id="product-search-suggestions" role="listbox" aria-label="Product suggestions" hidden></div>
+  </div>
+</section>
+
+<section class="section home-partners-section">
+  <div class="container">
+    <div class="center-heading"><span class="eyebrow">Trusted network</span><h2>Working with leading manufacturers</h2><p>Access to specialised laboratory products from established international brands.</p></div>
+  </div>
+  {% include "core/_partner_marquee.html" with marquee_label="Trusted manufacturing partners" link_to_catalogue=True %}
+</section>
+
+{% if customers %}
+<section class="section home-customers-section">
+  <div class="container">
+    <div class="center-heading"><h2>Trusted by leading healthcare organizations</h2></div>
+  </div>
+  {% include "core/_customer_marquee.html" with marquee_label="Trusted healthcare organizations" %}
+</section>
+{% endif %}
+
+<section class="home-stats" aria-label="Somlab at a glance">
+  <div class="container home-stats-grid">
+    {% for statistic in home_statistics %}
+    <div class="home-stat">
+      <strong{% if statistic.animate %} data-counter data-counter-target="{{ statistic.value }}"{% endif %} aria-label="{{ statistic.value }} {{ statistic.label }}">{{ statistic.value }}</strong>
+      <span>{{ statistic.label }}</span>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="container solution-split">
+    <div class="solution-visual"><div class="molecule">{% for i in "1234567" %}<i></i>{% endfor %}</div><span class="solution-badge">Since 2022</span></div>
+    <div class="solution-copy"><span class="eyebrow">More than a supplier</span><h2>A partner in laboratory performance.</h2><p>Somlab Diagnostics combines an extensive product range with installation, staff training, maintenance and project support—helping your laboratory perform reliably from day one.</p><ul class="check-list"><li>International diagnostic brands</li><li>Practical technical expertise</li><li>Responsive after-sales support</li><li>Solutions shaped around your facility</li></ul><a class="btn btn-dark" href="{% url 'about' %}">Discover Somlab</a></div>
+  </div>
+</section>
+
+<section class="section section-navy">
+  <div class="container">
+    <div class="section-heading light"><div><span class="eyebrow">Expert support</span><h2>From delivery to dependable operation</h2></div><a class="text-link" href="{% url 'services' %}">All services →</a></div>
+    <div class="service-grid">{% for service in services %}<a class="service-card" href="{{ service.get_absolute_url }}"><span>{{ forloop.counter|stringformat:"02d" }}</span><h3>{{ service.name }}</h3><p>{{ service.short_description }}</p><b>Learn more →</b></a>{% endfor %}</div>
+  </div>
+</section>
+
+<section class="cta-section"><div class="container cta-inner"><div><span class="eyebrow">Let's equip your next step</span><h2>Need help choosing the right product?</h2><p>Tell our team what your laboratory needs. We’ll help you identify a practical solution.</p></div><div><a class="btn btn-white" href="{% url 'contact' %}">Contact Somlab</a><a class="btn btn-outline-white" href="{% url 'product_list' %}">Browse products</a></div></div></section>
+{% endblock %}

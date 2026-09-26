@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block title %}{{ subcategory.name }} — {{ category.navigation_name }} — Somlab Diagnostics{% endblock %}
+{% block meta_description %}{{ subcategory.description|default:"Explore Somlab Diagnostics products and solutions." }}{% endblock %}
+{% block content %}
+<section class="category-detail-hero subcategory-detail-hero{% if is_vatech %} vatech-category-hero{% endif %}">
+  <div class="container category-hero-grid">
+    <div class="category-hero-copy">
+      <div class="breadcrumbs"><a href="{% url 'home' %}">Home</a><span>/</span><a href="{% url 'product_list' %}">Products</a><span>/</span><a href="{{ category.get_absolute_url }}">{{ category.navigation_name }}</a>{% if subcategory.parent %}<span>/</span><a href="{{ subcategory.parent.get_absolute_url }}">{{ subcategory.parent.name }}</a>{% endif %}<span>/</span><strong>{{ subcategory.name }}</strong></div>
+      <span class="eyebrow">{{ category.navigation_name }} · Product subcategory</span>
+      <h1>{{ subcategory.name }}</h1>
+      <p>{{ subcategory.description|default:"Explore the products available in this Somlab catalogue group." }}</p>
+      <div class="category-hero-actions"><a class="btn btn-primary" href="#subcategory-products">{% if child_subcategories %}View assay groups{% elif is_truenat_assay_group %}View assays{% else %}View products{% endif %}</a><a class="btn btn-secondary" href="{% url 'contact' %}?subject={{ subcategory.name|urlencode }}">Ask our team</a></div>
+    </div>
+    <div class="category-hero-image subcategory-hero-image{% if category.slug == 'light-microscopes' %} zeiss-light-microscopes-cutout-fit{% elif category.slug == 'sd-biosensor' and subcategory.slug == 'standard-q' %} sd-standard-q-hero-fit{% elif category.slug == 'molbio' and subcategory.slug == 'ibreastexam' %} ibreastexam-subcategory-image-fit{% elif category.slug == 'molbio' and subcategory.slug == 'optrascan' %} optrascan-subcategory-image-fit{% elif category.slug == 'molbio' and subcategory.slug == 'prorad-atlas' %} prorad-atlas-subcategory-image-fit{% elif category.slug == 'molbio' and subcategory.slug == 'truenat-platform' %} truenat-subcategory-image-fit{% elif is_truenat_assay_group %} truenat-assay-group-hero-fit{% elif subcategory.slug == 'automated-semen-analysis-solutions' %} mes-subcategory-image-fit mes-subcategory-image-3-2{% elif subcategory.slug == 'consumer-semen-analysis-solutions' or subcategory.slug == 'veterinary-semen-analysis-solutions' %} mes-subcategory-image-fit mes-subcategory-image-16-9{% endif %}">
+      {% if subcategory.image %}
+        <img src="{{ subcategory.image.url }}" alt="{{ subcategory.name }}">
+      {% else %}
+        <div class="category-visual-placeholder"><span>{% if is_vatech %}VD{% else %}{{ subcategory.name|slice:":2"|upper }}{% endif %}</span><i></i><i></i><small>{{ category.navigation_name }}</small></div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft" id="subcategory-products">
+  <div class="container">
+    {% if child_subcategories %}
+      <div class="section-heading"><div><span class="eyebrow">Official assay catalogue</span><h2>Truenat Assay groups</h2></div></div>
+      <div class="product-grid category-product-grid">
+        {% for child in child_subcategories %}
+          <article class="product-card">
+            <a class="product-image truenat-assay-group-card-image-fit{% if child.image %} has-image{% endif %}" href="{{ child.get_absolute_url }}"{% if child.image %} style="--truenat-assay-group-image:url('{{ child.image.url }}')"{% endif %}>
+              {% if child.image %}<img src="{{ child.image.url }}" alt="{{ child.name }}">{% else %}<span class="category-visual-placeholder"><span>{{ child.name|slice:":2"|upper }}</span><i></i><i></i><small>Molbio</small></span>{% endif %}
+            </a>
+            <div class="product-card-body">
+              <span class="product-meta">Molbio Diagnostics · Assay group</span>
+              <h3><a href="{{ child.get_absolute_url }}">{{ child.name }}</a></h3>
+              <p>{{ child.description|truncatewords:15 }}</p>
+              <div class="product-card-foot">
+                <strong class="request-price">Explore assays</strong>
+                <a href="{{ child.get_absolute_url }}" aria-label="View {{ child.name }} assays">→</a>
+              </div>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    {% elif is_truenat_assay_group %}
+      <div class="section-heading"><div><span class="eyebrow">Official Molbio catalogue</span><h2>Included &amp; Related</h2></div></div>
+      <div class="product-related-list truenat-assay-related-list">
+        {% for product in products %}
+          <details class="product-related-item">
+            <summary>
+              <span class="product-related-summary-copy"><strong>{{ product.name }}</strong><span>Assay · {{ product.get_availability_display }}</span></span>
+              <span class="product-related-toggle" aria-hidden="true"></span>
+            </summary>
+            <template data-product-related-preview>
+              <article class="product-related-hover-card">
+                {% if product.image %}<div class="product-related-hover-media"><img src="{{ product.image.url }}" alt="" loading="lazy"></div>{% endif %}
+                <div class="product-related-hover-copy"><strong>{{ product.name }}</strong><p>{{ product.description }}</p></div>
+              </article>
+            </template>
+            <div class="product-related-body">
+              {% if product.image %}<a class="product-related-image" href="{{ product.get_absolute_url }}" aria-label="View {{ product.name }}"><img src="{{ product.image.url }}" alt="{{ product.name }}" loading="lazy"></a>{% endif %}
+              <p>{{ product.description }}</p>
+            </div>
+          </details>
+        {% empty %}<div class="empty-state wide category-empty-state"><h3>Assays are being prepared</h3><p>Contact Somlab to ask about {{ subcategory.name|lower }} assays.</p></div>{% endfor %}
+      </div>
+    {% else %}
+      <div class="section-heading"><div><span class="eyebrow">Available catalogue</span><h2>Products in {{ subcategory.name }}</h2></div><span class="category-result-count">{{ products|length }} product{{ products|length|pluralize }}</span></div>
+      <div class="product-grid category-product-grid">
+        {% for product in products %}{% include "catalog/_product_card.html" %}
+        {% empty %}<div class="empty-state wide category-empty-state"><h3>Products are being prepared</h3><p>Contact Somlab to ask about {{ subcategory.name|lower }} products.</p><a class="btn btn-primary" href="{% url 'contact' %}?subject={{ subcategory.name|urlencode }}">Contact our team</a></div>{% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<section class="cta-section"><div class="container cta-inner"><div><span class="eyebrow">Expert guidance</span><h2>Planning a {{ subcategory.name|lower }} requirement?</h2><p>Tell us about your workflow and preferred configuration.</p></div><a class="btn btn-white" href="{% url 'contact' %}?subject={{ subcategory.name|urlencode }}">Discuss your needs</a></div></section>
+{% endblock %}

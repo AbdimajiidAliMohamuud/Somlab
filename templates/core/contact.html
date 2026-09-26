@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block title %}Contact Somlab Diagnostics{% endblock %}
+{% block content %}
+<section class="page-hero"><div class="container narrow"><span class="eyebrow">Contact us</span><h1>Let’s solve your laboratory requirement.</h1><p>Ask about products, availability, technical services or your current order.</p></div></section>
+<section class="section"><div class="container contact-grid"><div class="contact-details"><span class="eyebrow">Somlab Diagnostics</span><h2>Talk to our team</h2><p>We usually respond during business hours. For urgent product enquiries, call or WhatsApp our sales team.</p><div class="contact-item"><b>Email</b><a href="mailto:info@somlab.so">info@somlab.so</a></div><div class="contact-item"><b>Phone</b><a href="tel:+252616119117">+252 616 119117</a><a href="tel:+905348200301">+90 534 820 0301</a></div><div class="contact-item"><b>Office</b><span>Star Home Tower, 5th Floor, Apt. 504<br>KM5, Amira Hotel Street, Hodan District<br>Mogadishu, Somalia</span></div></div><div class="form-card"><h2>Send a message</h2><form method="post">{% csrf_token %}{% include "includes/form_fields.html" with form=form %}<button class="btn btn-primary btn-block">Send message</button></form></div></div></section>
+{% endblock %}

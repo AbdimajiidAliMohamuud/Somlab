@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% block title %}Your Cart — Somlab Diagnostics{% endblock %}
+{% block content %}
+<section class="cart-page">
+  <div class="container">
+    <nav class="cart-breadcrumbs" aria-label="Breadcrumb">
+      <a href="{% url 'home' %}">Home</a><span aria-hidden="true">/</span><span>Shopping cart</span>
+    </nav>
+    <header class="cart-heading">
+      <div>
+        <span class="eyebrow">Somlab order request</span>
+        <h1>Your shopping cart</h1>
+        <p>Review your laboratory products before submitting them to our team.</p>
+      </div>
+      {% if items %}
+      <div class="cart-heading-count" aria-label="{{ cart_count }} item{{ cart_count|pluralize }} in your cart">
+        <strong>{{ cart_count }}</strong>
+        <span>Item{{ cart_count|pluralize }}</span>
+      </div>
+      {% endif %}
+    </header>
+
+    {% if items %}
+    <div class="cart-layout cart-layout-premium">
+      <section class="cart-products-panel" aria-labelledby="cart-products-title">
+        <div class="cart-panel-heading">
+          <h2 id="cart-products-title">Products</h2>
+          <span>{{ items|length }} product{{ items|length|pluralize }}</span>
+        </div>
+        <div class="cart-items">
+          {% for item in items %}
+          <article class="cart-item">
+            <a class="cart-thumb" href="{{ item.product.get_absolute_url }}" aria-label="View {{ item.product.name }}">
+              {% if item.product.image %}
+              <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+              {% else %}
+              <span aria-hidden="true">{{ item.product.category.name|slice:":2"|upper }}</span>
+              {% endif %}
+            </a>
+            <div class="cart-item-info">
+              <span class="product-meta">{{ item.product.brand|default:item.product.category.name }}</span>
+              <h2><a href="{{ item.product.get_absolute_url }}">{{ item.product.name }}</a></h2>
+              {% if item.variant %}<div class="cart-product-variant">Selected model: <strong>{{ item.variant }}</strong></div>{% endif %}
+              <div class="cart-product-code">Product code <strong>{{ item.product.product_code }}</strong></div>
+              <div class="cart-unit-price">Request price</div>
+              <form method="post" action="{% url 'cart_update' item.line_key %}" class="inline-quantity">
+                {% csrf_token %}
+                <label for="cart-quantity-{{ forloop.counter }}">Quantity</label>
+                <div class="cart-quantity-control">
+                  <button type="button" data-qty-minus aria-label="Decrease {{ item.product.name }} quantity">−</button>
+                  <input id="cart-quantity-{{ forloop.counter }}" type="number" name="quantity" min="1" max="999" value="{{ item.quantity }}" inputmode="numeric">
+                  <button type="button" data-qty-plus aria-label="Increase {{ item.product.name }} quantity">+</button>
+                </div>
+                <button class="cart-update-button" type="submit">Update</button>
+              </form>
+            </div>
+            <div class="cart-item-price">
+              <div><small>Pricing</small><strong>Request price</strong></div>
+              <form method="post" action="{% url 'cart_remove' item.line_key %}">
+                {% csrf_token %}
+                <button class="cart-remove-button" type="submit" aria-label="Remove {{ item.product.name }} from cart">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M4 7h16M9 7V4h6v3m3 0-1 13H7L6 7m4 4v5m4-5v5"/></svg>
+                  Remove
+                </button>
+              </form>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+        <a class="cart-continue-shopping" href="{% url 'product_list' %}">
+          <span aria-hidden="true">←</span> Continue shopping
+        </a>
+      </section>
+
+      <aside class="order-summary order-summary-premium" aria-labelledby="order-summary-title">
+        <div class="summary-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path d="M7 3h10v4H7zM5 5H3v16h18V5h-2M8 12h8m-8 4h5"/></svg>
+        </div>
+        <h2 id="order-summary-title">Order summary</h2>
+        <div><span>Product pricing</span><strong>Request price</strong></div>
+        <div><span>Delivery</span><small>Confirmed after review</small></div>
+        <div class="summary-total"><span>Order pricing</span><strong>Request price</strong></div>
+        <div class="summary-notice">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Zm0-14v5m0 3h.01"/></svg>
+          <p>No payment is taken online. Our team confirms price, availability and delivery with you.</p>
+        </div>
+        <a class="btn btn-primary btn-block cart-checkout-button" href="{% url 'checkout' %}">
+          Continue to checkout <span aria-hidden="true">→</span>
+        </a>
+        <div class="summary-assurances">
+          <span><b aria-hidden="true">✓</b> Secure order request</span>
+          <span><b aria-hidden="true">✓</b> Reviewed by Somlab</span>
+          <span><b aria-hidden="true">✓</b> No online payment required</span>
+        </div>
+      </aside>
+    </div>
+    {% else %}
+    <section class="cart-empty-premium">
+      <div class="cart-empty-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="34" height="34"><path d="M3 4h2l1.7 9.1a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 1.9-1.4L20 8H6.1M9 20h.01M18 20h.01"/></svg>
+      </div>
+      <span class="eyebrow">Your cart is ready when you are</span>
+      <h2>No products added yet</h2>
+      <p>Explore Somlab’s laboratory equipment, reagents and diagnostic solutions.</p>
+      <a class="btn btn-primary" href="{% url 'product_list' %}">Explore products <span aria-hidden="true">→</span></a>
+    </section>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

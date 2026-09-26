@@ -1,0 +1,28 @@
+{% extends "dashboard/base.html" %}
+{% block title %}{{ customer.name }} projects{% endblock %}
+{% block content %}
+<div class="dash-heading">
+  <div><a class="back-link" href="{% url 'dashboard_customers' %}">← Customers</a><span>Customer portfolio</span><h1>{{ customer.name }} projects</h1></div>
+  <a class="btn btn-primary" href="{% url 'dashboard_customer_project_add' customer.pk %}">+ Add project</a>
+</div>
+<div class="dash-card">
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Project</th><th>Date</th><th>Media</th><th>Display order</th><th>Actions</th></tr></thead>
+      <tbody>
+        {% for project in projects %}
+          <tr>
+            <td><strong>{{ project.title }}</strong>{% if project.description %}<small>{{ project.description|truncatewords:14 }}</small>{% endif %}</td>
+            <td>{{ project.date|date:"M j, Y"|default:"—" }}</td>
+            <td>{{ project.media_total }}</td>
+            <td>{{ project.display_order }}</td>
+            <td><div class="row-actions"><a href="{{ customer.get_absolute_url }}" target="_blank">View ↗</a><a href="{% url 'dashboard_customer_project_media' customer.pk project.pk %}">Media</a><a href="{% url 'dashboard_customer_project_edit' customer.pk project.pk %}">Edit</a><a class="danger" href="{% url 'dashboard_customer_project_delete' customer.pk project.pk %}">Delete</a></div></td>
+          </tr>
+        {% empty %}
+          <tr><td colspan="5"><div class="empty-state"><h3>No projects yet</h3><p>Add completed work, images, and videos for this customer.</p></div></td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

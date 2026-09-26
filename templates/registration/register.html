@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block title %}Create Account — Somlab Diagnostics{% endblock %}
+{% block content %}
+<section class="auth-section"><div class="auth-card auth-wide"><span class="eyebrow">Customer account</span><h1>Create your account</h1><p>Save your details and keep track of submitted orders.</p><form method="post">{% csrf_token %}{% include "includes/form_fields.html" with form=form %}<button class="btn btn-primary btn-block">Create account</button></form><p class="auth-foot">Already registered? <a href="{% url 'login' %}">Sign in</a></p></div></section>
+{% endblock %}
