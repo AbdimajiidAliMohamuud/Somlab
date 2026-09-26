@@ -11,7 +11,8 @@ WorkingDirectory=/var/www/somlab
 EnvironmentFile=/etc/somlab.env
 RuntimeDirectory=somlab
 RuntimeDirectoryMode=0750
-UMask=0027
+# Gunicorn's Unix socket must be writable by the Nginx/www-data group.
+UMask=0007
 ExecStart=/var/www/somlab/venv/bin/gunicorn config.wsgi:application \
     --bind unix:/run/somlab/gunicorn.sock \
     --workers 2 \

@@ -92,15 +92,20 @@ install -o www-data -g www-data -m 640 /tmp/somlab-db.sqlite3.upload /var/lib/so
 rm /tmp/somlab.env.upload /tmp/somlab-db.sqlite3.upload
 
 chown -R root:www-data /var/www/somlab
-find /var/www/somlab -type d -exec chmod 750 {} \;
-find /var/www/somlab -type f -exec chmod 640 {} \;
-chmod 750 /var/www/somlab/venv/bin/*
+# Do not apply blanket chmod operations inside the virtualenv: its Python
+# launchers are symlinks and its console scripts must retain execute bits.
+find /var/www/somlab -path /var/www/somlab/venv -prune -o -type d -exec chmod 750 {} \;
+find /var/www/somlab -path /var/www/somlab/venv -prune -o -type f -exec chmod 640 {} \;
+chmod -R g+rX,o-rwx /var/www/somlab/venv
 chown -R www-data:www-data /var/lib/somlab
 chmod 750 /var/lib/somlab
 
 DJANGO_ENV_FILE=/etc/somlab.env ./venv/bin/python manage.py check --deploy
 DJANGO_ENV_FILE=/etc/somlab.env ./venv/bin/python manage.py migrate
 DJANGO_ENV_FILE=/etc/somlab.env ./venv/bin/python manage.py collectstatic --noinput
+chown -R root:www-data /var/www/somlab/staticfiles
+find /var/www/somlab/staticfiles -type d -exec chmod 750 {} \;
+find /var/www/somlab/staticfiles -type f -exec chmod 640 {} \;
 ```
 
 `check --deploy` must complete without errors. Warnings about a deliberately
@@ -161,6 +166,9 @@ git pull --ff-only origin main
 DJANGO_ENV_FILE=/etc/somlab.env ./venv/bin/python manage.py check --deploy
 DJANGO_ENV_FILE=/etc/somlab.env ./venv/bin/python manage.py migrate
 DJANGO_ENV_FILE=/etc/somlab.env ./venv/bin/python manage.py collectstatic --noinput
+chown -R root:www-data /var/www/somlab/staticfiles
+find /var/www/somlab/staticfiles -type d -exec chmod 750 {} \;
+find /var/www/somlab/staticfiles -type f -exec chmod 640 {} \;
 systemctl restart somlab
 systemctl status somlab --no-pager -l
 journalctl -u somlab -n 100 --no-pager
