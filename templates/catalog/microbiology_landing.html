@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Microbiology Solutions — Somlab Diagnostics{% endblock %}
+{% block meta_description %}Explore Somlab Diagnostics microbiology identification, susceptibility testing panels, systems, informatics and automation solutions.{% endblock %}
+{% block extra_head %}<link rel="stylesheet" href="{% static 'css/microbiology.css' %}?v=microbiology-catalogue-4">{% endblock %}
+{% block content %}
+<section class="microbiology-catalogue">
+  <div class="container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="{% url 'home' %}">Home</a><span aria-hidden="true">/</span>
+      <a href="{% url 'product_list' %}">Products</a><span aria-hidden="true">/</span>
+      <strong aria-current="page">Microbiology</strong>
+    </nav>
+
+    <header class="microbiology-catalogue__heading">
+      <span class="eyebrow">Microbiology</span>
+      <h1>Full Line of Microbiology Products</h1>
+      <p>Explore identification, antimicrobial susceptibility testing, laboratory systems, informatics and automation solutions.</p>
+    </header>
+
+    {% if selected_brand %}
+      <div class="microbiology-catalogue__brand-context">
+        <span>Showing <strong>{{ selected_brand_name }}</strong> solutions</span>
+        <a href="{{ clear_brand_url }}">View all Microbiology solutions</a>
+      </div>
+    {% endif %}
+
+    <div class="microbiology-catalogue__grid">
+      {% for solution_group in solution_groups %}
+        <article class="microbiology-solution-card">
+          <div class="microbiology-solution-card__image">
+            {% if solution_group.slug == "microscan-id-ast-panels" and fallback_image %}
+              <img src="{{ fallback_image.url }}" alt="{{ solution_group.title }}">
+            {% elif solution_group.slug == "microbiology-systems" %}
+              <img src="{% static 'images/microbiology/microbiology-systems.jpg' %}" alt="{{ solution_group.title }}" loading="lazy">
+            {% elif solution_group.slug == "informatics" %}
+              <img src="{% static 'images/microbiology/informatics-labpro.jpg' %}" alt="{{ solution_group.title }}" loading="lazy">
+            {% elif solution_group.slug == "microbiology-automation" %}
+              <img src="{% static 'images/microbiology/microbiology-automation.jpg' %}" alt="{{ solution_group.title }}" loading="lazy">
+            {% elif solution_group.image_product %}
+              <img src="{{ solution_group.image_product.image.url }}" alt="{{ solution_group.title }}"{% if forloop.counter > 1 %} loading="lazy"{% endif %}>
+            {% elif fallback_image %}
+              <img src="{{ fallback_image.url }}" alt="{{ solution_group.title }}"{% if forloop.counter > 1 %} loading="lazy"{% endif %}>
+            {% else %}
+              <div class="microbiology-solution-card__placeholder" aria-hidden="true"><span>MI</span></div>
+            {% endif %}
+          </div>
+
+          <div class="microbiology-solution-card__content">
+            <h2>{{ solution_group.title }}</h2>
+            <p>{{ solution_group.description }}</p>
+          </div>
+
+          <div class="microbiology-solution-card__links">
+            {% if solution_group.products %}
+              <ul aria-label="Products in {{ solution_group.title }}">
+                {% for product in solution_group.products %}
+                  {% if solution_group.slug == "microbiology-automation" %}
+                    <li><button class="microbiology-solution-card__static-item" type="button">{% if product.product_code == "SL-CC-229" %}Copan WASPLab™ System - Now featuring the Copan Colibri{% else %}{{ product.name }}{% endif %}</button></li>
+                  {% else %}
+                    <li><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            {% else %}
+              <p>Products for this solution area are available through our team. Contact Somlab for current options.</p>
+            {% endif %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

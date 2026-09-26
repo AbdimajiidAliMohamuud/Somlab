@@ -1,0 +1,205 @@
+/* Page-only catalogue layout for /products/microbiology/. */
+.microbiology-catalogue{
+  min-height:650px;
+  padding:44px 0 95px;
+  background:linear-gradient(180deg,#f5fbfa 0,#fff 300px);
+}
+.microbiology-catalogue .breadcrumbs{margin-bottom:24px}
+.microbiology-catalogue .microbiology-catalogue__heading{
+  max-width:760px;
+  margin-bottom:32px;
+}
+.microbiology-catalogue .microbiology-catalogue__heading .eyebrow{margin-bottom:7px}
+.microbiology-catalogue .microbiology-catalogue__heading h1{
+  margin:0;
+  color:var(--navy);
+  font:800 clamp(34px,4vw,50px)/1.08 var(--display);
+  letter-spacing:-.045em;
+}
+.microbiology-catalogue .microbiology-catalogue__heading p{
+  max-width:680px;
+  margin:12px 0 0;
+  color:var(--muted);
+  font-size:15px;
+}
+.microbiology-catalogue .microbiology-catalogue__brand-context{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  margin:-10px 0 25px;
+  padding:11px 15px;
+  border:1px solid #bfe4e2;
+  border-radius:4px;
+  background:#effafa;
+  color:var(--navy);
+  font-size:12px;
+}
+.microbiology-catalogue .microbiology-catalogue__brand-context a{
+  color:#007fbe;
+  font-weight:700;
+}
+.microbiology-catalogue .microbiology-catalogue__grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  align-items:stretch;
+  gap:20px;
+  width:100%;
+}
+.microbiology-catalogue .microbiology-solution-card{
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+  height:100%;
+  overflow:hidden;
+  border:1px solid #dfe5e7;
+  border-radius:4px;
+  background:#fff;
+  box-shadow:0 3px 12px rgba(0,0,0,.06);
+  transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease;
+}
+.microbiology-catalogue .microbiology-solution-card:hover,
+.microbiology-catalogue .microbiology-solution-card:focus-within{
+  border-color:#b9d7dc;
+  box-shadow:0 9px 24px rgba(4,39,51,.10);
+  transform:translateY(-2px);
+}
+.microbiology-catalogue .microbiology-solution-card__image{
+  display:grid;
+  place-items:center;
+  width:100%;
+  aspect-ratio:563/480;
+  overflow:hidden;
+  padding:0;
+  border-bottom:1px solid #dfe5e7;
+  background:#f3f5f5;
+}
+.microbiology-catalogue .microbiology-solution-card__image img{
+  display:block;
+  width:100%;
+  height:100%;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  object-position:center;
+}
+.microbiology-catalogue .microbiology-solution-card__placeholder{
+  display:grid;
+  place-items:center;
+  width:100%;
+  height:100%;
+}
+.microbiology-catalogue .microbiology-solution-card__placeholder span{
+  display:grid;
+  place-items:center;
+  width:68px;
+  height:68px;
+  border-radius:16px;
+  background:linear-gradient(145deg,var(--teal),#087e8d);
+  color:#fff;
+  font:800 22px var(--display);
+}
+.microbiology-catalogue .microbiology-solution-card__content{
+  padding:24px 20px;
+}
+.microbiology-catalogue .microbiology-solution-card__content h2{
+  min-height:54px;
+  margin:0 0 10px;
+  color:var(--navy);
+  font:800 18px/1.38 var(--display);
+  letter-spacing:-.025em;
+}
+.microbiology-catalogue .microbiology-solution-card__content p{
+  min-height:78px;
+  margin:0;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.6;
+}
+.microbiology-catalogue .microbiology-solution-card__links{
+  margin-top:auto;
+  padding:20px;
+  border-top:1px solid #dfe5e7;
+}
+.microbiology-catalogue .microbiology-solution-card__links ul{
+  display:grid;
+  gap:12px;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.microbiology-catalogue .microbiology-solution-card__links li{
+  min-width:0;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.microbiology-catalogue .microbiology-solution-card__links li::marker{content:""}
+.microbiology-catalogue .microbiology-solution-card__links a,
+.microbiology-catalogue .microbiology-solution-card__static-item{
+  display:block;
+  margin:0;
+  padding:0;
+  border:0;
+  background:none;
+  color:#007fbe;
+  font-family:inherit;
+  font-size:12px;
+  font-weight:600;
+  line-height:1.45;
+  text-align:left;
+  text-decoration:none;
+}
+.microbiology-catalogue .microbiology-solution-card__links a:hover,
+.microbiology-catalogue .microbiology-solution-card__links a:focus-visible,
+.microbiology-catalogue .microbiology-solution-card__static-item:hover,
+.microbiology-catalogue .microbiology-solution-card__static-item:focus-visible{
+  color:#006b9f;
+  text-decoration:underline;
+}
+.microbiology-catalogue .microbiology-solution-card__links a:focus-visible,
+.microbiology-catalogue .microbiology-solution-card__static-item:focus-visible{
+  outline:3px solid rgba(0,127,190,.24);
+  outline-offset:3px;
+}
+.microbiology-catalogue .microbiology-solution-card__links>p{
+  margin:0;
+  padding:15px;
+  border-radius:3px;
+  background:#f3f6f6;
+  color:#60747a;
+  font-size:12px;
+  line-height:1.55;
+}
+@media(max-width:1100px){
+  .microbiology-catalogue .microbiology-catalogue__grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  .microbiology-catalogue .microbiology-solution-card__content h2,
+  .microbiology-catalogue .microbiology-solution-card__content p{min-height:0}
+}
+@media(max-width:640px){
+  .microbiology-catalogue{padding:32px 0 70px}
+  .microbiology-catalogue .breadcrumbs{
+    flex-wrap:wrap;
+    margin-bottom:22px;
+  }
+  .microbiology-catalogue .microbiology-catalogue__heading{margin-bottom:26px}
+  .microbiology-catalogue .microbiology-catalogue__heading h1{font-size:35px}
+  .microbiology-catalogue .microbiology-catalogue__heading p{font-size:14px}
+  .microbiology-catalogue .microbiology-catalogue__brand-context{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:4px;
+  }
+  .microbiology-catalogue .microbiology-catalogue__grid{grid-template-columns:1fr}
+  .microbiology-catalogue .microbiology-solution-card__content{padding:22px}
+  .microbiology-catalogue .microbiology-solution-card__links{padding:20px 22px 22px}
+  .microbiology-catalogue .microbiology-solution-card__links a{
+    min-height:44px;
+    font-size:12px;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .microbiology-catalogue .microbiology-solution-card{transition:none}
+}

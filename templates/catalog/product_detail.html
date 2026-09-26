@@ -1,0 +1,246 @@
+{% extends "base.html" %}
+{% load specification_tags %}
+{% block title %}{{ product.name }} — Somlab Diagnostics{% endblock %}
+{% block meta_description %}{{ product.short_description }}{% endblock %}
+{% block content %}
+<section class="product-detail-section">
+  <div class="container">
+    <div class="breadcrumbs">
+      <a href="{% url 'home' %}">Home</a><span>/</span>
+      <a href="{% url 'product_list' %}">Products</a><span>/</span>
+      <a href="{{ product.category.get_absolute_url }}">{{ product.category.navigation_name }}</a>
+      {% if product.category.slug == "sd-biosensor" or product.category.slug == "medical-electronic-systems" or product.category.slug == "molbio" %}
+        {% if product.subcategory %}<span>/</span>
+        {% if product.subcategory.parent %}<a href="{{ product.subcategory.parent.get_absolute_url }}">{{ product.subcategory.parent.name }}</a><span>/</span>{% endif %}
+        <a href="{{ product.subcategory.get_absolute_url }}">{{ product.subcategory.name }}</a><span>/</span>
+        <strong>{{ product.name }}</strong>{% endif %}
+      {% endif %}
+    </div>
+    <div class="product-detail-grid">
+      <div class="product-gallery{% if product.category.slug == 'medical-electronic-systems' and product.subcategory.slug == 'automated-semen-analysis-solutions' or product.category.slug == 'medical-electronic-systems' and product.subcategory.slug == 'consumer-semen-analysis-solutions' or product.category.slug == 'medical-electronic-systems' and product.subcategory.slug == 'veterinary-semen-analysis-solutions' %} sqa-product-gallery-fit{% endif %}{% if product.product_code == 'SL-CC-203' %} pk7400-detail-image-fit{% elif product.product_code == 'MOLBIO-IBREASTEXAM' %} ibreastexam-product-gallery-fit{% elif product.category.slug == 'molbio' and product.subcategory.slug == 'prorad-atlas' %} prorad-atlas-product-gallery-fit{% elif product.category.slug == 'molbio' and product.subcategory.slug == 'truenat-platform' %} truenat-product-gallery-fit{% elif product.category.slug == 'molbio' and product.subcategory.parent.slug == 'truenat-assays' %} truenat-assay-product-gallery-fit{% endif %}" data-product-gallery>
+        <div class="product-gallery-main" aria-live="polite">
+          {% for item in gallery_items %}
+            <div class="product-gallery-slide{% if item.media_type == 'image' %} is-image{% endif %}{% if forloop.first %} is-active{% endif %}"
+                 data-gallery-slide="{{ forloop.counter0 }}"
+                 {% if not forloop.first %}hidden{% endif %}>
+              {% if item.media_type == "video" %}
+                <video controls preload="metadata" aria-label="{{ item.label }}">
+                  <source src="{{ item.url }}">
+                  Your browser does not support this product video.
+                </video>
+              {% else %}
+                <img src="{{ item.url }}" alt="{{ item.label }}"
+                     {% if item.fallback_url %}data-image-fallback="{{ item.fallback_url }}"{% endif %}
+                     {% if not forloop.first %}loading="lazy"{% endif %}>
+              {% endif %}
+            </div>
+          {% empty %}
+            <div class="detail-placeholder">
+              <span>{{ product.category.navigation_name|slice:":2"|upper }}</span>
+              <i></i><i></i><b>Somlab Diagnostics</b>
+            </div>
+          {% endfor %}
+        </div>
+        {% if gallery_items|length > 1 %}
+          <div class="product-gallery-thumbnails"
+               role="group"
+               aria-label="{{ product.name }} gallery thumbnails">
+            {% for item in gallery_items %}
+              <button type="button"
+                      class="product-gallery-thumb{% if forloop.first %} is-active{% endif %}"
+                      data-gallery-thumb="{{ forloop.counter0 }}"
+                      aria-label="Show {{ item.label }}"
+                      aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}">
+                {% if item.media_type == "video" %}
+                  <video muted preload="metadata" aria-hidden="true">
+                    <source src="{{ item.url }}">
+                  </video>
+                  <span class="gallery-play" aria-hidden="true">▶</span>
+                {% else %}
+                  <img src="{{ item.url }}" alt="" loading="lazy"
+                       {% if item.fallback_url %}data-image-fallback="{{ item.fallback_url }}"{% endif %}>
+                {% endif %}
+              </button>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="detail-copy">
+        <span class="product-meta">{{ product.display_brand|default:product.category.navigation_name }} · {{ product.product_code }}</span>
+        <h1>{{ product.name }}</h1>
+        <p class="lead">{{ product.short_description }}</p>
+        <span class="availability availability-{{ product.availability }}">{{ product.get_availability_display }}</span>
+
+        {% if variants %}
+          <div class="product-variant-field">
+            <label for="product-variant">Product variant / model</label>
+            <select id="product-variant">
+              {% for variant in variants %}
+                <option value="{{ variant.id }}">{{ variant }}</option>
+              {% endfor %}
+            </select>
+          </div>
+        {% endif %}
+
+        <div class="detail-price"><small>Pricing</small><strong>Request price</strong></div>
+        <a class="btn btn-primary btn-block product-inquiry-cta" href="{% url 'product_inquiry' %}?product={{ product.pk }}">Inquiry <span aria-hidden="true">→</span></a>
+        <div class="detail-assurances">
+          <span><b>✓</b> Quality-sourced products</span>
+          <span><b>✓</b> Local technical support</span>
+          <span><b>✓</b> Inquiry reviewed by our team</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="product-content-section" data-product-sections>
+  <div class="container">
+    <nav class="product-section-nav section-count-{{ product_section_count }}" aria-label="Product information sections" data-product-section-nav>
+      <a class="is-active" href="#product-overview" data-product-section-link>Overview</a>
+      {% if product.specifications %}<a href="#product-specifications" data-product-section-link>Specifications</a>{% endif %}
+      {% if show_included_related %}<a href="#product-included" data-product-section-link>Included &amp; Related</a>{% endif %}
+    </nav>
+
+    <div class="product-section-panels">
+      <section class="product-section-panel" id="product-overview" data-product-section-panel>
+        <div class="detail-info-grid">
+          <article>
+            <span class="eyebrow">Product overview</span>
+            <h2>About this product</h2>
+            <div class="article-body">{{ product.description|linebreaks }}</div>
+          </article>
+          <aside>
+            <h3>Product information</h3>
+            <dl>
+              <div><dt>Product code</dt><dd>{{ product.product_code }}</dd></div>
+              <div><dt>Category</dt><dd>{{ product.category.navigation_name }}</dd></div>
+              <div><dt>Brand</dt><dd>{{ product.display_brand|default:"Somlab selected" }}</dd></div>
+              <div><dt>Availability</dt><dd>{{ product.get_availability_display }}</dd></div>
+            </dl>
+          </aside>
+        </div>
+        {% if product_feature_sections %}
+          <div class="product-feature-sections" aria-label="How iBreastExam works">
+            <div class="product-panel-heading">
+              <span class="eyebrow">How it works</span>
+              <h2>Affordable, earlier stage detection with minimal training.</h2>
+            </div>
+            <div class="product-feature-grid">
+              {% for feature in product_feature_sections %}
+                <article class="product-feature-card">
+                  <div class="product-feature-media">
+                    <img src="{{ feature.image_url }}" alt="{{ feature.title }}" loading="lazy">
+                  </div>
+                  <div class="product-feature-copy">
+                    <span>0{{ forloop.counter }}</span>
+                    <h3>{{ feature.title }}</h3>
+                    <p>{{ feature.description }}</p>
+                  </div>
+                </article>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+      </section>
+
+      {% if product.specifications %}<section class="product-section-panel" id="product-specifications" data-product-section-panel>
+        <div class="product-panel-heading">
+          <span class="eyebrow">Technical details</span>
+          <h2>Specifications</h2>
+        </div>
+        <div class="product-specification-sheet">{{ product.specifications|render_specifications }}</div>
+      </section>{% endif %}
+
+      {% if show_included_related %}<section class="product-section-panel" id="product-included" data-product-section-panel>
+        {% if nested_items %}
+          <div class="product-panel-heading">
+            <span class="eyebrow">Product relationships</span>
+            <h2>Included and related items</h2>
+            {% if hide_related_item_specifications %}
+              <p>Open a row for the official image and descriptive details.</p>
+            {% else %}
+              <p>Open a row for details, specifications and links to connected catalogue items.</p>
+            {% endif %}
+          </div>
+          <div class="product-related-list">
+            {% for item in nested_items %}
+              <details class="product-related-item">
+                <summary>
+                  <span class="product-related-summary-copy">
+                    <strong>{{ item.name }}</strong>
+                    <span>
+                      {{ item.relationship_type|title }}
+                      {% if item.child_product %}<i aria-hidden="true">·</i> {{ item.child_product.get_availability_display }}{% endif %}
+                    </span>
+                  </span>
+                  <span class="product-related-toggle" aria-hidden="true"></span>
+                </summary>
+                <template data-product-related-preview>
+                  <article class="product-related-hover-card">
+                    {% if item.image %}
+                      <div class="product-related-hover-media"><img src="{{ item.image.url }}" alt="" loading="lazy"></div>
+                    {% elif item.child_product and item.child_product.image %}
+                      <div class="product-related-hover-media"><img src="{{ item.child_product.image.url }}" alt="" loading="lazy"></div>
+                    {% endif %}
+                    <div class="product-related-hover-copy">
+                      <strong>{{ item.name }}</strong>
+                      {% if item.description %}
+                        <p>{{ item.description }}</p>
+                      {% elif is_mes_product and item.child_product.description %}
+                        <p>{{ item.child_product.description }}</p>
+                      {% elif item.child_product.short_description %}
+                        <p>{{ item.child_product.short_description }}</p>
+                      {% endif %}
+                    </div>
+                  </article>
+                </template>
+                <div class="product-related-body">
+                  {% if is_mes_product %}
+                    {% if item.child_product %}<a class="product-related-image" href="{{ item.child_product.get_absolute_url }}" aria-label="View {{ item.name }}">{% else %}<div class="product-related-image">{% endif %}
+                      {% if item.image %}
+                        <img src="{{ item.image.url }}" alt="{{ item.name }}" loading="lazy">
+                      {% elif item.child_product and item.child_product.image %}
+                        <img src="{{ item.child_product.image.url }}" alt="{{ item.name }}" loading="lazy">
+                      {% else %}
+                        <span class="detail-placeholder product-related-placeholder" aria-hidden="true">
+                          <span>ME</span>
+                          <i></i><i></i><b>Somlab Diagnostics</b>
+                        </span>
+                      {% endif %}
+                    {% if item.child_product %}</a>{% else %}</div>{% endif %}
+                  {% endif %}
+                  {% if item.description %}
+                    <p>{{ item.description }}</p>
+                  {% elif is_mes_product and item.child_product.description %}
+                    <p>{{ item.child_product.description }}</p>
+                  {% elif item.child_product.short_description %}
+                    <p>{{ item.child_product.short_description }}</p>
+                  {% endif %}
+                  {% if item.child_product.specifications and not hide_related_item_specifications %}
+                    <div class="product-related-specifications">
+                      <h3>Specifications</h3>
+                      {{ item.child_product.specifications|render_specifications }}
+                    </div>
+                  {% endif %}
+                </div>
+              </details>
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        {% if related %}
+          <div class="product-recommendations{% if not nested_items %} product-recommendations-first{% endif %}">
+            <div class="product-compact-heading"><h2>YOU MAY ALSO NEED</h2></div>
+            <div class="product-grid product-grid-compact">
+              {% for product in related %}{% include "catalog/_product_card.html" %}{% endfor %}
+            </div>
+          </div>
+        {% endif %}
+      </section>{% endif %}
+
+    </div>
+  </div>
+</section>
+{% endblock %}

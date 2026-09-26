@@ -1,0 +1,15 @@
+<article class="product-card">
+  <a class="product-image{% if product.image %} has-image{% endif %}{% if product.image and product.category.slug == 'eschweiler-abg' and product.subcategory.slug == 'modular-pro' or product.image and product.category.slug == 'eschweiler-abg' and product.subcategory.slug == 'combi-line-2' %} eschweiler-product-image-fit{% endif %}{% if product.category.slug == 'medical-electronic-systems' and product.subcategory.slug == 'automated-semen-analysis-solutions' or product.category.slug == 'medical-electronic-systems' and product.subcategory.slug == 'consumer-semen-analysis-solutions' or product.category.slug == 'medical-electronic-systems' and product.subcategory.slug == 'veterinary-semen-analysis-solutions' %} sqa-product-image-fit{% endif %}{% if product.product_code == 'SL-CC-203' %} pk7400-card-image-fit{% elif product.product_code == 'MOLBIO-IBREASTEXAM' %} ibreastexam-card-image-fit{% elif product.category.slug == 'molbio' and product.subcategory.slug == 'optrascan' %} optrascan-card-image-fit{% elif product.category.slug == 'molbio' and product.subcategory.slug == 'prorad-atlas' %} prorad-atlas-card-image-fit{% elif product.category.slug == 'molbio' and product.subcategory.slug == 'truenat-platform' %} truenat-card-image-fit{% elif product.category.slug == 'molbio' and product.subcategory.parent.slug == 'truenat-assays' %} truenat-assay-card-image-fit{% endif %}" href="{{ product.get_absolute_url }}">
+    {% if product.image %}{% if product.category.slug == 'medical-electronic-systems' and product.source_image and product.subcategory.slug == 'automated-semen-analysis-solutions' or product.category.slug == 'medical-electronic-systems' and product.source_image and product.subcategory.slug == 'consumer-semen-analysis-solutions' or product.category.slug == 'medical-electronic-systems' and product.source_image and product.subcategory.slug == 'veterinary-semen-analysis-solutions' %}<img src="{{ product.source_image.url }}" alt="{{ product.name }}" data-image-fallback="{{ product.image.url }}">{% else %}<img src="{{ product.image.url }}" alt="{{ product.name }}">{% endif %}{% else %}<div class="product-placeholder"><span>{{ product.category.navigation_name|slice:":2"|upper }}</span><i></i><i></i></div>{% endif %}
+    <span class="availability availability-{{ product.availability }}">{{ product.get_availability_display }}</span>
+  </a>
+  <div class="product-card-body">
+    <span class="product-meta">{{ product.display_brand|default:product.category.navigation_name }}</span>
+    <h3><a href="{{ product.get_absolute_url }}">{{ product.name }}</a></h3>
+    <p>{{ product.short_description|truncatewords:15 }}</p>
+    <div class="product-card-foot">
+      <strong class="request-price">Request price</strong>
+      <a href="{{ product.get_absolute_url }}" aria-label="View {{ product.name }}">→</a>
+    </div>
+  </div>
+</article>

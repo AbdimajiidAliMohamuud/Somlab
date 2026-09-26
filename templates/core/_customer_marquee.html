@@ -1,0 +1,20 @@
+{% if customers %}
+<div class="customers-marquee" aria-label="{{ marquee_label|default:'Somlab customers' }}">
+  <div class="customers-marquee-track">
+    <div class="customers-marquee-sequence">
+      {% for customer in customers %}
+        <a class="customers-marquee-item" href="{{ customer.get_absolute_url }}" aria-label="View {{ customer.name }} profile">
+          {% if customer.logo %}<img src="{{ customer.logo.url }}" alt="{{ customer.name }} logo" loading="lazy" decoding="async">{% else %}<b aria-hidden="true">{{ customer.name|slice:":2"|upper }}</b><span class="sr-only">{{ customer.name }}</span>{% endif %}
+        </a>
+      {% endfor %}
+    </div>
+    <div class="customers-marquee-sequence" aria-hidden="true">
+      {% for customer in customers %}
+        <a class="customers-marquee-item" href="{{ customer.get_absolute_url }}" tabindex="-1">
+          {% if customer.logo %}<img src="{{ customer.logo.url }}" alt="" loading="lazy" decoding="async">{% else %}<b>{{ customer.name|slice:":2"|upper }}</b>{% endif %}
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endif %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Inquiry Received — Somlab Diagnostics{% endblock %}
+{% block content %}
+<section class="inquiry-success-section">
+  <div class="container narrow inquiry-success-card">
+    <div class="success-icon" aria-hidden="true">✓</div>
+    <span class="eyebrow">Inquiry received</span>
+    <h1>Thank you. Somlab has received your request.</h1>
+    <p>Our team will review your inquiry for <strong>{{ inquiry.product_name }}</strong> and contact you using the information provided.</p>
+    <div class="inquiry-reference"><small>Your inquiry reference</small><strong>{{ inquiry.inquiry_number }}</strong><span>Keep this reference if you need to follow up with our team.</span></div>
+    <div class="success-actions"><a class="btn btn-primary" href="{% url 'product_list' %}">Continue browsing</a><a class="btn btn-secondary" href="{% url 'contact' %}">Contact Somlab</a></div>
+  </div>
+</section>
+{% endblock %}

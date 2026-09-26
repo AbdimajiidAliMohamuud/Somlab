@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}{{ equipment_group_name }} Products — Somlab Diagnostics{% endblock %}
+{% block meta_description %}Browse all Somlab products and solutions available under {{ equipment_group_name }}.{% endblock %}
+{% block content %}
+<section class="page-hero compact equipment-group-hero">
+  <div class="container">
+    <div class="breadcrumbs"><a href="{% url 'home' %}">Home</a><span>/</span><a href="{% url 'product_list' %}">Products</a><span>/</span><strong>{{ equipment_group_name }}</strong></div>
+    <span class="eyebrow">Products &amp; Solutions</span>
+    <h1>{{ equipment_group_name }}</h1>
+    <p>Browse all products currently organised under {{ equipment_group_name }}.</p>
+  </div>
+</section>
+<section class="section catalog-section equipment-group-catalogue">
+  <div class="container">
+    <div class="results-heading" aria-hidden="true"></div>
+    <div class="catalog-layout">
+      <aside class="category-sidebar">
+        <h3>{{ equipment_group_name }} categories</h3>
+        <a class="active" href="{% url 'equipment_group_products' equipment_group_slug %}">All {{ equipment_group_name }}</a>
+        {% for category in categories %}<a href="{{ category.get_absolute_url }}">{{ category.navigation_name }}</a>{% endfor %}
+      </aside>
+      <div class="product-grid">
+        {% for product in products %}{% include "catalog/_product_card.html" %}{% empty %}<div class="empty-state wide"><h3>No products are currently listed</h3><p>Contact Somlab for help with this equipment group.</p><a class="btn btn-primary" href="{% url 'contact' %}">Contact Somlab</a></div>{% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

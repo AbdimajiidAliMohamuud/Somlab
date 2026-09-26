@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}{{ category.navigation_name }} — Somlab Diagnostics{% endblock %}
+{% block meta_description %}{{ category.description|default:"Explore Somlab Diagnostics products and solutions." }}{% endblock %}
+{% block content %}
+<section class="category-detail-hero">
+  <div class="container category-hero-grid">
+    <div class="category-hero-copy">
+      <div class="breadcrumbs"><a href="{% url 'home' %}">Home</a><span>/</span><a href="{% url 'product_list' %}">Products</a>{% if selected_brand %}<span>/</span><a href="{{ brand_products_url }}">{{ selected_brand_name }}</a>{% endif %}<span>/</span><strong>{{ category.navigation_name }}</strong></div>
+      <span class="eyebrow">{% if category.slug == "light-microscopes" %}Medical equipment{% else %}Laboratory discipline{% endif %}</span>
+      <h1>{{ category.navigation_name }}</h1>
+      <p>{{ category.description|default:"Explore dependable equipment, reagents and laboratory supplies selected for this discipline." }}</p>
+      {% if selected_brand %}<div class="category-brand-context"><span>Showing <strong>{{ selected_brand_name }}</strong> products</span><a href="{{ clear_brand_url }}">View all {{ category.navigation_name }} products</a></div>{% endif %}
+      <div class="category-hero-actions"><a class="btn btn-primary" href="#category-products">View products</a><a class="btn btn-secondary" href="{% url 'contact' %}?subject={{ category.navigation_name|urlencode }}">Ask our team</a></div>
+    </div>
+    <div class="category-hero-image{% if category.slug == 'blood-banking' %} blood-banking-image-fit{% elif category.slug == 'light-microscopes' %} zeiss-light-microscopes-image-fit{% elif category.slug == 'molbio' %} molbio-category-hero-fit{% elif category.slug == 'sd-biosensor' %} sd-biosensor-hero-fit{% endif %}">
+      {% if category.image %}
+        <img src="{{ category.image.url }}" alt="{{ category.navigation_name }}">
+      {% else %}
+        <div class="category-visual-placeholder"><span>{{ category.navigation_name|slice:":2"|upper }}</span><i></i><i></i><small>Somlab Diagnostics</small></div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft" id="category-products">
+  <div class="container">
+    <div class="section-heading"><div><span class="eyebrow">Available catalogue</span><h2>Products in {{ category.navigation_name }}</h2></div><span class="category-result-count">{{ products|length }} product{{ products|length|pluralize }}</span></div>
+    {% if subcategory_groups %}
+    <nav class="zeiss-subcategory-nav" aria-label="{% if category.slug == 'light-microscopes' %}ZEISS Light Microscope subcategories{% else %}{{ category.navigation_name }} product groups{% endif %}">
+      {% for group in subcategory_groups %}<a href="{{ group.subcategory.get_absolute_url }}">{{ group.subcategory.name }}</a>{% endfor %}
+    </nav>
+    <div class="zeiss-subcategory-groups">
+      {% for group in subcategory_groups %}
+      <section class="zeiss-subcategory-group" id="{{ group.subcategory.slug }}">
+        <div class="zeiss-subcategory-heading"><div><span class="eyebrow">{{ category.navigation_name }}</span><h3><a href="{{ group.subcategory.get_absolute_url }}">{{ group.subcategory.name }}</a></h3></div><p>{{ group.subcategory.description }}</p></div>
+        <div class="product-grid category-product-grid">
+          {% for product in group.products %}{% include "catalog/_product_card.html" %}{% endfor %}
+        </div>
+      </section>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="product-grid category-product-grid">
+      {% for product in products %}{% include "catalog/_product_card.html" %}
+      {% empty %}<div class="empty-state wide category-empty-state">{% if selected_brand %}<h3>No products from {{ selected_brand_name }} are currently available in {{ category.navigation_name }}.</h3><p>Explore the complete {{ category.navigation_name|lower }} catalogue or return to all products from {{ selected_brand_name }}.</p><div class="category-empty-actions"><a class="btn btn-primary" href="{{ clear_brand_url }}">View all {{ category.navigation_name }} products</a><a class="btn btn-secondary" href="{{ brand_products_url }}">View all {{ selected_brand_name }} products</a></div>{% else %}<h3>Products are being prepared</h3><p>Contact Somlab to ask about {{ category.navigation_name|lower }} equipment and supplies.</p><a class="btn btn-primary" href="{% url 'contact' %}?subject={{ category.navigation_name|urlencode }}">Contact our team</a>{% endif %}</div>{% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<section class="cta-section"><div class="container cta-inner"><div><span class="eyebrow">Expert guidance</span><h2>Planning a {{ category.navigation_name|lower }} requirement?</h2><p>Tell us your testing volume, workflow and preferred equipment.</p></div><a class="btn btn-white" href="{% url 'contact' %}?subject={{ category.navigation_name|urlencode }}">Discuss your needs</a></div></section>
+{% endblock %}

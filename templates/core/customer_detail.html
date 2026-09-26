@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% block title %}{{ customer.name }} — Somlab Diagnostics{% endblock %}
+{% block meta_description %}{{ customer.short_description|default:"Customer portfolio from Somlab Diagnostics." }}{% endblock %}
+{% block content %}
+<section class="customer-profile-header">
+  <div class="container">
+    <nav class="breadcrumbs customer-profile-breadcrumb" aria-label="Breadcrumb"><a href="{% url 'home' %}">Home</a><span>/</span><a href="{% url 'customers' %}">Customers</a><span>/</span><span>{{ customer.name }}</span></nav>
+    <div class="customer-profile-panel">
+      <div class="customer-profile-logo">
+        {% if customer.logo %}<img src="{{ customer.logo.url }}" alt="{{ customer.name }} logo">{% else %}<span>{{ customer.name|slice:":2"|upper }}</span>{% endif %}
+      </div>
+      <div class="customer-profile-identity">
+        <span class="eyebrow">Customer profile</span>
+        <h1>{{ customer.name }}</h1>
+        {% if customer.short_description %}<p>{{ customer.short_description }}</p>{% endif %}
+        {% if supplied_products or project_count %}
+          <div class="customer-profile-meta" aria-label="Published portfolio summary">
+            {% if supplied_products %}<span><strong>{{ supplied_products|length }}</strong> product{{ supplied_products|length|pluralize }} supplied</span>{% endif %}
+            {% if project_count %}<span><strong>{{ project_count }}</strong> work record{{ project_count|pluralize }}</span>{% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if customer.description %}
+<section class="customer-overview-section">
+  <div class="container customer-overview-grid">
+    <div><span class="eyebrow">Customer overview</span><h2>About {{ customer.name }}</h2></div>
+    <div class="prose">{{ customer.description|linebreaks }}</div>
+  </div>
+</section>
+{% endif %}
+
+{% if supplied_products or portfolio_sections %}
+<section class="customer-success-section">
+  <div class="container">
+    <div class="customer-success-heading{% if is_featured_gallery %} customer-gallery-intro{% endif %}">
+      <div><span class="eyebrow">Customer success</span><h2>{% if is_featured_gallery %}Delivered systems portfolio{% else %}Work delivered{% endif %}</h2></div>
+      <p>{% if is_featured_gallery %}A visual record of equipment supplied and project work completed by Somlab.{% else %}Published products, installations, projects and technical work recorded by Somlab.{% endif %}</p>
+    </div>
+
+    {% if supplied_products %}
+    <section class="customer-portfolio-group" aria-labelledby="products-supplied-heading">
+      <header class="customer-group-heading"><span>01</span><div><h3 id="products-supplied-heading">Products supplied by Somlab</h3><p>Products connected to this customer portfolio.</p></div></header>
+      <div class="customer-products-grid customer-products-premium">
+        {% for product in supplied_products %}
+          <a class="customer-product-card" href="{{ product.get_absolute_url }}">
+            <span class="customer-product-image">{% if product.image %}<img src="{{ product.image.url }}" alt="{{ product.name }}" loading="lazy">{% else %}<span aria-hidden="true">{{ product.category.navigation_name|slice:":2"|upper }}</span>{% endif %}</span>
+            <span class="customer-product-copy"><small>{{ product.category.navigation_name }}</small><strong>{{ product.name }}</strong><span class="customer-product-summary">{{ product.short_description|truncatewords:18 }}</span><span class="customer-product-link">View product <b aria-hidden="true">→</b></span></span>
+          </a>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+    {% for section in portfolio_sections %}
+    <section class="customer-portfolio-group" aria-labelledby="portfolio-{{ section.slug }}-heading">
+      <header class="customer-group-heading"><span>{% if supplied_products %}0{{ forloop.counter|add:1 }}{% else %}0{{ forloop.counter }}{% endif %}</span><div><h3 id="portfolio-{{ section.slug }}-heading">{{ section.title }}</h3><p>{{ section.projects|length }} published record{{ section.projects|length|pluralize }}</p></div></header>
+      <div class="customer-record-list">
+        {% for project in section.projects %}
+            <article class="customer-record-card{% if is_featured_gallery %} customer-record-card--featured-gallery{% endif %}{% if customer.slug == 'marwo-fertility-center' %} customer-record-card--marwo-gallery{% elif customer.slug == 'horyaal-hospital' %} customer-record-card--horyaal-gallery{% elif customer.slug == 'mogadishu-specialist-hospital' %} customer-record-card--mogadishu-gallery{% elif customer.slug == 'shaafi-hospital' %} customer-record-card--shaafi-gallery{% endif %}">
+          <div class="customer-record-copy">
+            <div class="customer-record-kicker"><span>{{ project.get_work_type_display }}</span>{% if project.date %}<time datetime="{{ project.date|date:'Y-m-d' }}">{{ project.date|date:"F Y" }}</time>{% endif %}</div>
+            <h4>{{ project.title }}</h4>
+            {% if project.description %}<div class="prose">{{ project.description|linebreaks }}</div>{% endif %}
+            {% if project.products.all %}
+            <div class="customer-record-products">
+              <span>Related Somlab products</span>
+              {% for product in project.products.all %}<a href="{{ product.get_absolute_url }}">{{ product.name }} <b aria-hidden="true">→</b></a>{% endfor %}
+            </div>
+            {% endif %}
+          </div>
+
+          {% if project.media.all %}
+          <div class="customer-record-media{% if is_featured_gallery %} customer-showcase-media{% endif %}">
+            {% for item in project.media.all %}
+              <figure class="customer-media-card{% if item.media_type == 'video' %} is-video{% endif %}">
+                {% if item.media_type == "video" %}
+                  {% if item.file %}
+                  <div class="customer-video-player" data-customer-video-player>
+                    <video controls playsinline preload="metadata"{% if item.video_poster %} poster="{{ item.video_poster.url }}"{% endif %} aria-label="{{ item.caption|default:project.title }} video"><source src="{% url 'customer_video_source' customer.slug item.pk %}"{% if item.playback_file %} type="video/mp4"{% elif item.video_mime_type %} type="{{ item.video_mime_type }}"{% endif %}>Your browser does not support this video.</video>
+                    <button class="customer-video-play" type="button" data-customer-video-play aria-label="Play {{ item.caption|default:project.title }} video" hidden><span aria-hidden="true">▶</span><span>Play video</span></button>
+                    <button class="customer-video-fullscreen" type="button" data-customer-video-fullscreen aria-label="Enter video fullscreen" hidden>⛶</button>
+                    <p class="customer-video-error" data-customer-video-error role="status" hidden>Video could not load. <button type="button" data-customer-video-retry>Try again</button> or <a href="{% url 'customer_video_source' customer.slug item.pk %}" target="_blank" rel="noopener">open video</a>.</p>
+                  </div>
+                  {% elif item.embed_url %}<span class="customer-video-frame"><iframe src="{{ item.embed_url }}" title="{{ item.caption|default:project.title }}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></span>
+                  {% elif item.video_url %}<a class="customer-external-video" href="{{ item.video_url }}" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">▶</span><strong>Watch project video</strong><small>Opens externally ↗</small></a>{% endif %}
+                {% elif item.file %}
+                  <button class="customer-gallery-button" type="button" data-customer-lightbox data-image-src="{{ item.file.url }}" data-image-alt="{{ item.caption|default:project.title }}" data-image-caption="{{ item.caption }}"><img src="{{ item.file.url }}" alt="{{ item.caption|default:project.title }}" loading="lazy"></button>
+                {% endif %}
+                {% if item.caption or item.description %}<figcaption>{% if item.caption %}<strong>{{ item.caption }}</strong>{% endif %}{% if item.description %}<span>{{ item.description }}</span>{% endif %}</figcaption>{% endif %}
+              </figure>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+    {% endfor %}
+
+  </div>
+</section>
+{% endif %}
+
+{% if customer.website or customer.facebook_url %}
+<section class="customer-links-section">
+  <div class="container customer-links-panel">
+    <div><span class="eyebrow">Customer link</span><h2>Learn more about {{ customer.name }}</h2></div>
+    <div class="customer-links">
+      {% if customer.website %}<a href="{{ customer.website }}" target="_blank" rel="noopener noreferrer">Our Platform</a>
+      {% elif customer.facebook_url %}<a href="{{ customer.facebook_url }}" target="_blank" rel="noopener noreferrer">Our Platform</a>{% endif %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<dialog class="customer-lightbox" data-customer-lightbox-dialog aria-label="Customer project image viewer">
+  <button type="button" class="customer-lightbox-close" data-customer-lightbox-close aria-label="Close image viewer">×</button>
+  <img src="" alt="" data-customer-lightbox-image>
+  <p data-customer-lightbox-caption hidden></p>
+</dialog>
+{% endblock %}

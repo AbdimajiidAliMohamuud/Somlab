@@ -1,0 +1,17 @@
+{% extends "dashboard/base.html" %}
+{% block title %}Product inquiries{% endblock %}
+{% block content %}
+<div class="dash-heading"><div><span>Customer product requests</span><h1>Product inquiries</h1></div></div>
+<div class="dash-card">
+  <form class="dash-filters">
+    <input name="q" value="{{ query }}" placeholder="Search reference, customer, organization or product">
+    <select name="status"><option value="">All statuses</option>{% for value,label in statuses %}<option value="{{ value }}"{% if status == value %} selected{% endif %}>{{ label }}</option>{% endfor %}</select>
+    <button class="btn btn-dark">Filter</button>
+    {% if status or query %}<a href="{% url 'dashboard_inquiries' %}">Clear</a>{% endif %}
+  </form>
+  <div class="table-wrap"><table><thead><tr><th>Inquiry</th><th>Customer</th><th>Product</th><th>Quantity</th><th>Date</th><th>Status</th><th></th></tr></thead><tbody>
+    {% for inquiry in inquiries %}<tr><td><strong>{{ inquiry.inquiry_number }}</strong></td><td>{{ inquiry.full_name }}<small>{{ inquiry.organization }} · {{ inquiry.phone }}</small></td><td>{{ inquiry.product_name }}<small>{{ inquiry.get_product_group_display|default:"Group not recorded" }} · {{ inquiry.product_code|default:"No code" }}</small></td><td>{{ inquiry.quantity|default:"—" }}</td><td>{{ inquiry.created_at|date:"d M Y" }}<small>{{ inquiry.created_at|time:"H:i" }}</small></td><td><span class="status status-{{ inquiry.status }}">{{ inquiry.get_status_display }}</span></td><td><a class="row-link" href="{% url 'dashboard_inquiry_detail' inquiry.inquiry_number %}" aria-label="Open {{ inquiry.inquiry_number }}">→</a></td></tr>
+    {% empty %}<tr><td colspan="7"><div class="empty-state"><h3>No matching inquiries</h3><p>Try clearing the filters.</p></div></td></tr>{% endfor %}
+  </tbody></table></div>
+</div>
+{% endblock %}

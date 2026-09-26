@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block title %}Sign in — Somlab Diagnostics{% endblock %}
+{% block content %}
+<section class="auth-section"><div class="auth-card">{% if '/dashboard/' in next %}<span class="eyebrow">Authorized administration</span><h1>Admin sign in</h1><p>Use an approved Somlab administrator account to continue.</p>{% else %}<span class="eyebrow">Customer account</span><h1>Welcome back</h1><p>Sign in to continue with your Somlab account.</p>{% endif %}<form method="post">{% csrf_token %}{% include "includes/form_fields.html" with form=form %}<input type="hidden" name="next" value="{{ next }}"><button class="btn btn-primary btn-block">Sign in</button></form>{% if '/dashboard/' not in next %}<p class="auth-foot">New to Somlab? <a href="{% url 'register' %}">Create an account</a></p>{% endif %}</div></section>
+{% endblock %}

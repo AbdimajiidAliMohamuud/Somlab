@@ -1,0 +1,5 @@
+{% extends "dashboard/base.html" %}
+{% block title %}{{ item.subject }}{% endblock %}
+{% block content %}
+<div class="dash-heading"><div><a class="back-link" href="{% url 'dashboard_messages' %}">← Back to messages</a><h1>{{ item.subject }}</h1><span>Received {{ item.created_at|date:"d M Y, H:i" }}</span></div><a class="btn btn-primary" href="mailto:{{ item.email }}?subject=Re: {{ item.subject|urlencode }}">Reply by email</a></div><div class="dash-card message-detail"><div class="message-sender"><div class="avatar">{{ item.full_name|slice:":1"|upper }}</div><div><strong>{{ item.full_name }}</strong><span>{{ item.company_name|default:"No organisation provided" }}</span></div></div><dl class="customer-dl"><div><dt>Email</dt><dd><a href="mailto:{{ item.email }}">{{ item.email }}</a></dd></div><div><dt>Phone</dt><dd><a href="tel:{{ item.phone }}">{{ item.phone }}</a></dd></div></dl><div class="message-body">{{ item.message|linebreaks }}</div></div>
+{% endblock %}

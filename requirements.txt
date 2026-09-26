@@ -1,0 +1,7 @@
+Django>=5.2,<5.3
+Pillow>=11.0
+gunicorn>=23.0
+whitenoise>=6.8
+django-storages[s3]>=1.14.6,<1.15
+python-dotenv>=1.0,<2
+imageio-ffmpeg>=0.6,<0.7

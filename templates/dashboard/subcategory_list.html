@@ -1,0 +1,9 @@
+{% extends "dashboard/base.html" %}
+{% block title %}Product subcategories{% endblock %}
+{% block content %}
+<div class="dash-heading"><div><span>Catalogue structure</span><h1>Product subcategories</h1></div><a class="btn btn-primary" href="{% url 'dashboard_subcategory_add' %}">+ Add subcategory</a></div>
+<div class="dash-card"><div class="table-wrap"><table><thead><tr><th>Subcategory</th><th>Parent category</th><th>Products</th><th>Order</th><th>Visible</th><th>Actions</th></tr></thead><tbody>
+{% for subcategory in subcategories %}<tr><td><strong>{{ subcategory.name }}</strong><small>{{ subcategory.description|truncatewords:12 }}</small></td><td>{{ subcategory.category.name }}</td><td>{{ subcategory.product_total }}</td><td>{{ subcategory.display_order }}</td><td>{% if subcategory.is_active %}<span class="yes-mark">Yes</span>{% else %}<span class="no-mark">No</span>{% endif %}</td><td><div class="row-actions"><a href="{% url 'dashboard_subcategory_edit' subcategory.pk %}">Edit</a><a class="danger" href="{% url 'dashboard_subcategory_delete' subcategory.pk %}">Delete</a></div></td></tr>
+{% empty %}<tr><td colspan="6"><div class="empty-state"><h3>No subcategories yet</h3></div></td></tr>{% endfor %}
+</tbody></table></div></div>
+{% endblock %}

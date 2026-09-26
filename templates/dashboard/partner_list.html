@@ -1,0 +1,9 @@
+{% extends "dashboard/base.html" %}
+{% block title %}Partners{% endblock %}
+{% block content %}
+<div class="dash-heading"><div><span>Manufacturer network</span><h1>Partners</h1></div><a class="btn btn-primary" href="{% url 'dashboard_partner_add' %}">+ Add partner</a></div>
+<div class="dash-card"><div class="table-wrap"><table><thead><tr><th>Partner</th><th>Country</th><th>Display order</th><th>Visible</th><th>Actions</th></tr></thead><tbody>
+{% for partner in partners %}<tr><td><div class="manage-item">{% if partner.website %}<a class="manage-logo-link" href="{{ partner.website }}" target="_blank" rel="noopener noreferrer" aria-label="Visit {{ partner.name }} official website">{% if partner.logo %}<img src="{{ partner.logo.url }}" alt="{{ partner.name }} logo">{% else %}<span>{{ partner.name|slice:":2"|upper }}</span>{% endif %}</a>{% elif partner.logo %}<img src="{{ partner.logo.url }}" alt="{{ partner.name }} logo">{% else %}<span>{{ partner.name|slice:":2"|upper }}</span>{% endif %}<strong>{{ partner.name }}</strong></div></td><td>{{ partner.country|default:"—" }}</td><td>{{ partner.display_order }}</td><td>{% if partner.is_active %}<span class="yes-mark">Yes</span>{% else %}<span class="no-mark">No</span>{% endif %}</td><td><div class="row-actions"><a href="{% url 'dashboard_partner_edit' partner.pk %}">Edit</a><a class="danger" href="{% url 'dashboard_partner_delete' partner.pk %}">Delete</a></div></td></tr>
+{% empty %}<tr><td colspan="5"><div class="empty-state"><h3>No partners yet</h3></div></td></tr>{% endfor %}
+</tbody></table></div></div>
+{% endblock %}

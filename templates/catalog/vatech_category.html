@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}{{ subcategory.name }} — Vatech Dental — Somlab Diagnostics{% endblock %}
+{% block meta_description %}Explore verified Vatech Dental {{ subcategory.name|lower }} products available from Somlab Diagnostics.{% endblock %}
+{% block content %}
+<section class="category-detail-hero subcategory-detail-hero vatech-category-hero">
+  <div class="container category-hero-grid">
+    <div class="category-hero-copy">
+      <div class="breadcrumbs"><a href="{% url 'home' %}">Home</a><span>/</span><a href="{% url 'product_list' %}">Products</a><span>/</span><a href="{{ category.get_absolute_url }}">Vatech Dental</a><span>/</span><strong>{{ subcategory.name }}</strong></div>
+      <span class="eyebrow">Dental equipment · Vatech Dental</span>
+      <h1>{{ subcategory.name }}</h1>
+      <p>{{ subcategory.description }}</p>
+      <div class="category-hero-actions"><a class="btn btn-primary" href="#vatech-products">View products</a><a class="btn btn-secondary" href="{% url 'contact' %}?subject={{ subcategory.name|urlencode }}">Ask our team</a></div>
+    </div>
+    <div class="category-hero-image subcategory-hero-image">
+      {% if subcategory.image %}
+        <img src="{{ subcategory.image.url }}" alt="{{ subcategory.name }}">
+      {% else %}
+        <div class="category-visual-placeholder"><span>VD</span><i></i><i></i><small>Vatech Dental</small></div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft" id="vatech-products">
+  <div class="container">
+    <div class="section-heading"><div><span class="eyebrow">Vatech Dental catalogue</span><h2>Products in {{ subcategory.name }}</h2></div><span class="category-result-count">{{ products|length }} product{{ products|length|pluralize }}</span></div>
+    <div class="product-grid category-product-grid">
+      {% for product in products %}{% include "catalog/_product_card.html" %}
+      {% empty %}<div class="empty-state wide category-empty-state"><h3>Products are being prepared</h3><p>Contact Somlab to ask about Vatech {{ subcategory.name|lower }} products.</p><a class="btn btn-primary" href="{% url 'contact' %}?subject={{ subcategory.name|urlencode }}">Contact our team</a></div>{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="cta-section"><div class="container cta-inner"><div><span class="eyebrow">Dental imaging guidance</span><h2>Planning a Vatech imaging requirement?</h2><p>Tell us about your diagnostic workflow and preferred configuration.</p></div><a class="btn btn-white" href="{% url 'contact' %}?subject=Vatech%20Dental">Discuss your needs</a></div></section>
+{% endblock %}

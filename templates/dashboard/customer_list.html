@@ -1,0 +1,33 @@
+{% extends "dashboard/base.html" %}
+{% block title %}Customers{% endblock %}
+{% block content %}
+<div class="dash-heading">
+  <div><span>Customer portfolio</span><h1>Customers</h1></div>
+  <a class="btn btn-primary" href="{% url 'dashboard_customer_add' %}">+ Add customer</a>
+</div>
+<div class="dash-card">
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Customer</th><th>Projects</th><th>Display order</th><th>Visible</th><th>Actions</th></tr></thead>
+      <tbody>
+        {% for customer in customers %}
+          <tr>
+            <td>
+              <div class="manage-item">
+                {% if customer.logo %}<img src="{{ customer.logo.url }}" alt="{{ customer.name }} logo">{% else %}<span>{{ customer.name|slice:":2"|upper }}</span>{% endif %}
+                <div><strong>{{ customer.name }}</strong><small>{{ customer.short_description|default:"No description yet"|truncatewords:10 }}</small></div>
+              </div>
+            </td>
+            <td>{{ customer.project_total }}</td>
+            <td>{{ customer.display_order }}</td>
+            <td>{% if customer.is_active %}<span class="yes-mark">Yes</span>{% else %}<span class="no-mark">No</span>{% endif %}</td>
+            <td><div class="row-actions"><a href="{{ customer.get_absolute_url }}" target="_blank">View ↗</a><a href="{% url 'dashboard_customer_projects' customer.pk %}">Projects</a><a href="{% url 'dashboard_customer_edit' customer.pk %}">Edit</a><a class="danger" href="{% url 'dashboard_customer_delete' customer.pk %}">Delete</a></div></td>
+          </tr>
+        {% empty %}
+          <tr><td colspan="5"><div class="empty-state"><h3>No customers yet</h3></div></td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

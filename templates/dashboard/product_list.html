@@ -1,0 +1,22 @@
+{% extends "dashboard/base.html" %}
+{% block title %}Products{% endblock %}
+{% block content %}
+<div class="dash-heading"><div><span>Catalogue management</span><h1>Products</h1></div><a class="btn btn-primary" href="{% url 'dashboard_product_add' %}">+ Add product</a></div>
+<div class="dash-card">
+  <form class="dash-filters manage-search">
+    <input name="q" value="{{ query }}" placeholder="Search product, code or brand">
+    <button class="btn btn-dark">Search</button>
+    {% if query %}<a href="{% url 'dashboard_products' %}">Clear</a>{% endif %}
+  </form>
+  <div class="table-wrap"><table><thead><tr><th>Product</th><th>Code</th><th>Category</th><th>Pricing</th><th>Availability</th><th>Visible</th><th>Actions</th></tr></thead><tbody>
+  {% for product in products %}<tr>
+    <td><div class="manage-item">{% if product.image %}<img class="product-manage-thumb" src="{{ product.image.url }}" alt="">{% else %}<span>{{ product.name|slice:":2"|upper }}</span>{% endif %}<div><strong>{{ product.name }}</strong><small>{{ product.brand|default:"No brand" }}</small></div></div></td>
+    <td>{{ product.product_code }}</td><td>{{ product.category.name }}{% if product.subcategory %}<small>{{ product.subcategory.name }}</small>{% endif %}</td>
+    <td><small>Request price</small></td>
+    <td><span class="availability availability-{{ product.availability }}">{{ product.get_availability_display }}</span></td>
+    <td>{% if product.is_active %}<span class="yes-mark">Yes</span>{% else %}<span class="no-mark">No</span>{% endif %}</td>
+    <td><div class="row-actions"><a href="{{ product.get_absolute_url }}" target="_blank" title="View">↗</a><a href="{% url 'dashboard_product_edit' product.pk %}">Edit</a><a class="danger" href="{% url 'dashboard_product_delete' product.pk %}">Delete</a></div></td>
+  </tr>{% empty %}<tr><td colspan="7"><div class="empty-state"><h3>No products found</h3><p>Add the first product to your catalogue.</p></div></td></tr>{% endfor %}
+  </tbody></table></div>
+</div>
+{% endblock %}

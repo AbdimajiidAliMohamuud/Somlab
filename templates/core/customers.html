@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Our Customers — Somlab Diagnostics{% endblock %}
+{% block meta_description %}Organizations and laboratory teams supported by Somlab Diagnostics across East Africa.{% endblock %}
+{% block content %}
+<section class="customers-intro">
+  <div class="container narrow">
+    <h1>Healthcare organizations we support</h1>
+    <p>Long-term customer relationships supported through laboratory products, implementation and technical expertise.</p>
+  </div>
+</section>
+
+{% if customers %}
+<section class="customers-marquee-section" aria-label="Somlab customers">
+  {% include "core/_customer_marquee.html" with marquee_label="Somlab customers" %}
+</section>
+{% endif %}
+
+<section class="section customers-directory">
+  <div class="container">
+    {% if customers %}
+      <div class="customers-directory-heading">
+        <span class="eyebrow">Customer network</span>
+        <h2>Organizations working with Somlab</h2>
+        <p>Select an organization to explore its Somlab customer profile.</p>
+      </div>
+      <div class="customer-showcase-grid">
+        {% for customer in customers %}
+          <a class="customer-showcase-card" href="{{ customer.get_absolute_url }}" aria-label="View {{ customer.name }} profile">
+            <span class="customer-logo-wrap">{% if customer.logo %}<img src="{{ customer.logo.url }}" alt="{{ customer.name }} logo" loading="lazy">{% else %}<b aria-hidden="true">{{ customer.name|slice:":2"|upper }}</b>{% endif %}</span>
+            <span class="customer-card-copy"><h2>{{ customer.name }}</h2></span>
+          </a>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="customers-placeholder">
+        <span class="customers-placeholder-mark" aria-hidden="true">S</span>
+        <div>
+          <h2>Stories built around laboratory performance.</h2>
+          <p>We are preparing profiles of the organizations, products and technical projects supported by Somlab Diagnostics.</p>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

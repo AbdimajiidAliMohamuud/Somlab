@@ -1,0 +1,9 @@
+{% extends "dashboard/base.html" %}
+{% block title %}Users{% endblock %}
+{% block content %}
+<div class="dash-heading"><div><span>Access and customer accounts</span><h1>Users</h1></div><a class="btn btn-primary" href="{% url 'dashboard_user_add' %}">+ Add user</a></div>
+<div class="dash-card"><div class="table-wrap"><table><thead><tr><th>User</th><th>Email</th><th>Access</th><th>Status</th><th>Joined</th><th>Actions</th></tr></thead><tbody>
+{% for item in users %}<tr><td><div class="manage-item"><span>{{ item.username|slice:":1"|upper }}</span><div><strong>{{ item.get_full_name|default:item.username }}</strong><small>@{{ item.username }}</small></div></div></td><td>{{ item.email|default:"—" }}</td><td>{% if item.is_staff %}<span class="access-admin">Administrator</span>{% else %}<span class="access-customer">Customer</span>{% endif %}</td><td>{% if item.is_active %}<span class="yes-mark">Active</span>{% else %}<span class="no-mark">Inactive</span>{% endif %}</td><td>{{ item.date_joined|date:"d M Y" }}</td><td><div class="row-actions"><a href="{% url 'dashboard_user_edit' item.pk %}">Edit</a></div></td></tr>
+{% empty %}<tr><td colspan="6"><div class="empty-state"><h3>No users found</h3></div></td></tr>{% endfor %}
+</tbody></table></div></div>
+{% endblock %}

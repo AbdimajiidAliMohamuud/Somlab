@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}ZEISS Microscopy — Somlab Diagnostics{% endblock %}
+{% block meta_description %}ZEISS Microscopy products are being prepared for the Somlab Diagnostics catalogue.{% endblock %}
+{% block content %}
+<section class="page-hero compact zeiss-microscopy-hero">
+  <div class="container narrow">
+    <div class="breadcrumbs"><a href="{% url 'home' %}">Home</a><span>/</span><a href="{% url 'product_list' %}">Products</a><span>/</span><strong>ZEISS Microscopy</strong></div>
+    <span class="eyebrow">Medical equipment</span>
+    <h1>ZEISS Microscopy</h1>
+    <p>Advanced microscopy solutions from ZEISS will be available here as the Somlab catalogue expands.</p>
+  </div>
+</section>
+
+<section class="section zeiss-microscopy-coming-soon">
+  <div class="container narrow">
+    <div class="empty-state zeiss-microscopy-empty">
+      <span class="eyebrow">Catalogue update</span>
+      <h2>Products coming soon</h2>
+      <p>We are currently preparing this product range. Please check back soon or contact Somlab for more information.</p>
+      <div class="zeiss-microscopy-actions">
+        <a class="btn btn-primary" href="{% url 'contact' %}?subject=ZEISS%20Microscopy">Contact us</a>
+        <a class="btn btn-secondary" href="{% url 'category_detail' 'light-microscopes' %}">View ZEISS Light Microscopes</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

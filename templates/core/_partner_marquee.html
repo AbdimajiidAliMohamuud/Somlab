@@ -1,0 +1,32 @@
+{% if partners %}
+<div class="partners-marquee" aria-label="{{ marquee_label|default:'Partner manufacturers' }}">
+  <div class="partners-marquee-track">
+    <div class="partners-marquee-sequence">
+      {% for partner in partners %}
+        {% if link_to_catalogue %}
+          <a class="partners-marquee-item manufacturer-logo-card" href="{% url 'product_list' %}?brand={{ partner.product_brand_slug }}" aria-label="View {{ partner.name }} products" data-brand="{{ partner.product_brand_slug|default:'' }}">
+        {% elif partner.website %}
+          <a class="partners-marquee-item manufacturer-logo-card" href="{{ partner.website }}" target="_blank" rel="noopener noreferrer" aria-label="Visit {{ partner.name }} official website" data-brand="{{ partner.product_brand_slug|default:'' }}">
+        {% else %}
+          <span class="partners-marquee-item manufacturer-logo-card" data-brand="{{ partner.product_brand_slug|default:'' }}">
+        {% endif %}
+            {% if partner.logo %}<span class="manufacturer-logo-visual"><img src="{{ partner.logo.url }}" alt="{{ partner.name }} logo" loading="lazy" decoding="async" data-manufacturer-logo></span><span class="manufacturer-logo-fallback" hidden>{{ partner.name }}</span>{% else %}<span class="manufacturer-logo-fallback">{{ partner.name }}</span>{% endif %}
+        {% if link_to_catalogue or partner.website %}</a>{% else %}</span>{% endif %}
+      {% endfor %}
+    </div>
+    <div class="partners-marquee-sequence" aria-hidden="true">
+      {% for partner in partners %}
+        {% if link_to_catalogue %}
+        <a class="partners-marquee-item manufacturer-logo-card" href="{% url 'product_list' %}?brand={{ partner.product_brand_slug }}" tabindex="-1" data-brand="{{ partner.product_brand_slug|default:'' }}">
+        {% elif partner.website %}
+        <a class="partners-marquee-item manufacturer-logo-card" href="{{ partner.website }}" target="_blank" rel="noopener noreferrer" tabindex="-1" data-brand="{{ partner.product_brand_slug|default:'' }}">
+        {% else %}
+        <span class="partners-marquee-item manufacturer-logo-card" data-brand="{{ partner.product_brand_slug|default:'' }}">
+        {% endif %}
+          {% if partner.logo %}<span class="manufacturer-logo-visual"><img src="{{ partner.logo.url }}" alt="" loading="lazy" decoding="async" data-manufacturer-logo></span><span class="manufacturer-logo-fallback" hidden>{{ partner.name }}</span>{% else %}<span class="manufacturer-logo-fallback">{{ partner.name }}</span>{% endif %}
+        {% if link_to_catalogue or partner.website %}</a>{% else %}</span>{% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endif %}

@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block title %}{{ service.name }} — Somlab Diagnostics{% endblock %}
+{% block content %}
+<section class="page-hero"><div class="container narrow"><a class="back-link" href="{% url 'services' %}">← All services</a><span class="eyebrow">Somlab services</span><h1>{{ service.name }}</h1><p>{{ service.short_description }}</p></div></section>
+<section class="section"><div class="container narrow article-body"><p>{{ service.description|linebreaks }}</p><div class="article-cta"><h3>Discuss your requirement with our team</h3><p>We’ll review your needs and recommend the next practical step.</p><a class="btn btn-primary" href="{% url 'contact' %}?subject={{ service.name|urlencode }}">Contact us</a></div></div></section>
+{% endblock %}
