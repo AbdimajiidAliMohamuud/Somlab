@@ -505,7 +505,7 @@ class CustomDashboardManagementTests(TestCase):
         self.assertContains(public_gallery, "Work delivered")
         self.assertContains(
             public_gallery,
-            '<video controls playsinline preload="metadata"',
+            '<video controls autoplay muted loop playsinline preload="metadata"',
             html=False,
         )
         self.assertContains(

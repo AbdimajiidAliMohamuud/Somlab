@@ -250,30 +250,66 @@ document.querySelectorAll("[data-customer-video-player]").forEach((player) => {
   const play = player.querySelector("[data-customer-video-play]");
   const error = player.querySelector("[data-customer-video-error]");
   const fullscreen = player.querySelector("[data-customer-video-fullscreen]");
-  fullscreen.hidden = !(document.fullscreenEnabled || video.webkitEnterFullscreen);
+  fullscreen.hidden = false;
+  const setFullscreenLabel = () => fullscreen.setAttribute("aria-label",
+    player.classList.contains("is-fullscreen-fallback") || document.fullscreenElement === video
+      ? "Exit video fullscreen" : "Enter video fullscreen");
+  const closeFallbackFullscreen = () => {
+    player.classList.remove("is-fullscreen-fallback");
+    player.removeAttribute("role");
+    player.removeAttribute("aria-modal");
+    setFullscreenLabel();
+  };
+  const openFallbackFullscreen = () => {
+    player.classList.add("is-fullscreen-fallback");
+    player.setAttribute("role", "dialog");
+    player.setAttribute("aria-modal", "true");
+    setFullscreenLabel();
+  };
   fullscreen.addEventListener("click", () => {
-    if (video.requestFullscreen) video.requestFullscreen().catch(() => {});
-    else video.webkitEnterFullscreen?.();
+    if (player.classList.contains("is-fullscreen-fallback")) {
+      closeFallbackFullscreen();
+    } else if (document.fullscreenElement === video) {
+      document.exitFullscreen?.();
+    } else if (video.requestFullscreen) {
+      video.requestFullscreen().then(setFullscreenLabel).catch(openFallbackFullscreen);
+    } else if (video.webkitEnterFullscreen) {
+      video.webkitEnterFullscreen();
+    } else {
+      openFallbackFullscreen();
+    }
+  });
+  document.addEventListener("fullscreenchange", setFullscreenLabel);
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && player.classList.contains("is-fullscreen-fallback"))
+      closeFallbackFullscreen();
   });
   const fitVideo = () => player.classList.toggle("is-portrait", video.videoHeight > video.videoWidth);
   video.addEventListener("loadedmetadata", fitVideo);
   if (video.readyState >= 1) fitVideo();
+  // Muted looping preview keeps one centered action; a click switches to normal playback.
+  let isPreview = true;
+  video.controls = false;
   play.hidden = false;
   const showError = () => { error.hidden = false; play.hidden = true; };
-  play.addEventListener("click", () => {
+  const startWithAudio = () => {
+    isPreview = false;
     error.hidden = true;
+    video.loop = false;
+    video.muted = false;
+    video.controls = true;
+    play.hidden = true;
     video.play().catch(showError);
-  });
-  video.addEventListener("play", () => { play.hidden = true; error.hidden = true; });
-  video.addEventListener("ended", () => { play.hidden = false; });
+  };
+  play.addEventListener("click", startWithAudio);
+  video.addEventListener("play", () => { if (!isPreview) play.hidden = true; error.hidden = true; });
   video.addEventListener("error", showError);
   // Source failures do not consistently bubble to the video element.
   video.querySelector("source").addEventListener("error", showError);
+  video.play().catch(() => { /* The centered button remains available if autoplay is blocked. */ });
   player.querySelector("[data-customer-video-retry]").addEventListener("click", () => {
-    error.hidden = true;
-    play.hidden = false;
     video.load();
-    video.play().catch(showError);
+    startWithAudio();
   });
 });
 
