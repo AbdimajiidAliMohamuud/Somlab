@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.db import transaction
-from django.db.models import Max
+from django.db.models import Max, TextField
 from django.utils.text import slugify
 
 from catalog.models import (
@@ -10,7 +10,8 @@ from catalog.models import (
 )
 from catalog.scope import public_categories
 from core.models import (
-    Customer, CustomerProject, CustomerProjectMedia, Partner, Service,
+    AboutPageContent, ContactPageContent, Customer, CustomerProject,
+    CustomerProjectMedia, Partner, Service,
 )
 from core.customer_video import (
     MAX_VIDEO_BYTES, VIDEO_LIMIT_MESSAGE, save_video_media, validate_video_upload,
@@ -18,14 +19,29 @@ from core.customer_video import (
 from core.customer_media_lifecycle import (
     move_customer_media_to_index, normalize_customer_media_order,
 )
-from orders.models import Order, ProductInquiry
+from orders.models import ProductInquiry
 
 
-class OrderUpdateForm(forms.ModelForm):
+class AboutPageContentForm(forms.ModelForm):
     class Meta:
-        model = Order
-        fields = ("status", "internal_notes")
-        widgets = {"internal_notes": forms.Textarea(attrs={"rows": 4})}
+        model = AboutPageContent
+        fields = "__all__"
+        widgets = {
+            field.name: forms.Textarea(attrs={"rows": 4})
+            for field in AboutPageContent._meta.fields
+            if isinstance(field, TextField)
+        }
+
+
+class ContactPageContentForm(forms.ModelForm):
+    class Meta:
+        model = ContactPageContent
+        fields = "__all__"
+        widgets = {
+            "hero_intro": forms.Textarea(attrs={"rows": 3}),
+            "details_intro": forms.Textarea(attrs={"rows": 3}),
+            "office_address": forms.Textarea(attrs={"rows": 3}),
+        }
 
 
 class InquiryUpdateForm(forms.ModelForm):

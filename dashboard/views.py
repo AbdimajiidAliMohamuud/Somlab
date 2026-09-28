@@ -12,12 +12,13 @@ from django.urls import reverse
 
 from catalog.models import Category, Product, ProductSubcategory
 from core.models import (
-    ContactMessage, Customer, CustomerProject, CustomerProjectMedia, Partner,
-    Service,
+    AboutPageContent, ContactPageContent, ContactMessage, Customer,
+    CustomerProject, CustomerProjectMedia, Partner, Service,
 )
-from orders.models import Order, ProductInquiry
+from orders.models import ProductInquiry
 from .forms import (
-    AdminUserCreateForm, AdminUserUpdateForm, CategoryForm, OrderUpdateForm,
+    AboutPageContentForm, ContactPageContentForm,
+    AdminUserCreateForm, AdminUserUpdateForm, CategoryForm,
     CustomerForm, CustomerProjectForm, CustomerProjectMediaForm, PartnerForm, ProductForm,
     ProductSubcategoryForm, ServiceForm, InquiryUpdateForm,
 )
@@ -38,14 +39,10 @@ def admin_required(view):
 
 @admin_required
 def overview(request):
-    orders = Order.objects.all()
     inquiries = ProductInquiry.objects.select_related("product")
     stats = {
         "products": Product.objects.filter(is_active=True).count(),
         "categories": Category.objects.filter(is_active=True).count(),
-        "new_orders": orders.filter(status="new").count(),
-        "active_orders": orders.exclude(status__in=["delivered", "cancelled"]).count(),
-        "delivered_orders": orders.filter(status="delivered").count(),
         "unread_messages": ContactMessage.objects.filter(is_read=False).count(),
         "new_inquiries": inquiries.filter(status="new").count(),
         "active_inquiries": inquiries.exclude(status__in=["responded", "closed"]).count(),
@@ -109,39 +106,6 @@ def inquiry_detail(request, inquiry_number):
 
 
 @admin_required
-def order_list(request):
-    orders = Order.objects.prefetch_related("items")
-    status = request.GET.get("status", "")
-    query = request.GET.get("q", "").strip()
-    if status:
-        orders = orders.filter(status=status)
-    if query:
-        orders = orders.filter(
-            Q(order_number__icontains=query) |
-            Q(full_name__icontains=query) |
-            Q(company_name__icontains=query) |
-            Q(phone__icontains=query)
-        )
-    return render(request, "dashboard/order_list.html", {
-        "orders": orders, "status": status, "query": query,
-        "statuses": Order.STATUS_CHOICES,
-    })
-
-
-@admin_required
-def order_detail(request, order_number):
-    order = get_object_or_404(
-        Order.objects.prefetch_related("items"), order_number=order_number
-    )
-    form = OrderUpdateForm(request.POST or None, instance=order)
-    if request.method == "POST" and form.is_valid():
-        form.save()
-        messages.success(request, f"Order {order.order_number} was updated.")
-        return redirect("dashboard_order_detail", order_number=order.order_number)
-    return render(request, "dashboard/order_detail.html", {"order": order, "form": form})
-
-
-@admin_required
 def messages_list(request):
     messages_qs = ContactMessage.objects.all()
     return render(request, "dashboard/messages.html", {"contact_messages": messages_qs})
@@ -154,6 +118,35 @@ def message_detail(request, pk):
         item.is_read = True
         item.save(update_fields=["is_read"])
     return render(request, "dashboard/message_detail.html", {"item": item})
+
+
+def _edit_page_content(request, model, form_class, title, url_name):
+    content, _ = model.objects.get_or_create(pk=1)
+    form = form_class(request.POST or None, instance=content)
+    if request.method == "POST" and form.is_valid():
+        form.save()
+        messages.success(request, f"{title} content was updated.")
+        return redirect(url_name)
+    return render(request, "dashboard/page_content_form.html", {
+        "form": form,
+        "title": title,
+    })
+
+
+@admin_required
+def about_content(request):
+    return _edit_page_content(
+        request, AboutPageContent, AboutPageContentForm,
+        "About Us", "dashboard_about_content",
+    )
+
+
+@admin_required
+def contact_content(request):
+    return _edit_page_content(
+        request, ContactPageContent, ContactPageContentForm,
+        "Contact Us", "dashboard_contact_content",
+    )
 
 
 def _save_form(request, form_class, template_title, success_name, instance=None):

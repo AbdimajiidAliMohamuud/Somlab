@@ -238,6 +238,76 @@ class CustomerProjectMedia(models.Model):
         return self.VIDEO_MIME_TYPES.get(extension, "")
 
 
+class AboutPageContent(models.Model):
+    hero_eyebrow = models.CharField(max_length=80, default="About Somlab")
+    hero_title = models.CharField(max_length=220, default="Built around reliable laboratory performance.")
+    hero_intro = models.TextField(default="Serving hospitals, private laboratories, universities, research organisations and clinics across East Africa.")
+    story_eyebrow = models.CharField(max_length=80, default="Who we are")
+    story_title = models.CharField(max_length=220, default="A laboratory solutions company with a long-term view.")
+    story_paragraph_one = models.TextField(default="Founded in 2022 as a sister company of Medisom Health Group, Somlab Diagnostics imports, distributes and installs quality laboratory equipment, reagents and supplies.")
+    story_paragraph_two = models.TextField(default="We support customers beyond delivery through training, maintenance, laboratory management systems and customised turnkey projects.")
+    vision_title = models.CharField(max_length=80, default="Our vision")
+    vision_body = models.TextField(default="To become a leading laboratory solutions provider in East Africa by delivering reliable products, excellent service and long-term value.")
+    mission_title = models.CharField(max_length=80, default="Our mission")
+    mission_body = models.TextField(default="To build lasting partnerships by providing quality laboratory products, innovative solutions and dependable technical support.")
+    promise_title = models.CharField(max_length=80, default="Our promise")
+    promise_body = models.TextField(default="We deliver what we promise and promise only what we can deliver—with integrity, care and consistent performance.")
+    values_eyebrow = models.CharField(max_length=80, default="Our values")
+    values_title = models.CharField(max_length=150, default="How we work")
+    integrity_title = models.CharField(max_length=80, default="Integrity")
+    integrity_body = models.TextField(default="Honesty, fairness and transparency in every relationship.")
+    reliability_title = models.CharField(max_length=80, default="Reliability")
+    reliability_body = models.TextField(default="Dependable products, communication and follow-through.")
+    teamwork_title = models.CharField(max_length=80, default="Teamwork")
+    teamwork_body = models.TextField(default="Working closely with customers, suppliers and technical teams.")
+    customer_focus_title = models.CharField(max_length=80, default="Customer focus")
+    customer_focus_body = models.TextField(default="Solutions shaped around the realities of each institution.")
+    service_excellence_title = models.CharField(max_length=80, default="Service excellence")
+    service_excellence_body = models.TextField(default="Responsive support delivered efficiently and professionally.")
+    audience_eyebrow = models.CharField(max_length=80, default="Who we serve")
+    audience_title = models.CharField(max_length=180, default="Supporting health and science across the region")
+    audiences = models.TextField(
+        default="Hospitals\nPrivate laboratories\nClinics\nBlood banks\nUniversities\nResearch centres\nGovernment institutions\nHumanitarian organisations",
+        help_text="One audience per line.",
+    )
+
+    @property
+    def audience_items(self):
+        return [item.strip() for item in self.audiences.splitlines() if item.strip()]
+
+    def __str__(self):
+        return "About Us content"
+
+
+class ContactPageContent(models.Model):
+    hero_eyebrow = models.CharField(max_length=80, default="Contact us")
+    hero_title = models.CharField(max_length=220, default="Let’s solve your laboratory requirement.")
+    hero_intro = models.TextField(default="Ask about products, availability, technical services or your current order.")
+    details_eyebrow = models.CharField(max_length=80, default="Somlab Diagnostics")
+    details_title = models.CharField(max_length=150, default="Talk to our team")
+    details_intro = models.TextField(default="We usually respond during business hours. For urgent product enquiries, call or WhatsApp our sales team.")
+    email = models.EmailField(default="info@somlab.so")
+    primary_phone = models.CharField(max_length=40, default="+252 616 119117")
+    secondary_phone = models.CharField(max_length=40, default="+90 534 820 0301", blank=True)
+    office_address = models.TextField(default="Star Home Tower, 5th Floor, Apt. 504\nKM5, Amira Hotel Street, Hodan District\nMogadishu, Somalia")
+    form_title = models.CharField(max_length=120, default="Send a message")
+
+    @staticmethod
+    def _tel(phone):
+        return "".join(char for char in phone if char.isdigit() or char == "+")
+
+    @property
+    def primary_phone_tel(self):
+        return self._tel(self.primary_phone)
+
+    @property
+    def secondary_phone_tel(self):
+        return self._tel(self.secondary_phone)
+
+    def __str__(self):
+        return "Contact Us content"
+
+
 class ContactMessage(models.Model):
     full_name = models.CharField(max_length=120)
     company_name = models.CharField(max_length=160, blank=True)

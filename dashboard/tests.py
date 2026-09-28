@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.core.cache import cache
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.core.files.storage import InMemoryStorage
+from django.forms.models import model_to_dict
 from django.test import Client, TestCase
 from django.test import override_settings
 from django.urls import reverse
@@ -12,7 +13,10 @@ from botocore.exceptions import EndpointConnectionError
 from catalog.models import (
     Category, Product, ProductMedia, ProductSubcategory, ProductVariant,
 )
-from core.models import Customer, CustomerProject, CustomerProjectMedia, Partner, Service
+from core.models import (
+    AboutPageContent, ContactPageContent, Customer, CustomerProject,
+    CustomerProjectMedia, Partner, Service,
+)
 
 
 class UnavailableStorage(InMemoryStorage):
@@ -32,6 +36,31 @@ class CustomDashboardManagementTests(TestCase):
         )
         self.client.force_login(self.staff)
         self.category = Category.objects.get(slug="chemistry")
+
+    def test_page_content_is_editable_and_visible_without_layout_changes(self):
+        about_url = reverse("dashboard_about_content")
+        contact_url = reverse("dashboard_contact_content")
+        self.assertContains(self.client.get(about_url), "About Us")
+        self.assertContains(self.client.get(contact_url), "Contact Us")
+        about = AboutPageContent.objects.get(pk=1)
+        about_data = model_to_dict(about)
+        about_data["hero_title"] = "A laboratory partner for every stage"
+        about_data["audiences"] = "Hospitals\nClinics"
+        self.assertRedirects(self.client.post(about_url, about_data), about_url)
+        self.assertContains(self.client.get(reverse("about")), about_data["hero_title"])
+        self.assertContains(self.client.get(reverse("about")), "Clinics")
+        contact = ContactPageContent.objects.get(pk=1)
+        contact_data = model_to_dict(contact)
+        contact_data["email"] = "team@example.com"
+        self.assertRedirects(self.client.post(contact_url, contact_data), contact_url)
+        public_contact = self.client.get(reverse("contact"))
+        self.assertContains(public_contact, 'href="mailto:team@example.com"')
+        self.assertContains(public_contact, 'name="csrfmiddlewaretoken"')
+
+    def test_historical_orders_are_absent_from_dashboard_navigation(self):
+        response = self.client.get(reverse("dashboard"))
+        self.assertNotContains(response, "Historical orders")
+        self.assertContains(response, "Product inquiries")
 
     def test_admin_login_redirects_authorized_admin_to_dashboard(self):
         self.assertRedirects(
@@ -686,7 +715,8 @@ class CustomDashboardManagementTests(TestCase):
 
     def test_anonymous_admin_routes_redirect_to_admin_login(self):
         self.client.logout()
-        for name in ("dashboard", "dashboard_orders", "dashboard_products"):
+        for name in ("dashboard", "dashboard_inquiries", "dashboard_products",
+                     "dashboard_about_content", "dashboard_contact_content"):
             self.assertRedirects(
                 self.client.get(reverse(name)),
                 reverse("admin_login"),

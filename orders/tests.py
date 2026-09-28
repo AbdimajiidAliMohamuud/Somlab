@@ -15,7 +15,6 @@ from .models import ProductInquiry
 @override_settings(
     EMAIL_BACKEND="django.core.mail.backends.locmem.EmailBackend",
     DEFAULT_FROM_EMAIL="Somlab Website <website@somlab.so>",
-    SOMLAB_INQUIRY_RECIPIENT="inquiries@somlab.so",
 )
 class ProductInquiryFlowTests(TestCase):
     def setUp(self):
@@ -159,7 +158,7 @@ class ProductInquiryFlowTests(TestCase):
 
         self.assertEqual(len(mail.outbox), 1)
         notification = mail.outbox[0]
-        self.assertEqual(notification.to, ["inquiries@somlab.so"])
+        self.assertEqual(notification.to, ["info@somlab.so"])
         self.assertIn(self.product.name, notification.subject)
         self.assertIn(inquiry.inquiry_number, notification.body)
         self.assertIn("North Lab", notification.body)
@@ -171,9 +170,19 @@ class ProductInquiryFlowTests(TestCase):
 
     @patch("orders.views.send_mail", side_effect=RuntimeError("SMTP unavailable"))
     def test_email_failure_never_loses_valid_inquiry(self, mocked_send):
-        response = self.client.post(reverse("product_inquiry"), self.payload)
+        with self.assertLogs("orders.views", level="ERROR"):
+            response = self.client.post(reverse("product_inquiry"), self.payload)
         self.assertRedirects(response, reverse("product_inquiry_success"))
         self.assertEqual(ProductInquiry.objects.count(), 1)
+        mocked_send.assert_called_once()
+
+    @patch("orders.views.send_mail", return_value=0)
+    def test_zero_delivery_is_logged_and_inquiry_remains_saved(self, mocked_send):
+        with self.assertLogs("orders.views", level="ERROR") as logs:
+            response = self.client.post(reverse("product_inquiry"), self.payload)
+        self.assertRedirects(response, reverse("product_inquiry_success"))
+        self.assertEqual(ProductInquiry.objects.count(), 1)
+        self.assertIn("not delivered", logs.output[0])
         mocked_send.assert_called_once()
 
     def test_invalid_submission_shows_errors_and_saves_nothing(self):

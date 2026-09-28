@@ -40,13 +40,18 @@ def _send_inquiry_notification(inquiry):
         "",
         f"Submitted: {submitted}",
     ))
-    send_mail(
+    delivered = send_mail(
         subject=f"New Product Inquiry – {inquiry.product_name}",
         message=body,
         from_email=settings.DEFAULT_FROM_EMAIL,
-        recipient_list=[settings.SOMLAB_INQUIRY_RECIPIENT],
+        recipient_list=["info@somlab.so"],
         fail_silently=False,
     )
+    if delivered != 1:
+        logger.error(
+            "Inquiry notification was not delivered for %s",
+            inquiry.inquiry_number,
+        )
 
 
 def product_inquiry(request):

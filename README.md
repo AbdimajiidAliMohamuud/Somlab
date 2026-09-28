@@ -1,8 +1,7 @@
 # Somlab Diagnostics
 
 A focused Django website for Somlab Diagnostics: corporate pages, a laboratory
-product catalogue, session cart, simple order checkout, customer accounts and a
-staff order-management dashboard.
+product catalogue, customer accounts and a staff inquiry-management dashboard.
 
 ## Local setup
 
@@ -24,7 +23,7 @@ Open:
 Only active users explicitly marked as **Staff status** can access the operations
 dashboard. Customer accounts receive a `403 Forbidden` response if they attempt
 to open any dashboard screen.
-Products, categories, partners, services, orders and messages are all managed
+Products, categories, partners, services, inquiries and messages are managed
 inside this custom dashboard. The Django built-in admin is not exposed.
 Authorized administrators can add other dashboard users from **Dashboard →
 Users**.
@@ -110,19 +109,23 @@ output, `python manage.py cleanup_customer_media_r2 --delete` rechecks each
 candidate's references, size, ETag, and age before removal. It never scans or
 deletes static assets or media outside `media/customers/projects/`.
 
-## Order workflow
+## Product inquiry workflow
 
-1. A visitor selects products and quantities.
-2. Checkout captures their organisation, contact and delivery details.
-3. The order is created with the `New` status.
-4. Staff see it immediately in the dashboard.
-5. Staff contact the customer and progress it through Contacted, Confirmed,
-   Processing, Ready, Delivered or Cancelled.
-
-No online payment is collected. Prices, stock and delivery are confirmed
-manually by Somlab.
+A submitted product inquiry is saved in **Admin → Product inquiries** and a
+notification is sent to `info@somlab.so`. Failed delivery is logged without
+discarding the saved inquiry. About Us and Contact Us page text can be edited
+under **Admin → Website**. Historical orders remain in the database but are no
+longer exposed in the custom dashboard.
 
 ## Production notes
+
+Configure `DJANGO_EMAIL_HOST`, `DJANGO_EMAIL_PORT`,
+`DJANGO_EMAIL_HOST_USER`, `DJANGO_EMAIL_HOST_PASSWORD` and
+`DJANGO_DEFAULT_FROM_EMAIL` for a trusted SMTP provider. Production requires
+the SMTP backend and exactly one of `DJANGO_EMAIL_USE_TLS=1` (typically port
+587) or `DJANGO_EMAIL_USE_SSL=1` (typically port 465). Keep credentials in the
+deployment environment, not source control. The console backend remains
+available in development.
 
 Customer videos accept MP4, WebM, MOV/M4V and Ogg files up to 999,999,999 bytes
 each (strictly under 1 decimal GB). Install `requirements.txt` for the bundled

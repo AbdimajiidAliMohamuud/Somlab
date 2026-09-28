@@ -1,0 +1,14 @@
+{% extends "dashboard/base.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+<div class="dash-heading"><div><a class="back-link" href="{% url 'dashboard' %}">← Back</a><h1>{{ title }}</h1><span>Edit the content shown on the public {{ title }} page.</span></div></div>
+<div class="manage-form-layout">
+  <section class="dash-card manage-form-card">
+    <form method="post">{% csrf_token %}
+      <div class="manage-form-grid">{% include "includes/form_fields.html" with form=form %}</div>
+      <div class="form-actions"><a class="btn btn-secondary" href="{% url 'dashboard' %}">Cancel</a><button class="btn btn-primary">Save changes</button></div>
+    </form>
+  </section>
+  <aside class="manage-help"><h3>Publishing guidance</h3><p>Saved changes appear on the public website immediately.</p><p>Review text and contact details before publishing.</p></aside>
+</div>
+{% endblock %}

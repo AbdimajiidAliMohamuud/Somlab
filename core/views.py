@@ -12,7 +12,7 @@ from django.views.decorators.http import require_POST
 
 from catalog.scope import public_products
 from .forms import AdminLoginForm, ContactForm, RegisterForm
-from .models import Customer, CustomerProject, Partner, Service
+from .models import AboutPageContent, ContactPageContent, Customer, CustomerProject, Partner, Service
 
 HERO_IMAGE_NAMES = (
     "472810462_122191066214174861_7361353671595623629_n.jpg",
@@ -103,7 +103,9 @@ def home(request):
 
 
 def about(request):
-    return render(request, "core/about.html")
+    return render(request, "core/about.html", {
+        "about_content": AboutPageContent.objects.first() or AboutPageContent(),
+    })
 
 
 def services(request):
@@ -182,7 +184,10 @@ def contact(request):
         form.save()
         messages.success(request, "Thank you. Your message has been sent to our team.")
         return redirect("contact")
-    return render(request, "core/contact.html", {"form": form})
+    return render(request, "core/contact.html", {
+        "form": form,
+        "contact_content": ContactPageContent.objects.first() or ContactPageContent(),
+    })
 
 
 def register(request):
