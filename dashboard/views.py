@@ -559,14 +559,7 @@ def customer_project_media_delete(request, customer_pk, project_pk, pk):
         kwargs={"customer_pk": customer.pk, "project_pk": project.pk},
     )
     if request.method == "POST":
-        storage = media.file.storage
-        file_name = media.file.name
         media.delete()
-        if file_name:
-            transaction.on_commit(
-                lambda: storage.delete(file_name),
-                robust=True,
-            )
         messages.success(request, "Project media was deleted.")
         return redirect(success_url)
     return render(request, "dashboard/confirm_delete.html", {

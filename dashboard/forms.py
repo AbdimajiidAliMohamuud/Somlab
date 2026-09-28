@@ -15,6 +15,9 @@ from core.models import (
 from core.customer_video import (
     MAX_VIDEO_BYTES, VIDEO_LIMIT_MESSAGE, save_video_media, validate_video_upload,
 )
+from core.customer_media_lifecycle import (
+    move_customer_media_to_index, normalize_customer_media_order,
+)
 from orders.models import Order, ProductInquiry
 
 
@@ -510,14 +513,7 @@ class CustomerProjectForm(forms.ModelForm):
             return project
 
         for media in self.cleaned_data.get("delete_media", []):
-            storage = media.file.storage
-            file_name = media.file.name
             media.delete()
-            if file_name:
-                transaction.on_commit(
-                    lambda storage=storage, file_name=file_name: storage.delete(file_name),
-                    robust=True,
-                )
 
         highest_order = project.media.aggregate(value=Max("display_order"))["value"]
         next_order = 0 if highest_order is None else highest_order + 1
@@ -537,6 +533,7 @@ class CustomerProjectForm(forms.ModelForm):
                 else:
                     media.save()
                 next_order += 1
+        normalize_customer_media_order(project.pk, using=project._state.db)
         return project
 
     class Meta:
@@ -616,21 +613,14 @@ class CustomerProjectMediaForm(forms.ModelForm):
         file_changed = "file" in self.changed_data
         if self.instance.pk and not file_changed:
             media.file.name = self._original_file_name
+        if file_changed and (media.media_type != "video" or not media.file):
+            media.playback_file = ""
+            media.video_poster = ""
         if file_changed and media.media_type == "video" and media.file:
             save_video_media(media, self.cleaned_data["file"])
         else:
             media.save()
-
-        if (
-            file_changed
-            and self._original_file_name
-            and self._original_file_name != media.file.name
-        ):
-            storage = media._meta.get_field("file").storage
-            transaction.on_commit(
-                lambda: storage.delete(self._original_file_name),
-                robust=True,
-            )
+        move_customer_media_to_index(media, self.cleaned_data["display_order"])
         return media
 
     class Meta:

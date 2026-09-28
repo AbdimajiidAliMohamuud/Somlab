@@ -103,6 +103,13 @@ changed or missing objects are skipped. Every successful deletion is recorded
 in a JSON Lines audit log beside the manifest. Running `--delete` without both
 the reviewed manifest and confirmation token is refused.
 
+For customer project uploads only, use `python manage.py cleanup_customer_media_r2`
+to list orphan objects without deleting them. It checks references across the
+site and protects objects uploaded in the last 24 hours. After reviewing the
+output, `python manage.py cleanup_customer_media_r2 --delete` rechecks each
+candidate's references, size, ETag, and age before removal. It never scans or
+deletes static assets or media outside `media/customers/projects/`.
+
 ## Order workflow
 
 1. A visitor selects products and quantities.
