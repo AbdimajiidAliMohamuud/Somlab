@@ -6,7 +6,8 @@ from django.core.exceptions import ImproperlyConfigured
 from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-load_dotenv(BASE_DIR / ".env")
+ENV_FILE = Path(os.environ.get("DJANGO_ENV_FILE", BASE_DIR / ".env"))
+load_dotenv(ENV_FILE)
 
 
 def env_bool(name, default=False):
@@ -103,10 +104,17 @@ TEMPLATES = [{
 }]
 
 WSGI_APPLICATION = "config.wsgi.application"
+database_path = os.environ.get("DJANGO_DB_PATH", "").strip()
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        # Keep the production database outside the release directory so code
+        # deployments cannot accidentally replace it. Local development still
+        # defaults to the traditional project-level db.sqlite3 file.
+        "NAME": Path(database_path) if database_path else BASE_DIR / "db.sqlite3",
+        "OPTIONS": {
+            "timeout": int(os.environ.get("DJANGO_DB_TIMEOUT", "20")),
+        },
     }
 }
 
