@@ -834,9 +834,20 @@ class PublicPageTests(TestCase):
         )
         self.assertNotContains(home_response, "Hidden Homepage Customer")
         self.assertEqual(
-            list(home_response.context["customers"]),
-            list(customers_response.context["customers"]),
+            {item.pk for item in home_response.context["customers"]},
+            {item.pk for item in customers_response.context["customers"]},
         )
+
+    def test_customers_page_rotates_first_customer_without_duplicates(self):
+        first_page = self.client.get(reverse("customers"))
+        next_page = self.client.get(reverse("customers"))
+        first_ids = [item.pk for item in first_page.context["customers"]]
+        next_ids = [item.pk for item in next_page.context["customers"]]
+        self.assertGreater(len(first_ids), 1)
+        self.assertNotEqual(first_ids[0], next_ids[0])
+        self.assertEqual(set(first_ids), set(next_ids))
+        self.assertEqual(len(first_ids), len(set(first_ids)))
+        self.assertEqual(len(next_ids), len(set(next_ids)))
 
     def test_home_omits_customer_experience_but_preserves_customers_page(self):
         testimonial = Testimonial.objects.create(

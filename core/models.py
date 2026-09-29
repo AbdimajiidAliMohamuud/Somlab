@@ -1,6 +1,6 @@
 from urllib.parse import parse_qs, urlparse
 
-from django.db import models
+from django.db import IntegrityError, models, transaction
 from django.urls import reverse
 
 from catalog.labels import catalogue_display_label
@@ -97,6 +97,16 @@ class Testimonial(models.Model):
         return "★" * (self.rating or 0)
 
 
+class CustomerQuerySet(models.QuerySet):
+    def delete(self):
+        from .customer_ordering import normalize_customer_display_order
+
+        with transaction.atomic(using=self.db):
+            result = super().delete()
+            normalize_customer_display_order(using=self.db)
+            return result
+
+
 class Customer(models.Model):
     name = models.CharField(max_length=160)
     slug = models.SlugField(unique=True)
@@ -116,9 +126,42 @@ class Customer(models.Model):
     )
     display_order = models.PositiveSmallIntegerField(default=0, blank=True)
     is_active = models.BooleanField(default=True)
+    objects = CustomerQuerySet.as_manager()
 
     class Meta:
         ordering = ("display_order", "name")
+        constraints = [
+            models.UniqueConstraint(
+                fields=["display_order"], name="unique_customer_display_order"
+            ),
+        ]
+
+    def save(self, *args, **kwargs):
+        from .customer_ordering import normalize_customer_display_order
+
+        using = kwargs.get("using") or self._state.db or "default"
+        for attempt in range(3):
+            try:
+                with transaction.atomic(using=using):
+                    if self._state.adding:
+                        self.display_order = normalize_customer_display_order(using=using)
+                    else:
+                        self.display_order = type(self).objects.using(using).values_list(
+                            "display_order", flat=True
+                        ).get(pk=self.pk)
+                    return super().save(*args, **kwargs)
+            except IntegrityError:
+                if not self._state.adding or attempt == 2:
+                    raise
+
+    def delete(self, *args, **kwargs):
+        from .customer_ordering import normalize_customer_display_order
+
+        using = kwargs.get("using") or self._state.db or "default"
+        with transaction.atomic(using=using):
+            result = super().delete(*args, **kwargs)
+            normalize_customer_display_order(using=using)
+            return result
 
     def __str__(self):
         return self.name

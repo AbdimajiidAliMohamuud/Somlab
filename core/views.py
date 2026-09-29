@@ -1,4 +1,5 @@
 import hashlib
+import random
 
 from django.contrib import messages
 from django.contrib.auth import login, logout
@@ -126,8 +127,18 @@ def partners(request):
 
 
 def customers(request):
+    customer_list = list(active_customers())
+    random.shuffle(customer_list)
+    previous_first = request.session.get("customers_previous_first")
+    if len(customer_list) > 1 and customer_list[0].pk == previous_first:
+        swap_index = random.randrange(1, len(customer_list))
+        customer_list[0], customer_list[swap_index] = (
+            customer_list[swap_index], customer_list[0]
+        )
+    if customer_list:
+        request.session["customers_previous_first"] = customer_list[0].pk
     return render(request, "core/customers.html", {
-        "customers": active_customers(),
+        "customers": customer_list,
     })
 
 

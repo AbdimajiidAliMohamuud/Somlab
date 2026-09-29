@@ -1054,7 +1054,7 @@ body:has(.customer-video-player.is-fullscreen-fallback){overflow:hidden}
 .customers-directory-heading h2{margin:7px 0 10px;color:var(--navy);font:800 clamp(30px,3.5vw,43px)/1.15 var(--display);letter-spacing:-.035em}
 .customers-directory-heading p{margin:0;color:var(--muted)}
 .customers-directory .customer-showcase-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
-.customers-directory .customer-showcase-card{grid-template-columns:150px minmax(0,1fr);grid-template-rows:1fr;align-items:center;height:auto;min-height:190px;padding:30px;border-color:#dce8ea;border-radius:22px;box-shadow:0 10px 30px rgba(0,42,53,.055)}
+.customers-directory .customer-showcase-card{grid-template-columns:150px minmax(0,1fr);grid-template-rows:1fr;align-items:center;column-gap:20px;height:auto;min-height:190px;padding:30px;border-color:#dce8ea;border-radius:22px;box-shadow:0 10px 30px rgba(0,42,53,.055)}
 .customers-directory .customer-showcase-card:hover{transform:translateY(-4px);border-color:#b8dedd;box-shadow:0 20px 44px rgba(0,42,53,.1)}
 .customers-directory .customer-logo-wrap{display:grid;place-items:center;width:150px;height:128px;min-height:0;padding:18px;border:1px solid #e2eeee;border-radius:18px;background:#fff;overflow:hidden}
 .customers-directory .customer-logo-wrap img{display:block;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;object-position:center}

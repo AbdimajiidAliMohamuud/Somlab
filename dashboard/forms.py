@@ -392,21 +392,25 @@ class CustomerForm(SlugFromNameMixin, forms.ModelForm):
     )
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.fields["display_order"].disabled = True
+        self.fields["display_order"].initial = (
+            self.instance.display_order if self.instance.pk else Customer.objects.count()
+        )
+        self.fields["display_order"].help_text = (
+            "Assigned automatically. Customer order remains sequential."
+        )
         self._original_logo_name = (
             self.instance.logo.name if self.instance.pk and self.instance.logo else ""
         )
         for field_name in (
             "slug", "logo", "website", "short_description", "description",
             "facebook_url", "instagram_url", "linkedin_url", "youtube_url",
-            "other_url", "products", "display_order", "is_active",
+            "other_url", "products", "is_active",
         ):
             self.fields[field_name].required = False
         self.fields["products"].queryset = Product.objects.select_related(
             "category"
         ).order_by("category__name", "name")
-
-    def clean_display_order(self):
-        return self.cleaned_data.get("display_order") or 0
 
     def save(self, commit=True):
         customer = super().save(commit=False)

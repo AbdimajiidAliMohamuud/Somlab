@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.core.cache import cache
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.core.files.storage import InMemoryStorage
+from django.db import IntegrityError, transaction
 from django.forms.models import model_to_dict
 from django.test import Client, TestCase
 from django.test import override_settings
@@ -613,6 +614,7 @@ class CustomDashboardManagementTests(TestCase):
         self.assertEqual(project.media.count(), 4)
 
     def test_customer_can_be_created_with_name_only(self):
+        expected_order = Customer.objects.count()
         response = self.client.post(reverse("dashboard_customer_add"), {
             "name": "Name Only Hospital",
         })
@@ -621,8 +623,107 @@ class CustomDashboardManagementTests(TestCase):
         self.assertFalse(customer.logo)
         self.assertEqual(customer.website, "")
         self.assertEqual(customer.short_description, "")
-        self.assertEqual(customer.display_order, 0)
+        self.assertEqual(customer.display_order, expected_order)
         self.assertFalse(customer.projects.exists())
+
+    def test_customer_admin_order_is_read_only_and_compacts_after_delete(self):
+        add_url = reverse("dashboard_customer_add")
+        add_page = self.client.get(add_url)
+        self.assertTrue(add_page.context["form"].fields["display_order"].disabled)
+        self.assertEqual(
+            add_page.context["form"].fields["display_order"].initial,
+            Customer.objects.count(),
+        )
+
+        for name in ("First Ordered Hospital", "Second Ordered Hospital"):
+            self.assertRedirects(
+                self.client.post(add_url, {"name": name, "display_order": 999}),
+                reverse("dashboard_customers"),
+            )
+        customers = list(Customer.objects.order_by("display_order", "pk"))
+        self.assertEqual(
+            [item.display_order for item in customers],
+            list(range(len(customers))),
+        )
+        first = Customer.objects.get(slug="first-ordered-hospital")
+        edit_url = reverse("dashboard_customer_edit", args=[first.pk])
+        self.assertTrue(self.client.get(edit_url).context["form"].fields["display_order"].disabled)
+        self.assertRedirects(
+            self.client.post(edit_url, {
+                "name": first.name,
+                "slug": first.slug,
+                "display_order": 999,
+            }),
+            reverse("dashboard_customers"),
+        )
+        first.refresh_from_db()
+        self.assertNotEqual(first.display_order, 999)
+        self.assertRedirects(
+            self.client.post(reverse("dashboard_customer_delete", args=[first.pk])),
+            reverse("dashboard_customers"),
+        )
+        remaining = list(Customer.objects.order_by("display_order", "pk"))
+        self.assertEqual(
+            [item.display_order for item in remaining],
+            list(range(len(remaining))),
+        )
+
+    def test_new_customer_repairs_gap_and_database_rejects_duplicates(self):
+        existing_ids = list(Customer.objects.order_by("pk").values_list("pk", flat=True)[:2])
+        first_order = Customer.objects.get(pk=existing_ids[0]).display_order
+        with self.assertRaises(IntegrityError), transaction.atomic():
+            Customer.objects.filter(pk=existing_ids[1]).update(
+                display_order=first_order
+            )
+        Customer.objects.filter(pk=existing_ids[1]).update(display_order=99)
+        expected_new_order = Customer.objects.count()
+        self.assertRedirects(
+            self.client.post(reverse("dashboard_customer_add"), {
+                "name": "Repair Order Hospital",
+                "display_order": 0,
+            }),
+            reverse("dashboard_customers"),
+        )
+        orders = list(Customer.objects.order_by("display_order").values_list(
+            "display_order", flat=True
+        ))
+        self.assertEqual(orders, list(range(len(orders))))
+        self.assertEqual(
+            Customer.objects.get(slug="repair-order-hospital").display_order,
+            expected_new_order,
+        )
+
+    def test_direct_customer_create_and_delete_keep_order_contiguous(self):
+        starting_count = Customer.objects.count()
+        first = Customer.objects.create(
+            name="Direct First Hospital", slug="direct-first-hospital",
+            display_order=999,
+        )
+        second = Customer.objects.create(
+            name="Direct Second Hospital", slug="direct-second-hospital",
+            display_order=999,
+        )
+        self.assertEqual(first.display_order, starting_count)
+        self.assertEqual(second.display_order, starting_count + 1)
+        second.display_order = 999
+        second.save(update_fields=["display_order"])
+        second.refresh_from_db()
+        self.assertEqual(second.display_order, starting_count + 1)
+        first.delete()
+        second.refresh_from_db()
+        self.assertEqual(second.display_order, starting_count)
+        Customer.objects.filter(pk=second.pk).delete()
+        replacement = Customer.objects.create(
+            name="Direct Replacement Hospital", slug="direct-replacement-hospital"
+        )
+        self.assertEqual(replacement.display_order, starting_count)
+        Customer.objects.filter(pk=replacement.pk).delete()
+        self.assertEqual(
+            list(Customer.objects.order_by("display_order").values_list(
+                "display_order", flat=True
+            )),
+            list(range(starting_count)),
+        )
 
     @override_settings(STORAGES={
         "default": {"BACKEND": "dashboard.tests.UnavailableStorage"},
