@@ -119,6 +119,11 @@ longer exposed in the custom dashboard.
 
 ## Production notes
 
+Run `python manage.py migrate` against the production database before serving a
+new release. In particular, `core.0014_aboutpagecontent_contactpagecontent`
+creates the About Us and Contact Us admin content tables; deploying the code
+without applying it makes `/admin/about/` and `/admin/contact/` fail.
+
 Configure `DJANGO_EMAIL_HOST`, `DJANGO_EMAIL_PORT`,
 `DJANGO_EMAIL_HOST_USER`, `DJANGO_EMAIL_HOST_PASSWORD` and
 `DJANGO_DEFAULT_FROM_EMAIL` for a trusted SMTP provider. Production requires
