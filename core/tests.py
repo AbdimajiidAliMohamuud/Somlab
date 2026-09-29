@@ -15,6 +15,25 @@ from .models import (
 
 
 class PublicPageTests(TestCase):
+    @override_settings(
+        DEBUG=False,
+        ALLOWED_HOSTS=["somlab.so"],
+        SECURE_SSL_REDIRECT=True,
+        SECURE_HSTS_SECONDS=3600,
+    )
+    def test_production_http_redirects_and_https_has_no_mixed_resources(self):
+        insecure = self.client.get(reverse("home"), HTTP_HOST="somlab.so")
+        self.assertEqual(insecure.status_code, 301)
+        self.assertEqual(insecure["Location"], "https://somlab.so/")
+
+        secure = self.client.get(reverse("home"), secure=True, HTTP_HOST="somlab.so")
+        self.assertEqual(secure.status_code, 200)
+        self.assertEqual(secure["Strict-Transport-Security"], "max-age=3600")
+        self.assertNotRegex(
+            secure.content.decode(),
+            r'\b(?:src|poster|action|srcset)=["\']http://',
+        )
+
     def test_core_pages_render(self):
         for name in ("home", "about", "services", "partners", "customers", "contact"):
             self.assertEqual(self.client.get(reverse(name)).status_code, 200)
