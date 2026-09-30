@@ -111,9 +111,11 @@ deletes static assets or media outside `media/customers/projects/`.
 
 ## Product inquiry workflow
 
-A submitted product inquiry is saved in **Admin → Product inquiries** and a
-notification is sent to `info@somlab.so`. Failed delivery is logged without
-discarding the saved inquiry. About Us and Contact Us page text can be edited
+A submitted product inquiry is saved in **Admin → Product inquiries** before a
+notification is attempted. **Admin → Email Settings** controls the recipient
+(default `info@somlab.so`) and can disable notifications without disabling
+inquiry submissions. Failed delivery is logged without discarding the saved
+inquiry. About Us and Contact Us page text can be edited
 under **Admin → Website**. Historical orders remain in the database but are no
 longer exposed in the custom dashboard.
 
@@ -124,13 +126,17 @@ new release. In particular, `core.0014_aboutpagecontent_contactpagecontent`
 creates the About Us and Contact Us admin content tables; deploying the code
 without applying it makes `/admin/about/` and `/admin/contact/` fail.
 
-Configure `DJANGO_EMAIL_HOST`, `DJANGO_EMAIL_PORT`,
-`DJANGO_EMAIL_HOST_USER`, `DJANGO_EMAIL_HOST_PASSWORD` and
-`DJANGO_DEFAULT_FROM_EMAIL` for a trusted SMTP provider. Production requires
-the SMTP backend and exactly one of `DJANGO_EMAIL_USE_TLS=1` (typically port
-587) or `DJANGO_EMAIL_USE_SSL=1` (typically port 465). Keep credentials in the
-deployment environment, not source control. The console backend remains
-available in development.
+Set the personal Gmail sender, SMTP host/port/TLS, Google App Password, From
+email, and recipient in **Admin → Email Settings**. The App Password is stored
+as encrypted ciphertext and never displayed after saving. Its encryption key
+is derived from the private `DJANGO_SECRET_KEY`; keep that key stable, as
+changing it makes the saved password unreadable until re-entered. Production
+requires the SMTP backend; the console backend remains available in
+development. **Send test email** always uses the last saved SMTP settings and
+connects to the real SMTP server, even in development. If a local Python
+installation has no trusted CA bundle, set `SSL_CERT_FILE` to a trusted system
+CA file; do not disable TLS verification. Apply the `orders` migrations before
+using Email Settings.
 
 Customer videos accept MP4, WebM, MOV/M4V and Ogg files up to 999,999,999 bytes
 each (strictly under 1 decimal GB). Install `requirements.txt` for the bundled

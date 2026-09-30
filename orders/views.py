@@ -1,6 +1,5 @@
 import logging
 
-from django.conf import settings
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.shortcuts import get_object_or_404, redirect, render
@@ -14,13 +13,18 @@ from catalog.navigation import (
 )
 from catalog.scope import public_products
 from .forms import ProductInquiryForm
-from .models import ProductInquiry
+from .email_delivery import inquiry_connection
+from .models import InquiryEmailSettings, ProductInquiry
 
 
 logger = logging.getLogger(__name__)
 
 
 def _send_inquiry_notification(inquiry):
+    email_settings = InquiryEmailSettings.current()
+    if not email_settings.notifications_enabled:
+        return
+    connection = inquiry_connection(email_settings)
     submitted = inquiry.created_at.strftime("%d %b %Y, %H:%M %Z")
     body = "\n".join((
         f"Inquiry ID: {inquiry.inquiry_number}",
@@ -43,9 +47,10 @@ def _send_inquiry_notification(inquiry):
     delivered = send_mail(
         subject=f"New Product Inquiry – {inquiry.product_name}",
         message=body,
-        from_email=settings.DEFAULT_FROM_EMAIL,
-        recipient_list=["info@somlab.so"],
+        from_email=email_settings.from_email,
+        recipient_list=[email_settings.recipient_email],
         fail_silently=False,
+        connection=connection,
     )
     if delivered != 1:
         logger.error(
@@ -71,10 +76,11 @@ def product_inquiry(request):
         request.session["last_inquiry_id"] = inquiry.pk
         try:
             _send_inquiry_notification(inquiry)
-        except Exception:
-            logger.exception(
-                "Inquiry notification failed for %s",
+        except Exception as error:
+            logger.error(
+                "Inquiry notification failed for %s (%s)",
                 inquiry.inquiry_number,
+                type(error).__name__,
             )
         return redirect("product_inquiry_success")
 

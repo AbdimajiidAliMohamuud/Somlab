@@ -19,7 +19,7 @@ from core.customer_video import (
 from core.customer_media_lifecycle import (
     move_customer_media_to_index, normalize_customer_media_order,
 )
-from orders.models import ProductInquiry
+from orders.models import InquiryEmailSettings, ProductInquiry
 
 
 class AboutPageContentForm(forms.ModelForm):
@@ -54,6 +54,78 @@ class InquiryUpdateForm(forms.ModelForm):
                 "placeholder": "Private notes for the Somlab team",
             }),
         }
+
+
+class InquiryEmailSettingsForm(forms.ModelForm):
+    smtp_app_password = forms.CharField(
+        label="SMTP App Password",
+        required=False,
+        strip=False,
+        widget=forms.PasswordInput(render_value=False, attrs={"autocomplete": "new-password"}),
+        help_text="Leave blank to keep the saved App Password. It is never shown again.",
+    )
+
+    class Meta:
+        model = InquiryEmailSettings
+        fields = (
+            "smtp_host", "smtp_port", "use_tls", "smtp_username",
+            "from_email", "recipient_email", "notifications_enabled",
+        )
+
+    def __init__(self, *args, **kwargs):
+        if args and args[0] is not None and kwargs.get("instance"):
+            submitted = args[0].copy()
+            saved = kwargs["instance"]
+            for name in (
+                "smtp_host", "smtp_port", "smtp_username",
+                "from_email", "recipient_email",
+            ):
+                if not submitted.get(name):
+                    submitted[name] = str(getattr(saved, name))
+            if "settings_form" not in submitted:
+                for name in ("use_tls", "notifications_enabled"):
+                    if name not in submitted and getattr(saved, name):
+                        submitted[name] = "on"
+            args = (submitted, *args[1:])
+        super().__init__(*args, **kwargs)
+        self.order_fields((
+            "smtp_host", "smtp_port", "use_tls", "smtp_username",
+            "smtp_app_password", "from_email", "recipient_email",
+            "notifications_enabled",
+        ))
+
+    def clean(self):
+        data = super().clean()
+        username = data.get("smtp_username", "").lower()
+        from_email = data.get("from_email", "").lower()
+        if username and not username.endswith("@gmail.com"):
+            self.add_error("smtp_username", "Use your personal Gmail address.")
+        if username and from_email and username != from_email:
+            self.add_error("from_email", "From email must match the SMTP Gmail address.")
+        needs_smtp = data.get("notifications_enabled") or self.data.get("action") == "send_test"
+        if needs_smtp and not username:
+            self.add_error("smtp_username", "Enter your personal Gmail address.")
+        if needs_smtp and not from_email:
+            self.add_error("from_email", "Enter the same Gmail address.")
+        if not 1 <= (data.get("smtp_port") or 0) <= 65535:
+            self.add_error("smtp_port", "Enter a port between 1 and 65535.")
+        password = data.get("smtp_app_password")
+        if password == "YOUR_GOOGLE_APP_PASSWORD":
+            self.add_error("smtp_app_password", "Enter a real Google App Password.")
+        if needs_smtp and not (
+            password or self.instance.app_password_encrypted
+        ):
+            self.add_error("smtp_app_password", "An App Password is required to enable notifications.")
+        return data
+
+    def save(self, commit=True):
+        instance = super().save(commit=False)
+        password = self.cleaned_data.get("smtp_app_password")
+        if password:
+            instance.set_app_password(password)
+        if commit:
+            instance.save()
+        return instance
 
 
 class SlugFromNameMixin:

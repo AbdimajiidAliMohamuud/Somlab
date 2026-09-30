@@ -4,6 +4,7 @@ from . import views
 urlpatterns = [
     path("inquiries/", views.inquiry_list, name="dashboard_inquiries"),
     path("inquiries/<str:inquiry_number>/", views.inquiry_detail, name="dashboard_inquiry_detail"),
+    path("email-settings/", views.inquiry_email_settings, name="dashboard_email_settings"),
     path("about/", views.about_content, name="dashboard_about_content"),
     path("contact/", views.contact_content, name="dashboard_contact_content"),
     path("messages/", views.messages_list, name="dashboard_messages"),

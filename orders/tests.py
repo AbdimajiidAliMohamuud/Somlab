@@ -8,8 +8,9 @@ from django.urls import reverse
 from catalog.models import Category, Product
 from catalog.navigation import equipment_group_category_ids
 from catalog.scope import public_products
+from .email_delivery import inquiry_connection
 from .forms import EAST_AFRICA_COUNTRIES, ProductInquiryForm
-from .models import ProductInquiry
+from .models import InquiryEmailSettings, ProductInquiry
 
 
 @override_settings(
@@ -18,6 +19,11 @@ from .models import ProductInquiry
 )
 class ProductInquiryFlowTests(TestCase):
     def setUp(self):
+        email_settings = InquiryEmailSettings.current()
+        email_settings.smtp_username = "personal@gmail.com"
+        email_settings.from_email = "personal@gmail.com"
+        email_settings.set_app_password("example-app-password")
+        email_settings.save()
         category = Category.objects.get(slug="chemistry")
         self.product = Product.objects.create(
             category=category,
@@ -159,6 +165,7 @@ class ProductInquiryFlowTests(TestCase):
         self.assertEqual(len(mail.outbox), 1)
         notification = mail.outbox[0]
         self.assertEqual(notification.to, ["info@somlab.so"])
+        self.assertEqual(notification.from_email, "personal@gmail.com")
         self.assertIn(self.product.name, notification.subject)
         self.assertIn(inquiry.inquiry_number, notification.body)
         self.assertIn("North Lab", notification.body)
@@ -168,12 +175,53 @@ class ProductInquiryFlowTests(TestCase):
         self.assertContains(success, inquiry.inquiry_number)
         self.assertContains(success, self.product.name)
 
-    @patch("orders.views.send_mail", side_effect=RuntimeError("SMTP unavailable"))
-    def test_email_failure_never_loses_valid_inquiry(self, mocked_send):
-        with self.assertLogs("orders.views", level="ERROR"):
+    def test_configured_recipient_receives_email_after_inquiry_is_saved(self):
+        email_settings = InquiryEmailSettings.current()
+        email_settings.recipient_email = "sales@somlab.so"
+        email_settings.save(update_fields=["recipient_email"])
+
+        def confirm_saved_before_send(**kwargs):
+            self.assertEqual(ProductInquiry.objects.count(), 1)
+            self.assertEqual(kwargs["recipient_list"], ["sales@somlab.so"])
+            return 1
+
+        with patch("orders.views.send_mail", side_effect=confirm_saved_before_send) as mocked_send:
+            response = self.client.post(reverse("product_inquiry"), self.payload)
+        self.assertRedirects(response, reverse("product_inquiry_success"))
+        mocked_send.assert_called_once()
+
+    def test_notifications_can_be_disabled_without_losing_inquiries(self):
+        email_settings = InquiryEmailSettings.current()
+        email_settings.notifications_enabled = False
+        email_settings.save(update_fields=["notifications_enabled"])
+        with patch("orders.views.send_mail") as mocked_send:
             response = self.client.post(reverse("product_inquiry"), self.payload)
         self.assertRedirects(response, reverse("product_inquiry_success"))
         self.assertEqual(ProductInquiry.objects.count(), 1)
+        mocked_send.assert_not_called()
+
+    def test_smtp_connection_uses_decrypted_settings_without_storing_plaintext(self):
+        email_settings = InquiryEmailSettings.current()
+        email_settings.smtp_host = "smtp.gmail.com"
+        email_settings.smtp_port = 587
+        email_settings.use_tls = True
+        email_settings.save()
+        self.assertNotIn("example-app-password", email_settings.app_password_encrypted)
+        with patch("orders.email_delivery.get_connection") as mocked_connection:
+            inquiry_connection(email_settings)
+        self.assertEqual(mocked_connection.call_args.kwargs["host"], "smtp.gmail.com")
+        self.assertEqual(mocked_connection.call_args.kwargs["port"], 587)
+        self.assertTrue(mocked_connection.call_args.kwargs["use_tls"])
+        self.assertEqual(mocked_connection.call_args.kwargs["username"], "personal@gmail.com")
+        self.assertEqual(mocked_connection.call_args.kwargs["password"], "example-app-password")
+
+    @patch("orders.views.send_mail", side_effect=RuntimeError("example-app-password"))
+    def test_email_failure_never_loses_valid_inquiry(self, mocked_send):
+        with self.assertLogs("orders.views", level="ERROR") as logs:
+            response = self.client.post(reverse("product_inquiry"), self.payload)
+        self.assertRedirects(response, reverse("product_inquiry_success"))
+        self.assertEqual(ProductInquiry.objects.count(), 1)
+        self.assertNotIn("example-app-password", " ".join(logs.output))
         mocked_send.assert_called_once()
 
     @patch("orders.views.send_mail", return_value=0)

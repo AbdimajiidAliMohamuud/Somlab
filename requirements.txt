@@ -4,4 +4,5 @@ gunicorn>=23.0
 whitenoise>=6.8
 django-storages[s3]>=1.14.6,<1.15
 python-dotenv>=1.0,<2
+cryptography>=45,<51
 imageio-ffmpeg>=0.6,<0.7

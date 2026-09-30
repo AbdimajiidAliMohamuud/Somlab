@@ -1,0 +1,16 @@
+{% extends "dashboard/base.html" %}
+{% block title %}Email Settings{% endblock %}
+{% block content %}
+<div class="dash-heading"><div><a class="back-link" href="{% url 'dashboard_inquiries' %}">← Back</a><h1>Email Settings</h1><span>Configure Product Inquiry delivery and notifications.</span></div></div>
+<div class="manage-form-layout">
+  <section class="dash-card manage-form-card">
+    <form method="post">{% csrf_token %}
+      <input type="hidden" name="settings_form" value="1">
+      <div class="manage-form-grid">{% include "includes/form_fields.html" with form=form %}</div>
+      <div class="form-actions"><a class="btn btn-secondary" href="{% url 'dashboard_inquiries' %}">Cancel</a><button class="btn btn-secondary" type="submit" form="email-test-form">Send test email</button><button class="btn btn-primary" type="submit" name="action" value="save">Save changes</button></div>
+    </form>
+    <form id="email-test-form" method="post">{% csrf_token %}<input type="hidden" name="action" value="send_test"></form>
+  </section>
+  <aside class="manage-help"><h3>Delivery</h3><p>Every inquiry is saved in Product inquiries before email is attempted. Turning off notifications does not stop inquiry submissions.</p><p>Use a personal Gmail address and Google App Password. The password is encrypted and never shown again. A test email goes to the configured recipient.</p></aside>
+</div>
+{% endblock %}

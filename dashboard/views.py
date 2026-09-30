@@ -1,9 +1,11 @@
 from functools import wraps
+import logging
 
 from botocore.exceptions import BotoCoreError, ClientError
 from django.core.exceptions import ValidationError
 from django.contrib import messages
 from django.contrib.auth.models import User
+from django.core.mail import send_mail
 from django.db import transaction
 from django.db.models.deletion import ProtectedError
 from django.db.models import Count, Q
@@ -15,13 +17,17 @@ from core.models import (
     AboutPageContent, ContactPageContent, ContactMessage, Customer,
     CustomerProject, CustomerProjectMedia, Partner, Service,
 )
-from orders.models import ProductInquiry
+from orders.models import InquiryEmailSettings, ProductInquiry
+from orders.email_delivery import format_smtp_failure, inquiry_connection
 from .forms import (
     AboutPageContentForm, ContactPageContentForm,
     AdminUserCreateForm, AdminUserUpdateForm, CategoryForm,
     CustomerForm, CustomerProjectForm, CustomerProjectMediaForm, PartnerForm, ProductForm,
-    ProductSubcategoryForm, ServiceForm, InquiryUpdateForm,
+    ProductSubcategoryForm, ServiceForm, InquiryUpdateForm, InquiryEmailSettingsForm,
 )
+
+
+logger = logging.getLogger(__name__)
 
 
 def admin_required(view):
@@ -103,6 +109,43 @@ def inquiry_detail(request, inquiry_number):
         "inquiry": inquiry,
         "form": form,
     })
+
+
+@admin_required
+def inquiry_email_settings(request):
+    email_settings = InquiryEmailSettings.current()
+    if request.method == "POST" and request.POST.get("action") == "send_test":
+        try:
+            delivered = send_mail(
+                "Somlab product inquiry email test",
+                "This test confirms that Product Inquiry email delivery is configured.",
+                email_settings.from_email,
+                [email_settings.recipient_email],
+                fail_silently=False,
+                connection=inquiry_connection(
+                    email_settings,
+                    backend="django.core.mail.backends.smtp.EmailBackend",
+                ),
+            )
+            if delivered != 1:
+                raise RuntimeError("No email was delivered")
+        except Exception as error:
+            reason = format_smtp_failure(error, email_settings)
+            logger.error("Inquiry test email failed: %s", reason)
+            messages.error(request, f"Test email could not be sent: {reason}")
+        else:
+            messages.success(
+                request,
+                f"Test email sent to {email_settings.recipient_email}.",
+            )
+        return redirect("dashboard_email_settings")
+
+    form = InquiryEmailSettingsForm(request.POST or None, instance=email_settings)
+    if request.method == "POST" and form.is_valid():
+        form.save()
+        messages.success(request, "Product inquiry email settings were updated.")
+        return redirect("dashboard_email_settings")
+    return render(request, "dashboard/inquiry_email_settings.html", {"form": form})
 
 
 @admin_required

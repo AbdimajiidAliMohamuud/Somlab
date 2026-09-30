@@ -13,6 +13,34 @@ def generate_inquiry_number():
     return f"INQ-{timezone.now():%Y%m%d}-{uuid.uuid4().hex[:8].upper()}"
 
 
+class InquiryEmailSettings(models.Model):
+    smtp_host = models.CharField(max_length=255, default="smtp.gmail.com", verbose_name="SMTP host")
+    smtp_port = models.PositiveIntegerField(default=587, verbose_name="SMTP port")
+    use_tls = models.BooleanField(default=True, verbose_name="Use TLS")
+    smtp_username = models.EmailField(blank=True, verbose_name="SMTP username")
+    app_password_encrypted = models.TextField(blank=True, editable=False)
+    from_email = models.EmailField(blank=True, verbose_name="From email")
+    recipient_email = models.EmailField(default="info@somlab.so")
+    notifications_enabled = models.BooleanField(default=True)
+
+    class Meta:
+        verbose_name = "Email settings"
+        verbose_name_plural = "Email settings"
+
+    @classmethod
+    def current(cls):
+        settings, _ = cls.objects.get_or_create(pk=1)
+        return settings
+
+    def __str__(self):
+        return "Product inquiry email settings"
+
+    def set_app_password(self, password):
+        from .email_delivery import encrypt_app_password
+
+        self.app_password_encrypted = encrypt_app_password(password)
+
+
 class ProductInquiry(models.Model):
     STATUS_CHOICES = [
         ("new", "New"),

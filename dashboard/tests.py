@@ -1,4 +1,6 @@
 import base64
+import smtplib
+from unittest.mock import patch
 
 from django.contrib.auth.models import User
 from django.core.cache import cache
@@ -18,6 +20,7 @@ from core.models import (
     AboutPageContent, ContactPageContent, Customer, CustomerProject,
     CustomerProjectMedia, Partner, Service,
 )
+from orders.models import InquiryEmailSettings
 
 
 class UnavailableStorage(InMemoryStorage):
@@ -62,6 +65,147 @@ class CustomDashboardManagementTests(TestCase):
         response = self.client.get(reverse("dashboard"))
         self.assertNotContains(response, "Historical orders")
         self.assertContains(response, "Product inquiries")
+
+    def test_sidebar_footer_uses_somlab_symbol_without_changing_profile_text(self):
+        response = self.client.get(reverse("dashboard"))
+        self.assertContains(response, 'class="avatar" role="img" aria-label="Somlab symbol"')
+        self.assertContains(response, 'background:#fff url(')
+        self.assertNotContains(response, 'class="avatar">M</div>')
+        self.assertContains(response, "<strong>manager</strong><small>Authorized admin</small>")
+
+    def test_email_settings_are_staff_only_editable_and_in_navigation(self):
+        url = reverse("dashboard_email_settings")
+        response = self.client.get(url)
+        self.assertContains(response, "Email Settings")
+        self.assertContains(response, "info@somlab.so")
+        self.assertEqual(InquiryEmailSettings.current().recipient_email, "info@somlab.so")
+
+        payload = {
+            "smtp_host": "smtp.gmail.com",
+            "smtp_port": 587,
+            "use_tls": "on",
+            "smtp_username": "personal@gmail.com",
+            "smtp_app_password": "example-app-password",
+            "from_email": "personal@gmail.com",
+            "recipient_email": "sales@somlab.so",
+            "notifications_enabled": "on",
+        }
+        invalid = self.client.post(url, payload | {"recipient_email": "not-an-email"})
+        self.assertContains(invalid, "Enter a valid email address")
+        self.assertEqual(InquiryEmailSettings.current().recipient_email, "info@somlab.so")
+
+        self.assertRedirects(self.client.post(url, payload), url)
+        settings = InquiryEmailSettings.current()
+        self.assertEqual(settings.smtp_host, "smtp.gmail.com")
+        self.assertEqual(settings.smtp_port, 587)
+        self.assertTrue(settings.use_tls)
+        self.assertEqual(settings.smtp_username, "personal@gmail.com")
+        self.assertEqual(settings.from_email, "personal@gmail.com")
+        self.assertEqual(settings.recipient_email, "sales@somlab.so")
+        self.assertTrue(settings.notifications_enabled)
+        self.assertNotIn("example-app-password", settings.app_password_encrypted)
+        encrypted_password = settings.app_password_encrypted
+        self.assertEqual(InquiryEmailSettings.objects.count(), 1)
+        reloaded = self.client.get(url)
+        self.assertContains(reloaded, 'name="smtp_host" value="smtp.gmail.com"')
+        self.assertContains(reloaded, 'name="smtp_username" value="personal@gmail.com"')
+        self.assertContains(reloaded, 'name="from_email" value="personal@gmail.com"')
+        self.assertContains(reloaded, 'name="recipient_email" value="sales@somlab.so"')
+        self.assertNotContains(reloaded, "example-app-password")
+
+        self.assertRedirects(
+            self.client.post(url, {
+                **payload,
+                "smtp_app_password": "",
+                "notifications_enabled": "",
+            }),
+            url,
+        )
+        self.assertFalse(InquiryEmailSettings.current().notifications_enabled)
+        self.assertEqual(InquiryEmailSettings.current().app_password_encrypted, encrypted_password)
+
+        self.assertRedirects(
+            self.client.post(url, {
+                "recipient_email": "team@somlab.so",
+                "notifications_enabled": "on",
+            }),
+            url,
+        )
+        settings.refresh_from_db()
+        self.assertEqual(settings.smtp_username, "personal@gmail.com")
+        self.assertEqual(settings.smtp_host, "smtp.gmail.com")
+        self.assertEqual(settings.smtp_port, 587)
+        self.assertTrue(settings.notifications_enabled)
+        self.assertEqual(settings.recipient_email, "team@somlab.so")
+        self.assertEqual(settings.app_password_encrypted, encrypted_password)
+
+        self.assertRedirects(self.client.post(url, {
+            "settings_form": "1",
+            "smtp_host": "smtp.example.test",
+            "smtp_port": "2525",
+            "smtp_username": "other@gmail.com",
+            "smtp_app_password": "",
+            "from_email": "other@gmail.com",
+            "recipient_email": "team@somlab.so",
+            "notifications_enabled": "on",
+        }), url)
+        settings.refresh_from_db()
+        self.assertEqual(settings.smtp_host, "smtp.example.test")
+        self.assertEqual(settings.smtp_port, 2525)
+        self.assertFalse(settings.use_tls)
+        self.assertEqual(settings.smtp_username, "other@gmail.com")
+        self.assertEqual(settings.from_email, "other@gmail.com")
+        self.assertEqual(settings.app_password_encrypted, encrypted_password)
+        self.assertContains(self.client.get(url), 'name="smtp_port" value="2525"')
+
+        self.client.logout()
+        self.assertRedirects(self.client.get(url), reverse("admin_login"))
+
+    @override_settings(EMAIL_BACKEND="django.core.mail.backends.locmem.EmailBackend")
+    def test_email_settings_test_action_uses_saved_smtp_configuration(self):
+        url = reverse("dashboard_email_settings")
+        payload = {
+            "smtp_host": "smtp.gmail.com",
+            "smtp_port": 587,
+            "use_tls": "on",
+            "smtp_username": "personal@gmail.com",
+            "smtp_app_password": "example-app-password",
+            "from_email": "personal@gmail.com",
+            "recipient_email": "sales@somlab.so",
+            "notifications_enabled": "on",
+        }
+        self.assertRedirects(self.client.post(url, payload), url)
+        with patch("dashboard.views.send_mail", return_value=1) as mocked_send:
+            response = self.client.post(url, {
+                "action": "send_test", "recipient_email": "unsaved@example.com",
+            }, follow=True)
+        self.assertContains(response, "Test email sent to sales@somlab.so")
+        saved = InquiryEmailSettings.current()
+        self.assertEqual(saved.recipient_email, "sales@somlab.so")
+        self.assertNotEqual(saved.app_password_encrypted, "example-app-password")
+        self.assertEqual(mocked_send.call_args.args[2:4], ("personal@gmail.com", ["sales@somlab.so"]))
+        self.assertEqual(
+            mocked_send.call_args.kwargs["connection"].__class__.__name__,
+            "EmailBackend",
+        )
+        self.assertEqual(
+            mocked_send.call_args.kwargs["connection"].host,
+            "smtp.gmail.com",
+        )
+
+        smtp_error = smtplib.SMTPAuthenticationError(
+            535, b"5.7.8 Username and Password not accepted: example-app-password"
+        )
+        with patch("dashboard.views.send_mail", side_effect=smtp_error):
+            with self.assertLogs("dashboard.views", level="ERROR") as logs:
+                response = self.client.post(
+                    url, {"action": "send_test"}, follow=True,
+                )
+        self.assertEqual(response.redirect_chain[0][0], url)
+        self.assertNotIn("example-app-password", " ".join(logs.output))
+        self.assertNotContains(response, "example-app-password")
+        self.assertContains(response, "SMTP 535")
+        self.assertContains(response, "Username and Password not accepted")
 
     def test_admin_login_redirects_authorized_admin_to_dashboard(self):
         self.assertRedirects(
