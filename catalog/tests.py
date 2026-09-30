@@ -1,4 +1,6 @@
 from django.test import TestCase
+from django.db import connection
+from django.test.utils import CaptureQueriesContext
 from django.core.management import call_command
 from django.urls import reverse
 from .models import (
@@ -135,6 +137,35 @@ class CatalogTests(TestCase):
         self.assertNotContains(detail, 'href="#product-downloads"')
         self.assertNotContains(detail, 'id="product-downloads"')
         self.assertNotContains(detail, "Documents available on request")
+
+    def test_catalogue_cards_do_not_query_each_product_subcategory(self):
+        with CaptureQueriesContext(connection) as baseline_queries:
+            self.client.get(reverse("product_list"))
+
+        for index in range(8):
+            subcategory = ProductSubcategory.objects.create(
+                category=self.category,
+                name=f"Audit group {index}",
+                slug=f"audit-group-{index}",
+            )
+            Product.objects.create(
+                category=self.category,
+                subcategory=subcategory,
+                name=f"Audit analyser {index}",
+                slug=f"audit-analyser-{index}",
+                product_code=f"AUDIT-{index}",
+                short_description="Audit product.",
+                description="Audit product.",
+            )
+
+        with CaptureQueriesContext(connection) as queries:
+            response = self.client.get(reverse("product_list"))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(
+            sum('FROM "catalog_productsubcategory"' in item["sql"] for item in queries),
+            sum('FROM "catalog_productsubcategory"' in item["sql"] for item in baseline_queries),
+        )
 
     def test_specifications_section_appears_from_product_data(self):
         self.product.specifications = "Method: Automated\nThroughput: 60 tests/hour"

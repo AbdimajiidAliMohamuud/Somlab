@@ -229,6 +229,62 @@ if (customerLightbox) {
   });
 }
 
+const videoLightbox = document.querySelector("[data-video-lightbox]");
+const lightboxVideo = videoLightbox?.querySelector("[data-video-lightbox-player]");
+const lightboxSource = videoLightbox?.querySelector("[data-video-lightbox-source]");
+let activeVideoPreview = null;
+
+const openVideoLightbox = (preview, opener, shouldResume) => {
+  if (!videoLightbox || !preview) return;
+  const previewSource = preview.querySelector("source");
+  const url = previewSource?.dataset.src || previewSource?.src;
+  if (!url) return;
+
+  preview.pause();
+  activeVideoPreview = { preview, opener, shouldResume };
+  lightboxSource.src = url;
+  const type = previewSource.getAttribute("type");
+  if (type) lightboxSource.type = type;
+  else lightboxSource.removeAttribute("type");
+  if (preview.poster) lightboxVideo.poster = preview.poster;
+  else lightboxVideo.removeAttribute("poster");
+  lightboxVideo.muted = false;
+  lightboxVideo.volume = 1;
+  lightboxVideo.loop = false;
+  lightboxVideo.controls = true;
+  videoLightbox.showModal();
+  lightboxVideo.load();
+  lightboxVideo.play().catch(() => { /* Native controls remain available if autoplay is blocked. */ });
+};
+
+if (videoLightbox) {
+  const closeVideoLightbox = () => videoLightbox.close();
+  videoLightbox.querySelector("[data-video-lightbox-close]").addEventListener("click", closeVideoLightbox);
+  videoLightbox.querySelector("[data-video-lightbox-fullscreen]").addEventListener("click", () => {
+    if (lightboxVideo.requestFullscreen) {
+      lightboxVideo.requestFullscreen()?.catch(() => lightboxVideo.webkitEnterFullscreen?.());
+    } else {
+      lightboxVideo.webkitEnterFullscreen?.();
+    }
+  });
+  videoLightbox.addEventListener("click", (event) => {
+    if (event.target === videoLightbox) closeVideoLightbox();
+  });
+  videoLightbox.addEventListener("close", () => {
+    lightboxVideo.pause();
+    lightboxSource.removeAttribute("src");
+    lightboxVideo.load();
+    const opened = activeVideoPreview;
+    activeVideoPreview = null;
+    if (opened?.shouldResume() && !document.hidden && opened.preview.isConnected) {
+      opened.preview.muted = true;
+      opened.preview.loop = true;
+      opened.preview.play().catch(() => {});
+    }
+    opened?.opener.focus();
+  });
+}
+
 document.querySelectorAll("[data-customer-video-limit]").forEach((input) => {
   input.addEventListener("change", () => {
     const oversized = Array.from(input.files || []).find((file) =>
@@ -247,69 +303,57 @@ document.querySelectorAll("[data-customer-video-limit]").forEach((input) => {
 
 document.querySelectorAll("[data-customer-video-player]").forEach((player) => {
   const video = player.querySelector("video");
+  const source = video.querySelector("source");
   const play = player.querySelector("[data-customer-video-play]");
   const error = player.querySelector("[data-customer-video-error]");
   const fullscreen = player.querySelector("[data-customer-video-fullscreen]");
   fullscreen.hidden = false;
-  const setFullscreenLabel = () => fullscreen.setAttribute("aria-label",
-    player.classList.contains("is-fullscreen-fallback") || document.fullscreenElement === video
-      ? "Exit video fullscreen" : "Enter video fullscreen");
-  const closeFallbackFullscreen = () => {
-    player.classList.remove("is-fullscreen-fallback");
-    player.removeAttribute("role");
-    player.removeAttribute("aria-modal");
-    setFullscreenLabel();
-  };
-  const openFallbackFullscreen = () => {
-    player.classList.add("is-fullscreen-fallback");
-    player.setAttribute("role", "dialog");
-    player.setAttribute("aria-modal", "true");
-    setFullscreenLabel();
-  };
-  fullscreen.addEventListener("click", () => {
-    if (player.classList.contains("is-fullscreen-fallback")) {
-      closeFallbackFullscreen();
-    } else if (document.fullscreenElement === video) {
-      document.exitFullscreen?.();
-    } else if (video.requestFullscreen) {
-      video.requestFullscreen().then(setFullscreenLabel).catch(openFallbackFullscreen);
-    } else if (video.webkitEnterFullscreen) {
-      video.webkitEnterFullscreen();
-    } else {
-      openFallbackFullscreen();
-    }
-  });
-  document.addEventListener("fullscreenchange", setFullscreenLabel);
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && player.classList.contains("is-fullscreen-fallback"))
-      closeFallbackFullscreen();
-  });
   const fitVideo = () => player.classList.toggle("is-portrait", video.videoHeight > video.videoWidth);
   video.addEventListener("loadedmetadata", fitVideo);
   if (video.readyState >= 1) fitVideo();
-  // Muted looping preview keeps one centered action; a click switches to normal playback.
-  let isPreview = true;
+  let inView = false;
   video.controls = false;
   play.hidden = false;
-  const showError = () => { error.hidden = false; play.hidden = true; };
-  const startWithAudio = () => {
-    isPreview = false;
-    error.hidden = true;
-    video.loop = false;
-    video.muted = false;
-    video.controls = true;
-    play.hidden = true;
-    video.play().catch(showError);
+  const showError = () => { error.hidden = false; play.hidden = false; };
+  const ensureSource = () => {
+    if (!source.src && source.dataset.src) {
+      source.src = source.dataset.src;
+      video.load();
+    }
   };
-  play.addEventListener("click", startWithAudio);
-  video.addEventListener("play", () => { if (!isPreview) play.hidden = true; error.hidden = true; });
+  const startPreview = () => {
+    if (!inView || document.hidden || activeVideoPreview?.preview === video) return;
+    ensureSource();
+    video.muted = true;
+    video.loop = true;
+    video.play().catch(() => { /* The centered button remains available if autoplay is blocked. */ });
+  };
+  const openViewer = (button) => {
+    error.hidden = true;
+    ensureSource();
+    openVideoLightbox(video, button, () => inView);
+  };
+  play.addEventListener("click", () => openViewer(play));
+  fullscreen.addEventListener("click", () => openViewer(fullscreen));
+  video.addEventListener("play", () => { error.hidden = true; play.hidden = false; });
   video.addEventListener("error", showError);
   // Source failures do not consistently bubble to the video element.
-  video.querySelector("source").addEventListener("error", showError);
-  video.play().catch(() => { /* The centered button remains available if autoplay is blocked. */ });
+  source.addEventListener("error", showError);
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver((entries) => {
+      inView = entries[0].isIntersecting;
+      if (inView) startPreview();
+      else video.pause();
+    }, { rootMargin: "160px 0px", threshold: 0.01 });
+    observer.observe(player);
+  } else {
+    inView = true;
+    startPreview();
+  }
   player.querySelector("[data-customer-video-retry]").addEventListener("click", () => {
+    ensureSource();
     video.load();
-    startWithAudio();
+    startPreview();
   });
 });
 
@@ -603,13 +647,29 @@ if (relatedPreviewTemplates.length) {
 document.querySelectorAll("[data-product-gallery]").forEach((gallery) => {
   const slides = [...gallery.querySelectorAll("[data-gallery-slide]")];
   const thumbnails = [...gallery.querySelectorAll("[data-gallery-thumb]")];
+  let galleryVisible = !("IntersectionObserver" in window);
+
+  const startPreview = (video) => {
+    if (!video || !galleryVisible || document.hidden || activeVideoPreview?.preview === video) return;
+    const source = video.querySelector("source[data-src]");
+    if (source && !source.src) {
+      source.src = source.dataset.src;
+      video.load();
+    }
+    video.muted = true;
+    video.loop = true;
+    video.controls = false;
+    video.play().catch(() => { /* The video poster and open button remain available. */ });
+  };
 
   const showSlide = (index) => {
     slides.forEach((slide, slideIndex) => {
       const active = slideIndex === index;
       slide.hidden = !active;
       slide.classList.toggle("is-active", active);
-      if (!active) {
+      if (active) {
+        startPreview(slide.querySelector("video"));
+      } else {
         slide.querySelector("video")?.pause();
       }
     });
@@ -620,8 +680,24 @@ document.querySelectorAll("[data-product-gallery]").forEach((gallery) => {
     });
   };
 
+  slides.forEach((slide) => {
+    const video = slide.querySelector("video");
+    if (!video) return;
+    const openViewer = (button) => openVideoLightbox(
+      video, button, () => galleryVisible && !slide.hidden,
+    );
+    const openButton = slide.querySelector("[data-product-video-open]");
+    const fullscreenButton = slide.querySelector("[data-product-video-fullscreen]");
+    openButton.addEventListener("click", () => openViewer(openButton));
+    fullscreenButton.addEventListener("click", () => openViewer(fullscreenButton));
+  });
+
   thumbnails.forEach((thumbnail, index) => {
-    thumbnail.addEventListener("click", () => showSlide(index));
+    thumbnail.addEventListener("click", () => {
+      showSlide(index);
+      const video = slides[index].querySelector("video");
+      if (video) openVideoLightbox(video, thumbnail, () => galleryVisible && !slides[index].hidden);
+    });
     thumbnail.addEventListener("keydown", (event) => {
       if (!["ArrowLeft", "ArrowRight"].includes(event.key)) {
         return;
@@ -633,6 +709,16 @@ document.querySelectorAll("[data-product-gallery]").forEach((gallery) => {
       showSlide(nextIndex);
     });
   });
+  showSlide(Math.max(0, slides.findIndex((slide) => slide.classList.contains("is-active"))));
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver((entries) => {
+      galleryVisible = entries[0].isIntersecting;
+      const activeVideo = slides.find((slide) => !slide.hidden)?.querySelector("video");
+      if (galleryVisible) startPreview(activeVideo);
+      else activeVideo?.pause();
+    }, { rootMargin: "160px 0px", threshold: 0.01 });
+    observer.observe(gallery);
+  }
 });
 
 document.querySelectorAll("[data-product-sections]").forEach((sectionGroup) => {

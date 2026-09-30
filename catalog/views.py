@@ -180,7 +180,9 @@ def microbiology_catalogue_context(request):
 
 def product_list(request):
     public_catalogue = catalogue_listing_products()
-    products = public_catalogue.select_related("category")
+    products = public_catalogue.select_related(
+        "category", "subcategory", "subcategory__parent",
+    )
     categories = public_categories().annotate(
         public_product_count=Count(
             "products",
@@ -506,7 +508,17 @@ def product_detail(request, slug):
         )
         gallery_items.append({
             "media_type": media.media_type,
-            "url": display_file.url,
+            "url": (
+                reverse("product_video_source", args=[product.slug, media.pk])
+                if media.media_type == "video" else display_file.url
+            ),
+            "poster_url": (
+                media.video_poster.url
+                if media.media_type == "video" and media.video_poster else ""
+            ),
+            "video_type": (
+                "video/mp4" if media.playback_file else ""
+            ),
             "fallback_url": (
                 media.file.url if display_file != media.file else ""
             ),

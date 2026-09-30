@@ -18,6 +18,14 @@ def customer_video_source(request, slug, pk):
         project__customer__is_active=True,
     )
     file = media.playback_file or media.file
+    return stream_video_file(
+        request, file,
+        "video/mp4" if media.playback_file else media.video_mime_type,
+    )
+
+
+def stream_video_file(request, file, content_type):
+    """Redirect R2 playback or stream local byte ranges without buffering a video."""
     if not file:
         return HttpResponse(status=404)
     url = file.url
@@ -52,7 +60,7 @@ def customer_video_source(request, slug, pk):
 
     response = StreamingHttpResponse(
         () if request.method == "HEAD" else chunks(), status=status,
-        content_type="video/mp4" if media.playback_file else media.video_mime_type,
+        content_type=content_type or "application/octet-stream",
     )
     response["Accept-Ranges"] = "bytes"
     response["Content-Length"] = end - start + 1

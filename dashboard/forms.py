@@ -9,6 +9,7 @@ from catalog.models import (
     Category, Product, ProductMedia, ProductSubcategory, ProductVariant,
 )
 from catalog.scope import public_categories
+from catalog.media_lifecycle import schedule_product_gallery_cleanup
 from core.models import (
     AboutPageContent, ContactPageContent, Customer, CustomerProject,
     CustomerProjectMedia, Partner, Service,
@@ -243,13 +244,14 @@ class ProductForm(SlugFromNameMixin, forms.ModelForm):
         return [image_validator.clean(uploaded_file) for uploaded_file in files]
 
     def clean_gallery_videos(self):
-        return self._validate_uploads(
+        files = self._validate_uploads(
             self.cleaned_data["gallery_videos"],
             {"mp4", "webm", "mov", "m4v"},
             6,
             100 * 1024 * 1024,
             "Video",
         )
+        return [validate_video_upload(upload) for upload in files]
 
     def clean_variants(self):
         raw_value = self.cleaned_data.get("variants", "")
@@ -291,12 +293,10 @@ class ProductForm(SlugFromNameMixin, forms.ModelForm):
         product = super().save(commit=commit)
         if not commit:
             return product
-
-        for media in self.cleaned_data.get("delete_media", []):
-            media.file.delete(save=False)
-            media.delete()
-
-        highest_order = product.gallery_media.aggregate(
+        delete_media = list(self.cleaned_data.get("delete_media", []))
+        highest_order = product.gallery_media.exclude(
+            pk__in=[media.pk for media in delete_media],
+        ).aggregate(
             value=Max("display_order")
         )["value"]
         next_order = 0 if highest_order is None else highest_order + 1
@@ -305,12 +305,16 @@ class ProductForm(SlugFromNameMixin, forms.ModelForm):
             ("video", "gallery_videos"),
         ):
             for uploaded_file in self.cleaned_data.get(field_name, []):
-                ProductMedia.objects.create(
+                media = ProductMedia(
                     product=product,
                     file=uploaded_file,
                     media_type=media_type,
                     display_order=next_order,
                 )
+                if media_type == "video":
+                    save_video_media(media, uploaded_file)
+                else:
+                    media.save()
                 next_order += 1
 
         product.variants.all().delete()
@@ -325,6 +329,18 @@ class ProductForm(SlugFromNameMixin, forms.ModelForm):
                 getattr(self, "_parsed_variants", [])
             )
         ])
+        for media in delete_media:
+            stored_files = [
+                (field.storage, field.name)
+                for field in (
+                    media.file, media.source_file,
+                    media.playback_file, media.video_poster,
+                )
+                if field.name
+            ]
+            media.delete()
+            for storage, name in stored_files:
+                schedule_product_gallery_cleanup(storage, name)
         return product
 
     class Meta:

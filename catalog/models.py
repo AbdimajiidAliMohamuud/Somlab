@@ -179,6 +179,12 @@ class ProductMedia(models.Model):
         related_name="gallery_media",
     )
     file = models.FileField(upload_to="products/gallery/")
+    playback_file = models.FileField(
+        upload_to="products/gallery/playback/", blank=True,
+    )
+    video_poster = models.ImageField(
+        upload_to="products/gallery/posters/", blank=True,
+    )
     source_file = models.FileField(
         upload_to="products/gallery/originals/",
         blank=True,

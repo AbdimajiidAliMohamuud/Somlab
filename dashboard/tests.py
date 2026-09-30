@@ -370,6 +370,7 @@ class CustomDashboardManagementTests(TestCase):
         },
     })
     def test_product_form_accepts_multiple_gallery_files_and_variants(self):
+        from core.test_customer_video import test_video_bytes
         tiny_png = base64.b64decode(
             "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwC"
             "AAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
@@ -401,7 +402,7 @@ class CustomDashboardManagementTests(TestCase):
             "gallery_videos": [
                 SimpleUploadedFile(
                     "demo.mp4",
-                    b"product video",
+                    test_video_bytes(),
                     content_type="video/mp4",
                 ),
             ],
@@ -411,6 +412,9 @@ class CustomDashboardManagementTests(TestCase):
         product = Product.objects.get(product_code="SL-GALLERY-1")
         self.assertEqual(product.gallery_media.filter(media_type="image").count(), 2)
         self.assertEqual(product.gallery_media.filter(media_type="video").count(), 1)
+        video = product.gallery_media.get(media_type="video")
+        self.assertTrue(video.playback_file)
+        self.assertTrue(video.video_poster)
         self.assertEqual(
             list(product.variants.values_list("name", "model_number")),
             [("Compact", "GA-100"), ("Advanced", "GA-200")],
@@ -679,12 +683,12 @@ class CustomDashboardManagementTests(TestCase):
         self.assertContains(public_gallery, "Work delivered")
         self.assertContains(
             public_gallery,
-            '<video controls autoplay muted loop playsinline preload="metadata"',
+            '<video controls autoplay muted loop playsinline webkit-playsinline preload="none"',
             html=False,
         )
         self.assertContains(
             public_gallery,
-            f'<source src="{reverse("customer_video_source", args=[customer.slug, uploaded_video.pk])}" type="video/mp4">',
+            f'<source data-src="{reverse("customer_video_source", args=[customer.slug, uploaded_video.pk])}" type="video/mp4">',
             html=False,
         )
         for uploaded_image in uploaded_images:

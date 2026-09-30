@@ -1,7 +1,9 @@
 from django.urls import path
 from . import views
+from .video_views import product_video_source
 
 urlpatterns = [
+    path("video/<slug:slug>/<int:pk>/", product_video_source, name="product_video_source"),
     path("", views.product_list, name="product_list"),
     path(
         "group/<slug:slug>/",

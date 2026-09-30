@@ -80,9 +80,9 @@
                 {% if item.media_type == "video" %}
                   {% if item.file %}
                   <div class="customer-video-player" data-customer-video-player>
-                    <video controls autoplay muted loop playsinline preload="metadata"{% if item.video_poster %} poster="{{ item.video_poster.url }}"{% endif %} aria-label="{{ item.caption|default:project.title }} video"><source src="{% url 'customer_video_source' customer.slug item.pk %}"{% if item.playback_file %} type="video/mp4"{% elif item.video_mime_type %} type="{{ item.video_mime_type }}"{% endif %}>Your browser does not support this video.</video>
-                    <button class="customer-video-play" type="button" data-customer-video-play aria-label="Play {{ item.caption|default:project.title }} video with audio" hidden><span aria-hidden="true">▶</span></button>
-                    <button class="customer-video-fullscreen" type="button" data-customer-video-fullscreen aria-label="Enter video fullscreen" hidden>⛶</button>
+                    <video controls autoplay muted loop playsinline webkit-playsinline preload="none"{% if item.video_poster %} poster="{{ item.video_poster.url }}"{% endif %} aria-label="{{ item.caption|default:project.title }} video"><source data-src="{% url 'customer_video_source' customer.slug item.pk %}"{% if item.playback_file %} type="video/mp4"{% elif item.video_mime_type %} type="{{ item.video_mime_type }}"{% endif %}>Your browser does not support this video.</video>
+                    <button class="customer-video-play" type="button" data-customer-video-play aria-label="Open {{ item.caption|default:project.title }} video with audio" hidden><span aria-hidden="true">▶</span></button>
+                    <button class="customer-video-fullscreen" type="button" data-customer-video-fullscreen aria-label="Open {{ item.caption|default:project.title }} video player" hidden>⛶</button>
                     <p class="customer-video-error" data-customer-video-error role="status" hidden>Video could not load. <button type="button" data-customer-video-retry>Try again</button> or <a href="{% url 'customer_video_source' customer.slug item.pk %}" target="_blank" rel="noopener">open video</a>.</p>
                   </div>
                   {% elif item.embed_url %}<span class="customer-video-frame"><iframe src="{{ item.embed_url }}" title="{{ item.caption|default:project.title }}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></span>

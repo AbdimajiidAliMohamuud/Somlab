@@ -1,5 +1,6 @@
 """Customer-only video validation and browser playback assets."""
 from contextlib import contextmanager
+import logging
 from pathlib import Path
 import shutil
 import subprocess
@@ -9,6 +10,8 @@ from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.core.files import File
 
+
+logger = logging.getLogger(__name__)
 
 # Decimal GB, exclusive: keep both the server and form at exactly the same limit.
 MAX_VIDEO_BYTES = 1_000_000_000 - 1
@@ -86,19 +89,25 @@ def playback_assets(upload):
             upload.seek(0)
         playback = root / "playback.mp4"
         poster = root / "poster.jpg"
-        # H.264 + AAC, 4:2:0 and front-loaded metadata work across desktop/iOS/Android.
-        # Pad an odd-sized source by at most one pixel, without cropping or stretching.
+        # Cap the longest side at 1920px without upscaling, cropping or stretching.
+        # H.264/AAC and front-loaded metadata allow ranged, progressive playback.
         run_ffmpeg([
             "-protocol_whitelist", "file,pipe", "-i", str(source),
             "-map", "0:v:0", "-map", "0:a:0?", "-sn", "-dn",
-            "-c:v", "libx264", "-preset", "fast", "-crf", "20",
-            "-pix_fmt", "yuv420p", "-vf", "pad=ceil(iw/2)*2:ceil(ih/2)*2",
-            "-threads", "2", "-c:a", "aac", "-b:a", "160k",
+            "-c:v", "libx264", "-preset", "medium", "-crf", "23",
+            "-pix_fmt", "yuv420p",
+            "-vf", "scale=w='min(1920,iw)':h='min(1920,ih)':force_original_aspect_ratio=decrease,"
+                   "pad=ceil(iw/2)*2:ceil(ih/2)*2",
+            "-threads", "2", "-c:a", "aac", "-b:a", "96k",
             "-movflags", "+faststart", str(playback),
         ])
         run_ffmpeg([
-            "-i", str(playback), "-frames:v", "1", "-q:v", "2", str(poster),
+            "-i", str(playback), "-frames:v", "1",
+            "-vf", "scale=w='min(640,iw)':h='min(640,ih)':force_original_aspect_ratio=decrease",
+            "-q:v", "5", str(poster),
         ])
+        if not playback.stat().st_size or not poster.stat().st_size:
+            raise ValidationError("Video optimization produced an empty file. Please retry.")
         yield playback, poster
 
 
@@ -106,12 +115,12 @@ def save_video_media(media, upload, *, replace_original=True):
     """Publish only after successful decoding, storage and database writes."""
     validate_video_upload(upload)
     saved_files = []
+    previous_names = {
+        field_name: getattr(media, field_name).name
+        for field_name in ("file", "playback_file", "video_poster")
+    }
     try:
         with playback_assets(upload) as (playback, poster):
-            if replace_original:
-                upload.seek(0)
-                media.file.save(Path(upload.name).name, upload, save=False)
-                saved_files.append((media.file.storage, media.file.name))
             for field, path, mime in (
                 (media.playback_file, playback, "video/mp4"),
                 (media.video_poster, poster, "image/jpeg"),
@@ -121,13 +130,20 @@ def save_video_media(media, upload, *, replace_original=True):
                     content.content_type = mime
                     field.save(path.name, content, save=False)
                     saved_files.append((field.storage, field.name))
+            if replace_original:
+                upload.seek(0)
+                media.file.save(Path(upload.name).name, upload, save=False)
+                saved_files.append((media.file.storage, media.file.name))
             media.save()
-    except Exception:
+    except Exception as error:
         # These are only new objects from this failed save, never existing media.
         for storage, name in saved_files:
             try:
                 storage.delete(name)
-            except Exception:
-                pass
+            except Exception as cleanup_error:
+                logger.warning("Could not clean a failed video upload (%s)", type(cleanup_error).__name__)
+        for field_name, previous_name in previous_names.items():
+            getattr(media, field_name).name = previous_name
+        logger.warning("Video upload/optimization failed (%s)", type(error).__name__)
         raise
     return media

@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="{% static 'img/somlab-logo.png' %}">
-  <link rel="stylesheet" href="{% static 'css/site.css' %}?v=customer-order-gap-1">
+  <link rel="stylesheet" href="{% static 'css/site.css' %}?v=video-lightbox-9">
   {% block extra_head %}{% endblock %}
 </head>
 <body>
@@ -132,7 +132,15 @@
     </div>
     <div class="container footer-bottom"><span>© {% now "Y" %} Somlab Diagnostics. All rights reserved.</span><span>A sister company of Medisom Health Group</span></div>
   </footer>
-  <script src="{% static 'js/site.js' %}?v=customer-video-player-6"></script>
+  <dialog class="site-video-lightbox" data-video-lightbox aria-label="Video viewer">
+    <button type="button" class="site-video-lightbox-close" data-video-lightbox-close aria-label="Close video viewer">×</button>
+    <button type="button" class="site-video-lightbox-fullscreen" data-video-lightbox-fullscreen aria-label="Play video fullscreen">⛶</button>
+    <video controls playsinline webkit-playsinline preload="none" data-video-lightbox-player aria-label="Selected video">
+      <source data-video-lightbox-source>
+      Your browser does not support this video.
+    </video>
+  </dialog>
+  <script src="{% static 'js/site.js' %}?v=video-lightbox-10"></script>
   {% block extra_js %}{% endblock %}
 </body>
 </html>

@@ -195,9 +195,21 @@ def contact_content(request):
 def _save_form(request, form_class, template_title, success_name, instance=None):
     form = form_class(request.POST or None, request.FILES or None, instance=instance)
     if request.method == "POST" and form.is_valid():
-        item = form.save()
-        messages.success(request, f"{item} was saved.")
-        return redirect(success_name)
+        if form_class is ProductForm:
+            try:
+                with transaction.atomic():
+                    item = form.save()
+            except ValidationError as error:
+                form.add_error(None, error)
+            except (BotoCoreError, ClientError, OSError):
+                form.add_error(None, "Product video storage is temporarily unavailable. Please retry.")
+            else:
+                messages.success(request, f"{item} was saved.")
+                return redirect(success_name)
+        else:
+            item = form.save()
+            messages.success(request, f"{item} was saved.")
+            return redirect(success_name)
     return render(request, "dashboard/manage_form.html", {
         "form": form,
         "title": template_title,

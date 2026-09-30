@@ -8,6 +8,7 @@ from django.contrib.auth.models import User
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test import TestCase, override_settings
 from django.urls import reverse
+from PIL import Image
 
 from core.customer_video import MAX_VIDEO_BYTES, ffmpeg_executable, save_video_media
 from core.models import Customer, CustomerProject, CustomerProjectMedia
@@ -104,11 +105,16 @@ class CustomerVideoTests(TestCase):
         self.assertLess(content.index(b"moov"), content.index(b"mdat"))
         page = self.client.get(self.customer.get_absolute_url())
         self.assertContains(page, "data-customer-video-player")
-        self.assertContains(page, "controls autoplay muted loop playsinline")
+        self.assertContains(page, 'controls autoplay muted loop playsinline webkit-playsinline preload="none"')
         self.assertContains(page, "data-customer-video-play")
+        self.assertContains(page, "data-customer-video-fullscreen")
+        self.assertContains(page, "data-video-lightbox-player")
+        self.assertContains(page, "data-video-lightbox-close")
+        self.assertContains(page, '<video controls playsinline webkit-playsinline preload="none"')
         self.assertNotContains(page, "<span>Play video</span>")
         self.assertContains(page, media.video_poster.url)
         source = reverse("customer_video_source", args=[self.customer.slug, media.pk])
+        self.assertContains(page, f'data-src="{source}"')
         response = self.client.get(source, HTTP_RANGE="bytes=10-49")
         self.assertEqual(response.status_code, 206)
         self.assertEqual(response["Content-Type"], "video/mp4")
@@ -127,6 +133,25 @@ class CustomerVideoTests(TestCase):
                 self.assertTrue(media.file.name.endswith(f".{extension}"))
                 self.assertTrue(media.playback_file.name.endswith(".mp4"))
                 self.assertTrue(media.video_poster.name.endswith(".jpg"))
+
+    def test_high_bitrate_upload_is_substantially_smaller_with_small_poster(self):
+        with TemporaryDirectory(prefix="somlab-high-bitrate-") as directory:
+            source = Path(directory) / "source.mp4"
+            subprocess.run([
+                ffmpeg_executable(), "-nostdin", "-loglevel", "error", "-y",
+                "-f", "lavfi", "-i", "testsrc2=size=640x360:rate=30",
+                "-t", "3", "-c:v", "libx264", "-crf", "8",
+                "-pix_fmt", "yuv420p", str(source),
+            ], check=True, capture_output=True, timeout=60)
+            upload = self.upload(source.read_bytes())
+        media = self.media_form(upload)
+        self.assertTrue(media.is_valid(), media.errors)
+        saved = media.save()
+        self.assertLess(saved.playback_file.size, saved.file.size * 0.5)
+        self.assertLess(saved.video_poster.size, 50 * 1024)
+        with saved.video_poster.open("rb") as poster:
+            with Image.open(poster) as image:
+                self.assertLessEqual(max(image.size), 640)
 
     def test_corrupt_container_returns_form_error_without_publishing(self):
         response = self.client.post(

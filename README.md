@@ -141,9 +141,14 @@ using Email Settings.
 Customer videos accept MP4, WebM, MOV/M4V and Ogg files up to 999,999,999 bytes
 each (strictly under 1 decimal GB). Install `requirements.txt` for the bundled
 FFmpeg runtime, or set `CUSTOMER_VIDEO_FFMPEG` to a maintained system FFmpeg.
-The admin keeps original uploads and creates H.264/AAC MP4 playback copies with
-fast-start metadata and poster images in the same media/R2 storage. Existing
-videos can be prepared once with `python manage.py prepare_customer_videos ID`.
+Customer and product admin video uploads keep their originals and create
+H.264/AAC MP4 playback copies (up to 1920 px, fast-start metadata) plus small
+JPEG posters in the same media/R2 storage. Product gallery videos retain their
+existing 100 MB upload limit. Public previews fetch video only when a customer
+card or product gallery enters view; browser range requests are
+redirected to R2, which serves partial content directly. Existing customer
+videos missing playback assets can be prepared with
+`python manage.py prepare_customer_videos ID`.
 
 Large uploads are streamed to temporary disk. Provision disk for the originals
 and playback copies, and set the origin server's request-body limit to at least

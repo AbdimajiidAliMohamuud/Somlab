@@ -20,14 +20,16 @@
       <div class="product-gallery{% if product.category.slug == 'medical-electronic-systems' and product.subcategory.slug == 'automated-semen-analysis-solutions' or product.category.slug == 'medical-electronic-systems' and product.subcategory.slug == 'consumer-semen-analysis-solutions' or product.category.slug == 'medical-electronic-systems' and product.subcategory.slug == 'veterinary-semen-analysis-solutions' %} sqa-product-gallery-fit{% endif %}{% if product.product_code == 'SL-CC-203' %} pk7400-detail-image-fit{% elif product.product_code == 'MOLBIO-IBREASTEXAM' %} ibreastexam-product-gallery-fit{% elif product.category.slug == 'molbio' and product.subcategory.slug == 'prorad-atlas' %} prorad-atlas-product-gallery-fit{% elif product.category.slug == 'molbio' and product.subcategory.slug == 'truenat-platform' %} truenat-product-gallery-fit{% elif product.category.slug == 'molbio' and product.subcategory.parent.slug == 'truenat-assays' %} truenat-assay-product-gallery-fit{% endif %}" data-product-gallery>
         <div class="product-gallery-main" aria-live="polite">
           {% for item in gallery_items %}
-            <div class="product-gallery-slide{% if item.media_type == 'image' %} is-image{% endif %}{% if forloop.first %} is-active{% endif %}"
+            <div class="product-gallery-slide{% if item.media_type == 'image' %} is-image{% else %} has-video{% endif %}{% if forloop.first %} is-active{% endif %}"
                  data-gallery-slide="{{ forloop.counter0 }}"
                  {% if not forloop.first %}hidden{% endif %}>
               {% if item.media_type == "video" %}
-                <video controls preload="metadata" aria-label="{{ item.label }}">
-                  <source src="{{ item.url }}">
+                <video autoplay muted loop playsinline webkit-playsinline preload="none"{% if item.poster_url %} poster="{{ item.poster_url }}"{% endif %} aria-label="{{ item.label }}">
+                  <source data-src="{{ item.url }}"{% if item.video_type %} type="{{ item.video_type }}"{% endif %}>
                   Your browser does not support this product video.
                 </video>
+                <button type="button" class="product-video-open" data-product-video-open aria-label="Open {{ item.label }} with audio"><span aria-hidden="true">▶</span></button>
+                <button type="button" class="product-video-fullscreen" data-product-video-fullscreen aria-label="Open {{ item.label }} video player">⛶</button>
               {% else %}
                 <img src="{{ item.url }}" alt="{{ item.label }}"
                      {% if item.fallback_url %}data-image-fallback="{{ item.fallback_url }}"{% endif %}
@@ -52,9 +54,7 @@
                       aria-label="Show {{ item.label }}"
                       aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}">
                 {% if item.media_type == "video" %}
-                  <video muted preload="metadata" aria-hidden="true">
-                    <source src="{{ item.url }}">
-                  </video>
+                  {% if item.poster_url %}<img src="{{ item.poster_url }}" alt="" loading="lazy">{% endif %}
                   <span class="gallery-play" aria-hidden="true">▶</span>
                 {% else %}
                   <img src="{{ item.url }}" alt="" loading="lazy"
