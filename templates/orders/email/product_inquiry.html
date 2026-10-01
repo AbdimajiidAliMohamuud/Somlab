@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>New Product Inquiry</title>
+  <style>
+    @media screen and (max-width: 620px) {
+      .email-padding { padding-left: 20px !important; padding-right: 20px !important; }
+      .email-heading { font-size: 25px !important; line-height: 32px !important; }
+      .email-button { display: block !important; text-align: center !important; }
+    }
+  </style>
+</head>
+<body style="margin:0;padding:0;background-color:#f2f6f7;color:#082b36;font-family:Arial,Helvetica,sans-serif;-webkit-text-size-adjust:100%;">
+  <div style="display:none;font-size:1px;line-height:1px;color:#f2f6f7;max-height:0;max-width:0;opacity:0;overflow:hidden;">New inquiry {{ inquiry.inquiry_number }} for {{ inquiry.product_name }}</div>
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;background-color:#f2f6f7;">
+    <tr><td align="center" style="padding:28px 12px;">
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:100%;max-width:600px;border-collapse:collapse;background-color:#ffffff;border:1px solid #dce8ea;">
+        <tr><td class="email-padding" style="padding:28px 36px 22px;border-top:5px solid #08b9b7;">
+          <img src="{{ logo_url }}" alt="Somlab Diagnostics" width="230" style="display:block;width:230px;max-width:100%;height:auto;border:0;outline:none;text-decoration:none;">
+        </td></tr>
+        <tr><td class="email-padding" style="padding:22px 36px 26px;background-color:#062c38;color:#ffffff;">
+          <p style="margin:0 0 8px;font-size:12px;line-height:18px;font-weight:bold;letter-spacing:1.4px;text-transform:uppercase;color:#65d9d5;">Product inquiry notification</p>
+          <h1 class="email-heading" style="margin:0;font-size:29px;line-height:36px;font-weight:bold;color:#ffffff;">New Product Inquiry</h1>
+          <p style="margin:11px 0 0;font-size:14px;line-height:22px;color:#d8e9eb;">Reference <strong style="color:#ffffff;">{{ inquiry.inquiry_number }}</strong> &nbsp;·&nbsp; {{ submitted }}</p>
+        </td></tr>
+        <tr><td class="email-padding" style="padding:30px 36px 0;">
+          <h2 style="margin:0 0 12px;font-size:18px;line-height:24px;color:#062c38;">Customer &amp; contact</h2>
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;">
+            <tr><td style="padding:10px 0;border-top:1px solid #e5edef;font-size:13px;line-height:20px;color:#617881;">Name</td><td align="right" style="padding:10px 0;border-top:1px solid #e5edef;font-size:14px;line-height:20px;color:#082b36;word-break:break-word;">{{ inquiry.full_name }}</td></tr>
+            <tr><td style="padding:10px 0;border-top:1px solid #e5edef;font-size:13px;line-height:20px;color:#617881;">Organization</td><td align="right" style="padding:10px 0;border-top:1px solid #e5edef;font-size:14px;line-height:20px;color:#082b36;word-break:break-word;">{{ inquiry.organization|default:"Not specified" }}</td></tr>
+            <tr><td style="padding:10px 0;border-top:1px solid #e5edef;font-size:13px;line-height:20px;color:#617881;">Email</td><td align="right" style="padding:10px 0;border-top:1px solid #e5edef;font-size:14px;line-height:20px;word-break:break-word;"><a href="mailto:{{ inquiry.email }}" style="color:#087f88;text-decoration:underline;">{{ inquiry.email }}</a></td></tr>
+            <tr><td style="padding:10px 0;border-top:1px solid #e5edef;font-size:13px;line-height:20px;color:#617881;">Phone</td><td align="right" style="padding:10px 0;border-top:1px solid #e5edef;font-size:14px;line-height:20px;color:#082b36;word-break:break-word;">{{ inquiry.phone }}</td></tr>
+            <tr><td style="padding:10px 0;border-top:1px solid #e5edef;font-size:13px;line-height:20px;color:#617881;">Country</td><td align="right" style="padding:10px 0;border-top:1px solid #e5edef;font-size:14px;line-height:20px;color:#082b36;word-break:break-word;">{{ inquiry.country }}</td></tr>
+          </table>
+        </td></tr>
+        <tr><td class="email-padding" style="padding:28px 36px 0;">
+          <h2 style="margin:0 0 12px;font-size:18px;line-height:24px;color:#062c38;">Requested product</h2>
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;">
+            <tr><td style="padding:10px 0;border-top:1px solid #e5edef;font-size:13px;line-height:20px;color:#617881;">Product</td><td align="right" style="padding:10px 0;border-top:1px solid #e5edef;font-size:14px;line-height:20px;font-weight:bold;color:#082b36;word-break:break-word;">{{ inquiry.product_name }}</td></tr>
+            <tr><td style="padding:10px 0;border-top:1px solid #e5edef;font-size:13px;line-height:20px;color:#617881;">Quantity</td><td align="right" style="padding:10px 0;border-top:1px solid #e5edef;font-size:14px;line-height:20px;color:#082b36;">{{ inquiry.quantity|default:"Not specified" }}</td></tr>
+            <tr><td style="padding:10px 0;border-top:1px solid #e5edef;font-size:13px;line-height:20px;color:#617881;">Group / category</td><td align="right" style="padding:10px 0;border-top:1px solid #e5edef;font-size:14px;line-height:20px;color:#082b36;word-break:break-word;">{{ inquiry.get_product_group_display|default:"Not specified" }}{% if inquiry.product_category %} / {{ inquiry.product_category }}{% endif %}</td></tr>
+            {% if inquiry.product_code %}<tr><td style="padding:10px 0;border-top:1px solid #e5edef;font-size:13px;line-height:20px;color:#617881;">Product code</td><td align="right" style="padding:10px 0;border-top:1px solid #e5edef;font-size:14px;line-height:20px;color:#082b36;word-break:break-word;">{{ inquiry.product_code }}</td></tr>{% endif %}
+          </table>
+        </td></tr>
+        <tr><td class="email-padding" style="padding:28px 36px 0;">
+          <h2 style="margin:0 0 12px;font-size:18px;line-height:24px;color:#062c38;">Customer message</h2>
+          <div style="padding:18px 20px;background-color:#f2f7f8;border-left:3px solid #08b9b7;font-size:14px;line-height:23px;color:#243f49;word-break:break-word;">{{ inquiry.message|linebreaksbr }}</div>
+        </td></tr>
+        <tr><td class="email-padding" style="padding:30px 36px 36px;">
+          <a class="email-button" href="{{ admin_url }}" style="display:inline-block;padding:14px 23px;background-color:#08aeb0;color:#ffffff;font-size:14px;line-height:20px;font-weight:bold;text-decoration:none;">View inquiry in Admin</a>
+          <p style="margin:14px 0 0;font-size:12px;line-height:18px;color:#617881;">This link requires an authorized Somlab admin account.</p>
+        </td></tr>
+        <tr><td class="email-padding" style="padding:24px 36px;background-color:#062c38;color:#d8e9eb;">
+          <p style="margin:0 0 6px;font-size:14px;line-height:20px;font-weight:bold;color:#ffffff;">Somlab Diagnostics</p>
+          <p style="margin:0;font-size:12px;line-height:19px;">Star Home Tower, 5th Floor, Apt. 504<br>KM5, Amira Hotel Street, Hodan<br>Mogadishu, Somalia<br><a href="mailto:info@somlab.so" style="color:#65d9d5;text-decoration:none;">info@somlab.so</a></p>
+        </td></tr>
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>

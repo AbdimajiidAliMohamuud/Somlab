@@ -1,8 +1,10 @@
 import logging
+from urllib.parse import urljoin
 
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.shortcuts import get_object_or_404, redirect, render
+from django.template.loader import render_to_string
 from django.urls import reverse
 from django.views.decorators.http import require_POST
 
@@ -18,6 +20,7 @@ from .models import InquiryEmailSettings, ProductInquiry
 
 
 logger = logging.getLogger(__name__)
+SITE_ORIGIN = "https://somlab.so/"
 
 
 def _send_inquiry_notification(inquiry):
@@ -26,31 +29,25 @@ def _send_inquiry_notification(inquiry):
         return
     connection = inquiry_connection(email_settings)
     submitted = inquiry.created_at.strftime("%d %b %Y, %H:%M %Z")
-    body = "\n".join((
-        f"Inquiry ID: {inquiry.inquiry_number}",
-        f"Customer name: {inquiry.full_name}",
-        f"Organization: {inquiry.organization}",
-        f"Email: {inquiry.email}",
-        f"Phone: {inquiry.phone}",
-        f"Country: {inquiry.country}",
-        f"Product Group: {inquiry.get_product_group_display()}",
-        f"Product: {inquiry.product_name}",
-        f"Product code: {inquiry.product_code}",
-        f"Category: {inquiry.product_category}",
-        f"Quantity: {inquiry.quantity or 'Not specified'}",
-        "",
-        "Message / Requirements:",
-        inquiry.message,
-        "",
-        f"Submitted: {submitted}",
-    ))
+    context = {
+        "inquiry": inquiry,
+        "submitted": submitted,
+        "admin_url": urljoin(
+            SITE_ORIGIN,
+            reverse("dashboard_inquiry_detail", args=[inquiry.inquiry_number]).lstrip("/"),
+        ),
+        # The stable, public URL is reachable by email clients independently
+        # of a deployment's generated staticfiles manifest.
+        "logo_url": urljoin(SITE_ORIGIN, "static/img/somlab-logo.png"),
+    }
     delivered = send_mail(
         subject=f"New Product Inquiry – {inquiry.product_name}",
-        message=body,
+        message=render_to_string("orders/email/product_inquiry.txt", context),
         from_email=email_settings.from_email,
         recipient_list=[email_settings.recipient_email],
         fail_silently=False,
         connection=connection,
+        html_message=render_to_string("orders/email/product_inquiry.html", context),
     )
     if delivered != 1:
         logger.error(

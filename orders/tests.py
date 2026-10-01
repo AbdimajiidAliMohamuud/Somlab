@@ -170,10 +170,37 @@ class ProductInquiryFlowTests(TestCase):
         self.assertIn(inquiry.inquiry_number, notification.body)
         self.assertIn("North Lab", notification.body)
         self.assertIn("Product Group: Laboratory", notification.body)
+        self.assertEqual(len(notification.alternatives), 1)
+        self.assertEqual(notification.alternatives[0].mimetype, "text/html")
+        html = notification.alternatives[0].content
+        self.assertIn("New Product Inquiry", html)
+        self.assertIn(inquiry.inquiry_number, html)
+        self.assertIn("North Lab", html)
+        self.assertIn("Test Reagent", html)
+        self.assertIn("Quantity", html)
+        self.assertIn("View inquiry in Admin", html)
+        self.assertIn(
+            f'https://somlab.so{reverse("dashboard_inquiry_detail", args=[inquiry.inquiry_number])}',
+            html,
+        )
+        self.assertIn('src="https://somlab.so/static/img/somlab-logo.png"', html)
+        self.assertIn("mailto:info@somlab.so", html)
+        self.assertNotIn("example-app-password", html)
+        self.assertNotIn("example-app-password", notification.body)
 
         success = self.client.get(reverse("product_inquiry_success"))
         self.assertContains(success, inquiry.inquiry_number)
         self.assertContains(success, self.product.name)
+
+    def test_html_inquiry_email_escapes_customer_message_and_keeps_plain_text(self):
+        message = "<script>alert(1)</script>\nSecond line"
+        self.client.post(reverse("product_inquiry"), self.payload | {"message": message})
+        notification = mail.outbox[0]
+        self.assertIn(message, notification.body)
+        html = notification.alternatives[0].content
+        self.assertNotIn("<script>", html)
+        self.assertIn("&lt;script&gt;alert(1)&lt;/script&gt;", html)
+        self.assertIn("Second line", html)
 
     def test_configured_recipient_receives_email_after_inquiry_is_saved(self):
         email_settings = InquiryEmailSettings.current()

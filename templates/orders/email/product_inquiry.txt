@@ -1,0 +1,28 @@
+{% autoescape off %}New Product Inquiry
+Inquiry reference: {{ inquiry.inquiry_number }}
+Submitted: {{ submitted }}
+
+Customer/contact details
+Name: {{ inquiry.full_name }}
+Organization: {{ inquiry.organization|default:"Not specified" }}
+Email: {{ inquiry.email }}
+Phone: {{ inquiry.phone }}
+Country: {{ inquiry.country }}
+
+Requested product
+Product Group: {{ inquiry.get_product_group_display|default:"Not specified" }}
+Product: {{ inquiry.product_name }}
+Product code: {{ inquiry.product_code|default:"Not specified" }}
+Category: {{ inquiry.product_category|default:"Not specified" }}
+Quantity: {{ inquiry.quantity|default:"Not specified" }}
+
+Customer message
+{{ inquiry.message }}
+
+View inquiry in Admin: {{ admin_url }}
+
+Somlab Diagnostics
+Star Home Tower, 5th Floor, Apt. 504
+KM5, Amira Hotel Street, Hodan, Mogadishu, Somalia
+info@somlab.so
+{% endautoescape %}
